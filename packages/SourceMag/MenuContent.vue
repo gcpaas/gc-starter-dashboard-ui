@@ -20,7 +20,7 @@ export default {
     },
     type: {
       type: String,
-      default: 'bigScreen'
+      default: 'dashboard'
     }
   },
   components: { SourceList },

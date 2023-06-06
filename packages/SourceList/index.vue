@@ -172,7 +172,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'bigScreen' // bigScreen | template
+      default: 'dashboard' // dashboard | template
     },
     catalogInfo: {
       type: Object,
@@ -183,7 +183,7 @@ export default {
   data () {
     return {
       upLoadUrl:
-        window.DS_CONFIG?.httpConfigs?.baseURL + '/bigScreen/file/upload',
+        window.DS_CONFIG?.httpConfigs?.baseURL + '/dashboard/file/upload',
       searchKey: '',
       extend: '',
       options: [],
@@ -240,7 +240,7 @@ export default {
       console.log(file)
     },
     getOptions () {
-      get('/bigScreen/file/getAllFileSuffix').then((data) => {
+      get('/dashboard/file/getAllFileSuffix').then((data) => {
         console.log(data)
         data.forEach((item) => this.options.push({ label: item, value: item }))
       })
@@ -248,7 +248,7 @@ export default {
     getDataList () {
       console.log(this.catalogInfo)
       this.loading = true
-      get('/bigScreen/file', {
+      get('/dashboard/file', {
         module: this.catalogInfo.page.id,
         current: this.current,
         size: this.size,
@@ -267,7 +267,7 @@ export default {
       window.open(screen.url, '_blank')
     },
     downLoad (screen) {
-      download(`/bigScreen/file/download/${screen.id}`)
+      download(`/dashboard/file/download/${screen.id}`)
     },
     del (screen) {
       this.$confirm('确定删除该资源？', '提示', {
@@ -277,7 +277,7 @@ export default {
         customClass: 'bs-el-message-box'
       })
         .then(async () => {
-          post(`/bigScreen/file/delete/${screen.id}`)
+          post(`/dashboard/file/delete/${screen.id}`)
             .then(() => {
               this.$message({
                 type: 'success',

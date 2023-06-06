@@ -33,12 +33,12 @@ export default {
   },
   computed: {
     ...mapState({
-      activeCode: state => state.bigScreen.activeCode,
-      activeCodes: state => state.bigScreen.activeCodes,
-      hoverCode: state => state.bigScreen.hoverCode,
-      activeItemConfig: state => state.bigScreen.activeItemConfig,
-      chartList: state => state.bigScreen.pageInfo.chartList,
-      presetLine: state => state.bigScreen.presetLine
+      activeCode: state => state.dashboard.activeCode,
+      activeCodes: state => state.dashboard.activeCodes,
+      hoverCode: state => state.dashboard.hoverCode,
+      activeItemConfig: state => state.dashboard.activeItemConfig,
+      chartList: state => state.dashboard.pageInfo.chartList,
+      presetLine: state => state.dashboard.presetLine
     })
   },
   data () {
@@ -48,7 +48,7 @@ export default {
   },
   mounted () {},
   methods: {
-    ...mapMutations('bigScreen', [
+    ...mapMutations('dashboard', [
       'changeHoverCode',
       'changeActiveCode',
       'changeChartConfig',

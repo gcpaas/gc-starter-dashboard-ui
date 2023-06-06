@@ -93,14 +93,14 @@ export default {
   },
   computed: {
     ...mapState({
-      pageConfig: (state) => state.bigScreen.pageInfo.pageConfig,
-      pageInfo: (state) => state.bigScreen.pageInfo,
-      chartList: (state) => state.bigScreen.pageInfo.chartList,
-      activeCode: (state) => state.bigScreen.activeCode,
-      hoverCode: (state) => state.bigScreen.hoverCode,
-      themeJson: (state) => state.bigScreen.pageInfo.pageConfig.themeJson,
-      isInit: (state) => !state.bigScreen.pageLoading,
-      scale: (state) => state.bigScreen.zoom / 100
+      pageConfig: (state) => state.dashboard.pageInfo.pageConfig,
+      pageInfo: (state) => state.dashboard.pageInfo,
+      chartList: (state) => state.dashboard.pageInfo.chartList,
+      activeCode: (state) => state.dashboard.activeCode,
+      hoverCode: (state) => state.dashboard.hoverCode,
+      themeJson: (state) => state.dashboard.pageInfo.pageConfig.themeJson,
+      isInit: (state) => !state.dashboard.pageLoading,
+      scale: (state) => state.dashboard.zoom / 100
     })
   },
   watch: {
@@ -132,7 +132,7 @@ export default {
     this.plotList = [...this.plotList, ...getCustomPlots()]
   },
   methods: {
-    ...mapMutations('bigScreen', [
+    ...mapMutations('dashboard', [
       'changeLayout',
       'changeActiveCode',
       'changeChartConfig',

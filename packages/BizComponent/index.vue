@@ -100,6 +100,7 @@ import CusBtn from 'packages/DashboardDesign/BtnLoading'
 import MonacoEditor from 'packages/MonacoEditor'
 import BizComponentPreview from './Preview'
 import { getBizComponentInfo, updateBizComponent } from 'packages/js/api/bigScreenApi'
+import { defaultSettingContent, defaultVueContent } from './config/defaultBizConfig'
 export default {
   name: 'BizComponentDesign',
   components: {
@@ -130,9 +131,15 @@ export default {
       const code = this.$route.query.code
       if (code) {
         getBizComponentInfo(code).then(data => {
-          this.form = data
-          this.$refs.vueContent.editor.setValue(data.vueContent)
-          this.$refs.settingContent.editor.setValue(data.settingContent)
+          this.form = {
+            ...data,
+            name: data.name,
+            coverPicture: data.coverPicture,
+            settingContent: data.settingContent || defaultSettingContent,
+            vueContent: data.vueContent || defaultVueContent
+          }
+          this.$refs.vueContent.editor.setValue(this.form.vueContent)
+          this.$refs.settingContent.editor.setValue(this.form.settingContent)
         })
       }
     },
@@ -155,7 +162,7 @@ export default {
     },
     backManagement () {
       this.$router.push({
-        path: window.DS_CONFIG?.routers?.componentUrl || '/dashboard-components'
+        path: window.DS_CONFIG?.routers?.componentUrl
       })
     },
     save () {

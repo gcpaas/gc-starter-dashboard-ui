@@ -258,7 +258,7 @@ export default {
     },
     // 获取分组列表
     getCatalogList () {
-      get(`/bigScreen/type/list/${this.catalogType}`)
+      get(`/dashboard/type/list/${this.catalogType}`)
         .then((data) => {
           this.catalogList = data
         })
@@ -267,7 +267,7 @@ export default {
     getDataList () {
       this.loading = true
       if (this.catalogInfo === 'component') {
-        get('/bigScreen/design/page', {
+        get('/dashboard/design/page', {
           parentCode: this.catalogCode || null,
           current: this.current,
           size: this.size,
@@ -282,7 +282,7 @@ export default {
             this.loading = false
           })
       } else {
-        get('/bigScreen/bizComponent/page', {
+        get('/dashboard/bizComponent/page', {
           current: this.current,
           size: this.size,
           searchKey: this.searchKey,
@@ -332,7 +332,7 @@ export default {
     add () {
       const page = {
         code: '',
-        type: this.catalogInfo === 'component' ? 'bigScreen' : 'bizComponent'
+        type: this.catalogInfo === 'component' ? 'dashboard' : 'bizComponent'
       }
       this.$refs.EditForm.init(page, this.catalogCode)
     },
@@ -347,7 +347,7 @@ export default {
         customClass: 'bs-el-message-box'
       })
         .then(async () => {
-          const url = this.catalogInfo === 'component' ? `/bigScreen/design/delete/${screen.code}` : `/bigScreen/bizComponent/delete/${screen.id}`
+          const url = this.catalogInfo === 'component' ? `/dashboard/design/delete/${screen.code}` : `/dashboard/bizComponent/delete/${screen.id}`
           post(url)
             .then(() => {
               this.$message({
@@ -366,7 +366,7 @@ export default {
         .catch()
     },
     copy (screen) {
-      const url = this.catalogInfo === 'component' ? `/bigScreen/design/copy/${screen.code}` : `/bigScreen/bizComponent/copy/${screen.code}`
+      const url = this.catalogInfo === 'component' ? `/dashboard/design/copy/${screen.code}` : `/dashboard/bizComponent/copy/${screen.code}`
       this.$confirm('确定复制该组件', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',

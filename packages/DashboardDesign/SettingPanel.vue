@@ -56,7 +56,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('bigScreen', {
+    ...mapState('dashboard', {
       activeItem: state => state.activeItemConfig,
       activeCode: state => state.activeCode
     }),

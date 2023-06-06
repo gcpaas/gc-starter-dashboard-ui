@@ -18,7 +18,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'bigScreenCatalog'
+      default: 'dashboardCatalog'
     }
   },
   components: { SideMenu, MenuContent },

@@ -4,15 +4,15 @@
   "description": "自定义仪表盘",
   "author": "gc-starter",
   "license": "MIT",
-  "main": "lib/bigScreen.umd.min.js",
+  "main": "lib/dashboard.umd.min.js",
   "files": [
     "lib/fonts/*",
     "lib/img/*",
-    "lib/bigScreen.css",
-    "lib/bigScreen.umd.min.js.gz"
+    "lib/dashboard.css",
+    "lib/dashboard.umd.min.js.gz"
   ],
   "keywords": [
-    "bigScreen",
+    "dashboard",
     "仪表盘设计器",
     "低代码",
     "low code"
@@ -38,8 +38,10 @@
     "set-commit-hook": "git config core.hooksPath hooks",
     "generate-changelog": "conventional-changelog -p -i CHANGELOG.md -s -r 0",
     "analyzer": "cross-env NODE_ENV=production npm_config_report=true npm run build",
-    "lib": "vue-cli-service build --no-lint --mode package  --target lib --name bigScreen --dest lib packages/index.js",
+    "lib": "vue-cli-service build --no-lint --mode package  --target lib --name dashBoard --dest lib packages/index.js",
+    "lib:app": "vue-cli-service build --no-lint --mode packageApp  --target libApp --name dashBoardApp --dest lib packages/index.js",
     "package": "npm run lib && npm publish"
+
   },
   "husky": {
     "hooks": {

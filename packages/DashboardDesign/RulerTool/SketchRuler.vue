@@ -129,11 +129,11 @@ export default {
     }
   },
   computed: {
-    ...mapState('bigScreen', {
+    ...mapState('dashboard', {
       scale: state => state.zoom / 100
     }),
     presetLines () {
-      const presetLine = this.$store.state.bigScreen.presetLine
+      const presetLine = this.$store.state.dashboard.presetLine
       // { type: 'h', site: y || 0 },
       const v = presetLine?.filter(p => p.type === 'h')?.map(p => p.site)
       const h = presetLine?.filter(p => p.type === 'v')?.map(p => p.site)
@@ -166,7 +166,7 @@ export default {
     this.throttleScroll()
   },
   methods: {
-    ...mapMutations('bigScreen', [
+    ...mapMutations('dashboard', [
       'changeZoom',
       'changeFitZoom'
     ]),

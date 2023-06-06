@@ -199,15 +199,15 @@ export default {
   computed: {
     config: {
       get () {
-        return this.$store.state.bigScreen.activeItemConfig
+        return this.$store.state.dashboard.activeItemConfig
       },
       set (val) {
-        this.$store.state.bigScreen.activeItemConfig = val
+        this.$store.state.dashboard.activeItemConfig = val
       }
     },
     appCode: {
       get () {
-        return this.$store.state.bigScreen.pageInfo.appCode
+        return this.$store.state.dashboard.pageInfo.appCode
       }
     },
     pageCode () {

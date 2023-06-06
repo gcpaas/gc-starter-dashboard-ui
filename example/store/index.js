@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import bigScreen from 'packages/js/store/index.js'
+import dashboard from 'packages/js/store/index.js'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   modules: {
-    bigScreen
+    dashboard
   }
 })
 

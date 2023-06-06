@@ -122,7 +122,7 @@
             }"
           >
             <BigScreenRun
-              v-if="activePage.type === 'bigScreen'"
+              v-if="activePage.type === 'dashboard'"
               :key="activePage.code"
               :code="activePage.code"
             />
@@ -362,7 +362,7 @@ export default {
     // 获取所有的目录
     openCascader (node) {
       const excludeCategory = node.type === 'catalog' && !this.isAdd ? node.code : undefined
-      post('/bigScreen/category/tree', { searchKey: '', typeList: ['catalog'], excludeCategory, sort: false }).then(data => {
+      post('/dashboard/category/tree', { searchKey: '', typeList: ['catalog'], excludeCategory, sort: false }).then(data => {
         const list = [{ name: '根目录', code: '', children: data }]
         this.catalogList = list
       }).catch(() => {
@@ -419,7 +419,7 @@ export default {
     },
     // 左侧菜单图标
     pageIconName (data, node) {
-      if (data.type === 'bigScreen') {
+      if (data.type === 'dashboard') {
         return this.pageIcon[2]
       } else {
         return node.expanded ? this.pageIcon[1] : this.pageIcon[0]
@@ -439,7 +439,7 @@ export default {
     },
     // 预览
     gopagePreview (nodeData) {
-      if (nodeData.code && nodeData.type === 'bigScreen') {
+      if (nodeData.code && nodeData.type === 'dashboard') {
         const { href } = this.$router.resolve({
           path: window.DS_CONFIG?.routers?.previewUrl || '/dashboard/preview', // 这里写的是要跳转的路由地址
           query: {
@@ -475,7 +475,7 @@ export default {
     // 获取页面的列表(获取，搜索，排序)
     getDataList () {
       this.pageLoading = true
-      post('/bigScreen/category/tree', { searchKey: this.searchKey, sort: this.sort }).then(data => {
+      post('/dashboard/category/tree', { searchKey: this.searchKey, sort: this.sort }).then(data => {
         this.pageDesignList = data
         // 如果有addModel这个参数，说明是从页面直接新增过来的，直接进入页面或者表单的填写状态
         if (this.$route.query.add) {
@@ -585,8 +585,8 @@ export default {
     // 仪表盘 dashboard从模版新建, 使用某个模版新建
     useIt (pageTemplateId, parentNode, type) {
       this.templateLoading = true
-      const className = 'com.gccloud.bigscreen.core.module.manage.dto.BigScreenPageDTO'
-      post(`/bigScreen/${type}/design/add/template`, {
+      const className = 'com.gccloud.dashboard.core.module.manage.dto.DashboardPageDTO'
+      post(`/dashboard/${type}/design/add/template`, {
         pageTemplateId,
         parentCode: parentNode.code,
         type,
@@ -610,7 +610,7 @@ export default {
       const categories = page.categories
       if (type !== 'catalog') {
         // 如果是仪表盘，弹出选择模版页面
-        if (['bigScreen'].includes(type)) {
+        if (['dashboard'].includes(type)) {
           this.$refs.ChooseTemplateDialog.init(this.parentNode, type)
           return
         }
@@ -658,7 +658,7 @@ export default {
           return
         }
         if (this.isAdd) {
-          post('/bigScreen/category/add',
+          post('/dashboard/category/add',
             {
               ...this.catalogData,
               id: '',
@@ -672,7 +672,7 @@ export default {
           }).catch(() => {
           })
         } else {
-          post('/bigScreen/category/update', { ...this.catalogData, excludeCategory: this.catalogData.code }).then(data => {
+          post('/dashboard/category/update', { ...this.catalogData, excludeCategory: this.catalogData.code }).then(data => {
             this.catalogVisible = false
             this.getDataList()
           }).catch(() => {
@@ -683,7 +683,7 @@ export default {
     // 删除页面设计
     deletePageDesign (nodeData, node) {
       const type = getPageType(nodeData.type)// 由于类型与接口不统一需要转化一下
-      const url = type === 'category' ? `/bigScreen/category/delete/${nodeData.code}` : `/bigScreen/${type}/design/delete/${nodeData.code}`// 接口地址
+      const url = type === 'category' ? `/dashboard/category/delete/${nodeData.code}` : `/dashboard/${type}/design/delete/${nodeData.code}`// 接口地址
       this.$confirm('确定删除该页面设计？', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',

@@ -118,7 +118,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'bigScreenCatalog'
+      default: 'dashboardCatalog'
     }
   },
   data () {
@@ -180,10 +180,10 @@ export default {
           return
         }
         if (!this.currentCatalog.id) {
-          post('/bigScreen/type/add',
+          post('/dashboard/type/add',
             {
               ...this.currentCatalog,
-              type: this.type || 'bigScreenCatalog'
+              type: this.type || 'dashboardCatalog'
             }).then(data => {
             this.catalogVisible = false
             this.getCatalogList()
@@ -193,7 +193,7 @@ export default {
           }).catch(() => {
           })
         } else {
-          post('/bigScreen/type/update', { ...this.currentCatalog, type: this.type || 'bigScreenCatalog' }).then(data => {
+          post('/dashboard/type/update', { ...this.currentCatalog, type: this.type || 'dashboardCatalog' }).then(data => {
             this.catalogVisible = false
             this.getCatalogList()
           }).catch(() => {
@@ -222,7 +222,7 @@ export default {
         type: 'warning',
         customClass: 'bs-el-message-box'
       }).then(async () => {
-        post(`/bigScreen/type/delete/${catalog.id}`).then(() => {
+        post(`/dashboard/type/delete/${catalog.id}`).then(() => {
           this.$message({
             type: 'success',
             message: '删除成功'
@@ -239,7 +239,7 @@ export default {
     // 获取目录的列表
     getCatalogList () {
       this.pageLoading = true
-      get(`/bigScreen/type/list/${this.type}`).then(data => {
+      get(`/dashboard/type/list/${this.type}`).then(data => {
         this.catalogList = data
       }).catch(() => {
       }).finally(() => {

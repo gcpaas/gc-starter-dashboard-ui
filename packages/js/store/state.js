@@ -3,7 +3,7 @@ export const defaultData = {
   // 仪表盘信息
   pageInfo: {
     className:
-      'com.gccloud.bigscreen.core.module.manage.dto.BigScreenPageDTO',
+      'com.gccloud.dashboard.core.module.manage.dto.DashboardPageDTO',
     id: '',
     name: '测试bigScreen',
     code: '',
@@ -11,7 +11,7 @@ export const defaultData = {
     iconColor: '#007aff',
     orderNum: 0,
     remark: '',
-    type: 'bigScreen',
+    type: 'dashboard',
     style: '',
     parentCode: '0',
 

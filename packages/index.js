@@ -30,7 +30,7 @@ const components = [
   // BigScreenTopLayout
 ]
 
-const $bigScreen = {
+const $dashboard = {
   bigScreenStore
 }
 
@@ -49,7 +49,7 @@ export {
   DataSourceManagement,
   // BigScreenTopLayout,
 
-  $bigScreen,
+  $dashboard,
   registerConfig,
   updateTheme
 }
@@ -62,7 +62,7 @@ export default {
   DataSetManagement,
   DataSourceManagement,
 
-  $bigScreen,
+  $dashboard,
   registerConfig,
   updateTheme
 }

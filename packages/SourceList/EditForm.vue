@@ -120,7 +120,7 @@ export default {
       title: '', // 弹框标题(新增/编辑)
       dataForm: {
         id: '',
-        type: 'bigScreen',
+        type: 'dashboard',
         name: '',
         icon: '',
         code: '',
@@ -169,7 +169,7 @@ export default {
       this.formVisible = true
       this.$nextTick(() => {
         if (code) {
-          get(`/bigScreen/design/info/code/${code}`).then((resp) => {
+          get(`/dashboard/design/info/code/${code}`).then((resp) => {
             this.$set(this, 'title', resp.name)
             this.$set(this.dataForm, 'name', resp.name)
             this.$set(this.dataForm, 'chartList', resp.chartList)
@@ -184,7 +184,7 @@ export default {
             this.$set(this.dataForm, 'orderNum', nodeData.orderNum)
             this.$set(this.dataForm, 'pageTemplateId', resp?.pageTemplateId)
             this.$set(this.dataForm, 'pageConfig', resp?.pageConfig)
-            if (this.dataForm.type === 'bigScreen') {
+            if (this.dataForm.type === 'dashboard') {
               const { w, h } = resp.pageConfig
               this.resolutionRatio.w = w
               this.resolutionRatio.h = h
@@ -212,7 +212,7 @@ export default {
             customTheme: 'auto',
             bg: null
           })
-          if (this.dataForm.type === 'bigScreen') {
+          if (this.dataForm.type === 'dashboard') {
             this.resolutionRatio.w = '1920'
             this.resolutionRatio.h = '1080'
           }
@@ -230,10 +230,10 @@ export default {
           return
         }
         const addOrUpdateHandel = !this.dataForm.code
-          ? (form) => post('/bigScreen/design/add', form)
-          : (form) => post('/bigScreen/design/update', form)
+          ? (form) => post('/dashboard/design/add', form)
+          : (form) => post('/dashboard/design/update', form)
         const form = {
-          className: 'com.gccloud.bigscreen.core.module.manage.dto.BigScreenPageDTO',
+          className: 'com.gccloud.dashboard.core.module.manage.dto.DashboardPageDTO',
           chartList: this.dataForm.chartList,
           code: this.dataForm.code,
           icon: this.dataForm.icon,
@@ -243,7 +243,7 @@ export default {
           parentCode: this.dataForm.parentCode,
           remark: this.dataForm.remark,
           style: this.dataForm.style,
-          type: 'bigScreen',
+          type: 'dashboard',
           orderNum: this.dataForm.orderNum,
           pageConfig: this.dataForm.pageConfig,
           pageTemplateId: this.dataForm.pageTemplateId

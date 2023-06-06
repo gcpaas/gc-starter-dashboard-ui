@@ -229,7 +229,7 @@ export default {
     },
     // 获取所有的目录
     openCascader () {
-      post('/bigScreen/category/tree', { searchKey: '', typeList: ['catalog'], sort: false }).then(data => {
+      post('/dashboard/category/tree', { searchKey: '', typeList: ['catalog'], sort: false }).then(data => {
         const list = [{ name: '根目录', code: '', children: data }]
         this.catalogList = list
       }).catch(() => {
@@ -249,7 +249,7 @@ export default {
       const code = nodeData ? nodeData.code : ''
       this.formVisible = true
       this.$nextTick(() => {
-        if (this.dataForm.type === 'bigScreen') {
+        if (this.dataForm.type === 'dashboard') {
           if (code) {
             get(`/${this.dataForm.type}/design/info/code/${code}`).then((resp) => {
               this.$set(this, 'title', resp.name)
@@ -265,7 +265,7 @@ export default {
               this.$set(this.dataForm, 'type', resp.type)
               this.$set(this.dataForm, 'orderNum', nodeData.orderNum)
               this.$set(this.dataForm, 'pageTemplateId', resp?.pageTemplateId)
-              if (this.dataForm.type === 'bigScreen') {
+              if (this.dataForm.type === 'dashboard') {
                 const { w, h } = resp.pageConfig
                 this.resolutionRatio.w = w
                 this.resolutionRatio.h = h
@@ -286,7 +286,7 @@ export default {
             this.$set(this.dataForm, 'type', this.dataForm.type)
             this.$set(this.dataForm, 'orderNum', 0)
             this.$set(this.dataForm, 'pageTemplateId', '')
-            if (this.dataForm.type === 'bigScreen') {
+            if (this.dataForm.type === 'dashboard') {
               this.resolutionRatio.w = '1920'
               this.resolutionRatio.h = '1080'
             }
@@ -297,7 +297,7 @@ export default {
     },
     // 点击确定时
     addOrUpdate (isToDesign = false) {
-      if (this.dataForm.type === 'bigScreen') {
+      if (this.dataForm.type === 'dashboard') {
         this.addOrUpdateBigScreen(isToDesign)
       }
     },
@@ -308,10 +308,10 @@ export default {
           return
         }
         const addOrUpdateHandel = !this.dataForm.code
-          ? (form) => post('/bigScreen/design/add', form)
-          : (form) => post('/bigScreen/design/update', form)
+          ? (form) => post('/dashboard/design/add', form)
+          : (form) => post('/dashboard/design/update', form)
         const form = {
-          className: 'com.gccloud.bigscreen.core.module.manage.dto.BigScreenPageDTO',
+          className: 'com.gccloud.dashboard.core.module.manage.dto.DashboardPageDTO',
           chartList: this.dataForm.chartList,
           code: this.dataForm.code,
           icon: this.dataForm.icon,
@@ -321,7 +321,7 @@ export default {
           parentCode: this.dataForm.parentCode,
           remark: this.dataForm.remark,
           style: this.dataForm.style,
-          type: 'bigScreen',
+          type: 'dashboard',
           orderNum: this.dataForm.orderNum,
           pageConfig: {
             w: this.resolutionRatio.w || '1920',

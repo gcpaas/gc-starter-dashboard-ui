@@ -4,7 +4,7 @@
  */
 export default function getComponentConfig (type, classNameType) {
   const className =
-    'com.gccloud.bigscreen.core.module.chart.components.ScreenBorderChart'
+    'com.gccloud.dashboard.core.module.chart.components.DashboardBorderChart'
   switch (type) {
     case 'border1':
       return {

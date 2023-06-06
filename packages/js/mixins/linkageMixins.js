@@ -12,7 +12,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations('bigScreen', {
+    ...mapMutations('dashboard', {
       changeChartKey: 'changeChartKey'
     }),
     /**

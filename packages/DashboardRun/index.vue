@@ -76,11 +76,11 @@ export default {
   },
   computed: {
     ...mapState({
-      pageInfo: state => state.bigScreen.pageInfo,
-      pageConfig: state => state.bigScreen.pageInfo.pageConfig,
-      chartList: state => state.bigScreen.pageInfo.chartList,
-      stateFitMode: state => state.bigScreen.pageInfo.pageConfig.fitMode,
-      isInit: (state) => !state.bigScreen.pageLoading
+      pageInfo: state => state.dashboard.pageInfo,
+      pageConfig: state => state.dashboard.pageInfo.pageConfig,
+      chartList: state => state.dashboard.pageInfo.chartList,
+      stateFitMode: state => state.dashboard.pageInfo.pageConfig.fitMode,
+      isInit: (state) => !state.dashboard.pageLoading
     }),
     pageCode () {
       // 内部系统取到外部iframe上src链接的code参数
@@ -97,7 +97,7 @@ export default {
       return this.config.fitSelector
     },
     pageLoading () {
-      return this.$store.state.bigScreen.pageLoading
+      return this.$store.state.dashboard.pageLoading
     },
     fitPageConfig () {
       return this.resolvePageConfig(this.pageConfig)
@@ -148,11 +148,11 @@ export default {
   beforeRouteEnter (to, from, next) {
     // 判断进入预览页面前是否有访问权限
     const code = to.query.code
-    get(`/bigScreen/permission/check/${code}`).then(res => {
+    get(`/dashboard/permission/check/${code}`).then(res => {
       if (res) {
         next(vm => {
           // 重置仪表盘的vuex store
-          vm.$store.commit('bigScreen/resetStoreData')
+          vm.$store.commit('dashboard/resetStoreData')
         })
       } else {
         next('/notPermission')
@@ -161,7 +161,7 @@ export default {
   },
   beforeRouteLeave (to, from, next) {
     // 离开的时候 重置仪表盘的vuex store
-    this.$store.commit('bigScreen/resetStoreData')
+    this.$store.commit('dashboard/resetStoreData')
     next()
   },
   created () {
@@ -170,10 +170,10 @@ export default {
     this.windowSize()
   },
   methods: {
-    ...mapActions('bigScreen', [
+    ...mapActions('dashboard', [
       'initLayout' // -> this.initLayout()
     ]),
-    ...mapMutations('bigScreen', [
+    ...mapMutations('dashboard', [
       'changeLayout',
       'changePageLoading',
       'changePageConfig'

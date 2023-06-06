@@ -183,7 +183,7 @@ export default {
     },
     // 获取分组列表
     getCatalogList () {
-      get(`/bigScreen/type/list/${this.catalogType}`)
+      get(`/dashboard/type/list/${this.catalogType}`)
         .then((data) => {
           this.tableList = data
         })
@@ -196,7 +196,7 @@ export default {
           return
         }
         if (!this.currentCatalog.id) {
-          post('/bigScreen/type/add',
+          post('/dashboard/type/add',
             {
               ...this.currentCatalog,
               type: this.catalogType
@@ -206,7 +206,7 @@ export default {
           }).catch(() => {
           })
         } else {
-          post('/bigScreen/type/update', { ...this.currentCatalog, type: this.type || 'bigScreenCatalog' }).then(data => {
+          post('/dashboard/type/update', { ...this.currentCatalog, type: this.type || 'dashboardCatalog' }).then(data => {
             this.catalogVisible = false
             this.getCatalogList()
           }).catch(() => {
@@ -234,7 +234,7 @@ export default {
         type: 'warning',
         customClass: 'bs-el-message-box'
       }).then(async () => {
-        post(`/bigScreen/type/delete/${catalog.id}`).then(() => {
+        post(`/dashboard/type/delete/${catalog.id}`).then(() => {
           this.$message({
             type: 'success',
             message: '删除成功'

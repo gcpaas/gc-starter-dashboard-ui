@@ -80,15 +80,15 @@ export default {
   },
   computed: {
     ...mapState({
-      chartList: state => state.bigScreen.timelineStore,
-      currentTimeLine: state => state.bigScreen.currentTimeLine
+      chartList: state => state.dashboard.timelineStore,
+      currentTimeLine: state => state.dashboard.currentTimeLine
     })
   },
   mounted () {},
   methods: {
     ...mapMutations({
-      clearTimeline: 'bigScreen/clearTimeline',
-      rollbackTimeline: 'bigScreen/rollbackTimeline'
+      clearTimeline: 'dashboard/clearTimeline',
+      rollbackTimeline: 'dashboard/rollbackTimeline'
     }),
     init () {
       this.dialogVisible = true

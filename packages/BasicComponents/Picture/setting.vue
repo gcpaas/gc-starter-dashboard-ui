@@ -123,7 +123,7 @@ export default {
   data () {
     return {
       upLoadUrl:
-        window.DS_CONFIG?.httpConfigs?.baseURL + '/bigScreen/file/upload',
+        window.DS_CONFIG?.httpConfigs?.baseURL + '/dashboard/file/upload',
       fileUploadParam: {
         module: 'form'
       },
@@ -159,10 +159,10 @@ export default {
   computed: {
     config: {
       get () {
-        return this.$store.state.bigScreen.activeItemConfig
+        return this.$store.state.dashboard.activeItemConfig
       },
       set (val) {
-        this.$store.state.bigScreen.activeItemConfig = val
+        this.$store.state.dashboard.activeItemConfig = val
       }
     }
   },

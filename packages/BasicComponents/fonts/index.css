@@ -1,12 +1,12 @@
 @font-face {
-  font-family: "bigScreen-iconfont"; /* Project id 3745398 */
+  font-family: "dashboard-iconfont"; /* Project id 3745398 */
   src: url('iconfont.woff2') format('woff2'),
   url('iconfont.woff') format('woff'),
   url('iconfont.ttf') format('truetype');
 }
 
-.bigScreen-iconfont {
-  font-family: "bigScreen-iconfont" !important;
+.dashboard-iconfont {
+  font-family: "dashboard-iconfont" !important;
   font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;

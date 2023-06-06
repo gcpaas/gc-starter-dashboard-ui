@@ -152,9 +152,9 @@ export default {
   },
   computed: {
     ...mapState({
-      pageInfo: (state) => state.bigScreen.pageInfo,
-      timelineStore: (state) => state.bigScreen.timelineStore,
-      currentTimeLine: (state) => state.bigScreen.currentTimeLine
+      pageInfo: (state) => state.dashboard.pageInfo,
+      timelineStore: (state) => state.dashboard.timelineStore,
+      currentTimeLine: (state) => state.dashboard.currentTimeLine
     }),
     pageCode () {
       return this.$route.query.code || this.code
@@ -174,14 +174,14 @@ export default {
   },
   methods: {
     ...mapActions({
-      initLayout: 'bigScreen/initLayout'
+      initLayout: 'dashboard/initLayout'
     }),
     ...mapMutations({
-      changeActiveCode: 'bigScreen/changeActiveCode',
-      changeActiveItem: 'bigScreen/changeActiveItem',
-      changePageInfo: 'bigScreen/changePageInfo',
-      undoTimeLine: 'bigScreen/undoTimeLine',
-      saveTimeLine: 'bigScreen/saveTimeLine'
+      changeActiveCode: 'dashboard/changeActiveCode',
+      changeActiveItem: 'dashboard/changeActiveItem',
+      changePageInfo: 'dashboard/changePageInfo',
+      undoTimeLine: 'dashboard/undoTimeLine',
+      saveTimeLine: 'dashboard/saveTimeLine'
     }),
     setAlign (command) {
       const pageInfo = _.cloneDeep(this.pageInfo)
@@ -253,7 +253,7 @@ export default {
     },
     backManagement () {
       this.$router.push({
-        path: this.pageInfo.type === 'component' ? (window.DS_CONFIG?.routers?.componentUrl || '/dashboard-components') : (window.DS_CONFIG?.routers?.pageManagementUrl || '/home')
+        path: this.pageInfo.type === 'component' ? (window.DS_CONFIG?.routers?.componentUrl || '/dashboard-components') : (window.DS_CONFIG?.routers?.pageManagementUrl)
       })
     },
     undo (isUndo) {

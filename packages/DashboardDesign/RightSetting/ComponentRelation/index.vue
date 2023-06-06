@@ -129,7 +129,7 @@ export default {
   },
   computed: {
     ...mapState({
-      chartList: state => state.bigScreen.pageInfo.chartList
+      chartList: state => state.dashboard.pageInfo.chartList
     }),
     // 当前已经关联的组件key
     currentLinkComponentKey () {

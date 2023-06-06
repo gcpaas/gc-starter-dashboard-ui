@@ -44,7 +44,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('bigScreen', {
+    ...mapState('dashboard', {
       shiftKeyDown: state => state.shiftKeyDown,
       scale: state => state.zoom / 100
     }),
@@ -70,7 +70,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations('bigScreen',
+    ...mapMutations('dashboard',
       [
         'changeActiveCodes',
         'changeActiveCode'

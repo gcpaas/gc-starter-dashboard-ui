@@ -29,7 +29,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('bigScreen', {
+    ...mapState('dashboard', {
       pageInfo: state => state.pageInfo,
       customTheme: state => state.pageInfo.pageConfig.customTheme
     }),
@@ -47,7 +47,7 @@ export default {
     this.getRemoteComponent()
   },
   methods: {
-    ...mapMutations('bigScreen', ['changeChartConfig']),
+    ...mapMutations('dashboard', ['changeChartConfig']),
     // 尝试渲染远程文件或远程字符串
     getRemoteComponent () {
       this.loading = true

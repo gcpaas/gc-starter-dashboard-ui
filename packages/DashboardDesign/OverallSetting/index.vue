@@ -182,8 +182,8 @@ export default {
   },
   computed: {
     ...mapState({
-      pageInfo: state => state.bigScreen.pageInfo,
-      config: state => state.bigScreen.activeItemConfig
+      pageInfo: state => state.dashboard.pageInfo,
+      config: state => state.dashboard.activeItemConfig
     }),
     dsValue () {
       return this.form.cacheDataSets?.map(dSet => ({
@@ -216,7 +216,7 @@ export default {
     this.init()
   },
   methods: {
-    ...mapMutations('bigScreen', [
+    ...mapMutations('dashboard', [
       'changePageLoading',
       'changePageConfig',
       'changeLayout',
@@ -253,8 +253,8 @@ export default {
       // 获取缓存数据集数据和配置
       // eslint-disable-next-line no-unused-expressions
       this.pageInfo.pageConfig.cacheDataSets?.map((cacheDataSet) => {
-        this.$store.dispatch('bigScreen/getCacheDataSetData', { dataSetId: cacheDataSet.dataSetId })
-        this.$store.dispatch('bigScreen/getCacheDataFields', { dataSetId: cacheDataSet.dataSetId })
+        this.$store.dispatch('dashboard/getCacheDataSetData', { dataSetId: cacheDataSet.dataSetId })
+        this.$store.dispatch('dashboard/getCacheDataFields', { dataSetId: cacheDataSet.dataSetId })
       })
     },
     // 改变
@@ -296,8 +296,8 @@ export default {
       // 获取缓存数据集数据和配置
       // eslint-disable-next-line no-unused-expressions
       this.form.cacheDataSets?.map((cacheDataSet) => {
-        this.$store.dispatch('bigScreen/getCacheDataSetData', { dataSetId: cacheDataSet.dataSetId })
-        this.$store.dispatch('bigScreen/getCacheDataFields', { dataSetId: cacheDataSet.dataSetId })
+        this.$store.dispatch('dashboard/getCacheDataSetData', { dataSetId: cacheDataSet.dataSetId })
+        this.$store.dispatch('dashboard/getCacheDataFields', { dataSetId: cacheDataSet.dataSetId })
       })
     },
     close () {

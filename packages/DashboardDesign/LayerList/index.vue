@@ -56,13 +56,13 @@ export default {
   },
   computed: {
     ...mapState({
-      chartList: state => state.bigScreen.pageInfo.chartList,
-      activeCode: state => state.bigScreen.activeCode,
-      activeItemConfig: state => state.bigScreen.activeItemConfig
+      chartList: state => state.dashboard.pageInfo.chartList,
+      activeCode: state => state.dashboard.activeCode,
+      activeItemConfig: state => state.dashboard.activeItemConfig
     }),
     chartList: {
       get () {
-        return this.$store.state.bigScreen.pageInfo.chartList
+        return this.$store.state.dashboard.pageInfo.chartList
       },
       set (val) {
         this.changeLayout(val)
@@ -72,10 +72,10 @@ export default {
   mounted () {},
   methods: {
     ...mapMutations({
-      changeLayout: 'bigScreen/changeLayout',
-      changeZIndex: 'bigScreen/changeZIndex',
-      changeHoverCode: 'bigScreen/changeHoverCode',
-      changeActiveCode: 'bigScreen/changeActiveCode'
+      changeLayout: 'dashboard/changeLayout',
+      changeZIndex: 'dashboard/changeZIndex',
+      changeHoverCode: 'dashboard/changeHoverCode',
+      changeActiveCode: 'dashboard/changeActiveCode'
     }),
     change (e) {
       this.changeZIndex(this.chartList)

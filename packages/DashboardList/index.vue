@@ -4,7 +4,7 @@
       <el-input
         v-model="searchKey"
         class="bs-el-input"
-        :placeholder="type === 'bigScreenCatalog' ?'请输入仪表盘名称':'请输入组件名称'"
+        :placeholder="type === 'dashboardCatalog' ?'请输入仪表盘名称':'请输入组件名称'"
         prefix-icon="el-icon-search"
         clearable
         @clear="reSearch"
@@ -38,7 +38,7 @@
           <div class="add-dashboard-card">
             <div class="add-dashboard-card-inner">
               <div class="add-dashboard-card-text">
-                新建{{ type === 'bigScreenCatalog' ? '仪表盘' : '组件' }}
+                新建{{ type === 'dashboardCatalog' ? '仪表盘' : '组件' }}
               </div>
             </div>
           </div>
@@ -158,7 +158,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'bigScreenCatalog'
+      default: 'dashboardCatalog'
     },
     catalogInfo: {
       type: Object,
@@ -177,7 +177,7 @@ export default {
   },
   computed: {
     hint () {
-      return this.pageType === 'bigScreen' ? '仪表盘' : '组件'
+      return this.pageType === 'dashboard' ? '仪表盘' : '组件'
     },
     code () {
       return this.catalogInfo?.page?.code
@@ -186,7 +186,7 @@ export default {
       return this.list.length > 2
     },
     pageType () {
-      return this.type === 'bigScreenCatalog' ? 'bigScreen' : 'component'
+      return this.type === 'dashboardCatalog' ? 'dashboard' : 'component'
     }
   },
   watch: {
@@ -201,7 +201,7 @@ export default {
   methods: {
     getDataList () {
       this.loading = true
-      get('/bigScreen/design/page', {
+      get('/dashboard/design/page', {
         parentCode: this.code || null,
         current: this.current,
         size: this.size,
@@ -238,7 +238,7 @@ export default {
     add () {
       const page = {
         code: '',
-        type: 'bigScreen'
+        type: 'dashboard'
       }
       this.$refs.EditForm.init(page, this.catalogInfo.page)
     },
@@ -253,7 +253,7 @@ export default {
         customClass: 'bs-el-message-box'
       })
         .then(async () => {
-          post(`/bigScreen/design/delete/${screen.code}`)
+          post(`/dashboard/design/delete/${screen.code}`)
             .then(() => {
               this.$message({
                 type: 'success',
@@ -278,7 +278,7 @@ export default {
         customClass: 'bs-el-message-box'
       })
         .then(async () => {
-          post(`/bigScreen/design/copy/${screen.code}`)
+          post(`/dashboard/design/copy/${screen.code}`)
             .then(() => {
               this.$message({
                 type: 'success',

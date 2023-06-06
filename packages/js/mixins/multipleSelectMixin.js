@@ -6,8 +6,8 @@ import { mapMutations, mapState } from 'vuex'
 export default {
   computed: {
     ...mapState({
-      activeCodes: (state) => state.bigScreen.activeCodes,
-      activeChart: (state) => state.bigScreen.activeItemConfig
+      activeCodes: (state) => state.dashboard.activeCodes,
+      activeChart: (state) => state.dashboard.activeItemConfig
     })
   },
   mounted () {
@@ -20,7 +20,7 @@ export default {
     document.removeEventListener('keyup', this.keyup)
   },
   methods: {
-    ...mapMutations('bigScreen', {
+    ...mapMutations('dashboard', {
       changeShiftDown: 'changeShiftDown',
       changeActivePos: 'changeActivePos',
       deleteItem: 'delItem',
