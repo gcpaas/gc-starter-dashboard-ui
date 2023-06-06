@@ -46,7 +46,7 @@
                 icon="el-icon-plus"
                 @click="addRootNode"
               >
-                <span style="color: var(--bs-el-color-primary);">新增根节点</span>
+                <span style="color: var(--ds-el-color-primary);">新增根节点</span>
               </el-button>
             </div>
             <ul
@@ -473,7 +473,7 @@ export default {
       width: 100%;
 
       .el-tabs__item {
-        color: var(--bs-el-text);
+        color: var(--ds-el-text);
         width: 50%;
         text-align: center;
       }
@@ -483,15 +483,15 @@ export default {
       }
 
       .el-tabs__item.is-active {
-        color: var(--bs-el-color-primary) !important;
-        border-bottom-color: var(--bs-el-border) !important;
+        color: var(--ds-el-color-primary) !important;
+        border-bottom-color: var(--ds-el-border) !important;
       }
     }
   }
 }
  ::v-deep .ztree {
     span {
-      color: var(--bs-el-text);
+      color: var(--ds-el-text);
     }
 
     li:hover {
@@ -500,13 +500,13 @@ export default {
     }
 
     .curSelectedNode {
-      background: var(--bs-el-background-3) !important;
-      background-color: var(--bs-el-background-3) !important;
+      background: var(--ds-el-background-3) !important;
+      background-color: var(--ds-el-background-3) !important;
     }
 
     a:hover {
-      background: var(--bs-el-background-3) !important;
-      background-color: var(--bs-el-background-3) !important;
+      background: var(--ds-el-background-3) !important;
+      background-color: var(--ds-el-background-3) !important;
     }
   }
 /deep/ .el-tabs__nav-wrap::after {
@@ -540,7 +540,7 @@ export default {
     line-height: 40px;
     position: absolute;
     left: 0;
-    border-left: 4px solid var(--bs-el-color-primary);
+    border-left: 4px solid var(--ds-el-color-primary);
   }
 }
 
@@ -554,7 +554,7 @@ export default {
 }
 
 .el-textarea__inner {
-  color: var(--bs-el-text);
-  background-color: var(--bs-el-background-1) !important;
+  color: var(--ds-el-text);
+  background-color: var(--ds-el-background-1) !important;
 }
 </style>

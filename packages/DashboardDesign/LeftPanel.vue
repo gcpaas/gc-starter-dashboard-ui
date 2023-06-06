@@ -289,7 +289,7 @@ export default {
 @import '~packages/DashboardDesign/fonts/iconfont.css';
 .bs-left-panel {
   display: flex;
-  background-color: var(--bs-background-1);
+  background-color: var(--ds-background-1);
 
   .bs-folder-wrap {
     width: 20px;
@@ -336,10 +336,10 @@ export default {
 
       .is-active {
         .iconfont-bigscreen {
-          color: var(--bs-el-color-primary);
+          color: var(--ds-el-color-primary);
         }
         .menu-title-span {
-          color: var(--bs-el-color-primary);
+          color: var(--ds-el-color-primary);
         }
       }
 
@@ -356,8 +356,8 @@ export default {
         width: 160px;
 
         .page-left-content-title {
-          background-color: var(--bs-background-2);
-          color: var(--bs-el-title);
+          background-color: var(--ds-background-2);
+          color: var(--ds-el-title);
           font-size: 14px;
           margin: 8px;
           padding: 8px 0;
@@ -374,7 +374,7 @@ export default {
               content: '';
               width: 4px;
               height: 14px;
-              background-color: var(--bs-el-color-primary);
+              background-color: var(--ds-el-color-primary);
             }
           }
         }
@@ -398,12 +398,12 @@ export default {
 
             .item {
               width: 100%;
-              background: var(--bs-background-2);
+              background: var(--ds-background-2);
               margin-bottom: 8px;
 
               .component-name {
-                background: var(--bs-el-background-3);
-                color: var(--bs-el-title);
+                background: var(--ds-el-background-3);
+                color: var(--ds-el-title);
                 font-size: 12px;
                 padding: 4px 8px;
                 text-align: left;
@@ -473,7 +473,7 @@ export default {
     }
 
     /deep/ .el-tabs__nav-scroll {
-      background-color: var(--bs-background-2);
+      background-color: var(--ds-background-2);
     }
   }
 

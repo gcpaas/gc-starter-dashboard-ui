@@ -77,7 +77,7 @@ export default {
   .el-input-group__append {
     width: 32.5px;
     height: 32.5px;
-    background-color: var(--bs-background-1);
+    background-color: var(--ds-background-1);
 
     .el-color-picker--mini {
       position: absolute;
@@ -89,8 +89,8 @@ export default {
   ::v-deep .el-color-picker__trigger {
     width: 32.5px;
     height: 32.5px;
-    border-color: var(--bs-el-border);
-    background-color: var(--bs-background-1);
+    border-color: var(--ds-el-border);
+    background-color: var(--ds-background-1);
   }
 }
 </style>

@@ -33,20 +33,6 @@ function registerRouters (config, router) {
   if (!router) {
     return
   }
-  // 默认路由
-  config.routers = {
-    pageManagementUrl: '/dashboard/management',
-    pageListUrl: '/dashboard-list',
-    dataSourceUrl: '/dashboard-dataSource',
-    dataSetUrl: '/dashboard-dataSet',
-    SourceUrl: '/dashboard-source',
-    componentUrl: '/dashboard-components',
-    designUrl: '/dashboard/design',
-    previewUrl: '/dashboard/preview',
-    bizComponentDesignUrl: '/dashboard-biz-component-design',
-    bizComponentPreviewUrl: '/dashboard-biz-component-preview',
-    ...config.routers
-  }
   const routers = [
     // 页面管理
     {
@@ -135,15 +121,15 @@ function registerRouters (config, router) {
 // 注册配置
 function registerTheme (config) {
   const defaultTheme = {
-    '--bs-el-color-primary': '#409EFF', // elment-ui主题色，激活
-    '--bs-background-1': '#151a26', // 整体背景色
-    '--bs-background-2': '#232832', // 布局背景色
-    '--bs-el-background-1': '#151A26', // 组件背景色，输入框...
-    '--bs-el-background-2': '#35393F', // 组件背景色，按钮、分页、加载...
-    '--bs-el-background-3': '#303640', // 组件背景色，表格头部、下拉框hover...
-    '--bs-el-title': '#ffffff', // 标题字体颜色
-    '--bs-el-text': '#ffffff', // 一般字体颜色
-    '--bs-el-border': 'transparent' // 边框颜色
+    '--ds-el-color-primary': '#409EFF', // elment-ui主题色，激活
+    '--ds-background-1': '#151a26', // 整体背景色
+    '--ds-background-2': '#232832', // 布局背景色
+    '--ds-el-background-1': '#151A26', // 组件背景色，输入框...
+    '--ds-el-background-2': '#35393F', // 组件背景色，按钮、分页、加载...
+    '--ds-el-background-3': '#303640', // 组件背景色，表格头部、下拉框hover...
+    '--ds-el-title': '#ffffff', // 标题字体颜色
+    '--ds-el-text': '#ffffff', // 一般字体颜色
+    '--ds-el-border': 'transparent' // 边框颜色
   }
   const mergedTheme = { ...defaultTheme, ...config?.customTheme }
   const style = document.createElement('style')
@@ -160,6 +146,20 @@ function registerTheme (config) {
 
 // 注册配置
 export default function (config, router) {
+  // 默认路由
+  config.routers = {
+    pageManagementUrl: '/dashboard/management',
+    pageListUrl: '/dashboard-list',
+    dataSourceUrl: '/dashboard-dataSource',
+    dataSetUrl: '/dashboard-dataSet',
+    SourceUrl: '/dashboard-source',
+    componentUrl: '/dashboard-components',
+    designUrl: '/dashboard/design',
+    previewUrl: '/dashboard/preview',
+    bizComponentDesignUrl: '/dashboard-biz-component-design',
+    bizComponentPreviewUrl: '/dashboard-biz-component-preview',
+    ...config.routers
+  }
   window.DS_CONFIG = {}
   window.DS_CONFIG = configDeepMerge(window.DS_CONFIG, config)
 

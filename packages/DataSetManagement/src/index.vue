@@ -617,7 +617,7 @@ export default {
   ::v-deep .el-input__inner {
     width: 110px !important;
     border:none;
-    background: var(--bs-el-background-1);
+    background: var(--ds-el-background-1);
   }
 }
 
@@ -632,19 +632,19 @@ export default {
 
   // ::v-deep .ztreeNodeMenu {
   //   ul {
-  //     background-color: var(--bs-background-1);
+  //     background-color: var(--ds-background-1);
   //   }
 
   //   li:hover {
-  //     background-color: var(--bs-el-color-primary);
+  //     background-color: var(--ds-el-color-primary);
   //   }
 
   //   span {
-  //     color: var(--bs-el-text);
+  //     color: var(--ds-el-text);
   //   }
 
   //   .triangle {
-  //     background-color: var(--bs-background-1) !important;
+  //     background-color: var(--ds-background-1) !important;
   //   }
   // }
 
@@ -652,16 +652,16 @@ export default {
 
 ::v-deep .left-tab-box {
   span {
-    color: var(--bs-el-text);
+    color: var(--ds-el-text);
   }
 }
 
 ::v-deep .left-tab-box ul li.tab-active {
-  background-color: var(--bs-el-background-3);
+  background-color: var(--ds-el-background-3);
 }
 
 ::v-deep .left-tab-box ul li:hover {
-  background-color: var(--bs-el-background-3);
+  background-color: var(--ds-el-background-3);
 }
 
 .el-dialog {
@@ -686,23 +686,23 @@ export default {
 
 ::v-deep .ztreeNodeMenu {
   ul {
-    background-color: var(--bs-background-1);
+    background-color: var(--ds-background-1);
   }
 
   li:hover {
-    background-color: var(--bs-el-background-3);
+    background-color: var(--ds-el-background-3);
 
     span {
-      color: var(--bs-el-color-primary);
+      color: var(--ds-el-color-primary);
     }
   }
 
   span {
-    color: var(--bs-el-text);
+    color: var(--ds-el-text);
   }
 
   .triangle {
-    background-color: var(--bs-background-1) !important;
+    background-color: var(--ds-background-1) !important;
   }
 }
 

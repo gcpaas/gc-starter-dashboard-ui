@@ -337,8 +337,8 @@ export default {
   }
 }
 .select-item-active {
-  border: 1px solid var(--bs-el-color-primary);
-  background: var(--bs-el-background-3);
+  border: 1px solid var(--ds-el-color-primary);
+  background: var(--ds-el-background-3);
 }
 // 修改设置面板样式
 .data-setting-box{
@@ -358,7 +358,7 @@ export default {
           content: '';
           width: 4px;
           height: 14px;
-          background-color: var(--bs-el-color-primary);
+          background-color: var(--ds-el-color-primary);
         }
       }
     }

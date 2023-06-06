@@ -292,8 +292,8 @@ export default {
   width: 220px;
   height: 100%;
   box-sizing: border-box;
-  color: var(--bs-el-title);
-  background-color: var(--bs-background-2);
+  color: var(--ds-el-title);
+  background-color: var(--ds-background-2);
   .side-catalog-box {
     height: calc(100% - 50px);
     overflow-y: auto;
@@ -310,11 +310,11 @@ export default {
       }
       .el-icon-more {
         transform: rotate(90deg);
-        color: var(--bs-el-title);
+        color: var(--ds-el-title);
         font-weight: 400;
       }
       .active-icon-more {
-        color: var(--bs-el-text);
+        color: var(--ds-el-text);
       }
       .catalog-name {
         overflow: hidden;
@@ -333,11 +333,11 @@ export default {
     .active-catalog {
       background-image: linear-gradient(
         to right,
-        var(--bs-el-color-primary),
-        var(--bs-background-2)
+        var(--ds-el-color-primary),
+        var(--ds-background-2)
       );
       background-repeat: round;
-      color: var(--bs-el-text);
+      color: var(--ds-el-text);
     }
   }
   .add-catalog-box {
@@ -349,9 +349,9 @@ export default {
     border-radius: 10px;
     margin: 0 8px;
     &:hover {
-      background-color: var(--bs-background-1);
+      background-color: var(--ds-background-1);
       cursor: pointer;
-      color: var(--bs-el-text);
+      color: var(--ds-el-text);
     }
     .el-icon-plus {
       padding: 0 5px;

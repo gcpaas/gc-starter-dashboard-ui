@@ -89,14 +89,14 @@ export default {
 .bs-right-panel-wrap {
   display: flex;
   flex-direction: column;
-  background-color: var(--bs-background-1);
+  background-color: var(--ds-background-1);
 
   .bs-set-title {
-    background-color: var(--bs-background-2);
-    color: var(--bs-el-title);
+    background-color: var(--ds-background-2);
+    color: var(--ds-el-title);
     height: 40px;
     font-size: 14px;
-    border-bottom: 2px solid var(--bs-background-1);
+    border-bottom: 2px solid var(--ds-background-1);
     display: flex;
     align-items: center;
 
@@ -112,7 +112,7 @@ export default {
         content: '';
         width: 4px;
         height: 14px;
-        background-color: var(--bs-el-color-primary);
+        background-color: var(--ds-el-color-primary);
       }
     }
   }
@@ -141,7 +141,7 @@ export default {
     height: calc(100vh - 80px);
     width: 320px;
     box-sizing: border-box;
-    background-color: var(--bs-background-2);
+    background-color: var(--ds-background-2);
 
     .config-title {
       display: flex;
