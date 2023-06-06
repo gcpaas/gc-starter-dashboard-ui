@@ -60,6 +60,18 @@ export default {
         // },
         {
           id: 1,
+          name: '资源库',
+          path: window?.DS_CONFIG?.routers?.sourceUrl || '/dashboard-source',
+          icon: 'icon-tupian'
+        },
+        {
+          id: 2,
+          name: '组件库',
+          path: window?.DS_CONFIG?.routers?.componentUrl || '/dashboard-components',
+          icon: 'icon-zujian1'
+        },
+        {
+          id: 3,
           name: '数据源管理',
           path:
             window?.DS_CONFIG?.routers?.dataSourceUrl ||
@@ -67,23 +79,11 @@ export default {
           icon: 'icon-datafull'
         },
         {
-          id: 2,
+          id: 4,
           name: '数据集管理',
           path: window?.DS_CONFIG?.routers?.dataSetUrl || '/dashboard-dataSet',
           icon: 'icon-data'
         },
-        {
-          id: 3,
-          name: '资源库',
-          path: window?.DS_CONFIG?.routers?.sourceUrl || '/dashboard-source',
-          icon: 'icon-tupian'
-        },
-        {
-          id: 4,
-          name: '组件库',
-          path: window?.DS_CONFIG?.routers?.componentUrl || '/dashboard-components',
-          icon: 'icon-zujian1'
-        }
       ]
     }
   },
