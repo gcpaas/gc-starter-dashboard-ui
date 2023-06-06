@@ -1,7 +1,8 @@
 <template>
   <div class="dashboard-list-wrap">
-    <div class="top-search-wrap" v-if="catalogInfo !== 'system'">
+    <div class="top-search-wrap">
       <el-select
+        v-if="catalogInfo !== 'system'"
         v-model="catalogCode"
         class="bs-el-select"
         popper-class="bs-el-select"
@@ -32,6 +33,7 @@
         搜索
       </el-button>
       <el-button
+        v-if="catalogInfo !== 'system'"
         type="primary"
         @click="catalogManage"
       >
@@ -142,7 +144,7 @@
       </div>
     </div>
 
-    <div class="footer-pagination-wrap">
+    <div class="footer-pagination-wrap"  v-if="catalogInfo !== 'system'">
       <!-- <div class="footer-pagination-wrap-text">
         总共 {{ totalCount }} 个项目
       </div> -->
@@ -174,7 +176,6 @@
       v-if="catalogInfo !== 'system'"
       ref="CatalogEditForm"
       :catalog-type="catalogType"
-      :catalog-list="catalogList"
       @updateCatalogList="updateCatalogList"
     />
   </div>
@@ -249,8 +250,13 @@ export default {
       this.catalogList = list
     },
     reSearch () {
-      this.current = 1
-      this.getDataList()
+      if (this.catalogInfo !== 'system') {
+        this.current = 1
+        this.getDataList()
+      } else {
+        const arr = getRemoteComponents()
+        this.list = arr?.filter((item) => item.title.indexOf(this.name) !== -1)
+      }
     },
     // 分组管理
     catalogManage () {
