@@ -4,7 +4,7 @@
 import { mapState } from 'vuex'
 export default {
   computed: {
-    ...mapState('bigScreen', {
+    ...mapState('dashboard', {
       pageInfo: state => state.pageInfo,
       customTheme: state => state.pageInfo.pageConfig.customTheme,
       themeJson: state => state.pageInfo.pageConfig?.themeJson

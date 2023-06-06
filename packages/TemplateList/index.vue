@@ -98,7 +98,7 @@ export default {
     // 得到模板列表
     getTemplateList (type) {
       this.type = type
-      get('/bigScreen/template/list', {
+      get('/dashboard/template/list', {
         type
       }).then((list) => {
         this.templateList = list
@@ -124,9 +124,9 @@ export default {
           type: 'warning',
           customClass: 'bs-el-message-box'
         }).then(() => {
-          const className = this.type === 'com.gccloud.bigscreen.core.module.manage.dto.BigScreenPageDTO'
+          const className = this.type === 'com.gccloud.dashboard.core.module.manage.dto.DashboardPageDTO'
           this.innerLoading = true
-          post(`/bigScreen/${this.type}/design/get/template`, {
+          post(`/dashboard/${this.type}/design/get/template`, {
             pageTemplateId: id,
             name: this.pageInfo.name,
             code: this.pageInfo.code,

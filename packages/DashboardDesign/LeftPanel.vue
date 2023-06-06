@@ -202,7 +202,7 @@ export default {
     this.nodeDrag()
   },
   methods: {
-    ...mapMutations('bigScreen', ['changeActiveCode']),
+    ...mapMutations('dashboard', ['changeActiveCode']),
     nodeDrag () {
       this.$nextTick(() => {
         const nodes = document.querySelectorAll('.drag-node')
@@ -247,7 +247,7 @@ export default {
     onEnd (e) {},
     // 点击左侧组件时触发
     addComponent (element) {
-      this.$store.commit('bigScreen/changeActiveItem', element)
+      this.$store.commit('dashboard/changeActiveItem', element)
       this.$emit('addComponent', element)
     },
     // 初始化

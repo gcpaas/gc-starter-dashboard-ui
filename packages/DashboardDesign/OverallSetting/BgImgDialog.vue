@@ -104,7 +104,7 @@ export default {
       headers: {
         ...window.DS_CONFIG?.httpConfigs?.headers
       },
-      actionUrl: window?.DS_CONFIG.httpConfigs?.baseURL + '/bigScreen/file/upload'
+      actionUrl: window?.DS_CONFIG.httpConfigs?.baseURL + '/dashboard/file/upload'
     }
   },
   computed: {
@@ -122,7 +122,7 @@ export default {
           }]
         : []
       this.hideUploadImgBtn = this.fileList.length !== 0
-      get('/bigScreen/design/bg/list').then(list => {
+      get('/dashboard/design/bg/list').then(list => {
         this.bgImgList = list
       })
     },

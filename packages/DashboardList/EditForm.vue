@@ -187,7 +187,7 @@ export default {
       this.formVisible = true
       this.$nextTick(() => {
         if (code) {
-          get(`/bigScreen/design/info/code/${code}`).then((resp) => {
+          get(`/dashboard/design/info/code/${code}`).then((resp) => {
             this.$set(this, 'title', resp.name)
             this.$set(this.dataForm, 'name', resp.name)
             this.$set(this.dataForm, 'chartList', resp.chartList)
@@ -245,10 +245,10 @@ export default {
           return
         }
         const addOrUpdateHandel = !this.dataForm.code
-          ? (form) => post('/bigScreen/design/add', form)
-          : (form) => post('/bigScreen/design/update', form)
+          ? (form) => post('/dashboard/design/add', form)
+          : (form) => post('/dashboard/design/update', form)
         const form = {
-          className: 'com.gccloud.bigscreen.core.module.manage.dto.BigScreenPageDTO',
+          className: 'com.gccloud.dashboard.core.module.manage.dto.DashboardPageDTO',
           chartList: this.dataForm.chartList,
           code: this.dataForm.code,
           icon: this.dataForm.icon,
@@ -261,7 +261,7 @@ export default {
           orderNum: this.dataForm.orderNum,
           pageConfig: { ...this.dataForm.pageConfig, w: this.resolutionRatio.w, h: this.resolutionRatio.h },
           pageTemplateId: this.dataForm.pageTemplateId,
-          type: this.type || 'bigScreen'
+          type: this.type || 'dashboard'
         }
         if (isToDesign) {
           this.toDesignLoading = true

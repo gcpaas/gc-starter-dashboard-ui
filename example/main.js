@@ -16,24 +16,7 @@ Vue.use(ElementUI, { size: 'mini' })
 registerConfig(
   {
     routers: {
-      // 仪表盘设计路由
-      designUrl: '/bigscreen/design',
-      // 预览路由
-      previewUrl: '/bigscreen/preview',
-      // 页面管理路由（带头部跳转路由）
-      pageManagementUrl: '/',
-      // 页面列表路由
-      pageListUrl: '/dashboard-list',
-      // 模版列表
-      templateListUrl: '/dashboard-template',
-      // 数据源管理
-      dataSourceUrl: '/dashboard-dataSource',
-      // 数据集管理
-      dataSetUrl: '/dashboard-dataSet',
-      // 资源管理
-      sourceUrl: '/dashboard-source',
-      // 组件库
-      componentUrl: '/dashboard-components'
+      pageManagementUrl: '/'
     },
     httpConfigs: {
       baseURL: window.CONFIG?.baseUrl

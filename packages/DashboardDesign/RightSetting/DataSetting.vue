@@ -656,10 +656,10 @@ export default {
   },
   computed: {
     ...mapState({
-      pageInfo: state => state.bigScreen.pageInfo,
-      config: state => state.bigScreen.activeItemConfig,
+      pageInfo: state => state.dashboard.pageInfo,
+      config: state => state.dashboard.activeItemConfig,
       // 缓存数据集
-      cacheDataSets: state => state.bigScreen.pageInfo.pageConfig.cacheDataSets
+      cacheDataSets: state => state.dashboard.pageInfo.pageConfig.cacheDataSets
     }),
     dataSourceDataList () {
       return this.fieldsList?.map(item => ({
@@ -670,7 +670,7 @@ export default {
     },
     appCode: {
       get () {
-        return this.$store.state.bigScreen.pageInfo.appCode
+        return this.$store.state.dashboard.pageInfo.appCode
       }
     },
     seriesFieldProp () {
@@ -834,7 +834,7 @@ export default {
         this.headerList.push({ name: item.comment, code: item.name, width: '150', align: 'left' })
       })
       this.config.customize.columnConfig = cloneDeep(this.headerList)
-      this.$store.commit('bigScreen/changeActiveItemConfig', this.config)
+      this.$store.commit('dashboard/changeActiveItemConfig', this.config)
     },
     changeCustomProps (value, index) {
       this.$set(this.config.setting[index], 'value', value)

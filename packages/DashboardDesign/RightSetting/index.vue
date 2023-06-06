@@ -71,10 +71,10 @@ export default {
   },
   computed: {
     ...mapState({
-      activeCode: (state) => state.bigScreen.activeCode,
-      hoverCode: (state) => state.bigScreen.hoverCode,
-      config: (state) => state.bigScreen.activeItemConfig,
-      chartList: (state) => state.bigScreen.pageInfo.chartList
+      activeCode: (state) => state.dashboard.activeCode,
+      hoverCode: (state) => state.dashboard.hoverCode,
+      config: (state) => state.dashboard.activeItemConfig,
+      chartList: (state) => state.dashboard.pageInfo.chartList
     }),
     pageCode () {
       return this.$route.query.code
@@ -115,7 +115,7 @@ export default {
   },
   mounted () {},
   methods: {
-    ...mapMutations('bigScreen', [
+    ...mapMutations('dashboard', [
       'saveTimeLine'
     ]),
     close () {

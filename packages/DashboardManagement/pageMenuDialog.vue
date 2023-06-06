@@ -43,8 +43,8 @@ export default {
         {
           name: '仪表盘',
           icon: require('./images/仪表盘.png'),
-          type: 'bigScreen',
-          categories: 'bigScreen'
+          type: 'dashboard',
+          categories: 'dashboard'
         }
       ]
     }

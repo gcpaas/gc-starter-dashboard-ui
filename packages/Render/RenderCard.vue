@@ -69,7 +69,7 @@ export default {
     destroyedEvent()
   },
   methods: {
-    ...mapMutations('bigScreen', [
+    ...mapMutations('dashboard', [
       'changeChartConfig'
     ]),
     resolveComponentType,

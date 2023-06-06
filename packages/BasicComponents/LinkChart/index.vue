@@ -43,7 +43,7 @@ export default {
   mounted () {
   },
   methods: {
-    ...mapMutations('bigScreen', ['changeIframeDialog']),
+    ...mapMutations('dashboard', ['changeIframeDialog']),
     linkHandle () {
       if (this.config.customize.url) {
         if (this.config.customize.openType === 'dialog') {

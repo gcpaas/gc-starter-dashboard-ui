@@ -34,7 +34,7 @@ export default {
   computed: {
     config: {
       get () {
-        return this.$store.state.bigScreen.activeItemConfig
+        return this.$store.state.dashboard.activeItemConfig
       },
       set () {
       }
@@ -50,7 +50,7 @@ export default {
     },
     iframeDialog: {
       get () {
-        return this.$store.state.bigScreen.iframeDialog
+        return this.$store.state.dashboard.iframeDialog
       },
       set () {
       }
@@ -60,7 +60,7 @@ export default {
 
   },
   methods: {
-    ...mapMutations('bigScreen', ['changeIframeDialog']),
+    ...mapMutations('dashboard', ['changeIframeDialog']),
     close () {
       this.changeIframeDialog(false)
     }

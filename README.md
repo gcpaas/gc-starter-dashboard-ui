@@ -70,7 +70,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI, { size: 'mini' })
 
 // 引入仪表盘css
-import 'gc-starter-dashboard-ui/lib/bigScreen.css'
+import 'gc-starter-dashboard-ui/lib/dashboard.css'
 ```
 
 ###  3. 在 `main.js` 配置仪表盘
@@ -118,11 +118,11 @@ registerConfig({
 ```js
 // file: 项目中导出strore的文件
 
-import { $bigScreen } from 'gc-starter-dashboard-ui'
+import { $dashboard } from 'gc-starter-dashboard-ui'
 const store = new Vuex.Store({
   modules: 
     // 导出仪表盘所需vuex模块
-    bigScreen: $bigScreen.bigScreenStore
+    dashboard: $dashboard.bigScreenStore
   }
 })
 export default store
@@ -136,7 +136,7 @@ export default store
 
 ## 演示DEMO
 
-<a href="http://gcpaas.gccloud.com/bigScreen"> http://gcpaas.gccloud.com/bigScreen </a>
+<a href="http://gcpaas.gccloud.com/dashboard"> http://gcpaas.gccloud.com/dashboard </a>
 
 ## 联系我们
 <img alt="Email" src="https://img.shields.io/badge/Email-tech@ustcinfo.com-blue.svg">

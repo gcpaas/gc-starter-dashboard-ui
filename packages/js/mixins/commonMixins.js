@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     ...mapState({
-      pageCode: state => state.bigScreen.pageInfo.code
+      pageCode: state => state.dashboard.pageInfo.code
     }),
     isPreview () {
       return (this.$route.path === window?.DS_CONFIG?.routers?.previewUrl) || (this.$route.path === '/dashboard/preview')
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     ...mapMutations({
-      changeChartConfig: 'bigScreen/changeChartConfig'
+      changeChartConfig: 'dashboard/changeChartConfig'
     }),
     /**
      * 初始化组件

@@ -405,7 +405,7 @@ export default {
     },
     getDataList () {
       this.loading = true
-      get('/bigScreen/design/page', {
+      get('/dashboard/design/page', {
         parentCode: this.code || null,
         current: this.current,
         size: this.size,
@@ -434,7 +434,7 @@ export default {
     },
     // 获取目录的列表
     getCatalogList () {
-      const url = this.activeName === 'combination' ? '/bigScreen/type/list/componentCatalog' : '/bigScreen/type/list/bizComponentCatalog'
+      const url = this.activeName === 'combination' ? '/dashboard/type/list/componentCatalog' : '/dashboard/type/list/bizComponentCatalog'
       get(url)
         .then((data) => {
           this.options = data

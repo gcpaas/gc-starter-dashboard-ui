@@ -154,17 +154,17 @@ export default {
   },
   computed: {
     ...mapState({
-      pageInfo: (state) => state.bigScreen.pageInfo,
-      chartList: (state) => state.bigScreen.pageInfo.chartList,
-      pageConfig: (state) => state.bigScreen.pageInfo.pageConfig,
-      pageLoading: (state) => state.bigScreen.pageLoading,
-      hoverCode: (state) => state.bigScreen.hoverCode,
-      presetLine: (state) => state.bigScreen.presetLine,
-      updateKey: (state) => state.bigScreen.updateKey,
-      hasGrid: (state) => state.bigScreen.hasGrid,
-      zoom: (state) => state.bigScreen.zoom,
-      fitZoom: (state) => state.bigScreen.fitZoom,
-      iframeDialog: (state) => state.bigScreen.iframeDialog
+      pageInfo: (state) => state.dashboard.pageInfo,
+      chartList: (state) => state.dashboard.pageInfo.chartList,
+      pageConfig: (state) => state.dashboard.pageInfo.pageConfig,
+      pageLoading: (state) => state.dashboard.pageLoading,
+      hoverCode: (state) => state.dashboard.hoverCode,
+      presetLine: (state) => state.dashboard.presetLine,
+      updateKey: (state) => state.dashboard.updateKey,
+      hasGrid: (state) => state.dashboard.hasGrid,
+      zoom: (state) => state.dashboard.zoom,
+      fitZoom: (state) => state.dashboard.fitZoom,
+      iframeDialog: (state) => state.dashboard.iframeDialog
     }),
     offset () {
       return {
@@ -176,11 +176,11 @@ export default {
   beforeRouteEnter (to, from, next) {
     // 判断进入设计页面前是否有访问权限
     const code = to.query.code
-    get(`/bigScreen/permission/check/${code}`).then((res) => {
+    get(`/dashboard/permission/check/${code}`).then((res) => {
       if (res) {
         next((vm) => {
           // 重置仪表盘的vuex store
-          vm.$store.commit('bigScreen/resetStoreData')
+          vm.$store.commit('dashboard/resetStoreData')
         })
       } else {
         next('/notPermission')
@@ -204,8 +204,8 @@ export default {
     this.clearTimeline()
   },
   methods: {
-    ...mapActions('bigScreen', ['initLayout']),
-    ...mapMutations('bigScreen', [
+    ...mapActions('dashboard', ['initLayout']),
+    ...mapMutations('dashboard', [
       'changeLayout',
       'changePageLoading',
       'resetPresetLine',
@@ -246,8 +246,8 @@ export default {
             newPageConfig.cacheDataSets = _.uniqBy(newPageConfig.cacheDataSets, 'dataSetId')
             this.changePageConfig({ ...this.pageConfig, ...newPageConfig })
             pageInfo.pageConfig.cacheDataSets?.map((cacheDataSet) => {
-              this.$store.dispatch('bigScreen/getCacheDataSetData', { dataSetId: cacheDataSet.dataSetId })
-              this.$store.dispatch('bigScreen/getCacheDataFields', { dataSetId: cacheDataSet.dataSetId })
+              this.$store.dispatch('dashboard/getCacheDataSetData', { dataSetId: cacheDataSet.dataSetId })
+              this.$store.dispatch('dashboard/getCacheDataFields', { dataSetId: cacheDataSet.dataSetId })
             })
           }
           const newChart = {
@@ -278,7 +278,7 @@ export default {
           name: val.originalName,
           icon: null,
           className:
-            'com.gccloud.bigscreen.core.module.chart.components.ScreenPictureChart',
+            'com.gccloud.dashboard.core.module.chart.components.DashboardPictureChart',
           w: 300,
           h: 300,
           x: 0,

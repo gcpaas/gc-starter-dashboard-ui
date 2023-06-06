@@ -186,7 +186,7 @@ export default {
     },
     getDataList () {
       this.loading = true
-      get('/bigScreen/file', {
+      get('/dashboard/file', {
         module: this.code,
         current: this.current,
         size: this.size,
@@ -203,7 +203,7 @@ export default {
     },
     // 获取目录的列表
     getCatalogList () {
-      get('/bigScreen/type/list/resourceCatalog')
+      get('/dashboard/type/list/resourceCatalog')
         .then((data) => {
           this.options = data
         })

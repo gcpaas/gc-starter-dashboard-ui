@@ -35,7 +35,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('bigScreen', {
+    ...mapState('dashboard', {
       pageInfo: state => state.pageInfo,
       customTheme: state => state.pageInfo.pageConfig.customTheme
     }),
@@ -67,7 +67,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations('bigScreen', ['changeChartConfig']),
+    ...mapMutations('dashboard', ['changeChartConfig']),
     chartInit () {
       // key和code相等，说明是一进来刷新，调用/chart/data/list
       if (this.config.code === this.config.key) {

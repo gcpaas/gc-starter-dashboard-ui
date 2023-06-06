@@ -207,7 +207,7 @@ export default {
           return
         }
         if (!this.currentCatalog.id) {
-          post('/bigScreen/type/add', {
+          post('/dashboard/type/add', {
             ...this.currentCatalog,
             type: 'resourceCatalog'
           })
@@ -220,7 +220,7 @@ export default {
             })
             .catch(() => {})
         } else {
-          post('/bigScreen/type/update', {
+          post('/dashboard/type/update', {
             ...this.currentCatalog,
             type: 'resourceCatalog'
           })
@@ -253,7 +253,7 @@ export default {
         customClass: 'bs-el-message-box'
       })
         .then(async () => {
-          post(`/bigScreen/type/delete/${catalog.id}`)
+          post(`/dashboard/type/delete/${catalog.id}`)
             .then(() => {
               this.$message({
                 type: 'success',
@@ -273,7 +273,7 @@ export default {
     // 获取目录的列表
     getCatalogList () {
       this.pageLoading = true
-      get('/bigScreen/type/list/resourceCatalog')
+      get('/dashboard/type/list/resourceCatalog')
         .then((data) => {
           this.catalogList = data
         })

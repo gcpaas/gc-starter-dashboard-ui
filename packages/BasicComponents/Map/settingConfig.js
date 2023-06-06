@@ -91,7 +91,7 @@ export const mapData = {
   title: '地图',
   icon: Icon.getNameList()[5],
   className:
-    'com.gccloud.bigscreen.core.module.chart.components.ScreenMapChart',
+    'com.gccloud.dashboard.core.module.chart.components.DashboardMapChart',
   w: 800,
   h: 700,
   x: 0,

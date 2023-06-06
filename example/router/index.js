@@ -2,10 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
-export const baseRoutes = [{
-  path: '/notPermission',
-  component: () => import('packages/NotPermission/index.vue')
-}]
+export const baseRoutes = [
+  {
+    path: '/notPermission',
+    component: () => import('packages/NotPermission/index.vue')
+  }
+]
 
 export const constantRoutes = []
 
