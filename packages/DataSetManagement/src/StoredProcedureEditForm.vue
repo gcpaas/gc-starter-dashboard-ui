@@ -297,7 +297,7 @@
               </template>
             </el-table-column>
           </el-table>
-          <div style="padding: 12px 0 0;color:var(--bs-el-text)">
+          <div style="padding: 12px 0 0;color:var(--ds-el-text)">
             <span v-show="dataPreviewList.length">数据预览中，存储过程仅展示20条数据</span>
           </div>
         </div>
@@ -404,7 +404,7 @@
         custom-class="fieldDescCheck"
         class="bs-dialog-wrap bs-el-dialog"
       >
-        <p style="color:var(--bs-el-text);line-height: 24px;padding-left: 10px;display: flex;">
+        <p style="color:var(--ds-el-text);line-height: 24px;padding-left: 10px;display: flex;">
           <i
             class="el-icon-warning"
             style="color: #E6A23C;font-size: 24px;margin-right: 5px;"
@@ -1300,7 +1300,7 @@ export default {
 .title-style {
   padding: 8px 12px;
   background-color: #f6f7fb;
-  border-left: 5px solid var(--bs-el-color-primary);
+  border-left: 5px solid var(--ds-el-color-primary);
   margin: 16px 16px 0 0;
 }
 
@@ -1354,11 +1354,11 @@ export default {
 .result-view {
   font-size: 14px;
   font-weight: 600;
-  color: var(--bs-el-text);
+  color: var(--ds-el-text);
   position: relative;
   padding: 16px 0;
   padding-left: 12px;
-  border-bottom: 1px solid var(--bs-background-1);
+  border-bottom: 1px solid var(--ds-background-1);
 
   &::before {
     content: "";
@@ -1367,7 +1367,7 @@ export default {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    border-left: 4px solid var(--bs-el-color-primary);
+    border-left: 4px solid var(--ds-el-color-primary);
   }
 }
 

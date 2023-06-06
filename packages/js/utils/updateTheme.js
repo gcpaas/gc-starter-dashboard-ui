@@ -6,7 +6,7 @@ export default function updateTheme (data) {
       if (primaryButton) {
         const backgroundColor = window.getComputedStyle(primaryButton).getPropertyValue('background-color')
         const element = document.querySelector('.bs-body-theme-wrap')
-        element.style.setProperty('--bs-el-color-primary', backgroundColor)
+        element.style.setProperty('--ds-el-color-primary', backgroundColor)
       }
     })
   }

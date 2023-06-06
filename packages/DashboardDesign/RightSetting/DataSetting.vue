@@ -870,7 +870,7 @@ export default {
   ::v-deep .el-tag__close.el-icon-close {
     top: -1px;
     &:hover {
-      background-color:var(--bs-el-color-primary);
+      background-color:var(--ds-el-color-primary);
     }
   }
   .opt-wrap{
@@ -916,7 +916,7 @@ export default {
             content: '';
             width: 4px;
             height: 14px;
-            background-color: var(--bs-el-color-primary);
+            background-color: var(--ds-el-color-primary);
           }
         }
       }

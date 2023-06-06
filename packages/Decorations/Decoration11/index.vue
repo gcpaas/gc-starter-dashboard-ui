@@ -72,7 +72,7 @@ export default {
     font-size: 14px;
     color: #333;
     font-weight: bold;
-    border-left: 3px solid var(--bs-el-color-primary);
+    border-left: 3px solid var(--ds-el-color-primary);
     padding-left: 16px;
   }
   .target-value {

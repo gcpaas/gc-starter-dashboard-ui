@@ -25,7 +25,7 @@
             content: '';
             width: 4px;
             height: 14px;
-            background-color: var(--bs-el-color-primary);
+            background-color: var(--ds-el-color-primary);
         }
     }
 }

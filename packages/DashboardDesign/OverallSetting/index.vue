@@ -313,7 +313,7 @@ export default {
 .bs-overall-wrap {
   position: relative;
   height: 100%;
-  background: var(--bs-background-2);
+  background: var(--ds-background-2);
 
   .bs-overall-setting-wrap {
     padding: 16px;
@@ -326,13 +326,13 @@ export default {
   /deep/ .el-textarea__inner,
   /deep/ .el-input-group__append,
   /deep/ .el-radio__label {
-    background: var(--bs-el-background-1);
-    color: var(--bs-el-text);
+    background: var(--ds-el-background-1);
+    color: var(--ds-el-text);
     border: 0 !important;
   }
 
   /deep/ .el-form-item__label {
-    color: var(--bs-el-title);
+    color: var(--ds-el-title);
     font-size: 12px;
   }
 
@@ -341,19 +341,19 @@ export default {
   }
 
   /deep/ .el-table {
-    background: var(--bs-el-background-1);
-    border-bottom: 1px solid var(--bs-el-title);
+    background: var(--ds-el-background-1);
+    border-bottom: 1px solid var(--ds-el-title);
   }
 
   /deep/ .el-table__cell {
-    background: var(--bs-el-background-1) !important;
-    color: var(--bs-el-title) !important;
-    border-color: var(--bs-el-text) !important;
+    background: var(--ds-el-background-1) !important;
+    color: var(--ds-el-title) !important;
+    border-color: var(--ds-el-text) !important;
   }
 
   /deep/ .el-input__inner{
     &:placeholder{
-      color: var(--bs-el-text);
+      color: var(--ds-el-text);
     }
   }
 }
@@ -394,7 +394,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bs-background-1);
+  background: var(--ds-background-1);
 
   .el-button {
     margin-right: 10px;
@@ -476,11 +476,11 @@ export default {
 /deep/ .el-color-picker--mini .el-color-picker__trigger {
   height: 32px;
   width: 32px;
-  border: 1px solid var(--bs-el-background-1);
-  background: var(--bs-el-background-1);
+  border: 1px solid var(--ds-el-background-1);
+  background: var(--ds-el-background-1);
 
   .el-color-picker__color {
-    background: var(--bs-el-background-1);
+    background: var(--ds-el-background-1);
     border: 0 !important;
   }
 }

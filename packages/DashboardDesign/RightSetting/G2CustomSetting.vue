@@ -291,11 +291,11 @@ export default {
     content: '';
     width: 4px;
     height: 14px;
-    background-color: var(--bs-el-color-primary);
+    background-color: var(--ds-el-color-primary);
   }
 }
 
 ::v-deep .el-color-picker__trigger {
-  border-color: var(--bs-el-border);
+  border-color: var(--ds-el-border);
 }
 </style>

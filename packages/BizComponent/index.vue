@@ -179,8 +179,8 @@ export default {
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  color: var(--bs-el-text);
-  background: var(--bs-background-2);
+  color: var(--ds-el-text);
+  background: var(--ds-background-2);
 
   > * {
     box-sizing: border-box;
@@ -192,12 +192,12 @@ export default {
     justify-content: space-between;
     height: 50px;
     padding: 0 16px;
-    border-bottom: 4px solid var(--bs-background-1);
-    background: var(--bs-background-2);
+    border-bottom: 4px solid var(--ds-background-1);
+    background: var(--ds-background-2);
 
     .left-title {
       font-size: 16px;
-      color: var(--bs-el-title);
+      color: var(--ds-el-title);
 
       .logo-wrap {
         display: flex;
@@ -222,7 +222,7 @@ export default {
 
   .bs-custom-component-content {
     flex: 1;
-    background: var(--bs-background-2);
+    background: var(--ds-background-2);
 
     .bs-custom-component-content-code {
       display: flex;
@@ -234,13 +234,13 @@ export default {
       .left-vue-code {
         width: 60%;
         height: 100%;
-        /* background: var(--bs-background-1); */
+        /* background: var(--ds-background-1); */
       }
 
       .right-setting-code {
         width: calc(40% - 16px);
         height: 100%;
-        /* background: var(--bs-background-1); */
+        /* background: var(--ds-background-1); */
       }
 
       .component-code {
@@ -257,14 +257,14 @@ export default {
             justify-content: center;
             width: 120px;
             height: 100%;
-            color: var(--bs-el-title);
-            background: var(--bs-background-1);
+            color: var(--ds-el-title);
+            background: var(--ds-background-1);
           }
         }
 
         .code-tab-content {
           height: calc(100% - 40px);
-          background: var(--bs-background-1);
+          background: var(--ds-background-1);
         }
       }
     }
@@ -277,7 +277,7 @@ export default {
       .bs-preview-inner {
         width: 100%;
         height: 100%;
-        background: var(--bs-background-1);
+        background: var(--ds-background-1);
       }
     }
   }
@@ -286,6 +286,6 @@ export default {
 <style>
   .monaco-editor-background,
   .monaco-editor .margin {
-    background: var(--bs-background-1) !important;
+    background: var(--ds-background-1) !important;
   }
 </style>

@@ -137,7 +137,7 @@ export default {
   font-weight: 400;
   cursor: pointer;
   position: relative;
-  color: var(--bs-el-text);
+  color: var(--ds-el-text);
   p {
     position: absolute;
     width: 100%;
@@ -147,7 +147,7 @@ export default {
     color: #909399;
   }
   &:hover{
-      color: var(--bs-el-color-primary);
+      color: var(--ds-el-color-primary);
     }
 }
 /deep/ .el-dialog__body {

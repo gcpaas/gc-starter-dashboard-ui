@@ -263,7 +263,7 @@ export default {
 }
 
 // ::v-deep .el-table th.gutter {
-//   border-bottom: 2px solid var(--bs-el-color-primary) !important;
+//   border-bottom: 2px solid var(--ds-el-color-primary) !important;
 // }
 ::v-deep .el-table__body {
   height: 100%;

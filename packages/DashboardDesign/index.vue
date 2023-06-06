@@ -432,14 +432,14 @@ export default {
         justify-content: flex-end;
         align-items: center;
         z-index: 1000;
-        background-color: var(--bs-background-2);
+        background-color: var(--ds-background-2);
 
         .bs-select-wrap {
           margin-right: 16px;
         }
 
         .select-zoom-text {
-          color: var(--bs-el-title);
+          color: var(--ds-el-title);
           margin-right: 16px;
         }
 
