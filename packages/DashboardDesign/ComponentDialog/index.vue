@@ -86,6 +86,9 @@
                       >
                         加载中···
                       </div>
+                      <div slot="error" class="image-slot" style="font-size: 20px">
+                        <div class="error-img-text"> {{ screen.name }}</div>
+                      </div>
                     </el-image>
                   </div>
                   <div class="dashboard-bottom">
@@ -581,10 +584,10 @@ export default {
 
             .left-bigscreen-title {
               font-size: 14px;
-              // overflow: hidden;
-              // width: 120px;
-              // white-space: nowrap;
-              // text-overflow: ellipsis;
+              overflow: hidden;
+              width: 120px;
+              white-space: nowrap;
+              text-overflow: ellipsis;
             }
 
             .right-bigscreen-time-title {
@@ -642,5 +645,12 @@ export default {
   }
   /deep/ .el-tabs__item {
     color: var(--ds-el-text);
+  }
+  .error-img-text{
+    overflow:hidden;
+    padding:0 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow:ellipsis;
   }
 </style>

@@ -130,6 +130,15 @@
               >
                 加载中···
               </div>
+              <div
+                slot="error"
+                class="image-slot"
+                style="font-size: 20px"
+              >
+                <div class="error-img-text">
+                  {{ catalogInfo !== 'system'? screen.name : screen.title }}
+                </div>
+              </div>
             </el-image>
           </div>
           <div class="dashboard-bottom">
@@ -601,6 +610,13 @@ export default {
         align-items: center;
         justify-content: center;
       }
+    }
+    .error-img-text{
+      overflow:hidden;
+      padding:0 10px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      -o-text-overflow:ellipsis;
     }
   }
 
