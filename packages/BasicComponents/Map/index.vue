@@ -236,13 +236,13 @@ export default {
           }
         }
       }
-      const mapUrl = `${window.BS_CONFIG?.httpConfigs?.baseURL}/static/chinaMap/${this.config.customize.level}/${this.config.customize.dataMap}`
+      const mapUrl = `${window.DS_CONFIG?.httpConfigs?.baseURL}/static/chinaMap/${this.config.customize.level}/${this.config.customize.dataMap}`
       const map = await get(decodeURI(mapUrl), {}, true)
       echarts.registerMap(this.config.customize.scope, map)
       this.charts.setOption(option)
       // this.charts.on('click', (params) => {
       //   get(
-      //     `${window.BS_CONFIG?.httpConfigs?.baseURL}/static/chinaMap/province/${params.name}.json`,
+      //     `${window.DS_CONFIG?.httpConfigs?.baseURL}/static/chinaMap/province/${params.name}.json`,
       //     {},
       //     true
       //   ).then((res) => {

@@ -108,7 +108,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~packages/BigScreenDesign/fonts/iconfont.css';
+@import '~packages/DashboardDesign/fonts/iconfont.css';
 @import '~packages/assets/style/bsTheme.scss';
 .layer-list-wrap {
   /deep/ .choosed-row {

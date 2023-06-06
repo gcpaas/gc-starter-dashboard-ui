@@ -2,7 +2,7 @@
 import { dataConfig, settingConfig } from './settingConfig'
 import _ from 'lodash'
 export function getRemoteComponents () {
-  const customList = window.BS_CONFIG?.remoteComponents || []
+  const customList = window.DS_CONFIG?.remoteComponents || []
 
   const list = []
   customList.forEach((config) => {

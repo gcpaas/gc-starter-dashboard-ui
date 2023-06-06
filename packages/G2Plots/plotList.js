@@ -52,7 +52,7 @@ function getPlotList (files) {
   return plotList
 }
 export function getCustomPlots () {
-  const customList = window.BS_CONFIG?.customPlots || []
+  const customList = window.DS_CONFIG?.customPlots || []
 
   const list = []
   customList.forEach((config) => {

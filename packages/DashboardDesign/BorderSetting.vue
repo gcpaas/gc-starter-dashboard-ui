@@ -116,7 +116,7 @@
 <script>
 import SettingTitle from 'packages/SettingTitle/index.vue'
 import ColorPicker from 'packages/ColorPicker/index.vue'
-import PosWhSetting from 'packages/BigScreenDesign/RightSetting/PosWhSetting.vue'
+import PosWhSetting from 'packages/DashboardDesign/RightSetting/PosWhSetting.vue'
 export default {
   name: 'BorderSetting',
   components: {

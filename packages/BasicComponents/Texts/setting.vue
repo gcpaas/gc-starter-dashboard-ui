@@ -60,8 +60,8 @@
 </template>
 <script>
 import SettingTitle from 'packages/SettingTitle/index.vue'
-import TextGradient from 'packages/BigScreenDesign/RightSetting/TextGradient/index'
-import PosWhSetting from 'packages/BigScreenDesign/RightSetting/PosWhSetting.vue'
+import TextGradient from 'packages/DashboardDesign/RightSetting/TextGradient/index'
+import PosWhSetting from 'packages/DashboardDesign/RightSetting/PosWhSetting.vue'
 export default {
   name: 'TextSetting',
   components: {

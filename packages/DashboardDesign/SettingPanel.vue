@@ -24,8 +24,8 @@
   <!-- </transition> -->
 </template>
 <script>
-import RightSetting from 'packages/BigScreenDesign/RightSetting/index.vue'
-import OverallSetting from 'packages/BigScreenDesign/OverallSetting/index.vue'
+import RightSetting from 'packages/DashboardDesign/RightSetting/index.vue'
+import OverallSetting from 'packages/DashboardDesign/OverallSetting/index.vue'
 import { mapState } from 'vuex'
 export default {
   name: '',

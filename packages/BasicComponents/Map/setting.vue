@@ -228,7 +228,7 @@ import { chartSettingMixins } from 'packages/js/mixins/chartSettingMixins'
 import ColorSelect from 'packages/ColorMultipleSelect/index.vue'
 import ColorPicker from 'packages/ColorPicker/index.vue'
 import { get } from 'packages/js/utils/http'
-import PosWhSetting from 'packages/BigScreenDesign/RightSetting/PosWhSetting.vue'
+import PosWhSetting from 'packages/DashboardDesign/RightSetting/PosWhSetting.vue'
 export default {
   name: 'BarSetting',
   components: {
@@ -272,7 +272,7 @@ export default {
   methods: {
     getMapList () {
       get(
-        `${window.BS_CONFIG?.httpConfigs?.baseURL}/bigScreen/design/map/list/${this.config.customize.level}`
+        `${window.DS_CONFIG?.httpConfigs?.baseURL}/bigScreen/design/map/list/${this.config.customize.level}`
       ).then((res) => {
         this.mapList = res
       })

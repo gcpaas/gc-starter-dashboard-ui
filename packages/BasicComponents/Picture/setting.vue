@@ -113,7 +113,7 @@
 </template>
 <script>
 import SettingTitle from 'packages/SettingTitle/index.vue'
-import PosWhSetting from 'packages/BigScreenDesign/RightSetting/PosWhSetting.vue'
+import PosWhSetting from 'packages/DashboardDesign/RightSetting/PosWhSetting.vue'
 export default {
   name: 'PicSetting',
   components: {
@@ -123,12 +123,12 @@ export default {
   data () {
     return {
       upLoadUrl:
-        window.BS_CONFIG?.httpConfigs?.baseURL + '/bigScreen/file/upload',
+        window.DS_CONFIG?.httpConfigs?.baseURL + '/bigScreen/file/upload',
       fileUploadParam: {
         module: 'form'
       },
       headers: {
-        ...window.BS_CONFIG?.httpConfigs?.headers
+        ...window.DS_CONFIG?.httpConfigs?.headers
       },
       fileList: [],
       accept: 'image/*',

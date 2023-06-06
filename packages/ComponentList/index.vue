@@ -304,9 +304,9 @@ export default {
         code: screen.code
       }
       if (this.catalogInfo === 'component') {
-        path = (window.BS_CONFIG?.routers?.previewUrl || '/dashboard/preview')
+        path = (window.DS_CONFIG?.routers?.previewUrl || '/dashboard/preview')
       } else {
-        path = (window.BS_CONFIG?.routers?.bizComponentPreviewUrl || 'dashboard-biz-component-preview')
+        path = (window.DS_CONFIG?.routers?.bizComponentPreviewUrl || 'dashboard-biz-component-preview')
       }
       if (this.catalogInfo === 'system') {
         query = {
@@ -320,7 +320,7 @@ export default {
       window.open(href, '_blank')
     },
     design (screen) {
-      const path = this.catalogInfo === 'component' ? (window.BS_CONFIG?.routers?.designUrl || '/dashboard/design') : (window.BS_CONFIG?.routers?.bizComponentDesignUrl || 'dashboard-biz-component-design')
+      const path = this.catalogInfo === 'component' ? (window.DS_CONFIG?.routers?.designUrl || '/dashboard/design') : (window.DS_CONFIG?.routers?.bizComponentDesignUrl || 'dashboard-biz-component-design')
       const { href } = this.$router.resolve({
         path,
         query: {

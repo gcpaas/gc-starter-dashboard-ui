@@ -601,8 +601,8 @@
 <script>
 import ElDragSelect from './ElDragSelect.vue'
 import { isEmpty, cloneDeep } from 'lodash'
-import ComponentRelation from 'packages/BigScreenDesign/RightSetting/ComponentRelation/index.vue'
-import ComponentBinding from 'packages/BigScreenDesign/RightSetting/ComponentBinding/index.vue'
+import ComponentRelation from 'packages/DashboardDesign/RightSetting/ComponentRelation/index.vue'
+import ComponentBinding from 'packages/DashboardDesign/RightSetting/ComponentBinding/index.vue'
 import dataSetSelect from 'packages/DataSetSetting/index.vue'
 import { mapState } from 'vuex'
 import { getDataSetDetails } from 'packages/js/api/bigScreenApi'

@@ -111,7 +111,7 @@
 </template>
 <script>
 import ColorPicker from 'packages/ColorPicker/index.vue'
-import PosWhSetting from 'packages/BigScreenDesign/RightSetting/PosWhSetting.vue'
+import PosWhSetting from 'packages/DashboardDesign/RightSetting/PosWhSetting.vue'
 export default {
   name: 'Border14Setting',
   components: {

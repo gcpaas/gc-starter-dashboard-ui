@@ -183,14 +183,14 @@ export default {
   data () {
     return {
       upLoadUrl:
-        window.BS_CONFIG?.httpConfigs?.baseURL + '/bigScreen/file/upload',
+        window.DS_CONFIG?.httpConfigs?.baseURL + '/bigScreen/file/upload',
       searchKey: '',
       extend: '',
       options: [],
       list: [],
       fileUploadParam: {},
       headers: {
-        ...window.BS_CONFIG?.httpConfigs?.headers
+        ...window.DS_CONFIG?.httpConfigs?.headers
       },
       fileList: [],
       defaultImg: require('./images/defaultImg.png'),

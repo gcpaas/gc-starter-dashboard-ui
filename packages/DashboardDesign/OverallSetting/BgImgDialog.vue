@@ -102,9 +102,9 @@ export default {
         module: 'attachment'
       },
       headers: {
-        ...window.BS_CONFIG?.httpConfigs?.headers
+        ...window.DS_CONFIG?.httpConfigs?.headers
       },
-      actionUrl: window?.BS_CONFIG.httpConfigs?.baseURL + '/bigScreen/file/upload'
+      actionUrl: window?.DS_CONFIG.httpConfigs?.baseURL + '/bigScreen/file/upload'
     }
   },
   computed: {

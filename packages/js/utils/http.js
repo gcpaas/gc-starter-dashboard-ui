@@ -38,7 +38,7 @@ function EipException (message, code) {
 http.interceptors.request.use(config => {
   return {
     ...config,
-    ..._.merge(httpConfig, window.BS_CONFIG?.httpConfigs)
+    ..._.merge(httpConfig, window.DS_CONFIG?.httpConfigs)
   }
 }, error => {
   return Promise.reject(error)
@@ -115,7 +115,7 @@ httpCustom.interceptors.response.use(response => {
  */
 export function get (url, params = {}, customHandlerException = false) {
   if (!url.startsWith('http')) {
-    url = window.BS_CONFIG?.httpConfigs?.baseURL + url
+    url = window.DS_CONFIG?.httpConfigs?.baseURL + url
   }
   // 如果是ie浏览器要添加个时间戳，解决浏览器缓存问题
   if (!!window.ActiveXObject || 'ActiveXObject' in window) {
@@ -148,7 +148,7 @@ export function get (url, params = {}, customHandlerException = false) {
  */
 export function post (url, data = {}, customHandlerException = false) {
   if (!url.startsWith('http')) {
-    url = window.BS_CONFIG?.httpConfigs?.baseURL + url
+    url = window.DS_CONFIG?.httpConfigs?.baseURL + url
   }
   const axiosInstance = customHandlerException ? httpCustom : http
   data = JSON.stringify(data)
@@ -171,7 +171,7 @@ export function post (url, data = {}, customHandlerException = false) {
 
 export function download (url, headers = {}, params = {}, body = {}) {
   if (!url.startsWith('http')) {
-    url = window.BS_CONFIG?.httpConfigs?.baseURL + url
+    url = window.DS_CONFIG?.httpConfigs?.baseURL + url
   }
   // 如果是ie浏览器要添加个时间戳，解决浏览器缓存问题
   if (!!window.ActiveXObject || 'ActiveXObject' in window) {

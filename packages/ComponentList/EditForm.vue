@@ -379,7 +379,7 @@ export default {
     },
     // 跳转设计态
     toDesign (form) {
-      const path = this.type === 'component' ? (window.BS_CONFIG?.routers?.designUrl || '/dashboard/design') : 'dashboard-biz-component-design'
+      const path = this.type === 'component' ? (window.DS_CONFIG?.routers?.designUrl || '/dashboard/design') : 'dashboard-biz-component-design'
       const { href: bigScreenHref } = this.$router.resolve({
         path,
         query: {

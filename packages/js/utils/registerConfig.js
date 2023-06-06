@@ -33,40 +33,45 @@ function registerRouters (config, router) {
   if (!router) {
     return
   }
+  // 默认路由
+  config.routers = {
+    pageManagementUrl: '/dashboard/management',
+    pageListUrl: '/dashboard-list',
+    dataSourceUrl: '/dashboard-dataSource',
+    dataSetUrl: '/dashboard-dataSet',
+    SourceUrl: '/dashboard-source',
+    componentUrl: '/dashboard-components',
+    designUrl: '/dashboard/design',
+    previewUrl: '/dashboard/preview',
+    bizComponentDesignUrl: '/dashboard-biz-component-design',
+    bizComponentPreviewUrl: '/dashboard-biz-component-preview',
+    ...config.routers
+  }
   const routers = [
     // 页面管理
     {
-      path: config?.routers?.pageManagementUrl || '/management',
-      redirect: config?.routers?.pageListUrl || '/dashboard-list',
+      path: config?.routers?.pageManagementUrl,
+      redirect: config?.routers?.pageListUrl,
       component: () => import('packages/Layout/BigScreenHomeLayout'),
       children: [
         {
-          path: config?.routers?.pageListUrl || '/dashboard-list',
+          path: config?.routers?.pageListUrl,
           name: 'BigScreenList',
           component: () =>
-            require.ensure([], () => require('packages/BigScreenMag')),
+            require.ensure([], () => require('packages/DashboardMag')),
           meta: {
             title: '仪表盘管理'
           }
         },
         {
-          path: config?.routers?.templateListUrl || '/dashboard-template',
-          name: 'Template',
-          component: () =>
-            require.ensure([], () => require('packages/BigScreenTempMag')),
-          meta: {
-            title: '模版管理'
-          }
-        },
-        {
-          path: config?.routers?.dataSourceUrl || '/dashboard-dataSource',
+          path: config?.routers?.dataSourceUrl,
           component: () => import('packages/DataSourceManagement'),
           meta: {
             title: '数据源管理'
           }
         },
         {
-          path: config?.routers?.dataSetUrl || '/dashboard-dataSet',
+          path: config?.routers?.dataSetUrl,
           component: () => import('packages/DataSetManagement'),
           meta: {
             title: '数据集管理'
@@ -80,8 +85,8 @@ function registerRouters (config, router) {
           }
         },
         {
-          path: config?.routers?.componentUrl || '/dashboard-components',
-          component: () => import('packages/BigScreenComponentMag'),
+          path: config?.routers?.componentUrl,
+          component: () => import('packages/DashboardComponentMag'),
           meta: {
             title: '资源管理'
           }
@@ -89,26 +94,26 @@ function registerRouters (config, router) {
       ]
     },
     {
-      path: config?.routers?.designUrl || '/dashboard/design',
+      path: config?.routers?.designUrl,
       name: 'Design',
       component: () =>
-        require.ensure([], () => require('packages/BigScreenDesign'))
+        require.ensure([], () => require('packages/DashboardDesign'))
     },
     {
-      path: config?.routers?.previewUrl || '/dashboard/preview',
+      path: config?.routers?.previewUrl,
       name: 'Preview',
       component: () =>
-        require.ensure([], () => require('packages/BigScreenRun'))
+        require.ensure([], () => require('packages/DashboardRun'))
     },
     {
-      path: config?.routers?.bizComponentDesignUrl || '/dashboard-biz-component-design',
+      path: config?.routers?.bizComponentDesignUrl,
       component: () => import('packages/BizComponent'),
       meta: {
         title: '业务组件'
       }
     },
     {
-      path: config?.routers?.bizComponentPreviewUrl || '/dashboard-biz-component-preview',
+      path: config?.routers?.bizComponentPreviewUrl,
       component: () => import('packages/BizComponent/Preview.vue'),
       meta: {
         title: '业务组件预览'
@@ -155,8 +160,8 @@ function registerTheme (config) {
 
 // 注册配置
 export default function (config, router) {
-  window.BS_CONFIG = {}
-  window.BS_CONFIG = configDeepMerge(window.BS_CONFIG, config)
+  window.DS_CONFIG = {}
+  window.DS_CONFIG = configDeepMerge(window.DS_CONFIG, config)
 
   // 注册路由
   registerRouters(config, router)

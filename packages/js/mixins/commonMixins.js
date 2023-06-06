@@ -20,7 +20,7 @@ export default {
       pageCode: state => state.bigScreen.pageInfo.code
     }),
     isPreview () {
-      return (this.$route.path === window?.BS_CONFIG?.routers?.previewUrl) || (this.$route.path === '/dashboard/preview')
+      return (this.$route.path === window?.DS_CONFIG?.routers?.previewUrl) || (this.$route.path === '/dashboard/preview')
     }
   },
   mounted () {

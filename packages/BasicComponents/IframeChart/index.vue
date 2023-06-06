@@ -37,7 +37,7 @@ export default {
   },
   computed: {
     isDesign () {
-      return (window?.BS_CONFIG?.routers?.designUrl || '/dashboard/design') === this.$route.path
+      return (window?.DS_CONFIG?.routers?.designUrl || '/dashboard/design') === this.$route.path
     }
   },
   watch: {},

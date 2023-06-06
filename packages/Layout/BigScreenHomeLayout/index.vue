@@ -39,49 +39,49 @@ export default {
   },
   computed: {
     title () {
-      return window?.BS_CONFIG?.starter?.title
+      return window?.DS_CONFIG?.starter?.title
     },
     logo () {
-      return window?.BS_CONFIG?.starter?.logo || require('./images/logo.png')
+      return window?.DS_CONFIG?.starter?.logo || require('./images/logo.png')
     },
     tabList () {
       return [
         {
           id: 0,
           name: '仪表盘管理',
-          path: window?.BS_CONFIG?.routers?.pageListUrl || '/dashboard-list',
+          path: window?.DS_CONFIG?.routers?.pageListUrl || '/dashboard-list',
           icon: 'icon-icon-shujudaping'
         },
         // {
         //   id: 1,
         //   name: '模版管理',
-        //   path: window?.BS_CONFIG?.routers?.templateListUrl || '/dashboard-template',
+        //   path: window?.DS_CONFIG?.routers?.templateListUrl || '/dashboard-template',
         //   icon: 'icon-xiangmuwenjianmobanku_mobanku'
         // },
         {
           id: 1,
           name: '数据源管理',
           path:
-            window?.BS_CONFIG?.routers?.dataSourceUrl ||
+            window?.DS_CONFIG?.routers?.dataSourceUrl ||
             '/dashboard-dataSource',
           icon: 'icon-datafull'
         },
         {
           id: 2,
           name: '数据集管理',
-          path: window?.BS_CONFIG?.routers?.dataSetUrl || '/dashboard-dataSet',
+          path: window?.DS_CONFIG?.routers?.dataSetUrl || '/dashboard-dataSet',
           icon: 'icon-data'
         },
         {
           id: 3,
           name: '资源库',
-          path: window?.BS_CONFIG?.routers?.sourceUrl || '/dashboard-source',
+          path: window?.DS_CONFIG?.routers?.sourceUrl || '/dashboard-source',
           icon: 'icon-tupian'
         },
         {
           id: 4,
           name: '组件库',
-          path: window?.BS_CONFIG?.routers?.componentUrl || '/dashboard-components',
+          path: window?.DS_CONFIG?.routers?.componentUrl || '/dashboard-components',
           icon: 'icon-zujian1'
         }
       ]

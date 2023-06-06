@@ -218,7 +218,7 @@ export default {
     },
     preview (screen) {
       const { href } = this.$router.resolve({
-        path: window.BS_CONFIG?.routers?.previewUrl || '/dashboard/preview', // 这里写的是要跳转的路由地址
+        path: window.DS_CONFIG?.routers?.previewUrl || '/dashboard/preview', // 这里写的是要跳转的路由地址
         query: {
           code: screen.code
         }
@@ -226,7 +226,7 @@ export default {
       window.open(href, '_blank')
     },
     design (screen) {
-      const path = window.BS_CONFIG?.routers?.designUrl || '/dashboard/design'
+      const path = window.DS_CONFIG?.routers?.designUrl || '/dashboard/design'
       const { href } = this.$router.resolve({
         path,
         query: {

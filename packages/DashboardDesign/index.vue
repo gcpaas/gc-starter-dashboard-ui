@@ -409,7 +409,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .bs-page-design-wrap {
-  overflow: hidden;
+  overflow: auto;
 
   .drag-wrap {
     display: flex;

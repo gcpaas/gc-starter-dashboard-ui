@@ -282,7 +282,7 @@ export default {
     // 跳转设计态
     toDesign (form) {
       const { href: bigScreenHref } = this.$router.resolve({
-        path: window.BS_CONFIG?.routers?.designUrl || '/dashboard/design',
+        path: window.DS_CONFIG?.routers?.designUrl || '/dashboard/design',
         query: {
           code: form.code
         }

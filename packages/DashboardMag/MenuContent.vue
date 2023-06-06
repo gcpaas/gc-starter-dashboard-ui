@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import BigScreenList from 'packages/BigScreenList'
+import BigScreenList from 'packages/DashboardList'
 export default {
   name: '',
   props: {

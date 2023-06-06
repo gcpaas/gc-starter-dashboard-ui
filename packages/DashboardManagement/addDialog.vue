@@ -367,7 +367,7 @@ export default {
     toDesign (form) {
       // eslint-disable-next-line no-case-declarations
       const { href: bigScreenHref } = this.$router.resolve({
-        path: window.BS_CONFIG?.routers?.designUrl || '/dashboard/design',
+        path: window.DS_CONFIG?.routers?.designUrl || '/dashboard/design',
         query: {
           code: form.code
         }

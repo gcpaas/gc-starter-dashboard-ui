@@ -5,7 +5,7 @@
         <div class="logo-wrap item-wrap">
           <img
             class="menu-img"
-            src="~packages/BigScreenDesign/images/app.png"
+            src="~packages/DashboardDesign/images/app.png"
             alt="返回"
             @click="backManagement"
           >
@@ -96,7 +96,7 @@
   </div>
 </template>
 <script>
-import CusBtn from 'packages/BigScreenDesign/BtnLoading'
+import CusBtn from 'packages/DashboardDesign/BtnLoading'
 import MonacoEditor from 'packages/MonacoEditor'
 import BizComponentPreview from './Preview'
 import { getBizComponentInfo, updateBizComponent } from 'packages/js/api/bigScreenApi'
@@ -155,7 +155,7 @@ export default {
     },
     backManagement () {
       this.$router.push({
-        path: window.BS_CONFIG?.routers?.componentUrl || '/dashboard-components'
+        path: window.DS_CONFIG?.routers?.componentUrl || '/dashboard-components'
       })
     },
     save () {

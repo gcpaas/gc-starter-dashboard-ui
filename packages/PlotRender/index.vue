@@ -41,21 +41,21 @@ export default {
     }),
     chatId () {
       let prefix = 'chart_'
-      if (this.$route.path === window?.BS_CONFIG?.routers?.previewUrl) {
+      if (this.$route.path === window?.DS_CONFIG?.routers?.previewUrl) {
         prefix = 'preview_chart_'
       }
 
-      if (this.$route.path === window?.BS_CONFIG?.routers?.designUrl) {
+      if (this.$route.path === window?.DS_CONFIG?.routers?.designUrl) {
         prefix = 'design_chart_'
       }
 
-      if (this.$route.path === window?.BS_CONFIG?.routers?.pageListUrl) {
+      if (this.$route.path === window?.DS_CONFIG?.routers?.pageListUrl) {
         prefix = 'management_chart_'
       }
       return prefix + this.config.code
     },
     isPreview () {
-      return (this.$route.path === window?.BS_CONFIG?.routers?.previewUrl) || (this.$route.path === '/dashboard/preview')
+      return (this.$route.path === window?.DS_CONFIG?.routers?.previewUrl) || (this.$route.path === '/dashboard/preview')
     }
   },
   created () {

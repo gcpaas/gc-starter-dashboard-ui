@@ -71,7 +71,7 @@
 </template>
 <script>
 import SettingTitle from 'packages/SettingTitle/index.vue'
-import PosWhSetting from 'packages/BigScreenDesign/RightSetting/PosWhSetting.vue'
+import PosWhSetting from 'packages/DashboardDesign/RightSetting/PosWhSetting.vue'
 export default {
   name: 'BarSetting',
   components: {

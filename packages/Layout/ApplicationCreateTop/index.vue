@@ -40,11 +40,11 @@ export default {
       tabList: [
         {
           name: '仪表盘管理',
-          path: window.BS_CONFIG?.routers?.pageManagementUrl || '/pages'
+          path: window.DS_CONFIG?.routers?.pageManagementUrl || '/pages'
         },
         {
           name: '数据集管理',
-          path: window.BS_CONFIG?.routers?.dsManageUrl || '/data-sources'
+          path: window.DS_CONFIG?.routers?.dsManageUrl || '/data-sources'
         }
       ]
     }

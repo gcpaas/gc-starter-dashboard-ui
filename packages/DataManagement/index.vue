@@ -65,8 +65,8 @@ export default {
   watch: {
   },
   created () {
-    this.tabList[0].path = window?.BS_CONFIG?.routers?.dataSourceUrl || '/data-sources/data-source-sets'
-    this.tabList[1].path = window?.BS_CONFIG?.routers?.dataSetUrl || '/data-sources/data-set-configuration'
+    this.tabList[0].path = window?.DS_CONFIG?.routers?.dataSourceUrl || '/data-sources/data-source-sets'
+    this.tabList[1].path = window?.DS_CONFIG?.routers?.dataSetUrl || '/data-sources/data-set-configuration'
   },
   mounted () {
     this.openTab(this.tabList[0])

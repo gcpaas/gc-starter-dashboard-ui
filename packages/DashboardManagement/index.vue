@@ -234,7 +234,7 @@
 import AddDialog from './addDialog.vue'
 import ChooseTemplateDialog from './ChooseTemplateDialog.vue'
 import pageMenuDialog from './pageMenuDialog.vue'
-import BigScreenRun from 'packages/BigScreenRun/index.vue'
+import BigScreenRun from 'packages/DashboardRun/index.vue'
 import Icon from 'packages/assets/images/pageIcon/export'
 import { getPageType } from './utils'
 import _ from 'lodash'
@@ -441,7 +441,7 @@ export default {
     gopagePreview (nodeData) {
       if (nodeData.code && nodeData.type === 'bigScreen') {
         const { href } = this.$router.resolve({
-          path: window.BS_CONFIG?.routers?.previewUrl || '/dashboard/preview', // 这里写的是要跳转的路由地址
+          path: window.DS_CONFIG?.routers?.previewUrl || '/dashboard/preview', // 这里写的是要跳转的路由地址
           query: {
             code: nodeData.code
           }
@@ -539,7 +539,7 @@ export default {
     // code (nodeData, node) {
     //   axios({
     //     method: 'get',
-    //     url: `${window.BS_CONFIG.baseUrl}/code/generation/adminPage/${nodeData.code}`,
+    //     url: `${window.DS_CONFIG.baseUrl}/code/generation/adminPage/${nodeData.code}`,
     //     headers: {
     //     },
     //     // 通过URL传参，后端通过  @RequestParam 注解获取参数
@@ -592,7 +592,7 @@ export default {
         type,
         className
       }).then((code) => {
-        const path = window.BS_CONFIG?.routers?.designUrl || '/dashboard/design'
+        const path = window.DS_CONFIG?.routers?.designUrl || '/dashboard/design'
         const { href } = this.$router.resolve({
           path,
           query: {
@@ -712,7 +712,7 @@ export default {
     },
     // 点击进入页面设计
     gopageDesign (nodeData) {
-      const path = window.BS_CONFIG?.routers?.designUrl || '/dashboard/design'
+      const path = window.DS_CONFIG?.routers?.designUrl || '/dashboard/design'
       const openType = nodeData.type === 'report' ? '_blank' : '_self'
       const { href } = this.$router.resolve({
         path,

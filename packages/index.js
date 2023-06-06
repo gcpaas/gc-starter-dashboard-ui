@@ -1,11 +1,11 @@
 import 'packages/assets/style/common/index.scss'
 import 'packages/assets/style/bsTheme.scss'
 // 仪表盘管理页面
-import BigScreenManagement from 'packages/BigScreenMag'
+import BigScreenManagement from 'packages/DashboardMag'
 // 渲染整个bigScreen的渲染引擎
-import BigScreenRun from 'packages/BigScreenRun'
+import BigScreenRun from 'packages/DashboardRun'
 // 仪表盘设计引擎
-import BigScreenDesign from 'packages/BigScreenDesign'
+import BigScreenDesign from 'packages/DashboardDesign'
 // 数据源管理
 import DataSourceManagement from 'packages/DataSourceManagement'
 // 数据集管理

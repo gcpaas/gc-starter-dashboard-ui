@@ -3,7 +3,7 @@
     <div class="logo-wrap item-wrap">
       <img
         class="menu-img"
-        src="~packages/BigScreenDesign/images/app.png"
+        src="~packages/DashboardDesign/images/app.png"
         alt="返回"
         @click="backManagement"
       >
@@ -78,11 +78,11 @@
 import { toJpeg, toPng } from 'html-to-image'
 import { mapMutations, mapActions, mapState } from 'vuex'
 import { saveScreen } from 'packages/js/api/bigScreenApi'
-import ChooseTemplateDialog from 'packages/BigScreenManagement/ChooseTemplateDialog.vue'
+import ChooseTemplateDialog from 'packages/DashboardManagement/ChooseTemplateDialog.vue'
 import _ from 'lodash'
 import { stringifyObjectFunctions } from 'packages/js/utils/evalFunctions'
-import AssignDialog from 'packages/BigScreenDesign/AssignDialog/index.vue'
-import HistoryList from 'packages/BigScreenDesign/HistoryList/index.vue'
+import AssignDialog from 'packages/DashboardDesign/AssignDialog/index.vue'
+import HistoryList from 'packages/DashboardDesign/HistoryList/index.vue'
 import CusBtn from './BtnLoading'
 import {
   showSize,
@@ -253,7 +253,7 @@ export default {
     },
     backManagement () {
       this.$router.push({
-        path: this.pageInfo.type === 'component' ? (window.BS_CONFIG?.routers?.componentUrl || '/dashboard-components') : (window.BS_CONFIG?.routers?.pageManagementUrl || '/home')
+        path: this.pageInfo.type === 'component' ? (window.DS_CONFIG?.routers?.componentUrl || '/dashboard-components') : (window.DS_CONFIG?.routers?.pageManagementUrl || '/home')
       })
     },
     undo (isUndo) {
@@ -273,7 +273,7 @@ export default {
     // 预览
     preview () {
       const { href } = this.$router.resolve({
-        path: window.BS_CONFIG?.routers?.previewUrl || '/dashboard/preview',
+        path: window.DS_CONFIG?.routers?.previewUrl || '/dashboard/preview',
         query: {
           code: this.pageCode
         }
@@ -412,7 +412,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import '~packages/BigScreenDesign/fonts/iconfont.css';
+@import '~packages/DashboardDesign/fonts/iconfont.css';
 .default-layout-box {
   display: flex;
   flex-wrap: wrap;

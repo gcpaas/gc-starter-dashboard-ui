@@ -34,7 +34,7 @@ export default {
       customTheme: state => state.pageInfo.pageConfig.customTheme
     }),
     isPreview () {
-      return (this.$route.path === window?.BS_CONFIG?.routers?.previewUrl) || (this.$route.path === '/dashboard/preview')
+      return (this.$route.path === window?.DS_CONFIG?.routers?.previewUrl) || (this.$route.path === '/dashboard/preview')
     }
   },
   data () {
