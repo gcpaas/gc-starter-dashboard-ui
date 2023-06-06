@@ -33,20 +33,6 @@ function registerRouters (config, router) {
   if (!router) {
     return
   }
-  // 默认路由
-  config.routers = {
-    pageManagementUrl: '/dashboard/management',
-    pageListUrl: '/dashboard-list',
-    dataSourceUrl: '/dashboard-dataSource',
-    dataSetUrl: '/dashboard-dataSet',
-    SourceUrl: '/dashboard-source',
-    componentUrl: '/dashboard-components',
-    designUrl: '/dashboard/design',
-    previewUrl: '/dashboard/preview',
-    bizComponentDesignUrl: '/dashboard-biz-component-design',
-    bizComponentPreviewUrl: '/dashboard-biz-component-preview',
-    ...config.routers
-  }
   const routers = [
     // 页面管理
     {
@@ -160,6 +146,20 @@ function registerTheme (config) {
 
 // 注册配置
 export default function (config, router) {
+  // 默认路由
+  config.routers = {
+    pageManagementUrl: '/dashboard/management',
+    pageListUrl: '/dashboard-list',
+    dataSourceUrl: '/dashboard-dataSource',
+    dataSetUrl: '/dashboard-dataSet',
+    SourceUrl: '/dashboard-source',
+    componentUrl: '/dashboard-components',
+    designUrl: '/dashboard/design',
+    previewUrl: '/dashboard/preview',
+    bizComponentDesignUrl: '/dashboard-biz-component-design',
+    bizComponentPreviewUrl: '/dashboard-biz-component-preview',
+    ...config.routers
+  }
   window.DS_CONFIG = {}
   window.DS_CONFIG = configDeepMerge(window.DS_CONFIG, config)
 

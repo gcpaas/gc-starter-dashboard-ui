@@ -161,7 +161,7 @@ export default {
     },
     backManagement () {
       this.$router.push({
-        path: window.BS_CONFIG?.routers?.componentUrl || '/big-screen-components'
+        path: window.DS_CONFIG?.routers?.componentUrl
       })
     },
     save () {
