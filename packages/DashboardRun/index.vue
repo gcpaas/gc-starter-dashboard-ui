@@ -332,11 +332,12 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  overflow: auto !important;
+  overflow: auto;
 
   .bs-render-wrap {
     position: relative;
     background-size: cover;
+     overflow: auto
   }
 }
 </style>

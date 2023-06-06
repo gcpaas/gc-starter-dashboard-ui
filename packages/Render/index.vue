@@ -26,7 +26,7 @@
       :margin="[20, 20]"
       :cols="{ lg: 12, md: 12, sm: 12, xs: 12, xxs: 12 }"
     >
-     <!-- @dragging="onDrag(...arguments, chart)"
+      <!-- @dragging="onDrag(...arguments, chart)"
       @resizing="onResize(...arguments, chart)"
       @resizestop="resizestop(...arguments, chart)"
       @dragstop="dragstop(...arguments, chart)"
@@ -373,6 +373,8 @@ export default {
 .bs-render-wrap {
   position: relative;
   background-size: cover;
+  overflow: auto;
+
   .drag-item {
     cursor: move;
   }
