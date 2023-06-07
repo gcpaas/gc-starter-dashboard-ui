@@ -1,18 +1,15 @@
 {
-  "name": "gc-starter-dashboard-ui",
+  "name": "gc-starter-dashboard-app-ui",
   "version": "0.0.1-2023060501-Alpha",
   "description": "自定义仪表盘",
   "author": "gc-starter",
   "license": "MIT",
-  "main": "lib/dashboard.umd.min.js",
+  "main": "lib/dashboardApp.umd.min.js",
   "files": [
-    "lib/fonts/*",
-    "lib/img/*",
-    "lib/dashboard.css",
-    "lib/dashboard.umd.min.js.gz"
+    "libApp/*"
   ],
   "keywords": [
-    "dashboard",
+    "dashboardApp",
     "仪表盘设计器",
     "低代码",
     "low code"
@@ -37,14 +34,7 @@
     "svgo": "svgo -f example/assets/icons/svg --config=src/icons/svgo.yml",
     "set-commit-hook": "git config core.hooksPath hooks",
     "generate-changelog": "conventional-changelog -p -i CHANGELOG.md -s -r 0",
-    "analyzer": "cross-env NODE_ENV=production npm_config_report=true npm run build",
-    "lib": "vue-cli-service build --no-lint --mode package  --target lib --name dashBoard --dest lib packages/index.js",
-    "lib:app": "cd appPackages && npm install && vue-cli-service build --no-lint  --target lib --name dashBoardApp --dest libApp index.js",
-    "package": "npm run lib && npm publish",
-    "package:test": "npm run lib && npm pack",
-    "package:app": "npm run lib:app && npm publish",
-    "package:app:test": "npm run lib:app && npm pack"
-
+    "analyzer": "cross-env NODE_ENV=production npm_config_report=true npm run build"
   },
   "husky": {
     "hooks": {
@@ -59,20 +49,14 @@
   },
   "dependencies": {
     "@antv/g2plot": "2.4.0",
-    "@jiaminghi/data-view": "2.10.0",
     "axios": "0.18.1",
     "babel-polyfill": "6.26.0",
     "echarts": "^5.2.2",
-    "element-ui": "2.15.6",
     "es6-promise": "4.2.8",
-    "html-to-image": "1.11.11",
-    "image-conversion": "^2.1.1",
-    "increase-memory-limit": "^1.0.7",
     "insert-css": "^2.0.0",
     "jquery": "^3.6.4",
     "lodash": "4.17.21",
     "moment": "^2.29.1",
-    "nprogress": "0.2.0",
     "path-to-regexp": "2.4.0",
     "qs": "^6.9.6",
     "remote-vue2-loader": "^1.0.3",
@@ -80,16 +64,9 @@
     "tiny-sass-compiler": "^0.12.2",
     "videojs-contrib-hls": "^5.15.0",
     "vue": "2.6.10",
-    "vue-codemirror": "^4.0.6",
-    "vue-contextmenujs": "^1.4.9",
-    "vue-grid-layout": "^2.4.0",
-    "vue-json-editor": "^1.4.3",
-    "vue-json-viewer": "^2.2.22",
     "vue-router": "3.0.6",
     "vue-video-player": "^5.0.1",
-    "vuedraggable": "^2.24.3",
-    "vuex": "3.1.0",
-    "ztree": "3.5.24"
+    "vuex": "3.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

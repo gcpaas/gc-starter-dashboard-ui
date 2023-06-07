@@ -1,7 +1,7 @@
-import BigScreenManagement from './index.vue'
+import DashboardManagement from './index.vue'
 
-BigScreenManagement.install = function (Vue) {
-  Vue.component(BigScreenManagement.name, BigScreenManagement)
+DashboardManagement.install = function (Vue) {
+  Vue.component(DashboardManagement.name, DashboardManagement)
 }
 
-export default BigScreenManagement
+export default DashboardManagement

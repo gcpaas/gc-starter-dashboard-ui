@@ -6,7 +6,6 @@
 const path = require('path')
 const CompressionPlugin = require('compression-webpack-plugin')
 const webpack = require('webpack')
-const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 function resolve (dir) {
   return path.join(__dirname, dir)
 }
@@ -29,10 +28,6 @@ const plugins = [
     jQuery: 'jquery',
     $: 'jquery',
     'window.jQuery': 'jquery'
-  }),
-  new MonacoWebpackPlugin({
-    // available options are documented at https://github.com/Microsoft/monaco-editor-webpack-plugin#options
-    languages: ['javascript', 'css', 'html', 'typescript', 'json']
   })
 ]
 module.exports = {
@@ -73,7 +68,9 @@ module.exports = {
         vue$: 'vue/dist/vue.common',
         // 仪表盘工程路径别名
         packages: resolve('packages'),
-        'gc-starter-dashboard-ui': resolve('packages/index.js')
+        app: resolve('appPackages'),
+        'gc-starter-dashboard-ui': resolve('packages/index.js'),
+        'gc-starter-dashboard-app-ui': resolve('appPackages/index.js')
       },
       fallback: {
         path: false,

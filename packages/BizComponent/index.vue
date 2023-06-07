@@ -38,11 +38,15 @@
             </div>
           </div>
           <div class="code-tab-content">
-            <MonacoEditor
+            <!-- <MonacoEditor
               ref="vueContent"
               v-model="form.vueContent"
               class="editor"
               language="html"
+            /> -->
+            <codemirror
+              v-model="form.vueContent"
+              :options="vueOptions"
             />
           </div>
         </div>
@@ -58,11 +62,9 @@
             </div>
           </div>
           <div class="code-tab-content">
-            <MonacoEditor
-              ref="settingContent"
+            <codemirror
               v-model="form.settingContent"
-              class="editor"
-              language="javascript"
+              :options="settingOptions"
             />
           </div>
         </div>
@@ -97,15 +99,31 @@
 </template>
 <script>
 import CusBtn from 'packages/DashboardDesign/BtnLoading'
-import MonacoEditor from 'packages/MonacoEditor'
 import BizComponentPreview from './Preview'
 import { getBizComponentInfo, updateBizComponent } from 'packages/js/api/bigScreenApi'
 import { defaultSettingContent, defaultVueContent } from './config/defaultBizConfig'
+import { codemirror } from 'vue-codemirror'
+import 'codemirror/lib/codemirror.css'
+import 'codemirror/theme/material-darker.css'
+
+import 'codemirror/addon/selection/active-line.js'
+import 'codemirror/addon/fold/foldgutter.css' // 代码折叠
+import 'codemirror/addon/lint/lint.css'
+import 'codemirror/mode/vue/vue.js'
+require('codemirror/addon/fold/foldcode.js')
+require('codemirror/addon/fold/foldgutter.js')
+require('codemirror/addon/fold/brace-fold.js')
+require('codemirror/addon/fold/indent-fold.js')
+require('codemirror/addon/fold/comment-fold.js')
+require('codemirror/lib/codemirror.js')
+require('codemirror/mode/javascript/javascript')
+require('codemirror/addon/hint/javascript-hint') // 代码错误提示 // 当前行高亮
+
 export default {
   name: 'BizComponentDesign',
   components: {
     CusBtn,
-    MonacoEditor,
+    codemirror,
     BizComponentPreview
   },
   props: {},
@@ -118,7 +136,51 @@ export default {
         vueContent: ''
       },
       currentContentType: 'vueContent',
-      loading: false
+      loading: false,
+      vueOptions: {
+        foldGutter: true,
+        lineWrapping: true,
+        gutters: [
+          'CodeMirror-linenumbers',
+          'CodeMirror-foldgutter',
+          'CodeMirror-lint-markers'
+        ],
+        theme: 'material-darker',
+        tabSize: 4,
+        lineNumbers: true,
+        line: true,
+        indentWithTabs: true,
+        smartIndent: true,
+        autofocus: false,
+        matchBrackets: true,
+        mode: 'text/x-vue',
+        hintOptions: {
+          completeSingle: false
+        },
+        lint: true
+      },
+      settingOptions: {
+        foldGutter: true,
+        lineWrapping: true,
+        gutters: [
+          'CodeMirror-linenumbers',
+          'CodeMirror-foldgutter',
+          'CodeMirror-lint-markers'
+        ],
+        theme: 'material-darker',
+        tabSize: 4,
+        lineNumbers: true,
+        line: true,
+        indentWithTabs: true,
+        smartIndent: true,
+        autofocus: false,
+        matchBrackets: true,
+        mode: 'text/javascript',
+        hintOptions: {
+          completeSingle: false
+        },
+        lint: true
+      }
     }
   },
   computed: {
@@ -138,8 +200,6 @@ export default {
             settingContent: data.settingContent || defaultSettingContent,
             vueContent: data.vueContent || defaultVueContent
           }
-          this.$refs.vueContent.editor.setValue(this.form.vueContent)
-          this.$refs.settingContent.editor.setValue(this.form.settingContent)
         })
       }
     },
@@ -162,7 +222,7 @@ export default {
     },
     backManagement () {
       this.$router.push({
-        path: window.DS_CONFIG?.routers?.componentUrl
+        path: window.BS_CONFIG?.routers?.componentUrl || '/big-screen-components'
       })
     },
     save () {
@@ -291,8 +351,9 @@ export default {
 }
 </style>
 <style>
-  .monaco-editor-background,
-  .monaco-editor .margin {
+  .cm-s-material-darker.CodeMirror,
+  .cm-s-material-darker .CodeMirror-gutters
+  {
     background: var(--bs-background-1) !important;
   }
 </style>

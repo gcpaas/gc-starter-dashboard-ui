@@ -1,7 +1,7 @@
-import BigScreenRun from './index.vue'
+import DashboardRun from './index.vue'
 
-BigScreenRun.install = function (Vue) {
-  Vue.component(BigScreenRun.name, BigScreenRun)
+DashboardRun.install = function (Vue) {
+  Vue.component(DashboardRun.name, DashboardRun)
 }
 
-export default BigScreenRun
+export default DashboardRun
