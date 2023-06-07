@@ -22,15 +22,15 @@ registerConfig(
       baseURL: window.CONFIG?.baseUrl
     },
     customTheme: {
-      '--bs-background-1': '#151a26', // 整体背景色
-      '--bs-background-2': '#232832', // 布局背景色
-      '--bs-el-background-1': '#151A26', // 组件背景色，输入框...
-      '--bs-el-background-2': '#35393F', // 组件背景色，按钮、分页、加载...
-      '--bs-el-background-3': '#303640', // 组件背景色，表格头部、下拉框hover...
-      '--bs-el-title': '#ffffff', // 标题字体颜色
-      '--bs-el-text': '#ffffff', // 一般字体颜色
-      '--bs-el-color-primary': '#409EFF', // elment-ui主题色，激活
-      '--bs-el-border': 'transparent' // 边框颜色
+      '--ds-background-1': '#151a26', // 整体背景色
+      '--ds-background-2': '#232832', // 布局背景色
+      '--ds-el-background-1': '#151A26', // 组件背景色，输入框...
+      '--ds-el-background-2': '#35393F', // 组件背景色，按钮、分页、加载...
+      '--ds-el-background-3': '#303640', // 组件背景色，表格头部、下拉框hover...
+      '--ds-el-title': '#ffffff', // 标题字体颜色
+      '--ds-el-text': '#ffffff', // 一般字体颜色
+      '--ds-el-color-primary': '#409EFF', // elment-ui主题色，激活
+      '--ds-el-border': 'transparent' // 边框颜色
     },
     customPlots: [],
     // 远程组件列表

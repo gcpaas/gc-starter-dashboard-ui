@@ -82,6 +82,6 @@ export default {
     margin-left: 5px;
     align-self: center;
     text-align: center;
-    background-color: var(--bs-background-1);
+    background-color: var(--ds-background-1);
   }
 </style>

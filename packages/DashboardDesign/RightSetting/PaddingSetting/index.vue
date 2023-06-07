@@ -75,7 +75,7 @@ export default {
     transform: translate(-50%,-50%);
     width: 30%;
     height: 30%;
-    background-color: var(--bs-background-1);
+    background-color: var(--ds-background-1);
   }
   .input-item{
     width: 50px;

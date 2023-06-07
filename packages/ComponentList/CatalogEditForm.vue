@@ -14,6 +14,7 @@
         label-position="right"
         label-width="100px"
       >
+        <div class="top-search-wrap">
         <el-input
           v-model="searchKey"
           class="bs-el-input"
@@ -35,6 +36,7 @@
         >
           新增
         </el-button>
+        </div>
         <el-table
           :key="randomKey"
           class="bs-el-table"
@@ -145,14 +147,11 @@ export default {
       type: String,
       default: ''
     },
-    catalogList: {
-      type: Array,
-      default: () => {}
-    }
   },
   data () {
     return {
-      // tableList: [],
+      dataList: [], // 模糊查询时用来给数据备份
+      tableList: [],
       randomKey: '',
       searchKey: '', // 分组查询
       catalogVisible: false,
@@ -166,29 +165,26 @@ export default {
     }
   },
   computed: {
-    tableList: {
-      get () {
-        return this.catalogList
-      },
-      set (val) {
-        // this.catalogList = val
-      }
-    }
   },
   watch: {
+    catalogType () {
+      this.getCatalogList()
+    }
   },
   mounted () {
-    // this.getCatalogList()
+    this.getCatalogList()
   },
   methods: {
     reSearch () {
-
+      const arr = this.dataList
+      this.tableList = arr?.filter((item) => item.name?.indexOf(this.searchKey) !== -1)
     },
     // 获取分组列表
     getCatalogList () {
       get(`/dashboard/type/list/${this.catalogType}`)
         .then((data) => {
           this.tableList = data
+          this.dataList = data
           this.$emit('updateCatalogList', data)
         })
         .catch(() => {})
@@ -269,6 +265,20 @@ export default {
     margin-right: 20px;
     /deep/.el-input__inner {
       /*background-color: #232832 !important;*/
+    }
+  }
+  .top-search-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+
+    .el-input {
+      width: 200px;
+      margin-right: 20px;
+      /deep/.el-input__inner {
+        background-color: #151A26 !important;
+      }
     }
   }
 }

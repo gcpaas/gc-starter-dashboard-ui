@@ -86,6 +86,9 @@
                       >
                         加载中···
                       </div>
+                      <div slot="error" class="image-slot" style="font-size: 20px">
+                        <div class="error-img-text"> {{ screen.name }}</div>
+                      </div>
                     </el-image>
                   </div>
                   <div class="dashboard-bottom">
@@ -165,7 +168,7 @@
               </el-button>
             </div>
             <div
-              v-if="list.length !== 0"
+              v-if="bizComponentList.length !== 0"
               v-loading="loading"
               class="list-wrap bs-scrollbar"
               element-loading-text="加载中"
@@ -452,7 +455,7 @@ export default {
     height: 100%;
     padding: 16px;
     color: #9ea9b2;
-    background-color: var(--bs-background-1) !important;
+    background-color: var(--ds-background-1) !important;
 
     .top-search-wrap {
       display: flex;
@@ -521,8 +524,8 @@ export default {
         }
 
         .focus {
-          color: var(--bs-el-text) !important;
-          border: 1px solid var(--bs-el-color-primary) !important;
+          color: var(--ds-el-text) !important;
+          border: 1px solid var(--ds-el-color-primary) !important;
         }
 
         .dashboard-card-inner {
@@ -530,13 +533,13 @@ export default {
           width: 100%;
           height: 100%;
           cursor: pointer;
-          background-color: var(--bs-background-2);
+          background-color: var(--ds-background-2);
           box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-          color: var(--bs-el-title);
-          border: 1px solid var(--bs-background-2);
+          color: var(--ds-el-title);
+          border: 1px solid var(--ds-background-2);
           &:hover {
-            color: var(--bs-el-text);
-            border: 1px solid var(--bs-el-color-primary);
+            color: var(--ds-el-text);
+            border: 1px solid var(--ds-el-color-primary);
           }
 
           .add-dashboard-card-text {
@@ -556,7 +559,7 @@ export default {
 
             /deep/.image-slot {
               height: 100%;
-              background-color: var(--bs-background-2);
+              background-color: var(--ds-background-2);
               display: flex;
               align-items: center;
               justify-content: center;
@@ -576,15 +579,15 @@ export default {
             /*height: 26px;*/
             padding: 0 10px;
             height: calc(100% - 180px);
-            color: var(--bs-el-title);
-            background-color: var(--bs-background-2);
+            color: var(--ds-el-title);
+            background-color: var(--ds-background-2);
 
             .left-bigscreen-title {
               font-size: 14px;
-              // overflow: hidden;
-              // width: 120px;
-              // white-space: nowrap;
-              // text-overflow: ellipsis;
+              overflow: hidden;
+              width: 120px;
+              white-space: nowrap;
+              text-overflow: ellipsis;
             }
 
             .right-bigscreen-time-title {
@@ -629,7 +632,7 @@ export default {
     ::v-deep .el-input__inner {
       width: 110px !important;
       border: none;
-      background: var(--bs-el-background-1);
+      background: var(--ds-el-background-1);
     }
   }
   .empty {
@@ -641,6 +644,13 @@ export default {
     align-items: center;
   }
   /deep/ .el-tabs__item {
-    color: var(--bs-el-text);
+    color: var(--ds-el-text);
+  }
+  .error-img-text{
+    overflow:hidden;
+    padding:0 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow:ellipsis;
   }
 </style>

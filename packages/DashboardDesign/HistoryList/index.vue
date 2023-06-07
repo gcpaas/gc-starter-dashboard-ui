@@ -113,9 +113,9 @@ export default {
 .layer-list-wrap {
   /deep/ .choosed-row {
     .bs-el-table-column {
-      border-color: var(--bs-el-border) !important;
-      background: var(--bs-background-2) !important;
-      background-color: var(--bs-background-2) !important;
+      border-color: var(--ds-el-border) !important;
+      background: var(--ds-background-2) !important;
+      background-color: var(--ds-background-2) !important;
       opacity: 0.7;
     }
   }
