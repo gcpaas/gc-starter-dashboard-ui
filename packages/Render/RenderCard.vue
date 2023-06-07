@@ -9,13 +9,15 @@
     <header class="top-title">
       <span>{{ title }}</span>
     </header>
-    <component
-      :is="resolveComponentType(config.type)"
-      :id="`${config.code}`"
-      :ref="config.code"
-      :key="config.key"
-      :config="config"
-    />
+    <div class="render-item-wrap-inner">
+      <component
+        :is="resolveComponentType(config.type)"
+        :id="`${config.code}`"
+        :ref="config.code"
+        :key="config.key"
+        :config="config"
+      />
+    </div>
   </div>
 </template>
 <script>
@@ -125,6 +127,10 @@ export default {
       border-left: 4px solid var(--ds-el-color-primary);
       padding-left: 16px;
     }
+  }
+  .render-item-wrap-inner {
+    flex: 1;
+    position: relative;
   }
 }
 </style>
