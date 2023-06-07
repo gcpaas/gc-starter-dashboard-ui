@@ -6,19 +6,23 @@
 
 <template>
   <div class="render-item-wrap">
-    <component
-      :is="resolveComponentType(config.type)"
-      :id="`${config.code}`"
-      :ref="config.code"
-      :key="config.key"
-      :config="config"
-    />
+    <header class="top-title">
+      <span>{{ title }}</span>
+    </header>
+    <div class="render-item-wrap-inner">
+      <component
+        :is="resolveComponentType(config.type)"
+        :id="`${config.code}`"
+        :ref="config.code"
+        :key="config.key"
+        :config="config"
+      />
+    </div>
   </div>
 </template>
 <script>
 import commonMixins from 'packages/js/mixins/commonMixins'
 import { mapMutations } from 'vuex'
-import { getUpdateChartInfo } from '../js/api//bigScreenApi'
 import { resolveComponentType } from 'packages/js/utils'
 import pcComponent from 'packages/js/utils/componentImport'
 import { dataInit, destroyedEvent } from 'packages/js/utils/eventBus'
@@ -54,7 +58,11 @@ export default {
   data () {
     return {}
   },
-  computed: {},
+  computed: {
+    title () {
+      return this.config.title
+    }
+  },
   mounted () {
     // 调用初始化方法
     dataInit(this)
@@ -106,7 +114,23 @@ export default {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   overflow: hidden;
   box-sizing: border-box;
+
+  .top-title {
+    color: var(--ds-el-title);
+    padding: 10px 0;
+
+    span {
+      display: inline-block;
+      border-left: 4px solid var(--ds-el-color-primary);
+      padding-left: 16px;
+    }
+  }
+  .render-item-wrap-inner {
+    flex: 1;
+    position: relative;
+  }
 }
 </style>

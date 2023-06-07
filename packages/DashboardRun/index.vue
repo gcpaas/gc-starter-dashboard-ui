@@ -5,7 +5,7 @@
     :style="previewWrapStyle"
   >
     <div
-      class="bs-render-wrap render-theme-wrap"
+      class="bs-render-wrap render-theme-wrap bs-scrollbar"
       :style="renderStyle"
     >
       <grid-layout
@@ -337,7 +337,7 @@ export default {
   .bs-render-wrap {
     position: relative;
     background-size: cover;
-     overflow: auto
+    overflow: auto
   }
 }
 </style>

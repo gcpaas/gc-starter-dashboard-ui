@@ -68,7 +68,7 @@ import { compile } from 'tiny-sass-compiler/dist/tiny-sass-compiler.esm-browser.
 import plotList, { getCustomPlots } from '../G2Plots/plotList'
 import VueGridLayout from 'vue-grid-layout'
 export default {
-  name: 'BigScreenRender',
+  name: 'DashboardRender',
   components: {
     RenderCard,
     Configuration,

@@ -37,7 +37,8 @@ module.exports = {
       'vue-json-viewer': 'vue-json-viewer',
       'vue-quill-editor': 'vue-quill-editor',
       vuedraggable: 'vuedraggable',
-      ztree: 'ztree'
+      ztree: 'ztree',
+      'vue-grid-layout': 'vue-grid-layout'
     },
     resolve: {
       alias: {
