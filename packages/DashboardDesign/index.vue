@@ -7,9 +7,11 @@
       v-show="headerShow"
       ref="PageTopSetting"
       :right-fold="rightVisiable"
+      :terminal="terminal"
       @updateRightVisiable="updateRightVisiable"
       @showPageInfo="showPageInfo"
       @empty="empty"
+      @chooseTerminal="chooseTerminal"
     />
     <div class="drag-wrap">
       <!-- 左侧面板 -->
@@ -32,12 +34,21 @@
         @keydown="designKeydown"
       >
         <Render
+          v-if="terminal === 'pc'"
           ref="Render"
           :class="{
             'grid-bg': hasGrid
           }"
           @openRightPanel="openRightPanel"
         />
+        <!-- 移动端 -->
+        <div class="app-wrap-box" v-else-if="terminal === 'app'" v-resize="boxResize">
+          <div class="app-wrap app-display-wrapper" id="app-dom" >
+            <div class="app-container app-design-wrap">
+              <AppDashBoard  ref="Render" @openRightPanel="openRightPanel"></AppDashBoard>
+            </div>
+          </div>
+        </div>
         <div class="footer-tools-bar" />
       </div>
       <!-- 右侧折叠设置面板   -->
@@ -88,6 +99,7 @@ import { get } from 'packages/js/utils/http'
 import { randomString } from '../js/utils'
 import { isFirefox } from 'packages/js/utils/userAgent'
 import { handleResData } from 'packages/js/store/actions.js'
+import AppDashBoard from '../../appPackages/DashboardAppRun/index.vue'
 export default {
   name: 'BigScreenDesign',
   components: {
@@ -97,7 +109,27 @@ export default {
     SettingPanel,
     SourceDialog,
     ComponentDialog,
-    iframeDialog
+    iframeDialog,
+    AppDashBoard
+  },
+  directives:{
+    resize: { // 指令的名称
+      bind(el, binding) { // el为绑定的元素，binding为绑定给指令的对象
+        let width = '', height = '';
+        function isReize() {
+          const style = document.defaultView.getComputedStyle(el);
+          if (width !== style.width || height !== style.height) {
+            binding.value({width:style.width,height:style.height});  // 关键(这传入的是函数,所以执行此函数)
+          }
+          width = style.width;
+          height = style.height;
+        }
+        el.__vueSetInterval__ = setInterval(isReize, 300);
+      },
+      unbind(el) {
+        clearInterval(el.__vueSetInterval__);
+      }
+    }
   },
   mixins: [multipleSelectMixin],
   props: {
@@ -116,6 +148,7 @@ export default {
   },
   data () {
     return {
+      terminal:'pc',//终端
       rightVisiable: false,
       pageInfoVisiable: false,
       ruleStartX: 100,
@@ -219,6 +252,16 @@ export default {
       'saveTimeLine',
       'changeIframeDialog'
     ]),
+    // 监听中间面板的大小变化
+    boxResize(data){
+      let appDom = document.getElementById('app-dom')
+      appDom.style.height = parseInt(data.height )* 0.9 + 'px'
+      appDom.style.width  =  parseInt(data.height ) * 0.9 * 0.47 + 'px'
+    },
+    // 切换终端
+    chooseTerminal(terminal){
+      this.terminal = terminal
+    },
     // 添加资源弹窗初始化
     initDialog () {
       this.$refs.SourceDialog.init()
@@ -452,6 +495,42 @@ export default {
     /deep/ .el-loading-mask {
       background-color: transparent !important;
     }
+    // 移动端样式
+    .app-wrap-box{
+      /*width: calc(100% - 210px);*/
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .app-display-wrapper {
+        position: relative;
+        // 水平垂直居中
+        width: 366.318px;
+        height: 779.4px;
+        //height: 98%;
+        // 固定宽高比
+        //aspect-ratio: 1 / 2.1;
+        // 设置最大最小宽高
+        min-width: 200px;
+        min-height: 420px;
+        background: url(packages/DashboardDesign/images/iphone.png) no-repeat center 0;
+        background-size: 100% 100%;
+
+        .app-design-wrap {
+          // 缩放比例
+          position: absolute;
+          top: 4rem;
+          left: 1.6rem;
+          right: 1.6rem;
+          bottom: 30px;
+          overflow: auto;
+          border-radius: 0 0 35px 35px;
+        }
+      }
+    }
+
+
   }
 }
 </style>

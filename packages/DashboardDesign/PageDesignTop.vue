@@ -9,6 +9,21 @@
       >
       <span class="logo-text name-span">{{ pageInfo.name }}</span>
     </div>
+    <!-- 中间切换按钮 -->
+    <div class="terminal-btn">
+      <div class="svg-box" :class="{'active-avg-box':terminal === 'pc'}"  @click="chooseTerminal('pc')">
+        <icon-svg
+          :name="icons[3]"
+          class="img-btn-svg"
+        />
+      </div>
+      <div class="svg-box"  :class="{'active-avg-box':terminal === 'app'}"   @click="chooseTerminal('app')">
+        <icon-svg
+          :name="icons[4]"
+          class="img-btn-svg"
+        />
+      </div>
+    </div>
     <div class="head-btn-group">
       <CusBtn
         :loading="saveAndPreviewLoading"
@@ -84,6 +99,8 @@ import { stringifyObjectFunctions } from 'packages/js/utils/evalFunctions'
 import AssignDialog from 'packages/DashboardDesign/AssignDialog/index.vue'
 import HistoryList from 'packages/DashboardDesign/HistoryList/index.vue'
 import CusBtn from './BtnLoading'
+import IconSvg from 'packages/SvgIcon'
+import Icon from 'packages/assets/images/pageIcon/export'
 import {
   showSize,
   dataURLtoBlob,
@@ -96,7 +113,8 @@ export default {
     ChooseTemplateDialog,
     AssignDialog,
     CusBtn,
-    HistoryList
+    HistoryList,
+    IconSvg
   },
   props: {
     code: {
@@ -106,10 +124,15 @@ export default {
     rightFold: {
       type: Boolean,
       default: false
-    }
+    },
+    terminal: {
+      type: String,
+      default: ''
+    },
   },
   data () {
     return {
+      icons:Icon.getNameList(),
       alignList: [
         {
           label: '左侧对齐',
@@ -183,73 +206,9 @@ export default {
       undoTimeLine: 'dashboard/undoTimeLine',
       saveTimeLine: 'dashboard/saveTimeLine'
     }),
-    setAlign (command) {
-      const pageInfo = _.cloneDeep(this.pageInfo)
-      const w = pageInfo.pageConfig.w
-      const h = pageInfo.pageConfig.h
-      switch (command) {
-        case 'left':
-          pageInfo.chartList.forEach((chart) => {
-            chart.x = 0
-          })
-          break
-        case 'center':
-          pageInfo.chartList.forEach((chart) => {
-            chart.x = (w - chart.w) / 2
-          })
-          break
-        case 'right':
-          pageInfo.chartList.forEach((chart) => {
-            chart.x = w - chart.w
-          })
-          break
-        case 'top':
-          pageInfo.chartList.forEach((chart) => {
-            chart.y = 0
-          })
-          break
-        case 'middle':
-          pageInfo.chartList.forEach((chart) => {
-            chart.y = (h - chart.h) / 2
-          })
-          break
-        case 'bottom':
-          pageInfo.chartList.forEach((chart) => {
-            chart.y = h - chart.h
-          })
-          break
-        case 'levelAround':
-          // eslint-disable-next-line no-case-declarations
-          let allW = 0
-          pageInfo.chartList.forEach((chart) => {
-            allW = allW + chart.w
-          })
-          // eslint-disable-next-line no-case-declarations
-          const padding = (w - allW) / (pageInfo.chartList.length + 1)
-          // eslint-disable-next-line no-case-declarations
-          let usedW = 0
-          pageInfo.chartList.forEach((chart) => {
-            chart.x = usedW + padding
-            usedW = chart.x + chart.w
-          })
-          break
-        case 'verticalAround':
-          // eslint-disable-next-line no-case-declarations
-          let allH = 0
-          pageInfo.chartList.forEach((chart) => {
-            allH = allH + chart.h
-          })
-          // eslint-disable-next-line no-case-declarations
-          const paddingBottom = (h - allH) / (pageInfo.chartList.length + 1)
-          // eslint-disable-next-line no-case-declarations
-          let usedH = 0
-          pageInfo.chartList.forEach((chart) => {
-            chart.y = usedH + paddingBottom
-            usedH = chart.y + chart.h
-          })
-          break
-      }
-      this.changePageInfo(pageInfo)
+    // 切换终端
+    chooseTerminal(terminal){
+      this.$emit('chooseTerminal',terminal)
     },
     backManagement () {
       this.$router.push({
@@ -273,7 +232,7 @@ export default {
     // 预览
     preview () {
       const { href } = this.$router.resolve({
-        path: window.DS_CONFIG?.routers?.previewUrl || '/dashboard/preview',
+        path: this.terminal === 'pc'? (window.DS_CONFIG?.routers?.previewUrl || '/dashboard/preview') :  (window.DS_CONFIG?.routers?.appPreviewUrl || '/dashboard/app-preview'),
         query: {
           code: this.pageCode
         }
@@ -469,7 +428,35 @@ export default {
   position: relative;
   color: #ffffff;
   padding: 0 5px;
-
+  .terminal-btn{
+    margin-left: 100px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    .svg-box{
+      width: 50px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover{
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        cursor: pointer;
+      }
+    }
+    .active-avg-box{
+      background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    .img-btn-svg{
+      width: 30px;
+      height: 30px;
+      color: #ffffff;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
   .app-name {
     cursor: pointer;
   }
@@ -490,7 +477,6 @@ export default {
   .item-wrap {
     display: flex;
     align-items: center;
-
     .menu-img {
       width: 18px;
       height: 18px;
