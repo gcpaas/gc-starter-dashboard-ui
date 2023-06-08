@@ -319,7 +319,7 @@ export default {
     }
 
     .iconfont-bigscreen {
-      color: #fff;
+      // color: #fff;
     }
 
     .flexible {

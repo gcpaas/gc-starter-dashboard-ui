@@ -207,9 +207,9 @@ export default {
           this.$set(this.dataForm, 'pageConfig', {
             w: '1920',
             h: '1080',
-            bgColor: '#151a26',
+            bgColor: '#F5F7FA',
             opacity: 100,
-            customTheme: 'auto',
+            customTheme: 'light',
             bg: null
           })
           if (this.dataForm.type === 'dashboard') {

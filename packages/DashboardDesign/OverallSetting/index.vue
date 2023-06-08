@@ -159,9 +159,9 @@ export default {
         w: 1920,
         h: 1080,
         bg: '',
-        bgColor: '#151a26', // 背景色
+        bgColor: '#F5F7FA', // 背景色
         opacity: 100,
-        customTheme: 'auto',
+        customTheme: 'light',
         themeJson: {},
         cacheDataSets: [],
         fitMode: 'none'
@@ -326,9 +326,9 @@ export default {
   /deep/ .el-textarea__inner,
   /deep/ .el-input-group__append,
   /deep/ .el-radio__label {
-    background: var(--ds-el-background-1);
-    color: var(--ds-el-text);
-    border: 0 !important;
+    // background: var(--ds-el-background-1);
+    // color: var(--ds-el-text);
+    // border: 0 !important;
   }
 
   /deep/ .el-form-item__label {
@@ -342,13 +342,13 @@ export default {
 
   /deep/ .el-table {
     background: var(--ds-el-background-1);
-    border-bottom: 1px solid var(--ds-el-title);
+    // border-bottom: 1px solid var(--ds-el-title);
   }
 
   /deep/ .el-table__cell {
     background: var(--ds-el-background-1) !important;
     color: var(--ds-el-title) !important;
-    border-color: var(--ds-el-text) !important;
+    // border-color: var(--ds-el-text) !important;
   }
 
   /deep/ .el-input__inner{
@@ -481,7 +481,7 @@ export default {
 
   .el-color-picker__color {
     background: var(--ds-el-background-1);
-    border: 0 !important;
+    // border: 0 !important;
   }
 }
 

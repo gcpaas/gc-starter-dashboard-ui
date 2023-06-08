@@ -41,7 +41,7 @@ export default {
 <style lang="scss" scoped>
 .head-btn {
   display: flex;
-  background-color: #303640;
+  // background-color: #303640;
   cursor: pointer;
   width: auto;
   justify-content: center;
@@ -51,15 +51,15 @@ export default {
   font-size: 12px;
 
   &:hover {
-    background-color: #414750;
+    // background-color: #414750;
   }
 
   &-disabled {
     cursor: not-allowed;
-    background-color: #303640;
-    color: #999;
+    // background-color: #303640;
+    // color: #999;
     &:hover {
-      background-color: #303640;
+      // background-color: #303640;
     }
   }
 }

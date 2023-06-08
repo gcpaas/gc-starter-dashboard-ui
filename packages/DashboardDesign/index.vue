@@ -413,7 +413,7 @@ export default {
 
   .drag-wrap {
     display: flex;
-    background-color: #1d1e20;
+    background-color: #F5F7FA;
     height: calc(100vh - 40px);
     overflow: hidden;
 

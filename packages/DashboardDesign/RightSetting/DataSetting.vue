@@ -903,6 +903,7 @@ export default {
     .data-setting-data-box{
       .lc-field-head{
         height: 30px;
+        background-color: var(--ds-el-background-3);
         .lc-field-title{
           position: relative;
           padding-left: 12px;

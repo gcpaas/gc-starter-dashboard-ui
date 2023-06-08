@@ -9,6 +9,7 @@
 <style lang="scss" scoped>
 .lc-field-head {
     height: 30px;
+    background-color: var(--ds-el-background-3);
     // margin-bottom: 12px;
 
     .lc-field-title {

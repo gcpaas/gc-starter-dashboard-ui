@@ -19,10 +19,10 @@ export const defaultData = {
     pageConfig: {
       w: 1920,
       h: 1080,
-      bgColor: '#151a26', // 背景色
+      bgColor: '#F5F7FA', // 背景色
       bg: '', // 背景图
       opacity: 100,
-      customTheme: 'auto',
+      customTheme: 'light',
       themeJson: {}, // 自定义主题配置
       // 缓存的数据集 { name: '', dataSetId: '' }
       cacheDataSets: [],

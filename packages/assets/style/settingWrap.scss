@@ -232,9 +232,9 @@
 /deep/ .el-textarea__inner,
 /deep/ .el-input-group__append
 {
-  background: var(--ds-el-background-1);
-  color: var(--ds-el-text);
-  border: 0 !important;
+  // background: var(--ds-el-background-1);
+  // color: var(--ds-el-text);
+  // border: 0 !important;
 }
 
 /deep/ .el-radio__label
@@ -253,12 +253,12 @@
 
 /deep/ .el-table {
   background: var(--ds-el-background-1);
-  border-bottom: 1px solid var(--ds-el-title);
+  // border-bottom: 1px solid var(--ds-el-title);
 }
 
 /deep/ .el-table__cell {
   background: var(--ds-el-background-1) !important;
   color: var(--ds-el-title) !important;
-  border-color: var(--ds-el-text) !important;
+  // border-color: var(--ds-el-text) !important;
 }
 

@@ -105,9 +105,11 @@ export default {
       }
       /*菜单激活时的样式*/
       .active-catalog{
-        background-image: linear-gradient(to right , var(--ds-el-color-primary), var(--ds-background-2));
-        background-repeat: round;
-        color: var(--ds-el-text);
+        background: rgba(0,122,255,.06274509803921569);
+        color: #007aff;
+        // background-image: linear-gradient(to right , var(--ds-el-color-primary), var(--ds-background-2));
+        // background-repeat: round;
+        // color: var(--ds-el-text);
       }
     }
     .add-catalog-box{

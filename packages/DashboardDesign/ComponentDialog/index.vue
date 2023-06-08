@@ -452,7 +452,7 @@ export default {
     height: 100%;
     padding: 16px;
     color: #9ea9b2;
-    background-color: var(--ds-background-1) !important;
+    background-color: var(--ds-el-background-3) !important;
 
     .top-search-wrap {
       display: flex;
@@ -464,14 +464,14 @@ export default {
         width: 200px;
         margin-right: 20px;
         /deep/.el-input__inner {
-          background-color: #232832 !important;
+          // background-color: #232832 !important;
         }
       }
 
       .el-select {
         margin-right: 20px;
         /deep/.el-input__inner {
-          background-color: #232832 !important;
+          // background-color: #232832 !important;
         }
       }
     }
@@ -562,7 +562,7 @@ export default {
               justify-content: center;
             }
             /deep/.el-image__error {
-              background-color: #1d1d1d;
+              // background-color: #1d1d1d;
             }
           }
 

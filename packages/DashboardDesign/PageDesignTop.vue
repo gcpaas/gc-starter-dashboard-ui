@@ -462,7 +462,7 @@ export default {
 
 .page-top-setting-wrap {
   height: 40px;
-  background-color: var(--ds-background-2);
+  background-color: var(--ds-background-header);
   display: flex;
   align-items: center;
   justify-content: space-between;
