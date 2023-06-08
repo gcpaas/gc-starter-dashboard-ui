@@ -1,34 +1,30 @@
 <template>
-  <div class="basic-component-input">
-    <span
-      v-if="config.customize.showTitle"
-      class="title-left"
-      :style="{ marginRight: config.customize.titleStyle.marginRight + 'px', fontSize: config.customize.titleStyle.fontSize + 'px', color: config.customize.titleStyle.color }"
-    >
-      {{ config.customize.title }}
-    </span>
-    <el-input
-      :id="`el-input-${config.code}`"
-      v-model="config.customize.value"
-      type="text"
-      resize="both"
-      class="input"
-      :placeholder="config.customize.placeholderStyle.placeholder"
-      :style="{ backgroundColor: config.customize.backgroundStyle.backgroundColor }"
-    >
-      <i
-        v-if="config.customize.icon.position === 'left' && config.customize.icon.name"
-        slot="prefix"
-        class="el-input__icon"
-        :class="config.customize.icon.position === 'left' ? config.customize.icon.name : ''"
-      />
-      <i
-        v-if="config.customize.icon.position === 'right' && config.customize.icon.name"
-        slot="suffix"
-        class="el-input__icon"
-        :class="config.customize.icon.position === 'right' ? config.customize.icon.name : ''"
-      />
-    </el-input>
+  <div class="bs-design-wrap">
+    <div class="basic-component-input">
+      <el-input
+        :id="`el-input-${config.code}`"
+        v-model="config.customize.value"
+        type="text"
+        resize="both"
+        class="input"
+        :placeholder="config.customize.placeholderStyle.placeholder"
+        :style="{ backgroundColor: config.customize.backgroundStyle.backgroundColor }"
+      >
+        <i
+          v-if="config.customize.icon.position === 'left' && config.customize.icon.name"
+          slot="prefix"
+          class="el-input__icon"
+          :class="config.customize.icon.position === 'left' ? config.customize.icon.name : ''"
+        />
+        <i
+          v-if="config.customize.icon.position === 'right' && config.customize.icon.name"
+          slot="suffix"
+          class="el-input__icon"
+          :class="config.customize.icon.position === 'right' ? config.customize.icon.name : ''"
+        />
+      </el-input>
+    </div>
+
   </div>
 </template>
 
@@ -76,9 +72,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.basic-component-input {
+  @import '~packages/assets/style/chartStyle.scss';
+.bs-design-wrap {
   width: 100%;
+  height: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  .basic-component-input{
+    width: 80%;
+  }
   .title-left {
     display: block;
     white-space: nowrap;

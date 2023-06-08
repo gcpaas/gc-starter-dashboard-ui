@@ -257,12 +257,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~packages/assets/style/echartStyle';
-.light-theme {
-  background-color: #ffffff;
-  color: #000000;
-}
-.auto-theme {
-  background-color: rgba(0, 0, 0, 0);
-}
+@import '~packages/assets/style/chartStyle.scss';
 </style>

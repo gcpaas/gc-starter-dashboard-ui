@@ -11,8 +11,8 @@ export default function getComponentConfig (type) {
         icon: Icon.getNameList()[0],
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardTextChart',
-        w: 150,
-        h: 30,
+        w: 3,
+        h: 4,
         x: 0,
         y: 0,
         type

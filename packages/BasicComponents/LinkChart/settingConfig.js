@@ -35,7 +35,7 @@ const customConfig = {
     title: '超链接占位符',
     fontSize: 20,
     fontWeight: 700,
-    color: 'left,#ffffff,#ffffff',
+    color: 'left,#36474f,#36474f',
     url: '', // 链接地址
     openType: '', // 打开方式
     dialogW: 1000, // 弹窗宽度

@@ -68,12 +68,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '~packages/assets/style/chartStyle.scss';
 .bs-design-wrap {
-  position: relative;
-  overflow: hidden;
-  background: #fff;
-  width: 100%;
-  height: 100%;
   .iframe-wrap {
     height: 100%;
   }
