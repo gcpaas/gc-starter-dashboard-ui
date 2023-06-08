@@ -340,4 +340,7 @@ export default {
     overflow: auto
   }
 }
+/deep/.vue-grid-placeholder {
+  background: #C6C8CA !important;
+}
 </style>

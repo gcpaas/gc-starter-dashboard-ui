@@ -5,6 +5,7 @@
 const path = require('path')
 const { ProvidePlugin } = require('webpack')
 const CompressionPlugin = require('compression-webpack-plugin')
+const webpack = require('webpack')
 function resolve (dir) {
   return path.join(__dirname, dir)
 }
@@ -38,7 +39,12 @@ module.exports = {
       'vue-quill-editor': 'vue-quill-editor',
       vuedraggable: 'vuedraggable',
       ztree: 'ztree',
-      'vue-grid-layout': 'vue-grid-layout'
+      'vue-grid-layout': 'vue-grid-layout',
+      // codemirror 导入但未声明的变量
+      'codemirror/lib/codemirror.css': 'codemirror',
+      'codemirror/theme/material-darker.css': 'codemirror',
+      'codemirror/addon/selection/active-line.js': 'codemirror',
+      'codemirror/mode/vue/vue.js': 'codemirror'
     },
     resolve: {
       alias: {
@@ -61,6 +67,9 @@ module.exports = {
         jQuery: 'jquery',
         $: 'jquery',
         'window.jQuery': 'jquery'
+      }),
+      new webpack.optimize.LimitChunkCountPlugin({
+        maxChunks: 1
       })
     ]
   },

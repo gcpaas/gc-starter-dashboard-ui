@@ -49,7 +49,7 @@
             </div>
           </div>
         </div>
-        <div class="footer-tools-bar" />
+        <!-- <div class="footer-tools-bar" /> -->
       </div>
       <!-- 右侧折叠设置面板   -->
       <SettingPanel
@@ -464,7 +464,7 @@ export default {
       flex: 1;
       overflow: hidden;
       position: relative;
-      margin: 8px 0 0 8px;
+      // margin: 8px 0 0 8px;
 
       .footer-tools-bar {
         position: absolute;
@@ -529,7 +529,15 @@ export default {
         }
       }
     }
-
+    /deep/::-webkit-scrollbar {
+      width: 8px;
+      border-radius: 8px;
+      height: 8px;
+    }
+    /deep/::-webkit-scrollbar-thumb {
+      background: #dddddd !important;
+      border-radius: 10px;
+    }
 
   }
 }

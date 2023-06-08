@@ -287,7 +287,7 @@ export default {
 
     width: 110px !important;
     border: none;
-    background: var(--ds-el-background-1);
+    background: var(--ds-el-background-2);
   }
 }
 </style>

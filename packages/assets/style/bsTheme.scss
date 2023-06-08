@@ -26,7 +26,7 @@
   .el-textarea__inner {
     color: var(--ds-el-text) !important;
     background: var(--ds-el-background-1) !important;
-    border-color: var(--ds-el-border) !important;
+    // border-color: var(--ds-el-border) !important;
   }
 }
 
@@ -83,12 +83,12 @@
 
   .el-radio__input .is-checked {
     .el-radio__inner {
-      background-color: var(--ds-el-color-primary) !important;
+      // background-color: var(--ds-el-color-primary) !important;
     }
   }
 
   .el-radio__inner {
-    background-color: var(--ds-background-1) !important;
+    // background-color: var(--ds-background-1) !important;
   }
 
   .el-radio__label {
@@ -222,9 +222,9 @@
 .bs-el-dialog {
 
   .el-dialog__header {
-    background: var(--ds-el-background-3) !important;
+    background: var(--ds-background-2) !important;
     background-color: var(--ds-background-2) !important;
-    border-bottom: 2px solid var(--ds-background-1) !important;
+    border-bottom: 2px solid var(--ds-el-background-3) !important;
 
     .el-dialog__title {
       color: var(--ds-el-text) !important;
@@ -266,7 +266,7 @@
   }
 
   ::v-deep ::-webkit-scrollbar-thumb {
-    background: var(--ds-el-background-3) !important;
+    background: #dddddd !important;
     border-radius: 10px !important;
   }
 
@@ -307,7 +307,7 @@
     font-size: 14px !important;
     font-weight: 600 !important;
     color: var(--ds-el-text) !important;
-    border-bottom: 1px solid var(--ds-background-1) !important;
+    border-bottom: 1px solid var(--ds-el-background-2) !important;
     padding: 10px 0px 14px 0 !important;
     padding-left: 12px !important;
     position: relative !important;
@@ -509,7 +509,7 @@
 
   &:hover {
     &::-webkit-scrollbar-thumb {
-      background-color: rgba(144, 147, 153, 0.3) !important;
+      background-color: #dddddd !important;
     }
   }
 }
@@ -532,7 +532,7 @@
 // radio
 .bs-radio-wrap {
   .el-radio__inner {
-    border: 1px solid #DCDFE6 !important;
+    // border: 1px solid #DCDFE6 !important;
   }
 }
 

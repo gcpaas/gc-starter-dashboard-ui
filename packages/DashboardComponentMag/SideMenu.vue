@@ -62,6 +62,7 @@ export default {
     }
   }
   .side-catalog-wrap{
+    border-right : 1px solid #e8e8e8;
     padding-top: 16px;
     width: 220px;
     height: 100%;

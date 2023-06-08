@@ -289,7 +289,7 @@ export default {
 @import '~packages/DashboardDesign/fonts/iconfont.css';
 .bs-left-panel {
   display: flex;
-  background-color: var(--ds-background-1);
+  background-color: var(--ds-background-leftPanel);
 
   .bs-folder-wrap {
     width: 20px;
@@ -361,6 +361,7 @@ export default {
           font-size: 14px;
           margin: 8px;
           padding: 8px 0;
+          border-bottom: 1px solid var(--ds-el-background-3);
 
           .page-left-content-title-text {
             /*border-left: 4px solid #007aff;*/
@@ -400,13 +401,15 @@ export default {
               width: 100%;
               background: var(--ds-background-2);
               margin-bottom: 8px;
+              border : 1px solid #e8e8e8;
 
               .component-name {
-                background: var(--ds-el-background-3);
+                background: var(--ds-background-2);
                 color: var(--ds-el-title);
                 font-size: 12px;
                 padding: 4px 8px;
                 text-align: left;
+                border-bottom : 1px solid #e8e8e8;
               }
               .sampleImg {
                 margin: 0 auto;
@@ -495,7 +498,7 @@ export default {
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        color: #bcc9d4;
+        color: var(--ds-el-title);
         .menu-icon {
           height: 20px;
         }
@@ -529,5 +532,9 @@ export default {
 /deep/ .el-tabs__item.is-left {
   text-align: center;
   padding: 0;
+}
+
+/deep/ .el-scrollbar__wrap{
+  margin-right: -8px !important;
 }
 </style>

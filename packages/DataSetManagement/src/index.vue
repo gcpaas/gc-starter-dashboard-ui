@@ -617,7 +617,7 @@ export default {
   ::v-deep .el-input__inner {
     width: 110px !important;
     border:none;
-    background: var(--ds-el-background-1);
+    background: var(--ds-el-background-2);
   }
 }
 

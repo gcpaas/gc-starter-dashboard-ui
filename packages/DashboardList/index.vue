@@ -311,7 +311,7 @@ export default {
   height: 100%;
   padding: 16px;
   color: #9ea9b2;
-  background-color: var(--ds-el-background-3) !important;
+  background-color: var(--ds-background-leftPanel) !important;
 
   .top-search-wrap {
     display: flex;
@@ -524,7 +524,7 @@ export default {
   ::v-deep .el-input__inner {
     width: 110px !important;
     border: none;
-    background: var(--ds-el-background-1);
+    background: var(--ds-el-background-2);
   }
 }
 </style>
