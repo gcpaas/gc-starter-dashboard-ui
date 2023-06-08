@@ -122,6 +122,7 @@ export default {
   .top-title {
     color: var(--ds-el-title);
     padding: 10px 0;
+    height: 40px;
 
     span {
       display: inline-block;
@@ -131,6 +132,7 @@ export default {
   }
   .render-item-wrap-inner {
     flex: 1;
+    height: calc(100% - 40px);
     position: relative;
   }
 }
