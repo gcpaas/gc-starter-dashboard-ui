@@ -87,7 +87,7 @@ export default {
   justify-content: center;
   .el-button {
     width: 80%;
-    height: 80%;
+    height: 70%;
   }
 }
 </style>

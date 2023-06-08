@@ -85,7 +85,7 @@ export default {
   @import '~packages/assets/style/chartStyle.scss';
 .bs-design-wrap {
   background-color: transparent;
-
+  overflow-y: hidden;
   .videoPlayer {
     width: 100%;
     height: 100%;
