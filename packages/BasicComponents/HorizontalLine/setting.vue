@@ -24,10 +24,6 @@
               />
             </el-form-item>
           </div>
-          <SettingTitle>位置</SettingTitle>
-          <div class="lc-field-body">
-            <PosWhSetting :config="config" />
-          </div>
           <SettingTitle>基础</SettingTitle>
           <div class="lc-field-body">
             <el-form-item label="背景色一">

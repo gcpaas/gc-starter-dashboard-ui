@@ -68,11 +68,6 @@
               />
             </el-form-item>
           </div>
-          <SettingTitle>位置</SettingTitle>
-          <div class="lc-field-body">
-            <PosWhSetting :config="config" />
-          </div>
-
           <!-- <el-form-item label="输入框类型">
             <el-select
               v-model="config.customize.type"

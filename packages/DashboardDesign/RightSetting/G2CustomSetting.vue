@@ -21,13 +21,6 @@
           />
         </el-form-item>
       </div>
-      <SettingTitle>位置</SettingTitle>
-      <div class="lc-field-body">
-        <PosWhSetting
-          label-width="120px"
-          :config="config"
-        />
-      </div>
       <template v-for="group in groupList">
         <div :key="group.groupName">
           <SettingTitle>   {{ group.groupName | filterGroupName }}</SettingTitle>
@@ -183,7 +176,6 @@ export default {
     filterGroupName (val) {
       const settingGroup = {
         basic: '基础',
-        position: '位置',
         graph: '图表',
         grid: '网格线',
         legend: '图例',

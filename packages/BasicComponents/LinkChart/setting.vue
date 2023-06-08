@@ -26,10 +26,6 @@
           />
         </el-form-item>
       </div>
-      <SettingTitle>位置</SettingTitle>
-      <div class="db-setting-wrap">
-        <PosWhSetting :config="config" />
-      </div>
       <SettingTitle>基础</SettingTitle>
       <div class="db-setting-wrap">
         <el-form-item

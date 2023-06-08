@@ -15,10 +15,6 @@
           class="setting-body"
           label-width="100px"
         >
-          <SettingTitle>位置</SettingTitle>
-          <div class="lc-field-body">
-            <PosWhSetting :config="config" />
-          </div>
           <SettingTitle>基础</SettingTitle>
           <div class="lc-field-body">
             <el-form-item label="按钮名称">

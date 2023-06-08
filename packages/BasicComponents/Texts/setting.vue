@@ -51,10 +51,6 @@
         </el-form-item>
         <TextGradient v-model="config.customize.color" />
       </div>
-      <SettingTitle>位置</SettingTitle>
-      <div class="lc-field-body">
-        <PosWhSetting :config="config" />
-      </div>
     </el-form>
   </div>
 </template>
