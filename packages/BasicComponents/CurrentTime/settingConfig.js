@@ -20,7 +20,7 @@ const customConfig = {
   customize: {
     fontSize: 28,
     fontWeight: 700,
-    color: '#ffffff'
+    color: '#36474f'
   }
 
 }

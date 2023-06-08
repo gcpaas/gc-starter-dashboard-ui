@@ -8,6 +8,10 @@
   <div class="render-item-wrap">
     <header class="top-title">
       <span>{{ title }}</span>
+      <icon-svg
+        :name="icons[5]"
+        class="img-btn-svg"
+      />
     </header>
     <div class="render-item-wrap-inner">
       <component
@@ -29,6 +33,8 @@ import { dataInit, destroyedEvent } from 'packages/js/utils/eventBus'
 import CustomComponent from '../PlotRender/index.vue'
 import Svgs from '../Svgs/index.vue'
 import RemoteComponent from 'packages/RemoteComponents/index.vue'
+import IconSvg from 'packages/SvgIcon'
+import Icon from 'packages/assets/images/pageIcon/export'
 const components = {}
 for (const key in pcComponent) {
   if (Object.hasOwnProperty.call(pcComponent, key)) {
@@ -39,6 +45,7 @@ export default {
   name: 'RenderCard',
   mixins: [commonMixins],
   components: {
+    IconSvg,
     ...components,
     CustomComponent,
     Svgs,
@@ -56,7 +63,9 @@ export default {
     }
   },
   data () {
-    return {}
+    return {
+      icons:Icon.getNameList(),
+    }
   },
   computed: {
     title () {
@@ -121,12 +130,16 @@ export default {
 
   .top-title {
     color: var(--ds-el-title);
-    padding: 10px 0;
-    height: 40px;
-
+    padding: 8px 8px 8px 0;
+    line-height: 20px;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 14px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
     span {
       display: inline-block;
-      border-left: 4px solid var(--ds-el-color-primary);
+      border-left: 3px solid var(--ds-el-color-primary);
       padding-left: 16px;
     }
   }
@@ -134,6 +147,11 @@ export default {
     flex: 1;
     height: calc(100% - 40px);
     position: relative;
+  }
+  .img-btn-svg{
+    &:hover{
+      cursor: pointer;
+    }
   }
 }
 </style>

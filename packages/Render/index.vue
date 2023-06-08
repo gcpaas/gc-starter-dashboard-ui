@@ -278,8 +278,6 @@ export default {
         ..._chart,
         x: 0,
         y: 0,
-        w: 6,
-        h: 10,
         code,
         i: code,
         option

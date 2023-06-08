@@ -69,9 +69,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .bs-design-wrap{
-    width: 100%;
-  }
+  @import '~packages/assets/style/chartStyle.scss';
   .content-box{
     text-align: center;
     /* 将背景设为渐变 */

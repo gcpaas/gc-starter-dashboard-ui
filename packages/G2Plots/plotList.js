@@ -33,8 +33,8 @@ function getPlotList (files) {
       img: require(`packages/G2Plots/images/componentLogo/${config.title}.png`),
       className:
         'com.gccloud.dashboard.core.module.chart.components.CustomComponentChart',
-      w: config?.option?.width || 450,
-      h: config?.option?.height || 320,
+      w: config?.option?.width || 6,
+      h: config?.option?.height || 10,
       x: 0,
       y: 0,
       type: 'customComponent',

@@ -116,24 +116,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.light-theme {
-  background-color: #ffffff;
-  color: #000000;
-}
-.auto-theme {
-  background-color: rgba(0, 0, 0, 0);
-}
-.dark-theme {
-  background-color: rgb(31, 31, 31);
-}
+  @import '~packages/assets/style/chartStyle.scss';
 .bs-design-wrap {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  border-radius: 4px;
-  // box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
   .content {
     display: flex;
     flex-direction: row;

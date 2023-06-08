@@ -82,15 +82,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '~packages/assets/style/chartStyle.scss';
 .bs-design-wrap {
-  position: relative;
-  width: 100%;
-  height: 100%;
   background-color: transparent;
-  border-radius: 4px;
-  // box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-
+  overflow-y: hidden;
   .videoPlayer {
     width: 100%;
     height: 100%;

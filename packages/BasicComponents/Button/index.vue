@@ -82,10 +82,12 @@ export default {
 .basic-component-button {
   width: 100%;
   height: 100%;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .el-button {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 70%;
   }
 }
 </style>

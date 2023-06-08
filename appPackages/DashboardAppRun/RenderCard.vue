@@ -2,6 +2,10 @@
   <div class="render-item-wrap">
     <header class="top-title">
       <span>{{ title }}</span>
+      <icon-svg
+        :name="icons[5]"
+        class="img-btn-svg"
+      />
     </header>
     <component
       :is="resolveComponentType(config.type)"
@@ -20,6 +24,8 @@
   import Svgs from 'packages/Svgs/index.vue'
   import RemoteComponent from 'packages/RemoteComponents/index.vue'
   import commonMixins from "packages/js/mixins/commonMixins";
+  import IconSvg from 'packages/SvgIcon'
+  import Icon from 'packages/assets/images/pageIcon/export'
   const components = {}
   for (const key in pcComponent) {
     if (Object.hasOwnProperty.call(pcComponent, key)) {
@@ -33,7 +39,8 @@ export default {
     ...components,
     CustomComponent,
     Svgs,
-    RemoteComponent
+    RemoteComponent,
+    IconSvg,
   },
   props: {
     // 卡片的属性
@@ -49,7 +56,7 @@ export default {
   },
   data() {
     return {
-      tables: 'tables'
+      icons:Icon.getNameList()
     }
   },
   beforeDestroy () {
@@ -73,15 +80,31 @@ export default {
     flex-direction: column;
     overflow: hidden;
     box-sizing: border-box;
+    background-color: var(--ds-background-1);
 
     .top-title {
       color: var(--ds-el-title);
-      padding: 10px 0;
-
+      padding: 8px 8px 8px 0;
+      line-height: 20px;
+      border-bottom: 1px solid #f5f5f5;
+      font-size: 14px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
       span {
         display: inline-block;
-        border-left: 4px solid var(--ds-el-color-primary);
+        border-left: 3px solid var(--ds-el-color-primary);
         padding-left: 16px;
+      }
+    }
+    .render-item-wrap-inner {
+      flex: 1;
+      height: calc(100% - 40px);
+      position: relative;
+    }
+    .img-btn-svg{
+      &:hover{
+        cursor: pointer;
       }
     }
   }

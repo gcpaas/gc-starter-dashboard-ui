@@ -35,7 +35,7 @@ const customConfig = {
     title: '文本标签占位符',
     fontSize: 20,
     fontWeight: 700,
-    color: 'left,#ffffff,#ffffff'
+    color: 'left,#36474f,#36474f'
   }
 
 }
