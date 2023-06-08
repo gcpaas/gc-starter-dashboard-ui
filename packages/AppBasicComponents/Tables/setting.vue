@@ -34,7 +34,6 @@
         <el-form-item label="头部字体颜色">
           <ColorPicker
             v-model="config.customize.headerFontColor"
-            style="width:180px"
             placeholder="请选择头部字体颜色"
             :predefine-colors="predefineThemeColors"
           />
