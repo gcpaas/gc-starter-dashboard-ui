@@ -375,7 +375,6 @@ export default {
 .default-layout-box {
   display: flex;
   flex-wrap: wrap;
-
   .default-layout-item {
     cursor: pointer;
     width: 42%;
@@ -428,6 +427,11 @@ export default {
   position: relative;
   color: #ffffff;
   padding: 0 5px;
+
+  .iconfont-bigscreen {
+    color: #fff;
+  }
+
   .terminal-btn{
     margin-left: 100px;
     flex: 1;
