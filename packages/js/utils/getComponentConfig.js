@@ -72,7 +72,7 @@ export default function getComponentConfig (type) {
         y: 0,
         type
       }
-    case 'screenScrollBoard':
+    case 'dashBoardScrollBoard':
       return {
         name: '轮播表',
         title: '轮播表',
@@ -85,7 +85,7 @@ export default function getComponentConfig (type) {
         y: 0,
         type
       }
-    case 'screenScrollRanking':
+    case 'dashBoardScrollRanking':
       return {
         name: '排名表',
         title: '排名表',

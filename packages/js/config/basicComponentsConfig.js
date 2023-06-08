@@ -21,8 +21,8 @@ const typeList = [
   'iframeChart',
   'digitalFlop',
   'tables',
-  'screenScrollRanking',
-  'screenScrollBoard',
+  'dashBoardScrollRanking',
+  'dashBoardScrollBoard',
   'video',
   // 'input',
   // 'button'
