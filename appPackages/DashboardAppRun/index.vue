@@ -5,10 +5,11 @@
     @drop="drop($event)"
     @dragover.prevent>
     <div
+      v-if="!['texts','linkChart','horizontalLine','verticalLine'].includes(card.type)"
       v-for="card in layout"
       :key="card.code"
       :class="{
-       'render-item-small': ['texts','linkChart','horizontalLine','verticalLine','currentTime','timeCountDown','input','button'].includes(card.type),
+       'render-item-small': ['currentTime','timeCountDown','input','button'].includes(card.type),
         'render-item-mid': ['picture', 'digitalFlop', 'video'].includes(card.type),
       }"
       class="render-item-box render-item-big"
@@ -166,7 +167,7 @@
     }
     .render-item-small {
       position: relative;
-      height: 48px;
+      height: 88px;
     }
     .render-item-mid {
       position: relative;

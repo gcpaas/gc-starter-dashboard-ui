@@ -1,5 +1,8 @@
 <template>
   <div class="render-item-wrap">
+    <header class="top-title">
+      <span>{{ title }}</span>
+    </header>
     <component
       :is="resolveComponentType(config.type)"
       :id="`${config.code}`"
@@ -39,6 +42,11 @@ export default {
       default: () => ({})
     }
   },
+  computed: {
+    title () {
+      return this.config.title
+    }
+  },
   data() {
     return {
       tables: 'tables'
@@ -58,10 +66,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.render-item-wrap {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  overflow: hidden;
-}
+  .render-item-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    .top-title {
+      color: var(--ds-el-title);
+      padding: 10px 0;
+
+      span {
+        display: inline-block;
+        border-left: 4px solid var(--ds-el-color-primary);
+        padding-left: 16px;
+      }
+    }
+  }
 </style>
