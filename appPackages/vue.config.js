@@ -1,5 +1,5 @@
 /*
- * @description: 打包的配置
+ * @description: app打包的配置
  * @Author: xing.heng
  */
 const path = require('path')
@@ -20,31 +20,19 @@ module.exports = {
       vue: 'vue',
       vueRouter: 'vue-router',
       '@antv/g2plot': '@antv/g2plot',
-      '@jiaminghi/data-view': '@jiaminghi/data-view',
       axios: 'axios',
-      echarts: 'echarts',
-      'element-ui': 'element-ui',
       'insert-css': 'insert-css',
       jquery: 'jquery',
       lodash: 'lodash',
       moment: 'moment',
       qs: 'qs',
-      sortablejs: 'sortablejs',
-      'tiny-sass-compiler': 'tiny-sass-compiler',
-      'vue-codemirror': 'vue-codemirror',
-      'vue-contextmenujs': 'vue-contextmenujs',
-      'vue-json-editor': 'vue-json-editor',
-      'vue-json-viewer': 'vue-json-viewer',
-      'vue-quill-editor': 'vue-quill-editor',
-      vuedraggable: 'vuedraggable',
-      ztree: 'ztree',
-      'vue-grid-layout': 'vue-grid-layout'
+      sortablejs: 'sortablejs'
     },
     resolve: {
       alias: {
-        '@': resolve('example'),
-        packages: resolve('packages'),
-        app: resolve('appPackages')
+        '@': resolve('../example'),
+        packages: resolve('../packages'),
+        app: resolve('../appPackages')
       },
       fallback: {
         path: false,
@@ -65,30 +53,6 @@ module.exports = {
     ]
   },
   chainWebpack: config => {
-    // set svg-sprite-loader
-    config.module
-      .rule('svg')
-      .exclude.add(resolve('packages/assets/images/bigScreenIcon/svg'))
-      .add(resolve('packages/Svgs/svg'))
-      .add(resolve('packages/assets/images/dataSourceIcon/svg'))
-      .add(resolve('packages/assets/images/pageIcon/svg'))
-      .end()
-
-    config.module
-      .rule('icons')
-      .test(/\.svg$/)
-      .include.add(resolve('packages/assets/images/bigScreenIcon/svg'))
-      .add(resolve('packages/Svgs/svg'))
-      .add(resolve('packages/assets/images/dataSourceIcon/svg'))
-      .add(resolve('packages/assets/images/pageIcon/svg'))
-      .end()
-      .use('svg-sprite-loader')
-      .loader('svg-sprite-loader')
-      .options({
-        symbolId: 'icon-[name]'
-      })
-      .end()
-
     const imagesRule = config.module.rule('images')
     imagesRule.uses.clear()
 

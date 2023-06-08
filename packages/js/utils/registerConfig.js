@@ -92,6 +92,12 @@ function registerRouters (config, router) {
         require.ensure([], () => require('packages/DashboardRun'))
     },
     {
+      path: config?.routers?.appPreviewUrl,
+      name: 'AppPreview',
+      component: () =>
+        require.ensure([], () => require('packages/AppDashboardRun'))
+    },
+    {
       path: config?.routers?.bizComponentDesignUrl,
       component: () => import('packages/BizComponent'),
       meta: {
@@ -156,6 +162,7 @@ export default function (config, router) {
     componentUrl: '/dashboard-components',
     designUrl: '/dashboard/design',
     previewUrl: '/dashboard/preview',
+    appPreviewUrl: '/dashboard/app-preview',
     bizComponentDesignUrl: '/dashboard-biz-component-design',
     bizComponentPreviewUrl: '/dashboard-biz-component-preview',
     ...config.routers

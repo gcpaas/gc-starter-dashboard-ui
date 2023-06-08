@@ -1,7 +1,7 @@
-import BigScreenDesign from './index.vue'
+import DashboardDesign from './index.vue'
 
-BigScreenDesign.install = function (Vue) {
-  Vue.component(BigScreenDesign.name, BigScreenDesign)
+DashboardDesign.install = function (Vue) {
+  Vue.component(DashboardDesign.name, DashboardDesign)
 }
 
-export default BigScreenDesign
+export default DashboardDesign

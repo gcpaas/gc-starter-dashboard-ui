@@ -99,7 +99,7 @@ registerConfig({
 ```javascript
 // file: .env.development
 
-VUE_APP_BASE_URL=http://127.0.0.1:8081/bigScreenServer
+VUE_APP_BASE_URL=http://127.0.0.1:8081/dashboardServer
 ```
 
 ```javascript
@@ -122,7 +122,7 @@ import { $dashboard } from 'gc-starter-dashboard-ui'
 const store = new Vuex.Store({
   modules: 
     // 导出仪表盘所需vuex模块
-    dashboard: $dashboard.bigScreenStore
+    dashboard: $dashboard.dashboardStore
   }
 })
 export default store
