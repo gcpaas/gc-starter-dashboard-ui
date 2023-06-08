@@ -319,7 +319,7 @@ export default {
     }
 
     .iconfont-bigscreen {
-      // color: #fff;
+      color: var(--ds-el-title);
     }
 
     .flexible {
@@ -339,7 +339,7 @@ export default {
           color: var(--ds-el-color-primary);
         }
         .menu-title-span {
-          color: var(--ds-el-color-primary);
+          color: var(--ds-el-color-primary) !important;
         }
       }
 
@@ -506,6 +506,7 @@ export default {
           display: block;
           width: 100%;
           font-size: 12px;
+          color: var(--ds-el-title);
         }
       }
     }

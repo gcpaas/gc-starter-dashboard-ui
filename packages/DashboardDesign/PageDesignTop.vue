@@ -13,13 +13,13 @@
     <div class="terminal-btn">
       <div class="svg-box" :class="{'active-avg-box':terminal === 'pc'}"  @click="chooseTerminal('pc')">
         <icon-svg
-          :name="icons[3]"
+          :name="icons[4]"
           class="img-btn-svg"
         />
       </div>
       <div class="svg-box"  :class="{'active-avg-box':terminal === 'app'}"   @click="chooseTerminal('app')">
         <icon-svg
-          :name="icons[4]"
+          :name="icons[3]"
           class="img-btn-svg"
         />
       </div>
@@ -375,7 +375,6 @@ export default {
 .default-layout-box {
   display: flex;
   flex-wrap: wrap;
-
   .default-layout-item {
     cursor: pointer;
     width: 42%;
@@ -420,6 +419,7 @@ export default {
 }
 
 .page-top-setting-wrap {
+  position: relative;
   height: 40px;
   background-color: var(--ds-background-header);
   display: flex;
@@ -428,9 +428,15 @@ export default {
   position: relative;
   color: #ffffff;
   padding: 0 5px;
+
+  .iconfont-bigscreen {
+    color: #fff;
+  }
+
   .terminal-btn{
-    margin-left: 100px;
-    flex: 1;
+    position: absolute;
+   left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     height: 100%;

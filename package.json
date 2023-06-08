@@ -1,6 +1,6 @@
 {
   "name": "gc-starter-dashboard-ui",
-  "version": "0.0.1-2023060701-Alpha",
+  "version": "0.0.1-2023060802-Alpha",
   "description": "自定义仪表盘",
   "author": "gc-starter",
   "license": "MIT",
@@ -44,7 +44,6 @@
     "package:test": "npm run lib && npm pack",
     "package:app": "npm run lib:app && npm publish",
     "package:app:test": "npm run lib:app && npm pack"
-
   },
   "husky": {
     "hooks": {

@@ -110,14 +110,6 @@ import 'codemirror/addon/selection/active-line.js'
 import 'codemirror/addon/fold/foldgutter.css' // 代码折叠
 import 'codemirror/addon/lint/lint.css'
 import 'codemirror/mode/vue/vue.js'
-require('codemirror/addon/fold/foldcode.js')
-require('codemirror/addon/fold/foldgutter.js')
-require('codemirror/addon/fold/brace-fold.js')
-require('codemirror/addon/fold/indent-fold.js')
-require('codemirror/addon/fold/comment-fold.js')
-require('codemirror/lib/codemirror.js')
-require('codemirror/mode/javascript/javascript')
-require('codemirror/addon/hint/javascript-hint') // 代码错误提示 // 当前行高亮
 
 export default {
   name: 'BizComponentDesign',
@@ -221,7 +213,7 @@ export default {
     },
     backManagement () {
       this.$router.push({
-        path: window.BS_CONFIG?.routers?.componentUrl || '/big-screen-components'
+        path: window.DS_CONFIG?.routers?.componentUrl
       })
     },
     save () {
@@ -245,8 +237,8 @@ export default {
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  color: var(--ds-el-text);
-  background: var(--ds-background-2);
+  color:  #fff;
+  background: #232832;
 
   > * {
     box-sizing: border-box;
@@ -258,12 +250,12 @@ export default {
     justify-content: space-between;
     height: 50px;
     padding: 0 16px;
-    border-bottom: 4px solid var(--ds-background-1);
-    background: var(--ds-background-2);
+    border-bottom: 4px solid#151a26;
+    background: #232832;
 
     .left-title {
       font-size: 16px;
-      color: var(--ds-el-title);
+      color:  #fff;
 
       .logo-wrap {
         display: flex;
@@ -288,7 +280,7 @@ export default {
 
   .bs-custom-component-content {
     flex: 1;
-    background: var(--ds-background-2);
+    background: #232832;
     display: flex;
     flex-direction: column;
 
@@ -302,13 +294,13 @@ export default {
       .left-vue-code {
         width: 60%;
         height: 100%;
-        /* background: var(--ds-background-1); */
+        /* background:#151a26; */
       }
 
       .right-setting-code {
         width: calc(40% - 16px);
         height: 100%;
-        /* background: var(--ds-background-1); */
+        /* background:#151a26; */
       }
 
       .component-code {
@@ -325,14 +317,14 @@ export default {
             justify-content: center;
             width: 120px;
             height: 100%;
-            color: var(--ds-el-title);
-            background: var(--ds-background-1);
+            color:  #fff;
+            background: #151a26;
           }
         }
 
         .code-tab-content {
           height: calc(100% - 40px);
-          background: var(--ds-background-1);
+          background: #151a26;
         }
       }
     }
@@ -345,7 +337,7 @@ export default {
       .bs-preview-inner {
         width: 100%;
         height: 100%;
-        background: var(--ds-background-1);
+        background: #151a26;
       }
     }
   }
@@ -356,5 +348,12 @@ export default {
   .cm-s-material-darker .CodeMirror-gutters
   {
     background: var(--bs-background-1) !important;
+  }
+  .CodeMirror-scroll {
+    background-color: var(--bs-background-1) !important;
+  }
+  .CodeMirror-gutters {
+    border-right: 1px solid var(--bs-background-1) !important;
+    background-color: var(--bs-background-1) !important;
   }
 </style>
