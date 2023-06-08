@@ -628,13 +628,13 @@ export default {
       padding: 0 20px;
     }
   }
-  .bs-pagination {
-    ::v-deep .el-input__inner {
-      width: 110px !important;
-      border: none;
-      background: var(--ds-el-background-2);
-    }
-  }
+  // .bs-pagination {
+  //   ::v-deep .el-input__inner {
+  //     width: 110px !important;
+  //     border: none;
+  //     background: var(--ds-el-background-2);
+  //   }
+  // }
   .empty {
     width: 100%;
     height: 70%;

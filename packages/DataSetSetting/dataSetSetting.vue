@@ -101,13 +101,13 @@ export default {
   /deep/ .el-dialog__body {
     position: relative;
     padding: 0 !important;
-    min-height: 535px;
+    min-height: 460px;
     overflow: hidden;
   }
 
   ::v-deep .bs-container {
     padding: 0;
-    min-height: 535px;
+    min-height: 460px;
 
     .el-table {
       max-height: calc(90vh - 350px);

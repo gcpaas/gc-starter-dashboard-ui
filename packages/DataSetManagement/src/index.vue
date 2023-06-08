@@ -613,13 +613,13 @@ export default {
 @import '~packages/assets/style/bsTheme.scss';
 @import '~packages/assets/style/zTree/treePackUp.scss';
 
-.bs-pagination {
-  ::v-deep .el-input__inner {
-    width: 110px !important;
-    border:none;
-    background: var(--ds-el-background-2);
-  }
-}
+// .bs-pagination {
+//   ::v-deep .el-input__inner {
+//     width: 110px !important;
+//     border:none;
+//     background: var(--ds-el-background-2);
+//   }
+// }
 
 .bs-container .inner-container .el-form .filter-item {
   /deep/ .el-input__inner {

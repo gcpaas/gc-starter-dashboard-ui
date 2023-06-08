@@ -39,7 +39,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
     // page页样式
     .bs-pagination {
-      padding: 0 0 4px 16px;
+      // padding: 0 0 4px 16px;
     }
 
     //输入框样式
@@ -184,71 +184,71 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
     }
     //分页样式
-    .bs-pagination {
-      .el-pagination.is-background .btn-prev,
-      .el-pagination.is-background .btn-next,
-      .el-pagination.is-background .el-pager li {
-        // color: #bfbfbf;
-        // background-color: var(--ds-el-background-2);
+    // .bs-pagination {
+    //   .el-pagination.is-background .btn-prev,
+    //   .el-pagination.is-background .btn-next,
+    //   .el-pagination.is-background .el-pager li {
+    //     // color: #bfbfbf;
+    //     // background-color: var(--ds-el-background-2);
 
-        // &:hover {
-        //   color: var(--ds-el-text);
-        //   background-color: var(--ds-el-color-primary);
-        // }
-      }
+    //     // &:hover {
+    //     //   color: var(--ds-el-text);
+    //     //   background-color: var(--ds-el-color-primary);
+    //     // }
+    //   }
 
-      .el-pagination.is-background .btn-prev:disabled,
-      .el-pagination.is-background .btn-next:disabled {
-        // color: #bfbfbf;
-        // background-color: var(--ds-el-background-2);
-      }
+    //   .el-pagination.is-background .btn-prev:disabled,
+    //   .el-pagination.is-background .btn-next:disabled {
+    //     // color: #bfbfbf;
+    //     // background-color: var(--ds-el-background-2);
+    //   }
 
-      .el-pagination__total {
-        color: #bfbfbf;
-      }
+    //   .el-pagination__total {
+    //     color: #bfbfbf;
+    //   }
 
-      .el-pagination .el-select .el-input .el-input__inner {
-        color: #bfbfbf;
+    //   .el-pagination .el-select .el-input .el-input__inner {
+    //     color: #bfbfbf;
 
-        &:hover {
-          color: var(--ds-el-color-primary);
-        }
-      }
+    //     &:hover {
+    //       color: var(--ds-el-color-primary);
+    //     }
+    //   }
 
-      .el-pagination {
-        text-align: right !important;
-        font-weight: normal !important;
-      }
+    //   .el-pagination {
+    //     text-align: right !important;
+    //     font-weight: normal !important;
+    //   }
 
-      .el-pager li {
-        padding: 0 !important;
-        min-width: 32px !important;
-        height: 32px !important;
-        line-height: 32px !important;
-        border-radius: 2px !important;
-      }
+    //   .el-pager li {
+    //     padding: 0 !important;
+    //     min-width: 32px !important;
+    //     height: 32px !important;
+    //     line-height: 32px !important;
+    //     border-radius: 2px !important;
+    //   }
 
-      .el-pager li:not(.disabled).active {
-        background-color: var(--ds-el-color-primary) !important;
-      }
+    //   .el-pager li:not(.disabled).active {
+    //     background-color: var(--ds-el-color-primary) !important;
+    //   }
 
-      .el-pagination span:not([class*=suffix]), .el-pagination button {
-        font-size: 14px !important;
-        min-width: 0 !important;
-        height: 32px !important;
-        line-height: 32px !important;
-      }
+    //   .el-pagination span:not([class*=suffix]), .el-pagination button {
+    //     font-size: 14px !important;
+    //     min-width: 0 !important;
+    //     height: 32px !important;
+    //     line-height: 32px !important;
+    //   }
 
-      .el-pagination .el-input--mini .el-input__inner {
-        height: 32px !important;
-        line-height: 32px !important;
-      }
+    //   .el-pagination .el-input--mini .el-input__inner {
+    //     height: 32px !important;
+    //     line-height: 32px !important;
+    //   }
 
-      .el-pagination__editor.el-input .el-input__inner {
-        height: 32px !important;
-      }
+    //   .el-pagination__editor.el-input .el-input__inner {
+    //     height: 32px !important;
+    //   }
 
-    }
+    // }
 
     /*解决el-scroll底部出现空白滚动条*/
     .el-scrollbar__wrap {

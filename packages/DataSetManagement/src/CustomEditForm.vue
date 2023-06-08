@@ -159,7 +159,7 @@
                 ref="targetInSql"
                 v-model="dataForm.sqlProcess"
                 :options="cOptions"
-                style="margin-top: 2px"
+                style="margin-top: 2px;border : 1px solid #e8e8e8"
               />
               <div class="bs-codemirror-bottom-text">
                 示例：
@@ -818,7 +818,7 @@ export default {
         mode: 'text/x-mysql',
         lineNumbers: true,
         lineWrapping: true,
-        theme: 'nord',
+        // theme: 'nord',
         extraKey: { Ctrl: 'autocomplete' },
         hintOptions: {
           completeSingle: true
@@ -1476,11 +1476,11 @@ export default {
   }
 }
 
-.bs-pagination {
-  ::v-deep .el-input__inner {
-    width: 110px !important;
-    border: none;
-    background: var(--ds-el-background-2);
-  }
-}
+// .bs-pagination {
+//   ::v-deep .el-input__inner {
+//     width: 110px !important;
+//     border: none;
+//     background: var(--ds-el-background-2);
+//   }
+// }
 </style>

@@ -1126,11 +1126,11 @@ export default {
   margin-bottom: 0 !important;
 }
 
-.bs-pagination {
-  ::v-deep .el-input__inner {
-    width: 110px !important;
-    border: none;
-    background: var(--ds-el-background-2);
-  }
-}
+// .bs-pagination {
+//   ::v-deep .el-input__inner {
+//     width: 110px !important;
+//     border: none;
+//     background: var(--ds-el-background-2);
+//   }
+// }
 </style>
