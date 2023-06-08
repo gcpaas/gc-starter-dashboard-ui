@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-theme-wrap">
+  <div class="db-theme-wrap">
     <el-input
       v-model="datasetNameStr"
       placeholder="请选择数据集"

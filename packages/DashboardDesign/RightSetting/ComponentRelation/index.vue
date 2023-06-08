@@ -31,8 +31,8 @@
             >
               <el-select
                 v-model="field.componentKey"
-                popper-class="bs-el-select"
-                class="bs-el-select"
+                popper-class="db-el-select"
+                class="db-el-select"
                 size="mini"
                 @change="changeComponent(...arguments, index)"
               >
@@ -274,7 +274,7 @@ export default {
 .design-tab-warp {
   padding: 10px;
 }
-/deep/.el-tabs--top {
+/deep/.el-tadb--top {
   height: 100%;
 }
 /deep/ .el-tabs__content {
@@ -337,15 +337,15 @@ export default {
   }
 }
 .select-item-active {
-  border: 1px solid var(--ds-el-color-primary);
-  background: var(--ds-el-background-3);
+  border: 1px solid var(--db-el-color-primary);
+  background: var(--db-el-background-3);
 }
 // 修改设置面板样式
 .data-setting-box{
   .data-setting-data-box{
     .lc-field-head{
       height: 30px;
-      background-color: var(--ds-el-background-3);
+      background-color: var(--db-el-background-3);
       .lc-field-title{
         position: relative;
         padding-left: 12px;
@@ -359,7 +359,7 @@ export default {
           content: '';
           width: 4px;
           height: 14px;
-          background-color: var(--ds-el-color-primary);
+          background-color: var(--db-el-color-primary);
         }
       }
     }

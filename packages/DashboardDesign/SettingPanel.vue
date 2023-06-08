@@ -2,12 +2,12 @@
   <!-- <transition name="slide-fade"> -->
   <div
     v-if="rightVisiable"
-    class="bs-right-panel-wrap"
+    class="db-right-panel-wrap"
   >
-    <div class="bs-set-title">
-      <span class="bs-set-title-text">{{ chartSettingShow ? `${title}设置` : '仪表盘设置' }}</span>
+    <div class="db-set-title">
+      <span class="db-set-title-text">{{ chartSettingShow ? `${title}设置` : '仪表盘设置' }}</span>
     </div>
-    <div :class="!rightVisiable ? 'bs-page-right bs-page-right-fold' : 'bs-page-right'">
+    <div :class="!rightVisiable ? 'db-page-right db-page-right-fold' : 'db-page-right'">
       <RightSetting
         v-if="chartSettingShow"
         @closeRightPanel="close"
@@ -86,21 +86,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bs-right-panel-wrap {
+.db-right-panel-wrap {
   display: flex;
   flex-direction: column;
-  background-color: var(--ds-background-1);
+  background-color: var(--db-background-1);
 
-  .bs-set-title {
-    background-color: var(--ds-background-2);
-    color: var(--ds-el-title);
+  .db-set-title {
+    background-color: var(--db-background-2);
+    color: var(--db-el-title);
     height: 40px;
     font-size: 14px;
-    border-bottom: 2px solid var(--ds-el-background-3);
+    border-bottom: 2px solid var(--db-el-background-3);
     display: flex;
     align-items: center;
 
-    .bs-set-title-text {
+    .db-set-title-text {
       position: relative;
       padding-left: 12px;
       display: inline-block;
@@ -112,12 +112,12 @@ export default {
         content: '';
         width: 4px;
         height: 14px;
-        background-color: var(--ds-el-color-primary);
+        background-color: var(--db-el-color-primary);
       }
     }
   }
 
-  .bs-folder-wrap {
+  .db-folder-wrap {
     width: 20px;
     position: relative;
 
@@ -137,11 +137,11 @@ export default {
     }
   }
 
-  .bs-page-right {
+  .db-page-right {
     height: calc(100vh - 80px);
     width: 320px;
     box-sizing: border-box;
-    background-color: var(--ds-background-2);
+    background-color: var(--db-background-2);
 
     .config-title {
       display: flex;
@@ -179,7 +179,7 @@ export default {
     }
   }
 
-  .bs-page-right-fold {
+  .db-page-right-fold {
     width: 0;
     overflow: hidden;
   }

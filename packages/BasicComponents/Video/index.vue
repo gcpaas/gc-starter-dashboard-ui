@@ -1,7 +1,7 @@
 <template>
   <div
     style="width: 100%; height: 100%"
-    class="bs-design-wrap"
+    class="db-design-wrap"
   >
     <video-player
       ref="videoPlayer1"
@@ -83,7 +83,7 @@ export default {
 
 <style lang="scss" scoped>
   @import '~packages/assets/style/chartStyle.scss';
-.bs-design-wrap {
+.db-design-wrap {
   background-color: transparent;
   overflow-y: hidden;
   .videoPlayer {

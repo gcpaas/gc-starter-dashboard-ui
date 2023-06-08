@@ -13,7 +13,7 @@
     :before-close="handleClose"
     width="800px"
     append-to-body
-    class="bs-dialog-wrap bs-el-dialog"
+    class="db-dialog-wrap db-el-dialog"
   >
     <el-form
       ref="form"
@@ -21,7 +21,7 @@
     >
       <el-table
         :data="configMapConfig.maps"
-        class="bs-table bs-el-table"
+        class="db-table db-el-table"
       >
         <el-empty />
         <el-table-column
@@ -31,8 +31,8 @@
           <template #default="scope">
             <el-select
               v-model="configMapConfig.maps[scope.$index].sourceField"
-              popper-class="bs-el-select"
-              class="bs-el-select"
+              popper-class="db-el-select"
+              class="db-el-select"
             >
               <el-option
                 v-for="sourceField in sourceFieldList"
@@ -50,8 +50,8 @@
           <template #default="scope">
             <el-select
               v-model="configMapConfig.maps[scope.$index].queryRule"
-              popper-class="bs-el-select"
-              class="bs-el-select"
+              popper-class="db-el-select"
+              class="db-el-select"
             >
               <el-option
                 v-for="operator in operatorList"
@@ -69,8 +69,8 @@
           <template #default="scope">
             <el-select
               v-model="configMapConfig.maps[scope.$index].targetField"
-              popper-class="bs-el-select"
-              class="bs-el-select"
+              popper-class="db-el-select"
+              class="db-el-select"
             >
               <el-option
                 v-for="targetField in targetFieldList"
@@ -111,7 +111,7 @@
       class="dialog-footer"
     >
       <el-button
-        class="bs-el-button-default"
+        class="db-el-button-default"
         @click="handleClose"
       >
         取消

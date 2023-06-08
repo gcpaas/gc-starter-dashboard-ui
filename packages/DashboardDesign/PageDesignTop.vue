@@ -421,7 +421,7 @@ export default {
 .page-top-setting-wrap {
   position: relative;
   height: 40px;
-  background-color: var(--ds-background-header);
+  background-color: var(--db-background-header);
   display: flex;
   align-items: center;
   justify-content: space-between;

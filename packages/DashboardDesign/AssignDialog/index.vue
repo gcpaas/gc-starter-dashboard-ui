@@ -6,7 +6,7 @@
     :modal="true"
     :modal-append-to-body="false"
     :appen-to-body="true"
-    class="bs-dialog-wrap bs-el-dialog"
+    class="db-dialog-wrap db-el-dialog"
   >
     <div class="content">
       <div class="top">

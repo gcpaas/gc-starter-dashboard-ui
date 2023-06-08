@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-setting-wrap">
+  <div class="db-setting-wrap">
     <el-form
       ref="form"
       :model="config"
@@ -53,8 +53,8 @@
         <el-form-item label="渐变色方向">
           <el-select
             v-model="config.customize.gradientDirection"
-            popper-class="bs-el-select"
-            class="bs-el-select"
+            popper-class="db-el-select"
+            class="db-el-select"
           >
             <el-option
               v-for="item in gradientDirection"
@@ -74,13 +74,13 @@
         <el-form-item label="边框线宽度">
           <el-input-number
             v-model="config.customize.borderWidth"
-            class="bs-el-input-number"
+            class="db-el-input-number"
           />
         </el-form-item>
         <el-form-item label="字体大小">
           <el-input-number
             v-model="config.customize.fontSize"
-            class="bs-el-input-number"
+            class="db-el-input-number"
             :min="12"
             :step="1"
           />
@@ -88,7 +88,7 @@
         <el-form-item label="字体粗度">
           <el-input-number
             v-model="config.customize.fontWeight"
-            class="bs-el-input-number"
+            class="db-el-input-number"
             :min="400"
             :step="1"
           />
@@ -99,7 +99,7 @@
         >
           <el-slider
             v-model="config.customize.opacity"
-            class="bs-slider bs-el-input-number"
+            class="db-slider db-el-input-number"
             :min="0"
             :max="100"
             show-input

@@ -1,11 +1,11 @@
 <template>
   <div
     v-if="!pageLoading"
-    class="bs-preview-wrap"
+    class="db-preview-wrap"
     :style="previewWrapStyle"
   >
     <div
-      class="bs-render-wrap render-theme-wrap bs-scrollbar"
+      class="db-render-wrap render-theme-wrap db-scrollbar"
       :style="renderStyle"
     >
       <grid-layout
@@ -236,8 +236,8 @@ export default {
           this.innerHeight = window.innerHeight
           this.innerWidth = window.innerWidth
         }
-        // 设置bs-preview-wrap的高度为父元素的高度
-        const previewWrap = document.querySelector('.bs-preview-wrap')
+        // 设置db-preview-wrap的高度为父元素的高度
+        const previewWrap = document.querySelector('.db-preview-wrap')
         if (previewWrap) {
           previewWrap.style.height = this.innerHeight + 'px'
           previewWrap.style.width = this.innerWidth + 'px'
@@ -328,13 +328,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bs-preview-wrap {
+.db-preview-wrap {
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: auto;
 
-  .bs-render-wrap {
+  .db-render-wrap {
     position: relative;
     background-size: cover;
     overflow: auto

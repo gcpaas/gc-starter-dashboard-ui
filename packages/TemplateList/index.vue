@@ -122,7 +122,7 @@ export default {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning',
-          customClass: 'bs-el-message-box'
+          customClass: 'db-el-message-box'
         }).then(() => {
           const className = this.type === 'com.gccloud.dashboard.core.module.manage.dto.DashboardPageDTO'
           this.innerLoading = true

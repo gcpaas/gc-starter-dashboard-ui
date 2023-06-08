@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-setting-wrap">
+  <div class="db-setting-wrap">
     <el-form
       ref="form"
       :model="config"
@@ -49,8 +49,8 @@
                 <el-select
                   v-else-if="setting.type === 'select'"
                   v-model="setting.value"
-                  popper-class="bs-el-select"
-                  class="bs-el-select"
+                  popper-class="db-el-select"
+                  class="db-el-select"
                   :placeholder="`请选择${setting.label}`"
                   clearable
                 >
@@ -78,7 +78,7 @@
                       v-for="(colorItem, colorItemIndex) in colors"
                       :key="colorItemIndex"
                       v-model="setting.value[colorItemIndex]"
-                      popper-class="bs-el-color-picker"
+                      popper-class="db-el-color-picker"
                       show-alpha
                       class="start-color"
                     />
@@ -98,7 +98,7 @@
                 <el-color-picker
                   v-else-if="setting.type === 'colorPicker'"
                   v-model="setting.value"
-                  popper-class="bs-el-color-picker"
+                  popper-class="db-el-color-picker"
                   show-alpha
                 />
                 <!-- 渐变色设置 -->
@@ -109,7 +109,7 @@
                 <el-input-number
                   v-else-if="setting.type === 'inputNumber'"
                   v-model="setting.value"
-                  class="bs-el-input-number"
+                  class="db-el-input-number"
                   :step="setting.step || 1"
                 />
                 <el-radio-group
@@ -291,11 +291,11 @@ export default {
     content: '';
     width: 4px;
     height: 14px;
-    background-color: var(--ds-el-color-primary);
+    background-color: var(--db-el-color-primary);
   }
 }
 
 ::v-deep .el-color-picker__trigger {
-  border-color: var(--ds-el-border);
+  border-color: var(--db-el-border);
 }
 </style>

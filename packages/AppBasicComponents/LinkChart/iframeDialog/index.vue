@@ -6,7 +6,7 @@
     :modal="true"
     :modal-append-to-body="false"
     :appen-to-body="true"
-    class="bs-dialog-wrap bs-el-dialog"
+    class="db-dialog-wrap db-el-dialog"
     @close="close"
   >
     <div class="el-dialog-div" :style="{height: dialogH}">

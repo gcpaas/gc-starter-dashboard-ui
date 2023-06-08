@@ -1,7 +1,7 @@
 <template>
   <div
-    class="bs-design-wrap"
-    :class="`bs-current-time-${customTheme}`"
+    class="db-design-wrap"
+    :class="`db-current-time-${customTheme}`"
   >
     <div
       :class="[
@@ -78,7 +78,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "~packages/BasicComponents/fonts/index.css";
-.bs-design-wrap{
+.db-design-wrap{
   width: 100%;
 }
 .time {

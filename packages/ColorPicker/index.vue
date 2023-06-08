@@ -8,7 +8,7 @@
     <el-color-picker
       slot="append"
       v-model="localValue"
-      popper-class="bs-el-color-picker"
+      popper-class="db-el-color-picker"
       show-alpha
       :predefine="predefineColors"
     />
@@ -77,7 +77,7 @@ export default {
   .el-input-group__append {
     width: 32.5px;
     height: 32.5px;
-    background-color: var(--ds-background-1);
+    background-color: var(--db-background-1);
 
     .el-color-picker--mini {
       position: absolute;
@@ -89,8 +89,8 @@ export default {
   ::v-deep .el-color-picker__trigger {
     width: 32.5px;
     height: 32.5px;
-    border-color: var(--ds-el-border);
-    background-color: var(--ds-background-1);
+    border-color: var(--db-el-border);
+    background-color: var(--db-background-1);
   }
 }
 </style>

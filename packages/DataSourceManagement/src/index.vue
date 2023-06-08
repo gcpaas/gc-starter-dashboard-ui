@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-container">
+  <div class="db-container">
     <!--数据源查看-->
     <div class="inner-container">
       <el-form
@@ -9,7 +9,7 @@
         <el-form-item class="filter-input filter-item">
           <el-input
             v-model="searchForm.sourceName"
-            class="bs-el-input"
+            class="db-el-input"
             placeholder="请输入数据源名称"
             clearable
             maxlength="200"
@@ -27,19 +27,19 @@
         </el-form-item>
         <el-form-item class="filter-item">
           <el-button
-            class="bs-el-button-default"
+            class="db-el-button-default"
             @click="addSource"
           >
             新增
           </el-button>
         </el-form-item>
       </el-form>
-      <div class="bs-table-box">
+      <div class="db-table-box">
         <el-table
           v-table
           v-loading="searchLoading"
           height="0"
-          class="bs-el-table bs-scrollbar"
+          class="db-el-table db-scrollbar"
           :element-loading-text="loadingText"
           :data="dataSourceList"
           @current-change="handleCurrentChange"
@@ -81,21 +81,21 @@
           >
             <template slot-scope="scope">
               <el-button
-                class="bs-el-button-default"
+                class="db-el-button-default"
                 :loading="testBtnLoading.includes(scope.row.id)"
                 @click="sourceLinkTest(scope.row)"
               >
                 测试
               </el-button>
               <el-button
-                class="bs-el-button-default"
+                class="db-el-button-default"
                 :disabled="scope.row.editable == 1 && !appCode"
                 @click="viewSource(scope.row)"
               >
                 编辑
               </el-button>
               <el-button
-                class="bs-el-button-default"
+                class="db-el-button-default"
                 :disabled="scope.row.editable == 1 && !appCode"
                 @click="handleDelete(scope.row)"
               >
@@ -105,10 +105,10 @@
           </el-table-column>
         </el-table>
       </div>
-      <div class="bs-pagination">
+      <div class="db-pagination">
         <el-pagination
-          class="bs-el-pagination"
-          popper-class="bs-el-pagination"
+          class="db-el-pagination"
+          popper-class="db-el-pagination"
           :current-page="current"
           :page-sizes="[10, 20, 50, 100]"
           :page-size="size"
@@ -255,7 +255,7 @@ export default {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning',
-        customClass: 'bs-el-message-box'
+        customClass: 'db-el-message-box'
       }).then(() => {
         sourceRemove(row.id).then((r) => {
           this.$message.success('删除成功')
@@ -282,12 +282,12 @@ export default {
 <style lang="scss" scoped>
 @import '~packages/assets/style/bsTheme.scss';
 
-// .bs-pagination {
+// .db-pagination {
 //   ::v-deep .el-input__inner {
 
 //     width: 110px !important;
 //     border: none;
-//     background: var(--ds-el-background-2);
+//     background: var(--db-el-background-2);
 //   }
 // }
 </style>

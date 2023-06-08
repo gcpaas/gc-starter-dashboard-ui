@@ -48,7 +48,7 @@
         >
           <el-input-number
             v-model="config.customize.fontWeight"
-            class="bs-el-input-number"
+            class="db-el-input-number"
             placeholder="请输入时间字体权重"
           />
         </el-form-item>

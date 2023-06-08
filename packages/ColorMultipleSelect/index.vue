@@ -7,8 +7,8 @@
   <el-select
     ref="colorSelect"
     v-model="myColor"
-    class="bs-el-select select"
-    popper-class="bs-el-select"
+    class="db-el-select select"
+    popper-class="db-el-select"
     placeholder=""
     style="width: 100%"
     @change="handleChange"

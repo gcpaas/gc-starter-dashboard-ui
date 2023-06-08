@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-setting-wrap">
+  <div class="db-setting-wrap">
     <el-form
       ref="form"
       :model="config"
@@ -50,7 +50,7 @@
             <el-form-item label="卡片边框粗度">
               <el-input-number
                 v-model="config.customize.borderWidth"
-                class="bs-el-input-number"
+                class="db-el-input-number"
                 :min="0"
                 :step="1"
               />
@@ -58,7 +58,7 @@
             <el-form-item label="字体大小">
               <el-input-number
                 v-model="config.customize.fontSize"
-                class="bs-el-input-number"
+                class="db-el-input-number"
                 :min="12"
                 :step="1"
               />
@@ -66,7 +66,7 @@
             <el-form-item label="卡片宽度">
               <el-input-number
                 v-model="config.customize.width"
-                class="bs-el-input-number"
+                class="db-el-input-number"
                 :min="0"
                 :step="1"
               />
@@ -74,7 +74,7 @@
             <el-form-item label="卡片圆角">
               <el-input-number
                 v-model="config.customize.borderRadius"
-                class="bs-el-input-number"
+                class="db-el-input-number"
                 :min="0"
                 :step="1"
               />
@@ -82,7 +82,7 @@
             <el-form-item label="逗号分隔位置">
               <el-input-number
                 v-model="config.customize.formatter"
-                class="bs-el-input-number"
+                class="db-el-input-number"
                 :min="0"
                 :max="100"
                 :step="1"
@@ -91,7 +91,7 @@
             <el-form-item label="字体粗细">
               <el-input-number
                 v-model="config.customize.fontWeight"
-                class="bs-el-input-number"
+                class="db-el-input-number"
                 :min="0"
                 :step="1"
               />
@@ -99,7 +99,7 @@
             <el-form-item label="数字位数">
               <el-input-number
                 v-model="config.customize.numberDigits"
-                class="bs-el-input-number"
+                class="db-el-input-number"
                 :min="0"
                 :step="1"
               />
@@ -107,7 +107,7 @@
             <el-form-item label="卡片距离">
               <el-input-number
                 v-model="config.customize.marginRight"
-                class="bs-el-input-number"
+                class="db-el-input-number"
                 :min="0"
                 :step="1"
               />

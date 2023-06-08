@@ -1,7 +1,7 @@
 <template>
   <div
     style="width: 100%;height: 100%"
-    class="bs-design-wrap bs-custom-component"
+    class="db-design-wrap db-custom-component"
     :class="{'light-theme':customTheme === 'light','auto-theme':customTheme !=='light'}"
   >
     <div

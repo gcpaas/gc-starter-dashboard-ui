@@ -1,6 +1,6 @@
 <template>
-  <div class="bs-overall-wrap">
-    <div class="bs-overall-setting-wrap">
+  <div class="db-overall-wrap">
+    <div class="db-overall-setting-wrap">
       <el-form
         ref="form"
         v-model="form"
@@ -18,7 +18,7 @@
           </el-button>
           <el-image
             v-show="form.bg"
-            class="bg-img bs-el-img"
+            class="bg-img db-el-img"
             :src="form.bg"
             fit="cover"
             @click="$refs.bgImg.init()"
@@ -310,12 +310,12 @@ export default {
 
 <style lang="scss" scoped>
   @import '~packages/assets/style/bsTheme.scss';
-.bs-overall-wrap {
+.db-overall-wrap {
   position: relative;
   height: 100%;
-  background: var(--ds-background-2);
+  background: var(--db-background-2);
 
-  .bs-overall-setting-wrap {
+  .db-overall-setting-wrap {
     padding: 16px;
   }
 
@@ -326,13 +326,13 @@ export default {
   /deep/ .el-textarea__inner,
   /deep/ .el-input-group__append,
   /deep/ .el-radio__label {
-    // background: var(--ds-el-background-1);
-    // color: var(--ds-el-text);
+    // background: var(--db-el-background-1);
+    // color: var(--db-el-text);
     // border: 0 !important;
   }
 
   /deep/ .el-form-item__label {
-    color: var(--ds-el-title);
+    color: var(--db-el-title);
     font-size: 12px;
   }
 
@@ -341,19 +341,19 @@ export default {
   }
 
   /deep/ .el-table {
-    background: var(--ds-el-background-1);
-    // border-bottom: 1px solid var(--ds-el-title);
+    background: var(--db-el-background-1);
+    // border-bottom: 1px solid var(--db-el-title);
   }
 
   /deep/ .el-table__cell {
-    background: var(--ds-el-background-1) !important;
-    color: var(--ds-el-title) !important;
-    // border-color: var(--ds-el-text) !important;
+    background: var(--db-el-background-1) !important;
+    color: var(--db-el-title) !important;
+    // border-color: var(--db-el-text) !important;
   }
 
   /deep/ .el-input__inner{
     &:placeholder{
-      color: var(--ds-el-text);
+      color: var(--db-el-text);
     }
   }
 }
@@ -394,7 +394,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--ds-background-1);
+  background: var(--db-background-1);
 
   .el-button {
     margin-right: 10px;
@@ -476,11 +476,11 @@ export default {
 /deep/ .el-color-picker--mini .el-color-picker__trigger {
   height: 32px;
   width: 32px;
-  border: 1px solid var(--ds-el-background-1);
-  background: var(--ds-el-background-1);
+  border: 1px solid var(--db-el-background-1);
+  background: var(--db-el-background-1);
 
   .el-color-picker__color {
-    background: var(--ds-el-background-1);
+    background: var(--db-el-background-1);
     // border: 0 !important;
   }
 }

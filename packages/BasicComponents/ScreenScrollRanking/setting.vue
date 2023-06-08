@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-setting-wrap">
+  <div class="db-setting-wrap">
     <el-form
       ref="form"
       :model="config"
@@ -46,7 +46,7 @@
             <el-input-number
               v-model="config.customize.rowNum"
               :precision="0"
-              class="bs-el-input-number"
+              class="db-el-input-number"
               label="请输入行数"
             />
           </el-form-item>

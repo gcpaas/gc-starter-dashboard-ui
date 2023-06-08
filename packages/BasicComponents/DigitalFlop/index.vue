@@ -1,7 +1,7 @@
 <template>
   <div
     style="width: 100%; height: 100%"
-    class="bs-design-wrap"
+    class="db-design-wrap"
   >
     <div class="content">
       <div
@@ -117,7 +117,7 @@ export default {
 
 <style lang="scss" scoped>
   @import '~packages/assets/style/chartStyle.scss';
-.bs-design-wrap {
+.db-design-wrap {
   .content {
     display: flex;
     flex-direction: row;

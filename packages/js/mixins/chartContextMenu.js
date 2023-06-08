@@ -67,7 +67,7 @@ export default {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning',
-        customClass: 'bs-el-message-box'
+        customClass: 'db-el-message-box'
       }).then(() => {
         this.delItem(config.code)
       })
@@ -78,7 +78,7 @@ export default {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning',
-        customClass: 'bs-el-message-box'
+        customClass: 'db-el-message-box'
       }).then(() => {
         // 找到和本组件group相同的组件 删除
         const codes = this.chartList.filter(_chart => _chart.group === config.group && config.group).map(_chart => _chart.code)
@@ -148,7 +148,7 @@ export default {
           }
         ],
         event, // 鼠标事件信息
-        customClass: 'bs-context-menu-class', // 自定义菜单 class
+        customClass: 'db-context-menu-class', // 自定义菜单 class
         zIndex: 999, // 菜单样式 z-index
         minWidth: 150 // 主菜单最小宽度
       })

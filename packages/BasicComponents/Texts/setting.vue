@@ -4,7 +4,7 @@
  * @Author: shiyi
 -->
 <template>
-  <div class="bs-setting-wrap">
+  <div class="db-setting-wrap">
     <el-form
       ref="form"
       label-width="100px"
@@ -45,7 +45,7 @@
         >
           <el-input-number
             v-model="config.customize.fontWeight"
-            class="bs-el-input-number"
+            class="db-el-input-number"
             placeholder="请输入标题字体权重"
           />
         </el-form-item>
@@ -98,7 +98,7 @@ export default {
 
 <style lang="scss" scoped>
   @import "../~packages/assets/style/settingWrap.scss";
-  .bs-setting-wrap{
+  .db-setting-wrap{
     padding-top: 16px;
   }
   .lc-field-body {

@@ -1,7 +1,7 @@
 <template>
   <div
     v-loading="loading"
-    class="bs-remote-preview"
+    class="db-remote-preview"
     element-loading-text="远程组件加载中..."
   >
     <component
@@ -133,7 +133,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bs-remote-preview {
+.db-remote-preview {
   padding: 16px;
   position: relative;
   height: 100%;

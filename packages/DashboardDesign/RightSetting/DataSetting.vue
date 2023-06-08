@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bs-setting-wrap"
+    class="db-setting-wrap"
     @click.stop
   >
     <el-form
@@ -28,7 +28,7 @@
             >
               <el-radio-group
                 v-model="config.dataSource.dataSetType"
-                class="bs-radio-wrap"
+                class="db-radio-wrap"
               >
                 <el-radio
                   :label="'1'"
@@ -62,8 +62,8 @@
             >
               <el-select
                 v-model="config.dataSource.businessKey"
-                popper-class="bs-el-select"
-                class="bs-el-select"
+                popper-class="db-el-select"
+                class="db-el-select"
                 clearable
                 @change="changeCacheBusinessKey"
               >
@@ -119,8 +119,8 @@
               <el-drag-select
                 v-if="config.option.displayOption.dimensionField.enable && config.option.displayOption.dimensionField.multiple"
                 v-model="config.dataSource.dimensionFieldList"
-                class="bs-el-select"
-                popper-class="bs-el-select"
+                class="db-el-select"
+                popper-class="db-el-select"
                 clearable
                 :multiple="config.option.displayOption.dimensionField.multiple"
                 @change="dimensionFieldListChange"
@@ -145,8 +145,8 @@
               <el-select
                 v-else
                 v-model="config.dataSource.dimensionField"
-                class="bs-el-select"
-                popper-class="bs-el-select"
+                class="db-el-select"
+                popper-class="db-el-select"
                 clearable
               >
                 <el-option
@@ -175,8 +175,8 @@
             >
               <el-select
                 v-model="config.dataSource.metricField"
-                class="bs-el-select"
-                popper-class="bs-el-select"
+                class="db-el-select"
+                popper-class="db-el-select"
                 clearable
               >
                 <el-option
@@ -208,8 +208,8 @@
               >
                 <el-select
                   v-if="setting.type === 'select'"
-                  class="bs-el-select select"
-                  popper-class="bs-el-select"
+                  class="db-el-select select"
+                  popper-class="db-el-select"
                   :value="setting.value"
                   clearable
                   :multiple="setting.multiple"
@@ -306,8 +306,8 @@
                 <template slot-scope="scope">
                   <el-select
                     v-model="scope.row.align"
-                    class="bs-el-select"
-                    popper-class="bs-el-select"
+                    class="db-el-select"
+                    popper-class="db-el-select"
                     clearable
                     placeholder="请选择对齐方式"
                   >
@@ -347,8 +347,8 @@
             >
               <el-select
                 v-model="config.customize.value"
-                class="bs-el-select"
-                popper-class="bs-el-select"
+                class="db-el-select"
+                popper-class="db-el-select"
                 clearable
               >
                 <el-option
@@ -374,8 +374,8 @@
             >
               <el-select
                 v-model="config.customize.name"
-                class="bs-el-select"
-                popper-class="bs-el-select"
+                class="db-el-select"
+                popper-class="db-el-select"
                 clearable
               >
                 <el-option
@@ -401,8 +401,8 @@
             >
               <el-select
                 v-model="config.customize.xaxis"
-                class="bs-el-select"
-                popper-class="bs-el-select"
+                class="db-el-select"
+                popper-class="db-el-select"
                 clearable
               >
                 <el-option
@@ -428,8 +428,8 @@
             >
               <el-select
                 v-model="config.customize.yaxis"
-                class="bs-el-select"
-                popper-class="bs-el-select"
+                class="db-el-select"
+                popper-class="db-el-select"
                 clearable
               >
                 <el-option
@@ -568,8 +568,8 @@
             >
               <el-select
                 v-model="config.dataSource.pageSize"
-                class="bs-el-select"
-                popper-class="bs-el-select"
+                class="db-el-select"
+                popper-class="db-el-select"
                 filterable
                 allow-create
                 default-first-option
@@ -870,7 +870,7 @@ export default {
   ::v-deep .el-tag__close.el-icon-close {
     top: -1px;
     &:hover {
-      background-color:var(--ds-el-color-primary);
+      background-color:var(--db-el-color-primary);
     }
   }
   .opt-wrap{
@@ -903,7 +903,7 @@ export default {
     .data-setting-data-box{
       .lc-field-head{
         height: 30px;
-        background-color: var(--ds-el-background-3);
+        background-color: var(--db-el-background-3);
         .lc-field-title{
           position: relative;
           padding-left: 12px;
@@ -917,7 +917,7 @@ export default {
             content: '';
             width: 4px;
             height: 14px;
-            background-color: var(--ds-el-color-primary);
+            background-color: var(--db-el-color-primary);
           }
         }
       }

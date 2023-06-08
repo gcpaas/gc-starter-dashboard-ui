@@ -80,10 +80,10 @@ export default {
     flex-direction: column;
     overflow: hidden;
     box-sizing: border-box;
-    background-color: var(--ds-background-1);
+    background-color: var(--db-background-1);
 
     .top-title {
-      color: var(--ds-el-title);
+      color: var(--db-el-title);
       padding: 8px 8px 8px 0;
       line-height: 20px;
       border-bottom: 1px solid #f5f5f5;
@@ -93,7 +93,7 @@ export default {
       justify-content: space-between;
       span {
         display: inline-block;
-        border-left: 3px solid var(--ds-el-color-primary);
+        border-left: 3px solid var(--db-el-color-primary);
         padding-left: 16px;
       }
     }

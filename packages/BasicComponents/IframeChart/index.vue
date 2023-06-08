@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bs-design-wrap"
+    class="db-design-wrap"
     :class="{ 'no-pointer': isDesign }"
   >
     <div class="iframe-wrap">
@@ -69,7 +69,7 @@ export default {
 
 <style lang="scss" scoped>
   @import '~packages/assets/style/chartStyle.scss';
-.bs-design-wrap {
+.db-design-wrap {
   .iframe-wrap {
     height: 100%;
   }

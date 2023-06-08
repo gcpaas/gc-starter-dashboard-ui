@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-setting-wrap">
+  <div class="db-setting-wrap">
     <el-form
       ref="form"
       :model="config"
@@ -42,8 +42,8 @@
           <el-form-item label="视频格式">
             <el-select
               v-model="config.customize.videoType"
-              popper-class="bs-el-select"
-              class="bs-el-select"
+              popper-class="db-el-select"
+              class="db-el-select"
             >
               <el-option
                 v-for="item in videoTypeList"

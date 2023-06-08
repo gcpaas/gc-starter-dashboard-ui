@@ -1,7 +1,7 @@
 <template>
   <div
-    class="bs-design-wrap"
-    :class="`bs-text-${customTheme}`"
+    class="db-design-wrap"
+    :class="`db-text-${customTheme}`"
     @click="linkHandle"
   >
     <div
@@ -69,7 +69,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .bs-design-wrap{
+  .db-design-wrap{
     width: 100%;
   }
   .content-box{

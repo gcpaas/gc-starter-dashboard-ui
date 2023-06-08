@@ -1,7 +1,7 @@
 <template>
   <div
     style="width: 100%; height: 100%"
-    class="bs-design-wrap"
+    class="db-design-wrap"
   >
     <div
       :key="updateKey"
@@ -75,7 +75,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bs-design-wrap {
+.db-design-wrap {
   position: relative;
   width: 100%;
   height: 100%;

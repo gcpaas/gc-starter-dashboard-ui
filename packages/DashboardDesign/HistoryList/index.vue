@@ -9,7 +9,7 @@
     :modal="true"
     :modal-append-to-body="false"
     :appen-to-body="true"
-    class="bs-dialog-wrap bs-el-dialog"
+    class="db-dialog-wrap db-el-dialog"
   >
     <div class="layer-list-wrap">
       <!-- el-table 三列，动作，时间，操作。操作栏中是回退 -->
@@ -17,25 +17,25 @@
         :data="chartList"
         border
         style="width: 100%"
-        class="bs-el-table"
+        class="db-el-table"
         :row-class-name="tableRowClassName"
       >
         <el-table-column
           prop="timelineTitle"
           label="动作"
-          class-name="bs-el-table-column"
+          class-name="db-el-table-column"
         />
         <el-table-column
           prop="updateTime"
           label="时间"
           width="180"
-          class-name="bs-el-table-column"
+          class-name="db-el-table-column"
         />
         <el-table-column
           prop="operation"
           label="操作"
           width="100"
-          class-name="bs-el-table-column"
+          class-name="db-el-table-column"
         >
           <template slot-scope="scope">
             <el-button
@@ -54,7 +54,7 @@
       class="dialog-footer"
     >
       <el-button
-        class="bs-el-button-default"
+        class="db-el-button-default"
         @click="dialogVisible = false"
       >
         取消
@@ -112,10 +112,10 @@ export default {
 @import '~packages/assets/style/bsTheme.scss';
 .layer-list-wrap {
   /deep/ .choosed-row {
-    .bs-el-table-column {
-      border-color: var(--ds-el-border) !important;
-      background: var(--ds-background-2) !important;
-      background-color: var(--ds-background-2) !important;
+    .db-el-table-column {
+      border-color: var(--db-el-border) !important;
+      background: var(--db-background-2) !important;
+      background-color: var(--db-background-2) !important;
       opacity: 0.7;
     }
   }

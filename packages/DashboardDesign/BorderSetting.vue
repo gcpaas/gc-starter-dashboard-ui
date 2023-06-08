@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-setting-wrap">
+  <div class="db-setting-wrap">
     <el-form
       ref="form"
       :model="config"
@@ -87,8 +87,8 @@
           >
             <el-select
               v-model="config.customize.gradientDirection"
-              popper-class="bs-el-select"
-              class="bs-el-select"
+              popper-class="db-el-select"
+              class="db-el-select"
             >
               <el-option
                 v-for="item in gradientDirection"
@@ -101,7 +101,7 @@
           <el-form-item label="不透明度">
             <el-input-number
               v-model="config.customize.opacity"
-              class="bs-el-input-number"
+              class="db-el-input-number"
               :min="0"
               :max="100"
               :step="10"

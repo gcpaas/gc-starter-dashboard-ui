@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="!pageLoading"
-    class="bs-page-design-wrap"
+    class="db-page-design-wrap"
   >
     <PageTopSetting
       v-show="headerShow"
@@ -355,7 +355,7 @@ export default {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning',
-        customClass: 'bs-el-message-box'
+        customClass: 'db-el-message-box'
       })
         .then(() => {
           this.changeLayout([])
@@ -426,7 +426,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.bs-page-design-wrap {
+.db-page-design-wrap {
   overflow: auto;
 
   .drag-wrap {
@@ -450,14 +450,14 @@ export default {
         justify-content: flex-end;
         align-items: center;
         z-index: 1000;
-        background-color: var(--ds-background-2);
+        background-color: var(--db-background-2);
 
-        .bs-select-wrap {
+        .db-select-wrap {
           margin-right: 16px;
         }
 
         .select-zoom-text {
-          color: var(--ds-el-title);
+          color: var(--db-el-title);
           margin-right: 16px;
         }
 

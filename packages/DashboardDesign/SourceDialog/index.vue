@@ -6,7 +6,7 @@
     :modal="true"
     :modal-append-to-body="false"
     :appen-to-body="true"
-    class="bs-dialog-wrap bs-el-dialog"
+    class="db-dialog-wrap db-el-dialog"
     @closed="close"
   >
     <div class="content">
@@ -14,7 +14,7 @@
         <div class="top-search-wrap">
           <el-input
             v-model="searchKey"
-            class="bs-el-input"
+            class="db-el-input"
             placeholder="请输入图片名称"
             prefix-icon="el-icon-search"
             clearable
@@ -23,8 +23,8 @@
           />
           <el-select
             v-model="code"
-            class="bs-el-select"
-            popper-class="bs-el-select"
+            class="db-el-select"
+            popper-class="db-el-select"
             placeholder="请选择类型"
             clearable
             @change="reSearch"
@@ -48,7 +48,7 @@
         <div
           v-if="list.length !== 0"
           v-loading="loading"
-          class="list-wrap bs-scrollbar"
+          class="list-wrap db-scrollbar"
           element-loading-text="加载中"
           :style="{
             display: gridComputed ? 'grid' : 'flex',
@@ -101,10 +101,10 @@
           暂无数据
         </div>
         <div class="footer-pagination-wrap">
-          <div class="bs-pagination">
+          <div class="db-pagination">
             <el-pagination
-              class="bs-el-pagination"
-              popper-class="bs-el-pagination"
+              class="db-el-pagination"
+              popper-class="db-el-pagination"
               background
               layout="total, prev, pager, next, sizes"
               :page-size="size"
@@ -125,7 +125,7 @@
       class="dialog-footer"
     >
       <el-button
-        class="bs-el-button-default"
+        class="db-el-button-default"
         @click="dialogVisible = false"
       >
         取消
@@ -220,7 +220,8 @@ export default {
   height: 100%;
   padding: 16px;
   color: #9ea9b2;
-  background-color: var(--ds-background-leftPanel) !important;
+  border: 1px solid #e8e8e8;
+  background-color: var(--db-background-1) !important;
 
   .top-search-wrap {
     display: flex;
@@ -290,8 +291,8 @@ export default {
       }
 
       .focus {
-        color: var(--ds-el-text) !important;
-        border: 1px solid var(--ds-el-color-primary) !important;
+        color: var(--db-el-text) !important;
+        border: 1px solid var(--db-el-color-primary) !important;
       }
 
       .dashboard-card-inner {
@@ -299,13 +300,13 @@ export default {
         width: 100%;
         height: 100%;
         cursor: pointer;
-        background-color: var(--ds-background-2);
+        background-color: var(--db-background-2);
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-        color: var(--ds-el-title);
-        border: 1px solid var(--ds-background-2);
+        color: var(--db-el-title);
+        border: 1px solid var(--db-background-2);
         &:hover {
-          color: var(--ds-el-text);
-          border: 1px solid var(--ds-el-color-primary);
+          color: var(--db-el-text);
+          border: 1px solid var(--db-el-color-primary);
         }
 
         .add-dashboard-card-text {
@@ -325,7 +326,7 @@ export default {
 
           /deep/.image-slot {
             height: 100%;
-            background-color: var(--ds-background-2);
+            background-color: var(--db-background-2);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -345,8 +346,8 @@ export default {
           /*height: 26px;*/
           padding: 0 10px;
           height: calc(100% - 180px);
-          color: var(--ds-el-title);
-          background-color: var(--ds-background-2);
+          color: var(--db-el-title);
+          background-color: var(--db-background-2);
 
           .left-bigscreen-title {
             font-size: 14px;
@@ -394,11 +395,11 @@ export default {
     padding: 0 20px;
   }
 }
-// .bs-pagination {
+// .db-pagination {
 //   ::v-deep .el-input__inner {
 //     width: 110px !important;
 //     border: none;
-//     background: var(--ds-el-background-2);
+//     background: var(--db-el-background-2);
 //   }
 // }
 .empty {

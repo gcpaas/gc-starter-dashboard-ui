@@ -2,7 +2,7 @@
   <el-dialog
     width="500px"
     :title="title"
-    class="bs-dialog-wrap dialogClass bs-el-dialog"
+    class="db-dialog-wrap dialogClass db-el-dialog"
     :visible.sync="dialogFormVisible"
     :append-to-body="true"
     :before-close="handleClose"
@@ -21,7 +21,7 @@
         >
           <el-input
             v-model="dataForm.name"
-            class="bs-el-input"
+            class="db-el-input"
             clearable
           />
         </el-form-item>
@@ -33,7 +33,7 @@
       class="dialog-footer"
     >
       <el-button
-        class="bs-el-button-default"
+        class="db-el-button-default"
         @click="cancel"
       >取消</el-button>
       <el-button

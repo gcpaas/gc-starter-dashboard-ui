@@ -1,7 +1,7 @@
 <template>
   <div
-    class="bs-design-wrap"
-    :class="`bs-time-count-down-${customTheme}`"
+    class="db-design-wrap"
+    :class="`db-time-count-down-${customTheme}`"
   >
     <span
       v-if="isPast"
@@ -140,7 +140,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "~packages/BasicComponents/fonts/index.css";
-.bs-design-wrap{
+.db-design-wrap{
   width: 100%;
 }
 .time {

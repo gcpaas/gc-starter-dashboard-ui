@@ -4,7 +4,7 @@
  * @Author: shiyi
 -->
 <template>
-  <div class="bs-setting-wrap">
+  <div class="db-setting-wrap">
     <el-form
       ref="form"
       label-width="100px"
@@ -39,7 +39,7 @@
           prop="customize.url"
         >
           <el-upload
-            class="bs-el-upload"
+            class="db-el-upload"
             :class="{ hide: fileList.length >= 1 }"
             :action="upLoadUrl"
             :data="fileUploadParam"
@@ -90,7 +90,7 @@
         >
           <el-slider
             v-model="config.customize.opacity"
-            class="bs-slider bs-el-input-number"
+            class="db-slider db-el-input-number"
             :min="0"
             :max="100"
             show-input
@@ -102,7 +102,7 @@
         >
           <el-input-number
             v-model="config.customize.radius"
-            class="bs-el-input-number"
+            class="db-el-input-number"
             placeholder="请输入圆角大小"
             :min="0"
           />
@@ -213,18 +213,18 @@ export default {
 
 <style lang="scss" scoped>
 @import '~packages/assets/style/settingWrap.scss';
-.bs-slider {
+.db-slider {
   .el-input-number__decrease {
-    background: var(--ds-el-background-1);
-    border-right: 1px solid var(--ds-background-1);
+    background: var(--db-el-background-1);
+    border-right: 1px solid var(--db-background-1);
   }
 
   .el-input-number__increase {
-    background: var(--ds-el-background-1);
-    border-left: 1px solid var(--ds-background-1);
+    background: var(--db-el-background-1);
+    border-left: 1px solid var(--db-background-1);
   }
 }
-.bs-setting-wrap {
+.db-setting-wrap {
   padding-top: 16px;
 
   /deep/ .hide .el-upload--picture-card {

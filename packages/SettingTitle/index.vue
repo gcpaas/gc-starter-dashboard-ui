@@ -9,7 +9,7 @@
 <style lang="scss" scoped>
 .lc-field-head {
     height: 30px;
-    background-color: var(--ds-el-background-3);
+    background-color: var(--db-el-background-3);
     // margin-bottom: 12px;
 
     .lc-field-title {
@@ -26,7 +26,7 @@
             content: '';
             width: 4px;
             height: 14px;
-            background-color: var(--ds-el-color-primary);
+            background-color: var(--db-el-color-primary);
         }
     }
 }

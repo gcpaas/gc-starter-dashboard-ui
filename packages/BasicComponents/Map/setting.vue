@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-setting-wrap">
+  <div class="db-setting-wrap">
     <el-form
       ref="form"
       :model="config"
@@ -32,7 +32,7 @@
         >
           <el-switch
             v-model="config.customize.mapName"
-            class="bs-el-switch"
+            class="db-el-switch"
             active-color="#007aff"
           />
         </el-form-item>
@@ -42,8 +42,8 @@
         >
           <el-select
             v-model="config.customize.level"
-            popper-class="bs-el-select"
-            class="bs-el-select"
+            popper-class="db-el-select"
+            class="db-el-select"
             @change="changeLevel()"
           >
             <el-option
@@ -63,8 +63,8 @@
         >
           <el-select
             v-model="config.customize.dataMap"
-            popper-class="bs-el-select"
-            class="bs-el-select"
+            popper-class="db-el-select"
+            class="db-el-select"
           >
             <el-option
               v-for="map in mapList"
@@ -107,7 +107,7 @@
         >
           <el-switch
             v-model="config.customize.scatter"
-            class="bs-el-switch"
+            class="db-el-switch"
             active-color="#007aff"
           />
         </el-form-item>
@@ -157,7 +157,7 @@
         >
           <el-switch
             v-model="config.customize.visual"
-            class="bs-el-switch"
+            class="db-el-switch"
             active-color="#007aff"
           />
         </el-form-item>

@@ -6,7 +6,7 @@
     :append-to-body="true"
     :close-on-click-modal="false"
     :before-close="handleClose"
-    class="bs-dialog-wrap bs-el-dialog"
+    class="db-dialog-wrap db-el-dialog"
   >
     <div
       v-loading="linkLoading"
@@ -28,8 +28,8 @@
           <el-select
             v-model="dataForm.sourceType"
             placeholder="请选择类型"
-            class="bs-el-select"
-            popper-class="bs-el-select"
+            class="db-el-select"
+            popper-class="db-el-select"
             clearable
             filterable
             @change="sourceEdit"
@@ -49,7 +49,7 @@
           <el-input
             v-model="dataForm.sourceName"
             placeholder="请输入数据源名称"
-            class="bs-el-input"
+            class="db-el-input"
             maxlength="200"
           />
         </el-form-item>
@@ -60,7 +60,7 @@
           <el-input
             v-model="dataForm.url"
             placeholder="请输入JDBC URL"
-            class="bs-el-input"
+            class="db-el-input"
             type="textarea"
             rows="4"
             @keydown.enter.native="textareaKeydown"
@@ -73,7 +73,7 @@
           <el-input
             v-model="dataForm.username"
             placeholder="请输入用户名"
-            class="bs-el-input"
+            class="db-el-input"
           />
         </el-form-item>
         <el-form-item
@@ -83,7 +83,7 @@
           <el-input
             v-model="dataForm.password"
             :placeholder="dataForm.id ? '请输入密码，不输入代表不更新' : '请输入密码'"
-            class="bs-el-input"
+            class="db-el-input"
             type="password"
             show-password
           />
@@ -95,7 +95,7 @@
           <el-input
             v-model="dataForm.remark"
             placeholder="请输入备注"
-            class="bs-el-input"
+            class="db-el-input"
             type="textarea"
             rows="4"
             @keydown.enter.native="textareaKeydown"
@@ -192,7 +192,7 @@
         测试
       </el-button>
       <el-button
-        class="bs-el-button-default"
+        class="db-el-button-default"
         @click="handleClose"
       >
         取消

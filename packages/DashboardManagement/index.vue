@@ -140,7 +140,7 @@
       :title="catalogData.id ? '编辑目录':'新增目录'"
       :visible.sync="catalogVisible"
       width="30%"
-      class="bs-dialog-wrap catalog-dialog bs-el-dialog"
+      class="db-dialog-wrap catalog-dialog db-el-dialog"
       @close="handleClose"
     >
       <el-form
@@ -207,7 +207,7 @@
         class="dialog-footer"
       >
         <el-button
-          class="bs-el-button-default"
+          class="db-el-button-default"
           @click="catalogVisible = false"
         >取消</el-button>
         <el-button
@@ -688,7 +688,7 @@ export default {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning',
-        customClass: 'bs-el-message-box'
+        customClass: 'db-el-message-box'
       }).then(async () => {
         post(url).then(() => {
           this.$message({
@@ -753,7 +753,7 @@ export default {
         .page-icon{
           font-size: 20px;
           margin-left: 10px;
-          color: var(--ds-el-color-primary);
+          color: var(--db-el-color-primary);
           &:hover{
             cursor: pointer;
           }
@@ -804,7 +804,7 @@ export default {
         justify-content: space-between;
         padding: 0 20px;
         .page-name-icon{
-          color: var(--ds-el-color-primary);
+          color: var(--db-el-color-primary);
           padding-right: 10px;
         }
       }
@@ -903,7 +903,7 @@ export default {
   .sort-icon {
     font-size: 20px;
     margin-left: 10px;
-    color: var(--ds-el-color-primary);
+    color: var(--db-el-color-primary);
     &:hover{
       cursor: pointer;
     }
@@ -915,7 +915,7 @@ export default {
   }
   /*选中树节点后*/
   .page-list-tree  /deep/ .ztree li a.curSelectedNode span{
-    color: var(--ds-el-color-primary)!important;
+    color: var(--db-el-color-primary)!important;
   }
   #settingDropdown{
     display: inline-block;
@@ -931,12 +931,12 @@ export default {
   /*当前tree节点激活样式*/
  .page-list-tree /deep/.is-current>.el-tree-node__content{
     background: #007aff10;
-    color: var(--ds-el-color-primary);
+    color: var(--db-el-color-primary);
   }
   .page-list-tree /deep/.is-current>.el-tree-node__content::before{
     position: absolute;
     left: 0;
-    border-left: 4px solid var(--ds-el-color-primary);
+    border-left: 4px solid var(--db-el-color-primary);
     content: "";
     height: 40px;
     width: 4px;

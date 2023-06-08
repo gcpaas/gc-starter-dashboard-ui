@@ -1,7 +1,7 @@
 <template>
   <div
     id="box"
-    class="bs-container"
+    class="db-container"
     @mousemove="mousemoveOnBox"
     @mouseup="mouseupOnBox"
   >
@@ -66,7 +66,7 @@
           >
             <el-input
               v-model="queryForm.name"
-              class="bs-el-input"
+              class="db-el-input"
               placeholder="请输入数据集名称"
               clearable
               @keyup.enter.native="handleSearch()"
@@ -85,20 +85,20 @@
           </el-form-item>
           <el-form-item class="filter-item">
             <el-button
-              class="bs-el-button-default"
+              class="db-el-button-default"
               @click="addDataset"
             >
               新增
             </el-button>
           </el-form-item>
         </el-form>
-        <div class="bs-table-box">
+        <div class="db-table-box">
           <el-table
             ref="userTable"
             v-table
             v-loading="dataListLoading"
             height="100%"
-            class="bs-el-table bs-scrollbar"
+            class="db-el-table db-scrollbar"
             :element-loading-text="loadingText"
             :data="tableData"
             :header-cell-style="sortStyle"
@@ -160,14 +160,14 @@
             >
               <template slot-scope="scope">
                 <el-button
-                  class="bs-el-button-default"
+                  class="db-el-button-default"
                   :disabled="scope.row.editable === 1 && !appCode"
                   @click="toEdit(scope.row.id, scope.row.datasetType, scope.row.name, scope.row.typeId)"
                 >
                   编辑
                 </el-button>
                 <el-button
-                  class="bs-el-button-default"
+                  class="db-el-button-default"
                   :disabled="scope.row.editable === 1 && !appCode"
                   @click="delDataset(scope.row.id)"
                 >
@@ -177,10 +177,10 @@
             </el-table-column>
           </el-table>
         </div>
-        <div class="bs-pagination">
+        <div class="db-pagination">
           <el-pagination
-            class="bs-el-pagination"
-            popper-class="bs-el-pagination"
+            class="db-el-pagination"
+            popper-class="db-el-pagination"
             :current-page="current"
             :page-sizes="[10, 20, 50, 100]"
             :page-size="size"
@@ -430,7 +430,7 @@ export default {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning',
-        customClass: 'bs-el-message-box'
+        customClass: 'db-el-message-box'
       }).then(() => {
         datasetRemove(id).then(res => {
           this.init(false)
@@ -613,15 +613,15 @@ export default {
 @import '~packages/assets/style/bsTheme.scss';
 @import '~packages/assets/style/zTree/treePackUp.scss';
 
-// .bs-pagination {
+// .db-pagination {
 //   ::v-deep .el-input__inner {
 //     width: 110px !important;
 //     border:none;
-//     background: var(--ds-el-background-2);
+//     background: var(--db-el-background-2);
 //   }
 // }
 
-.bs-container .inner-container .el-form .filter-item {
+.db-container .inner-container .el-form .filter-item {
   /deep/ .el-input__inner {
     width: 200px;
   }
@@ -632,19 +632,19 @@ export default {
 
   // ::v-deep .ztreeNodeMenu {
   //   ul {
-  //     background-color: var(--ds-background-1);
+  //     background-color: var(--db-background-1);
   //   }
 
   //   li:hover {
-  //     background-color: var(--ds-el-color-primary);
+  //     background-color: var(--db-el-color-primary);
   //   }
 
   //   span {
-  //     color: var(--ds-el-text);
+  //     color: var(--db-el-text);
   //   }
 
   //   .triangle {
-  //     background-color: var(--ds-background-1) !important;
+  //     background-color: var(--db-background-1) !important;
   //   }
   // }
 
@@ -652,20 +652,20 @@ export default {
 
 ::v-deep .left-tab-box {
   span {
-    color: var(--ds-el-text);
+    color: var(--db-el-text);
   }
 }
 
 ::v-deep .left-tab-box ul li.tab-active {
-  background-color: var(--ds-el-background-3);
+  background-color: var(--db-el-background-3);
 }
 
 ::v-deep .left-tab-box ul li:hover {
-  background-color: var(--ds-el-background-3);
+  background-color: var(--db-el-background-3);
 }
 
 .el-dialog {
-  .bs-container {
+  .db-container {
     max-height: calc(90vh - 236px) !important;
 
     .el-table {
@@ -686,23 +686,23 @@ export default {
 
 ::v-deep .ztreeNodeMenu {
   ul {
-    background-color: var(--ds-background-1);
+    background-color: var(--db-background-1);
   }
 
   li:hover {
-    background-color: var(--ds-el-background-3);
+    background-color: var(--db-el-background-3);
 
     span {
-      color: var(--ds-el-color-primary);
+      color: var(--db-el-color-primary);
     }
   }
 
   span {
-    color: var(--ds-el-text);
+    color: var(--db-el-text);
   }
 
   .triangle {
-    background-color: var(--ds-background-1) !important;
+    background-color: var(--db-background-1) !important;
   }
 }
 

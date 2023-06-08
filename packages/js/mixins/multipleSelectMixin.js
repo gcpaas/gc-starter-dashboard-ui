@@ -89,7 +89,7 @@ export default {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning',
-          customClass: 'bs-el-message-box'
+          customClass: 'db-el-message-box'
         }).then(() => {
           // 批量删除
           if (Array.isArray(this.activeCodes) && this.activeCodes.length > 0) {

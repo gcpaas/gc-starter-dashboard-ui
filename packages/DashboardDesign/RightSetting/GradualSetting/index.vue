@@ -1,6 +1,6 @@
 /** * @Description: 渐变色配置 * @author liu.shiyi * @date 2023/4/13 16:01 */
 <template>
-  <div class="bs-gradual-wrap">
+  <div class="db-gradual-wrap">
     <el-color-picker v-model="startColor" /> <div class="el-icon-right" /> <el-color-picker v-model="endColor" />
   </div>
 </template>
@@ -58,7 +58,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .bs-gradual-wrap{
+  .db-gradual-wrap{
     width: 100%;
     display: flex;
     align-items: center;
