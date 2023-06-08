@@ -5,7 +5,7 @@ import 'packages/assets/style/bsTheme.scss'
 import DashboardAppRun from 'app/DashboardAppRun'
 
 // 仪表盘 vuex store数据
-import dashboardAppStore from 'packages/js/store'
+import dashboardStore from 'packages/js/store'
 // 注册基础配置
 import registerConfig from 'packages/js/utils/registerConfig'
 // 更新主题
@@ -16,8 +16,8 @@ const components = [
   DashboardAppRun
 ]
 
-const $dashboardApp = {
-  dashboardAppStore
+const $dashboard = {
+  dashboardStore
 }
 
 function install (Vue) {
@@ -30,7 +30,7 @@ export {
   install,
   DashboardAppRun,
 
-  $dashboardApp,
+  $dashboard,
   registerConfig,
   updateTheme
 }
@@ -39,7 +39,7 @@ export default {
   install,
   DashboardAppRun,
 
-  $dashboardApp,
+  $dashboard,
   registerConfig,
   updateTheme
 }
