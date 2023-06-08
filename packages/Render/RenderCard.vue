@@ -117,6 +117,7 @@ export default {
   flex-direction: column;
   overflow: hidden;
   box-sizing: border-box;
+  background-color: var(--ds-background-1);
 
   .top-title {
     color: var(--ds-el-title);
