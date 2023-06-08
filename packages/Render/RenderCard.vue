@@ -117,11 +117,10 @@ export default {
   flex-direction: column;
   overflow: hidden;
   box-sizing: border-box;
-
+  background-color: var(--ds-el-background-1);
   .top-title {
     color: var(--ds-el-title);
     padding: 10px 0;
-
     span {
       display: inline-block;
       border-left: 4px solid var(--ds-el-color-primary);

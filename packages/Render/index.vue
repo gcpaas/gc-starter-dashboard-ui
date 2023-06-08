@@ -395,4 +395,9 @@ export default {
 .design-drag-wrap {
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
 }
+
+/deep/.vue-grid-placeholder {
+  background: #C6C8CA !important;
+}
+
 </style>

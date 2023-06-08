@@ -96,7 +96,7 @@ export default {
     color: var(--ds-el-title);
     height: 40px;
     font-size: 14px;
-    border-bottom: 2px solid var(--ds-background-1);
+    border-bottom: 2px solid var(--ds-el-background-3);
     display: flex;
     align-items: center;
 

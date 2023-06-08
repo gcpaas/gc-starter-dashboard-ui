@@ -1108,7 +1108,7 @@ export default {
   position: relative;
   padding: 16px 0;
   padding-left: 12px;
-  border-bottom: 1px solid var(--ds-background-1);
+  border-bottom: 1px solid var(--ds-el-background-2);
 
   &::before {
     content: "";

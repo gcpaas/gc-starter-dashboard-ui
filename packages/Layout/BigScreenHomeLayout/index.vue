@@ -148,7 +148,7 @@ export default {
     overflow: hidden;
     width: 100%;
     height: calc(100vh - 150px);
-    background-color: var(--ds-background-1);
+    background-color: var(--ds-el-background-2);
     box-sizing: border-box;
   }
 }

@@ -132,7 +132,7 @@ export default {
   height: 100%;
   background-color: transparent;
   border-radius: 4px;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   .content {
     display: flex;

@@ -23,6 +23,7 @@ registerConfig(
     },
     customTheme: {
       '--ds-background-header': '#007aff', // 头部颜色
+      '--ds-background-leftPanel': '#eef2f7', // 左侧组件栏背景色
       '--ds-background-1': '#fff', // 整体背景色
       '--ds-background-2': '#fff', // 布局背景色
       '--ds-el-background-1': '#fff', // 组件背景色，输入框...
