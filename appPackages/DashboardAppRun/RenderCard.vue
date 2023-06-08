@@ -14,7 +14,7 @@
 </template>
 <script>
   import { resolveComponentType } from 'packages/js/utils'
-  import pcComponent from 'packages/js/utils/componentImport'
+  import pcComponent from 'packages/js/utils/appComponentImport'
   import { dataInit, destroyedEvent } from 'packages/js/utils/eventBus'
   import CustomComponent from 'packages/PlotRender/index.vue'
   import Svgs from 'packages/Svgs/index.vue'
