@@ -29,7 +29,7 @@ export const settingConfig = {
   }
 }
 const customConfig = {
-  type: 'screenScrollBoard',
+  type: 'dashBoardScrollBoard',
   root: {
     contribution: false
   },

@@ -23,7 +23,7 @@ export const settingConfig = {
   }
 }
 const customConfig = {
-  type: 'screenScrollRanking',
+  type: 'dashBoardScrollRanking',
   root: {
     contribution: false
   },
