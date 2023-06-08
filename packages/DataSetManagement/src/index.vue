@@ -710,4 +710,8 @@ export default {
   width: 100%;
   height: 100%;
 }
+
+/deep/ .el-table__body-wrapper{
+  max-height: 260px !important;
+}
 </style>

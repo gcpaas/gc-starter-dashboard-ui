@@ -312,7 +312,7 @@ export default {
   padding: 16px;
   color: #9ea9b2;
   border: 1px solid #e8e8e8;
-  background-color: var(--db-background-1) !important;
+  background-color: var(--db-background-3) !important;
 
   .top-search-wrap {
     display: flex;
