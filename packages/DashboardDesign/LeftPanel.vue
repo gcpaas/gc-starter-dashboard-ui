@@ -77,14 +77,13 @@
                       draggable="true"
                       :data-type="element.type"
                       :data-name="element.name"
-                      @addComponent="addComponent(element)"
+                      @click.stop="addComponent(element)"
                     >
                       <div class="component-name">
                         {{ element.title || element.name }}
                       </div>
                       <div
                         class="img_dispaly chooseDragNode"
-                        @click.stop="addComponent(element)"
                       >
                         <icon-svg
                           v-if="element.icon"
