@@ -8,33 +8,37 @@
       label-width="90px"
     >
       <el-form
-          :model="config.customize"
-          class="setting-body"
-          label-position="left"
-          label-width="90px"
-        >
+        :model="config.customize"
+        class="setting-body"
+        label-position="left"
+        label-width="90px"
+      >
         <SettingTitle>标题</SettingTitle>
-          <el-form-item class="lc-field-body" label="轮播表名称">
-            <el-input
-              v-model="config.title"
-              clearable
-            />
-          </el-form-item>
+        <el-form-item
+          label-width="100px"
+          class="lc-field-body"
+          label="轮播表名称"
+        >
+          <el-input
+            v-model="config.title"
+            clearable
+          />
+        </el-form-item>
         <SettingTitle>基础</SettingTitle>
         <div class="lc-field-body">
-          <el-form-item label="表头背景色">
+          <el-form-item label-width="100px" label="表头背景色">
             <ColorPicker
               v-model="config.customize.headerBGC"
               :predefine="predefineThemeColors"
             />
           </el-form-item>
-          <el-form-item label="偶数行背景色">
+          <el-form-item label-width="100px" label="偶数行背景色">
             <ColorPicker
               v-model="config.customize.oddRowBGC"
               :predefine="predefineThemeColors"
             />
           </el-form-item>
-          <el-form-item label="奇数行背景色">
+          <el-form-item label-width="100px" label="奇数行背景色">
             <ColorPicker
               v-model="config.customize.evenRowBGC"
               :predefine="predefineThemeColors"
@@ -54,7 +58,7 @@
               </template>
             </el-input>
           </el-form-item>
-          <el-form-item label="显示行数">
+          <el-form-item label-width="100px" label="显示行数">
             <el-input-number
               v-model="config.customize.rowNum"
               :precision="0"

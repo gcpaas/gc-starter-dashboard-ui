@@ -17,7 +17,7 @@
           v-model="activeName"
           tab-position="left"
           style="height: 200px"
-          class="left-tadb-box"
+          class="left-tabs-box"
           @tab-click="tabClick"
         >
           <el-tab-pane
@@ -457,7 +457,7 @@ export default {
       margin-right: 0 !important;
     }
 
-    /deep/.el-tadb--left .el-tabs__nav-wrap.is-left::after {
+    /deep/.el-tabs--left .el-tabs__nav-wrap.is-left::after {
       width: 0 !important;
     }
 
@@ -489,7 +489,7 @@ export default {
       border: none;
     }
   }
-  .left-tadb-box {
+  .left-tabs-box {
     /deep/.el-tabs__item {
       height: 70px !important;
       .menu-slot {

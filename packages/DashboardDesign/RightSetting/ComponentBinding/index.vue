@@ -198,7 +198,7 @@ export default {
 .design-tab-warp {
   padding: 10px;
 }
-/deep/.el-tadb--top {
+/deep/.el-tabs--top {
   height: 100%;
 }
 /deep/ .el-tabs__content {
