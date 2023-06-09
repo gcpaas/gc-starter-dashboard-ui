@@ -15,7 +15,7 @@
     <grid-layout
       ref="gridlayout"
       :layout.sync="chartList"
-      :col-num="12"
+      :col-num="24"
       :row-height="10"
       :responsive="true"
       :is-resizable="true"
@@ -23,14 +23,7 @@
       :use-css-transforms="true"
       :is-draggable="true"
       :margin="[20, 20]"
-      :cols="{ lg: 12, md: 12, sm: 12, xs: 12, xxs: 12 }"
     >
-      <!-- @dragging="onDrag(...arguments, chart)"
-      @resizing="onResize(...arguments, chart)"
-      @resizestop="resizestop(...arguments, chart)"
-      @dragstop="dragstop(...arguments, chart)"
-      @refLineParams="getRefLineParams"
-      @mouseleave.native="resetPresetLineDelay" -->
       <grid-item
         v-for="(card) in chartList"
         :id="`${card.code}`"
@@ -300,7 +293,7 @@ export default {
         ..._chart,
         x: 0,
         y: 0,
-        w: 6,
+        w: 12,
         h: 10,
         code,
         i: code,

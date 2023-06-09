@@ -64,7 +64,7 @@ export default {
   },
   data () {
     return {
-      icons:Icon.getNameList(),
+      icons: Icon.getNameList()
     }
   },
   computed: {

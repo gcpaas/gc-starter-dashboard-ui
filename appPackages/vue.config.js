@@ -5,6 +5,7 @@
 const path = require('path')
 const { ProvidePlugin } = require('webpack')
 const CompressionPlugin = require('compression-webpack-plugin')
+const webpack = require('webpack')
 function resolve (dir) {
   return path.join(__dirname, dir)
 }
@@ -49,6 +50,9 @@ module.exports = {
         jQuery: 'jquery',
         $: 'jquery',
         'window.jQuery': 'jquery'
+      }),
+      new webpack.optimize.LimitChunkCountPlugin({
+        maxChunks: 1
       })
     ]
   },
