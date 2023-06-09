@@ -8,10 +8,11 @@
   <div class="render-item-wrap">
     <header class="top-title">
       <span>{{ title }}</span>
-      <icon-svg
-        :name="icons[5]"
-        class="img-btn-svg"
-      />
+      <div class="img-btn-svg" @click="openDialog">
+        <icon-svg
+          :name="icons[5]"
+        />
+      </div>
     </header>
     <div class="render-item-wrap-inner">
       <component
@@ -22,6 +23,23 @@
         :config="config"
       />
     </div>
+    <el-dialog
+      :visible.sync="formVisible"
+      :append-to-body="true"
+      class="db-dialog-wrap db-el-dialog"
+      width="50%"
+      >
+      <div class="dialog-box" style="height: 500px">
+        <component
+          :is="resolveComponentType(config.type)"
+          :id="`${config.code}${config.key}`"
+          :ref="config.code"
+          :key="config.key + 'dialog'"
+          :config="config"
+          :isDialog="isDialog"
+        />
+      </div>
+    </el-dialog>
   </div>
 </template>
 <script>
@@ -64,6 +82,8 @@ export default {
   },
   data () {
     return {
+      isDialog:true,
+      formVisible:false,
       icons:Icon.getNameList(),
     }
   },
@@ -89,6 +109,9 @@ export default {
     ...mapMutations('dashboard', [
       'changeChartConfig'
     ]),
+    openDialog(){
+      this.formVisible = true
+    },
     resolveComponentType,
     // 刷新
     refresh (config) {
