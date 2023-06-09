@@ -5,8 +5,8 @@
       placeholder="请选择图标"
       filterable
       clearable
-      class="bs-el-select"
-      popper-class="bs-el-select"
+      class="db-el-select"
+      popper-class="db-el-select"
       @change="changeValue"
     >
       <el-option
@@ -82,6 +82,6 @@ export default {
     margin-left: 5px;
     align-self: center;
     text-align: center;
-    background-color: var(--ds-background-1);
+    background-color: var(--db-background-1);
   }
 </style>

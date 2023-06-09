@@ -22,8 +22,8 @@ export default {
   .not-permission-wrap {
     width: 100vw;
     height: 100vh;
-    background-color: var(--ds-background-1);
-    color: var(--ds-el-text);
+    background-color: var(--db-background-1);
+    color: var(--db-el-text);
     font-size: 24px;
     display: flex;
     justify-content: center;

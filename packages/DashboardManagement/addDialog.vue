@@ -5,7 +5,7 @@
       :title="title ? '编辑' : '新增'"
       :visible.sync="formVisible"
       :append-to-body="true"
-      class="bs-dialog-wrap bs-el-dialog"
+      class="db-dialog-wrap db-el-dialog"
       @close="closeAddDialog"
     >
       <el-form
@@ -74,7 +74,7 @@
         class="dialog-footer"
       >
         <el-button
-          class="bs-el-button-default"
+          class="db-el-button-default"
           @click="closeAddDialog"
         >
           取消

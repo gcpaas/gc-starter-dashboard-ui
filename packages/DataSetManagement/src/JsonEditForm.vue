@@ -6,7 +6,7 @@
   >
     <el-scrollbar class="data-set-scrollbar">
       <div class="header">
-        <el-page-header class="bs-el-page-header">
+        <el-page-header class="db-el-page-header">
           <template slot="content">
             <div class="page-header">
               <div class="page-header-left">
@@ -14,7 +14,7 @@
               </div>
               <div class="page-header-right">
                 <el-button
-                  class="bs-el-button-default"
+                  class="db-el-button-default"
                   @click="openNewWindow('https://www.yuque.com/chuinixiongkou/bigscreen/json_dataset')"
                 >
                   帮助
@@ -27,7 +27,7 @@
                   保存
                 </el-button>
                 <el-button
-                  class="bs-el-button-default"
+                  class="db-el-button-default"
                   @click="goBack"
                 >
                   返回
@@ -54,7 +54,7 @@
                 >
                   <el-input
                     v-model="dataForm.name"
-                    class="bs-el-input"
+                    class="db-el-input"
                     clearable
                     :disabled="!isEdit"
                   />
@@ -68,8 +68,8 @@
                   <el-select
                     ref="selectParentName"
                     v-model="dataForm.typeId"
-                    class="bs-el-select"
-                    popper-class="bs-el-select"
+                    class="db-el-select"
+                    popper-class="db-el-select"
                     clearable
                     :disabled="!isEdit"
                     @clear="clearType"
@@ -90,7 +90,7 @@
                           :default-expand-all="true"
                           :highlight-current="true"
                           :expand-on-click-node="false"
-                          class="bs-el-tree"
+                          class="db-el-tree"
                           @node-click="selectParentCategory"
                         >
                           <span
@@ -119,7 +119,7 @@
                 >
                   <el-input
                     v-model="dataForm.remark"
-                    class="bs-el-input"
+                    class="db-el-input"
                     :disabled="!isEdit"
                   />
                 </el-form-item>
@@ -158,7 +158,7 @@
           :span="8"
         >
           <div class="structure">
-            <div class="title-style bs-title-style">
+            <div class="title-style db-title-style">
               输出字段
               <el-button
                 type="text"
@@ -168,7 +168,7 @@
                 配置
               </el-button>
             </div>
-            <div class="field-wrap bs-field-wrap">
+            <div class="field-wrap db-field-wrap">
               <div
                 v-for="field in structurePreviewList"
                 :key="field.columnName"
@@ -201,13 +201,13 @@
         <div class="result-view">
           数据预览
         </div>
-        <div class="bs-table-box is-Edit">
+        <div class="db-table-box is-Edit">
           <el-table
             align="center"
             :data="dataPreviewList"
             max-height="400"
             :border="true"
-            class="bs-el-table"
+            class="db-el-table"
           >
             <el-table-column
               v-for="(value, key) in dataPreviewList[0]"
@@ -233,13 +233,13 @@
             label="数据1预览"
             name="data"
           >
-            <div class="bs-table-box">
+            <div class="db-table-box">
               <el-table
                 align="center"
                 :data="dataPreviewList"
                 max-height="400"
                 :border="true"
-                class="bs-el-table"
+                class="db-el-table"
               >
                 <el-table-column
                   v-for="(value, key) in dataPreviewList[0]"
@@ -260,13 +260,13 @@
             label="数据集结构"
             name="structure"
           >
-            <div class="bs-table-box">
+            <div class="db-table-box">
               <el-table
                 max-height="400"
                 :data="structurePreviewList"
                 :border="true"
                 align="center"
-                class="bs-el-table"
+                class="db-el-table"
               >
                 <el-table-column
                   align="center"
@@ -284,7 +284,7 @@
                       v-if="isEdit"
                       v-model="scope.row.fieldDesc"
                       size="small"
-                      class="labeldsc bs-el-input"
+                      class="labeldsc db-el-input"
                     />
                     <span v-else>{{ scope.row.fieldDesc }}</span>
                   </template>
@@ -303,9 +303,9 @@
         append-to-body
         :close-on-click-modal="false"
         custom-class="fieldDescCheck"
-        class="bs-dialog-wrap bs-el-dialog"
+        class="db-dialog-wrap db-el-dialog"
       >
-        <p style="color:var(--ds-el-text);line-height: 24px;padding-left: 10px;display: flex;">
+        <p style="color:var(--db-el-text);line-height: 24px;padding-left: 10px;display: flex;">
           <i
             class="el-icon-warning"
             style="color: #E6A23C;font-size: 24px;margin-right: 5px;"
@@ -316,11 +316,11 @@
           class="dialog-footer"
         >
           <el-button
-            class="bs-el-button-default"
+            class="db-el-button-default"
             @click="fieldDescFill"
           >使用字段名填充</el-button>
           <el-button
-            class="bs-el-button-default"
+            class="db-el-button-default"
             @click="fieldDescEdit"
           >进入编辑</el-button>
           <el-button
@@ -337,14 +337,14 @@
         append-to-body
         :close-on-click-modal="false"
         :before-close="cancelField"
-        class="bs-dialog-wrap bs-el-dialog"
+        class="db-dialog-wrap db-el-dialog"
       >
-        <div class="bs-table-box">
+        <div class="db-table-box">
           <el-table
             :data="structurePreviewListCopy"
             :border="true"
             align="center"
-            class="bs-el-table"
+            class="db-el-table"
           >
             <el-empty slot="empty" />
             <el-table-column
@@ -363,7 +363,7 @@
                   v-if="isEdit"
                   v-model="scope.row.fieldDesc"
                   size="small"
-                  class="labeldsc bs-el-input"
+                  class="labeldsc db-el-input"
                 />
                 <span v-else>{{ scope.row.fieldDesc }}</span>
               </template>
@@ -375,7 +375,7 @@
           class="dialog-footer"
         >
           <el-button
-            class="bs-el-button-default"
+            class="db-el-button-default"
             @click="cancelField"
           >
             取消
@@ -839,7 +839,7 @@ export default {
 .title-style {
   padding: 8px 12px;
   background-color: #f6f7fb;
-  border-left: 5px solid var(--ds-el-color-primary);
+  border-left: 5px solid var(--db-el-color-primary);
   margin: 16px 16px 0 0;
 }
 
@@ -877,11 +877,11 @@ export default {
 .result-view {
   font-size: 14px;
   font-weight: 600;
-  color: var(--ds-el-text);
+  color: var(--db-el-text);
   position: relative;
   padding: 16px 0;
   padding-left: 12px;
-  border-bottom: 1px solid var(--ds-el-background-2);
+  border-bottom: 1px solid var(--db-el-background-2);
 
   &::before {
     content: "";
@@ -890,7 +890,7 @@ export default {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    border-left: 4px solid var(--ds-el-color-primary);
+    border-left: 4px solid var(--db-el-color-primary);
   }
 }
 
@@ -899,19 +899,19 @@ export default {
 }
 
 /deep/ .jsoneditor-menu {
-  background: var(--ds-el-color-primary);
-  border-color: var(--ds-el-color-primary);
+  background: var(--db-el-color-primary);
+  border-color: var(--db-el-color-primary);
 }
 
 /deep/ .jsoneditor-mode-code {
-  border-color: var(--ds-el-color-primary);
+  border-color: var(--db-el-color-primary);
 }
 
-.bs-table-box {
+.db-table-box {
   margin-bottom: 0;
 }
 
-/deep/ .bs-table-box.is-Edit .el-table {
+/deep/ .db-table-box.is-Edit .el-table {
   max-height: unset !important;
 
   .el-table__body-wrapper {
@@ -919,7 +919,7 @@ export default {
   }
 }
 
-.bs-table-box {
+.db-table-box {
   height: 100% !important;
   margin-bottom: 0 !important;
 }

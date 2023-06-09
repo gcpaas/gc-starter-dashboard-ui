@@ -1,13 +1,13 @@
 
 <template>
-  <div class="bs-gradual-wrap">
+  <div class="db-gradual-wrap">
     <el-form-item
       label="文字渐变方向"
       label-width="100px"
     >
       <el-radio-group
         v-model="position"
-        class="bs-radio-wrap"
+        class="db-radio-wrap"
       >
         <el-radio
           label="top"

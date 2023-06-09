@@ -276,7 +276,7 @@ export default {
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: var(--ds-el-background-2) !important;
+    background-color: var(--db-el-background-2) !important;
   }
   &::-webkit-scrollbar-track {
     border-radius: 10px;
@@ -324,21 +324,21 @@ export default {
 }
 /deep/.action {
   .value {
-    background: var(--ds-el-color-primary);
+    background: var(--db-el-color-primary);
     padding: 4px;
     color: #fff;
   }
 
   .del {
-    color: var(--ds-el-color-primary);
+    color: var(--db-el-color-primary);
   }
 }
 /deep/ .ruler, /deep/ .corner {
-  background: var(--ds-background-1);
+  background: var(--db-background-1);
 }
 /deep/ .corner {
   z-index: 999;
-  background: var(--ds-background-1) !important;
+  background: var(--db-background-1) !important;
 }
 
 /deep/ .mb-ruler {

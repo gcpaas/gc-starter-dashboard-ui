@@ -13,7 +13,7 @@
       :rules="rules"
     >
       <SettingTitle>标题</SettingTitle>
-      <div class="bs-setting-wrap">
+      <div class="db-setting-wrap">
         <el-form-item
           label="标题"
           label-width="100px"
@@ -26,12 +26,8 @@
           />
         </el-form-item>
       </div>
-      <SettingTitle>位置</SettingTitle>
-      <div class="bs-setting-wrap">
-        <PosWhSetting :config="config" />
-      </div>
       <SettingTitle>基础</SettingTitle>
-      <div class="bs-setting-wrap">
+      <div class="db-setting-wrap">
         <el-form-item
           label="链接地址"
           label-width="100px"
@@ -50,8 +46,8 @@
         >
           <el-select
             v-model="config.customize.openType"
-            popper-class="bs-el-select"
-            class="bs-el-select"
+            popper-class="db-el-select"
+            class="db-el-select"
           >
             <el-option
               v-for="type in openTypeList"
@@ -68,7 +64,7 @@
         >
           <el-input-number
             v-model="config.customize.dialogW"
-            class="bs-el-input-number"
+            class="db-el-input-number"
             placeholder="请输入弹窗宽度"
             clearable
           />
@@ -80,7 +76,7 @@
         >
           <el-input-number
             v-model="config.customize.dialogH"
-            class="bs-el-input-number"
+            class="db-el-input-number"
             placeholder="请输入弹窗高度"
             clearable
           />
@@ -105,7 +101,7 @@
         >
           <el-input-number
             v-model="config.customize.fontWeight"
-            class="bs-el-input-number"
+            class="db-el-input-number"
             placeholder="请输入标题字体权重"
           />
         </el-form-item>
@@ -168,7 +164,7 @@ export default {
 
 <style lang="scss" scoped>
   @import "../~packages/assets/style/settingWrap.scss";
-  .bs-setting-wrap{
+  .db-setting-wrap{
     padding: 12px 16px;
   }
 </style>

@@ -6,7 +6,7 @@
     :modal="true"
     :modal-append-to-body="false"
     :appen-to-body="true"
-    class="bs-dialog-wrap bs-el-dialog"
+    class="db-dialog-wrap db-el-dialog"
     @closed="$emit('imgUrl', imgUrl)"
   >
     <div>
@@ -53,7 +53,7 @@
             style="max-width: 200px"
           >
             <el-image
-              class="bg-img bs-el-img"
+              class="bg-img db-el-img"
               :src="img.url"
               fit="cover"
               @click.native="imgUrl = img.url; dialogVisible = false"
@@ -67,7 +67,7 @@
       class="dialog-footer"
     >
       <el-button
-        class="bs-el-button-default"
+        class="db-el-button-default"
         @click="dialogVisible=false"
       >
         取消

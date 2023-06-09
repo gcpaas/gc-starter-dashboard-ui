@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-padding-setting">
+  <div class="db-padding-setting">
     <div class="padding-box">
       <el-input
         v-model.number="paddingValue[0]"
@@ -21,7 +21,7 @@
       />
       <el-input
         v-model.number="paddingValue[3]"
-        class="input-left input-item bs-el-input"
+        class="input-left input-item db-el-input"
         size="mini"
         @change="paddingChange"
       />
@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bs-padding-setting{
+.db-padding-setting{
   .padding-box{
     width: 160px;
     height: 190px;
@@ -75,7 +75,7 @@ export default {
     transform: translate(-50%,-50%);
     width: 30%;
     height: 30%;
-    background-color: var(--ds-background-1);
+    background-color: var(--db-background-1);
   }
   .input-item{
     width: 50px;

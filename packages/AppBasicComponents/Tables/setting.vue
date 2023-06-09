@@ -15,13 +15,6 @@
           clearable
         />
       </el-form-item>
-      <SettingTitle>位置</SettingTitle>
-      <div class="lc-field-body">
-        <PosWhSetting
-          :config="config"
-          label-width="120px"
-        />
-      </div>
       <SettingTitle>基础</SettingTitle>
       <div class="lc-field-body">
         <el-form-item label="头部背景颜色">
@@ -41,7 +34,7 @@
         <el-form-item label="头部字体大小">
           <el-input-number
             v-model="config.customize.headerFontSize"
-            class="bs-el-input-number"
+            class="db-el-input-number"
             :min="12"
             :max="100"
             :step="1"
@@ -64,7 +57,7 @@
         <el-form-item label="主体字体大小">
           <el-input-number
             v-model="config.customize.bodyFontSize"
-            class="bs-el-input-number"
+            class="db-el-input-number"
             :min="12"
             :max="100"
             :step="1"

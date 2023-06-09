@@ -83,7 +83,7 @@ export default {
       align-items: center;
       transition: color 0.2s;
       text-decoration: none !important;
-      color: var(--ds-el-title);
+      color: var(--db-el-title);
       width: auto;
       min-width: 140px;
       line-height: 40px;
@@ -94,7 +94,7 @@ export default {
 
       &.nav-active,
       &:hover {
-        color: var(--ds-el-text) !important;
+        color: var(--db-el-text) !important;
       }
     }
 
@@ -107,8 +107,8 @@ export default {
       background-size: 100% 100%;
       background-repeat: no-repeat;
       background-position: center bottom;
-      /* border-bottom: 1px solid var(--ds-background-1); */
-      /* background-color: var(--ds-background-1) */
+      /* border-bottom: 1px solid var(--db-background-1); */
+      /* background-color: var(--db-background-1) */
     }
 
   }

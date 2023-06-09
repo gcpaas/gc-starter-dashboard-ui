@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="!pageLoading"
-    class="bs-page-design-wrap"
+    class="db-page-design-wrap"
   >
     <PageTopSetting
       v-show="headerShow"
@@ -42,7 +42,7 @@
           @openRightPanel="openRightPanel"
         />
         <!-- 移动端 -->
-        <div class="app-wrap-box" v-else-if="terminal === 'app'" v-resize="boxResize">
+        <div class="app-wrap-box" v-else-if="terminal === 'app'" >
           <div class="app-wrap app-display-wrapper" id="app-dom" >
             <div class="app-container app-design-wrap">
               <AppDashBoard  ref="Render" @openRightPanel="openRightPanel"></AppDashBoard>
@@ -111,25 +111,6 @@ export default {
     ComponentDialog,
     iframeDialog,
     AppDashBoard
-  },
-  directives:{
-    resize: { // 指令的名称
-      bind(el, binding) { // el为绑定的元素，binding为绑定给指令的对象
-        let width = '', height = '';
-        function isReize() {
-          const style = document.defaultView.getComputedStyle(el);
-          if (width !== style.width || height !== style.height) {
-            binding.value({width:style.width,height:style.height});  // 关键(这传入的是函数,所以执行此函数)
-          }
-          width = style.width;
-          height = style.height;
-        }
-        el.__vueSetInterval__ = setInterval(isReize, 300);
-      },
-      unbind(el) {
-        clearInterval(el.__vueSetInterval__);
-      }
-    }
   },
   mixins: [multipleSelectMixin],
   props: {
@@ -252,12 +233,6 @@ export default {
       'saveTimeLine',
       'changeIframeDialog'
     ]),
-    // 监听中间面板的大小变化
-    boxResize(data){
-      let appDom = document.getElementById('app-dom')
-      appDom.style.height = parseInt(data.height )* 0.9 + 'px'
-      appDom.style.width  =  parseInt(data.height ) * 0.9 * 0.47 + 'px'
-    },
     // 切换终端
     chooseTerminal(terminal){
       this.terminal = terminal
@@ -380,7 +355,7 @@ export default {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning',
-        customClass: 'bs-el-message-box'
+        customClass: 'db-el-message-box'
       })
         .then(() => {
           this.changeLayout([])
@@ -451,7 +426,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.bs-page-design-wrap {
+.db-page-design-wrap {
   overflow: auto;
 
   .drag-wrap {
@@ -475,14 +450,14 @@ export default {
         justify-content: flex-end;
         align-items: center;
         z-index: 1000;
-        background-color: var(--ds-background-2);
+        background-color: var(--db-background-2);
 
-        .bs-select-wrap {
+        .db-select-wrap {
           margin-right: 16px;
         }
 
         .select-zoom-text {
-          color: var(--ds-el-title);
+          color: var(--db-el-title);
           margin-right: 16px;
         }
 
@@ -497,23 +472,21 @@ export default {
     }
     // 移动端样式
     .app-wrap-box{
+      position: relative;
       /*width: calc(100% - 210px);*/
       width: 100%;
       height: 100%;
+      overflow-y: auto;
       display: flex;
-      align-items: center;
       justify-content: center;
+      /*align-items: center;*/
       .app-display-wrapper {
+        margin-top: 5%;
         position: relative;
         // 水平垂直居中
         width: 366.318px;
-        height: 779.4px;
-        //height: 98%;
-        // 固定宽高比
-        //aspect-ratio: 1 / 2.1;
-        // 设置最大最小宽高
-        min-width: 200px;
-        min-height: 420px;
+        height: 80%;
+        min-height: 600px;
         background: url(packages/DashboardDesign/images/iphone.png) no-repeat center 0;
         background-size: 100% 100%;
 
@@ -535,7 +508,7 @@ export default {
       height: 8px;
     }
     /deep/::-webkit-scrollbar-thumb {
-      background: #dddddd !important;
+      background: #dddddd;
       border-radius: 10px;
     }
 

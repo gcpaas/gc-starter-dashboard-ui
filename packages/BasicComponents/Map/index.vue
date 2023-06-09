@@ -1,7 +1,7 @@
 <template>
   <div
     style="width: 100%; height: 100%"
-    class="bs-design-wrap bs-bar"
+    class="db-design-wrap db-bar"
   >
     <div
       :id="`chart${config.code}`"

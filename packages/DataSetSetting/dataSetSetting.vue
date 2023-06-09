@@ -5,12 +5,12 @@
     title="数据集设置"
     :visible.sync="dataSetVisible"
     width="80%"
-    class="bs-dialog-wrap data-set-wrap bs-el-dialog"
+    class="db-dialog-wrap data-set-wrap db-el-dialog"
   >
     <DataSetManagement
       ref="dataSetSetting"
-      class="bs-data-set-management"
-      theme-class="bs-"
+      class="db-data-set-management"
+      theme-class="db-"
       :is-border="true"
       :is-dialog="true"
       :ds-id="dataSetId"
@@ -22,7 +22,7 @@
       class="dialog-footer"
     >
       <el-button
-        class="bs-el-button-default"
+        class="db-el-button-default"
         @click="dataSetVisible = false"
       >
         取消
@@ -101,19 +101,19 @@ export default {
   /deep/ .el-dialog__body {
     position: relative;
     padding: 0 !important;
-    min-height: 535px;
+    min-height: 400px;
     overflow: hidden;
   }
 
-  ::v-deep .bs-container {
+  ::v-deep .db-container {
     padding: 0;
-    min-height: 535px;
+    min-height: 400px;
 
     .el-table {
-      max-height: calc(90vh - 350px);
+      max-height: 300px;
     }
 
-    .bs-table-box {
+    .db-table-box {
       margin-bottom: 0px;
     }
 
@@ -122,16 +122,16 @@ export default {
     }
   }
 
-  .bs-data-set-management {
+  .db-data-set-management {
     ::v-deep .ztree {
       height: auto !important;
     }
 
-    ::v-deep .bs-table-box {
+    ::v-deep .db-table-box {
       height: auto !important;
     }
 
-    ::v-deep .bs-el-pagination {
+    ::v-deep .db-el-pagination {
       right: 6px !important;
     }
 

@@ -1,6 +1,6 @@
 <template>
-  <div class="bs-custom-components">
-    <div class="bs-custom-component-header">
+  <div class="db-custom-components">
+    <div class="db-custom-component-header">
       <div class="left-title">
         <div class="logo-wrap item-wrap">
           <img
@@ -24,8 +24,8 @@
         </CusBtn>
       </div>
     </div>
-    <div class="bs-custom-component-content">
-      <div class="bs-custom-component-content-code">
+    <div class="db-custom-component-content">
+      <div class="db-custom-component-content-code">
         <div class="left-vue-code component-code">
           <div class="code-tab-header">
             <div class="code-tab">
@@ -69,8 +69,8 @@
           </div>
         </div>
       </div>
-      <div class="bs-custom-component-content-preview">
-        <div class="bs-preview-inner">
+      <div class="db-custom-component-content-preview">
+        <div class="db-preview-inner">
           <BizComponentPreview
             :vue-content="form.vueContent"
             :setting-content="form.settingContent"
@@ -231,7 +231,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bs-custom-components {
+.db-custom-components {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -244,7 +244,7 @@ export default {
     box-sizing: border-box;
   }
 
-  .bs-custom-component-header {
+  .db-custom-component-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -278,13 +278,13 @@ export default {
     }
   }
 
-  .bs-custom-component-content {
+  .db-custom-component-content {
     flex: 1;
     background: #232832;
     display: flex;
     flex-direction: column;
 
-    .bs-custom-component-content-code {
+    .db-custom-component-content-code {
       display: flex;
       justify-content: space-between;
       width: 100%;
@@ -329,12 +329,12 @@ export default {
       }
     }
 
-    .bs-custom-component-content-preview {
+    .db-custom-component-content-preview {
       flex: 1;
       width: 100%;
       padding: 0 16px 16px;
 
-      .bs-preview-inner {
+      .db-preview-inner {
         width: 100%;
         height: 100%;
         background: #151a26;
@@ -347,13 +347,13 @@ export default {
   .cm-s-material-darker.CodeMirror,
   .cm-s-material-darker .CodeMirror-gutters
   {
-    background: var(--bs-background-1) !important;
+    background: var(--db-background-1) !important;
   }
   .CodeMirror-scroll {
-    background-color: var(--bs-background-1) !important;
+    background-color: var(--db-background-1) !important;
   }
   .CodeMirror-gutters {
-    border-right: 1px solid var(--bs-background-1) !important;
-    background-color: var(--bs-background-1) !important;
+    border-right: 1px solid var(--db-background-1) !important;
+    background-color: var(--db-background-1) !important;
   }
 </style>

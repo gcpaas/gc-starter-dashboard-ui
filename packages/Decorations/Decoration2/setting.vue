@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-setting-wrap">
+  <div class="db-setting-wrap">
     <el-form
       ref="form"
       :model="config"
@@ -20,10 +20,7 @@
             clearable
           />
         </el-form-item>
-        <SettingTitle>位置</SettingTitle>
-        <div class="lc-field-body">
-          <PosWhSetting :config="config" />
-        </div>
+
         <SettingTitle>基础</SettingTitle>
         <div class="lc-field-body">
           <el-form-item label="装饰主颜色">
@@ -41,7 +38,7 @@
           <el-form-item label="单次动画时长">
             <el-input-number
               v-model="config.customize.dur"
-              class="bs-el-input-number"
+              class="db-el-input-number"
               :precision="0"
               label="请输入时长(s)"
             />

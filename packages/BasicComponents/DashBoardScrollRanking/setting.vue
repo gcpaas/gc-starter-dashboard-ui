@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-setting-wrap">
+  <div class="db-setting-wrap">
     <el-form
       ref="form"
       :model="config"
@@ -22,10 +22,6 @@
             />
           </el-form-item>
         </div>
-        <SettingTitle>位置</SettingTitle>
-        <div class="lc-field-body">
-          <PosWhSetting :config="config" />
-        </div>
         <SettingTitle>基础</SettingTitle>
         <div class="lc-field-body">
           <el-form-item
@@ -46,7 +42,7 @@
             <el-input-number
               v-model="config.customize.rowNum"
               :precision="0"
-              class="bs-el-input-number"
+              class="db-el-input-number"
               label="请输入行数"
             />
           </el-form-item>

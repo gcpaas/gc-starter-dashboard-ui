@@ -1,12 +1,12 @@
 <template>
-  <div class="bs-theme-wrap">
+  <div class="db-theme-wrap">
     <div class="tree-box">
       <div class="ztree-filter-container filter-container">
         <el-input
           v-model="queryForm.searchKey"
           placeholder="请输入数据集分类"
           clearable
-          class="ztree-input bs-el-input"
+          class="ztree-input db-el-input"
           @keyup.enter.native="reSearch()"
           @clear="reSearch()"
         />
@@ -46,7 +46,7 @@
                 icon="el-icon-plus"
                 @click="addRootNode"
               >
-                <span style="color: var(--ds-el-color-primary);">新增根节点</span>
+                <span style="color: var(--db-el-color-primary);">新增根节点</span>
               </el-button>
             </div>
             <ul
@@ -439,7 +439,7 @@ export default {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning',
-          customClass: 'bs-el-message-box'
+          customClass: 'db-el-message-box'
         }
       ).then(() => {
         if (!org.id) {
@@ -473,7 +473,7 @@ export default {
       width: 100%;
 
       .el-tabs__item {
-        color: var(--ds-el-text);
+        color: var(--db-el-text);
         width: 50%;
         text-align: center;
       }
@@ -483,15 +483,15 @@ export default {
       }
 
       .el-tabs__item.is-active {
-        color: var(--ds-el-color-primary) !important;
-        border-bottom-color: var(--ds-el-border) !important;
+        color: var(--db-el-color-primary) !important;
+        border-bottom-color: var(--db-el-border) !important;
       }
     }
   }
 }
  ::v-deep .ztree {
     span {
-      color: var(--ds-el-text);
+      color: var(--db-el-text);
     }
 
     li:hover {
@@ -500,13 +500,13 @@ export default {
     }
 
     .curSelectedNode {
-      background: var(--ds-el-background-3) !important;
-      background-color: var(--ds-el-background-3) !important;
+      background: var(--db-el-background-3) !important;
+      background-color: var(--db-el-background-3) !important;
     }
 
     a:hover {
-      background: var(--ds-el-background-3) !important;
-      background-color: var(--ds-el-background-3) !important;
+      background: var(--db-el-background-3) !important;
+      background-color: var(--db-el-background-3) !important;
     }
   }
 /deep/ .el-tabs__nav-wrap::after {
@@ -540,7 +540,7 @@ export default {
     line-height: 40px;
     position: absolute;
     left: 0;
-    border-left: 4px solid var(--ds-el-color-primary);
+    border-left: 4px solid var(--db-el-color-primary);
   }
 }
 
@@ -554,7 +554,7 @@ export default {
 }
 
 .el-textarea__inner {
-  color: var(--ds-el-text);
-  background-color: var(--ds-el-background-1) !important;
+  color: var(--db-el-text);
+  background-color: var(--db-el-background-1) !important;
 }
 </style>

@@ -39,7 +39,7 @@
     }
 
     &:hover {
-      background-color: var(--ds-el-color-primary);
+      background-color: var(--db-el-color-primary);
     }
   }
 }
@@ -51,7 +51,7 @@
   line-height: 40px !important;
   position: absolute !important;
   cursor: col-resize !important;
-  background-color: var(--ds-background-2) !important;
+  background-color: var(--db-background-2) !important;
   opacity: 0.8;
 
   span {
@@ -99,7 +99,7 @@
   width: 14px;
   display: flex;
   height: auto;
-  background-color: var(--ds-el-background-2);
+  background-color: var(--db-el-background-2);
   height: 100%;
 
   a {
@@ -109,7 +109,7 @@
     line-height: 0px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    background-color: var(--ds-background-2);
+    background-color: var(--db-background-2);
 
     i {
       line-height: 100px;
@@ -117,7 +117,7 @@
     }
 
     &:hover {
-      background-color: var(--ds-el-color-primary);
+      background-color: var(--db-el-color-primary);
     }
   }
 }

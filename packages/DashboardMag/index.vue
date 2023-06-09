@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-manage-main-wrap">
+  <div class="db-manage-main-wrap">
     <side-menu
       :type="type"
       @getPageInfo="getPageInfo"
@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bs-manage-main-wrap {
+.db-manage-main-wrap {
   display: flex;
   height: 100%;
 }

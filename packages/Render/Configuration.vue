@@ -121,9 +121,9 @@ export default {
 }
 
 .hover {
-  border: 1px dashed var(--ds-el-color-primary);
+  border: 1px dashed var(--db-el-color-primary);
 }
 .active {
-  border: 1px solid var(--ds-el-color-primary);
+  border: 1px solid var(--db-el-color-primary);
 }
 </style>

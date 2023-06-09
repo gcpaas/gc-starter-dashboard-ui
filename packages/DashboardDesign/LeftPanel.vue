@@ -6,7 +6,7 @@
 <template>
   <transition name="slide-fade">
     <div
-      class="bs-left-panel"
+      class="db-left-panel"
       @click.stop
     >
       <div
@@ -287,11 +287,11 @@ export default {
 
 <style lang="scss" scoped>
 @import '~packages/DashboardDesign/fonts/iconfont.css';
-.bs-left-panel {
+.db-left-panel {
   display: flex;
-  background-color: var(--ds-background-leftPanel);
+  background-color: var(--db-background-leftPanel);
 
-  .bs-folder-wrap {
+  .db-folder-wrap {
     width: 20px;
     position: relative;
 
@@ -319,7 +319,7 @@ export default {
     }
 
     .iconfont-bigscreen {
-      color: var(--ds-el-title);
+      color: var(--db-el-title);
     }
 
     .flexible {
@@ -336,10 +336,10 @@ export default {
 
       .is-active {
         .iconfont-bigscreen {
-          color: var(--ds-el-color-primary);
+          color: var(--db-el-color-primary);
         }
         .menu-title-span {
-          color: var(--ds-el-color-primary) !important;
+          color: var(--db-el-color-primary) !important;
         }
       }
 
@@ -356,12 +356,12 @@ export default {
         width: 160px;
 
         .page-left-content-title {
-          background-color: var(--ds-background-2);
-          color: var(--ds-el-title);
+          background-color: var(--db-background-2);
+          color: var(--db-el-title);
           font-size: 14px;
           margin: 8px;
           padding: 8px 0;
-          border-bottom: 1px solid var(--ds-el-background-3);
+          border-bottom: 1px solid var(--db-el-background-3);
 
           .page-left-content-title-text {
             /*border-left: 4px solid #007aff;*/
@@ -375,7 +375,7 @@ export default {
               content: '';
               width: 4px;
               height: 14px;
-              background-color: var(--ds-el-color-primary);
+              background-color: var(--db-el-color-primary);
             }
           }
         }
@@ -399,13 +399,13 @@ export default {
 
             .item {
               width: 100%;
-              background: var(--ds-background-2);
+              background: var(--db-background-2);
               margin-bottom: 8px;
               border : 1px solid #e8e8e8;
 
               .component-name {
-                background: var(--ds-background-2);
-                color: var(--ds-el-title);
+                background: var(--db-background-2);
+                color: var(--db-el-title);
                 font-size: 12px;
                 padding: 4px 8px;
                 text-align: left;
@@ -476,7 +476,7 @@ export default {
     }
 
     /deep/ .el-tabs__nav-scroll {
-      background-color: var(--ds-background-2);
+      background-color: var(--db-background-2);
     }
   }
 
@@ -498,7 +498,7 @@ export default {
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        color: var(--ds-el-title);
+        color: var(--db-el-title);
         .menu-icon {
           height: 20px;
         }
@@ -506,7 +506,7 @@ export default {
           display: block;
           width: 100%;
           font-size: 12px;
-          color: var(--ds-el-title);
+          color: var(--db-el-title);
         }
       }
     }

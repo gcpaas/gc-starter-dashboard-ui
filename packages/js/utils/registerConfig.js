@@ -127,16 +127,16 @@ function registerRouters (config, router) {
 // 注册配置
 function registerTheme (config) {
   const defaultTheme = {
-    '--ds-background-header': '#007aff', // 头部颜色
-    '--ds-background-1': '#fff', // 整体背景色
-    '--ds-background-2': '#fff', // 布局背景色
-    '--ds-el-background-1': '#fff', // 组件背景色，输入框...
-    '--ds-el-background-2': '#F5F7FA', // 组件背景色，按钮、分页、加载...
-    '--ds-el-background-3': '#F5F7FA', // 组件背景色，表格头部、下拉框hover...
-    '--ds-el-title': '#36474f', // 标题字体颜色
-    '--ds-el-text': '#36474f', // 一般字体颜色
-    '--ds-el-color-primary': '#409EFF', // elment-ui主题色，激活
-    '--ds-el-border': 'transparent' // 边框颜色
+    '--db-background-header': '#007aff', // 头部颜色
+    '--db-background-1': '#fff', // 整体背景色
+    '--db-background-2': '#fff', // 布局背景色
+    '--db-el-background-1': '#fff', // 组件背景色，输入框...
+    '--db-el-background-2': '#F5F7FA', // 组件背景色，按钮、分页、加载...
+    '--db-el-background-3': '#F5F7FA', // 组件背景色，表格头部、下拉框hover...
+    '--db-el-title': '#36474f', // 标题字体颜色
+    '--db-el-text': '#36474f', // 一般字体颜色
+    '--db-el-color-primary': '#409EFF', // elment-ui主题色，激活
+    '--db-el-border': 'transparent' // 边框颜色
   }
   const mergedTheme = { ...defaultTheme, ...config?.customTheme }
   const style = document.createElement('style')
@@ -145,9 +145,9 @@ function registerTheme (config) {
   for (const key in mergedTheme) {
     themeStr += `${key}:${mergedTheme[key]};`
   }
-  // 给body添加class bs-body-theme-wrap
-  document.body.classList.add('bs-body-theme-wrap')
-  style.innerHTML = `.bs-body-theme-wrap {${themeStr}}`
+  // 给body添加class db-body-theme-wrap
+  document.body.classList.add('db-body-theme-wrap')
+  style.innerHTML = `.db-body-theme-wrap {${themeStr}}`
   document.getElementsByTagName('head')[0].appendChild(style)
 }
 

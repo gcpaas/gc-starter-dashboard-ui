@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-setting-wrap">
+  <div class="db-setting-wrap">
     <el-form
       ref="form"
       :model="config"
@@ -15,16 +15,12 @@
           class="setting-body"
           label-width="100px"
         >
-          <SettingTitle>位置</SettingTitle>
-          <div class="lc-field-body">
-            <PosWhSetting :config="config" />
-          </div>
           <SettingTitle>基础</SettingTitle>
           <div class="lc-field-body">
             <el-form-item label="按钮名称">
               <el-input
                 v-model="config.title"
-                class="bs-el-input"
+                class="db-el-input"
                 clearable
               />
             </el-form-item>
@@ -37,7 +33,7 @@
             <el-form-item label="字体大小">
               <el-input-number
                 v-model="config.customize.fontSize"
-                class="bs-el-input-number"
+                class="db-el-input-number"
                 controls-position="right"
                 :min="12"
                 :max="100"
@@ -46,8 +42,8 @@
             <el-form-item label="类型">
               <el-select
                 v-model="config.customize.type"
-                popper-class="bs-el-select"
-                class="bs-el-select"
+                popper-class="db-el-select"
+                class="db-el-select"
                 clearable
               >
                 <el-option
@@ -72,8 +68,8 @@
             <el-form-item label="图标位置">
               <el-select
                 v-model="config.customize.icon.position"
-                popper-class="bs-el-select"
-                class="bs-el-select"
+                popper-class="db-el-select"
+                class="db-el-select"
               >
                 <el-option
                   v-for="iconPosition in iconPositionOptions"
@@ -92,7 +88,7 @@
             <el-form-item label="边框宽度">
               <el-input-number
                 v-model="config.customize.borderStyle.borderWidth"
-                class="bs-el-input-number"
+                class="db-el-input-number"
                 controls-position="right"
                 :min="0"
                 :max="10"
@@ -101,8 +97,8 @@
             <el-form-item label="边框样式">
               <el-select
                 v-model="config.customize.borderStyle.borderStyle"
-                popper-class="bs-el-select"
-                class="bs-el-select"
+                popper-class="db-el-select"
+                class="db-el-select"
                 clearable
               >
                 <el-option
@@ -116,7 +112,7 @@
             <el-form-item label="边框圆角">
               <el-input-number
                 v-model="config.customize.borderStyle.borderRadius"
-                class="bs-el-input-number"
+                class="db-el-input-number"
                 controls-position="right"
                 :min="0"
                 :max="100"

@@ -77,7 +77,7 @@ export default {
     height: 40px;
     display: flex;
     align-items: center;
-    background-color: var(--ds-el-color-primary) !important;
+    background-color: var(--db-el-color-primary) !important;
 
     .top-left {
       display: flex;

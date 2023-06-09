@@ -11,7 +11,7 @@
     >
       <el-input-number
         v-model="config.w"
-        class="bs-el-input-number"
+        class="db-el-input-number"
         :min="0"
         :step="1"
       />
@@ -22,7 +22,7 @@
     >
       <el-input-number
         v-model="config.h"
-        class="bs-el-input-number"
+        class="db-el-input-number"
         :min="0"
         :step="1"
       />
@@ -33,7 +33,7 @@
     >
       <el-input-number
         v-model="config.x"
-        class="bs-el-input-number"
+        class="db-el-input-number"
         :min="0"
         :step="1"
       />
@@ -44,7 +44,7 @@
     >
       <el-input-number
         v-model="config.y"
-        class="bs-el-input-number"
+        class="db-el-input-number"
         :min="0"
         :step="1"
       />

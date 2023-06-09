@@ -146,7 +146,7 @@ export default {
           line-height: 40px;
           position: absolute;
           left: 0;
-          border-left: 4px solid var(--ds-el-color-primary);
+          border-left: 4px solid var(--db-el-color-primary);
         }
       }
 
@@ -176,7 +176,7 @@ export default {
       height: 100%;
       .inner-router-view-wrap{
         height: 100%;
-        .bs-table-box{
+        .db-table-box{
           height: calc(100vh - 205px);
           .el-table{
             height: 100%;

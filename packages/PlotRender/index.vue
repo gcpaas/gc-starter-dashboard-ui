@@ -1,7 +1,7 @@
 <template>
   <div
     style="width: 100%;height: 100%"
-    class="bs-design-wrap bs-custom-component"
+    class="db-design-wrap db-custom-component"
     :class="{'light-theme':customTheme === 'light','auto-theme':customTheme !=='light'}"
   >
     <div
@@ -25,6 +25,10 @@ export default {
     config: {
       type: Object,
       default: () => ({})
+    },
+    isDialog: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -41,17 +45,22 @@ export default {
     }),
     chatId () {
       let prefix = 'chart_'
-      if (this.$route.path === window?.DS_CONFIG?.routers?.previewUrl) {
-        prefix = 'preview_chart_'
+      if (this.isDialog){
+        prefix = 'isDialog_chart_'
+      }else{
+        if (this.$route.path === window?.DS_CONFIG?.routers?.previewUrl) {
+          prefix = 'preview_chart_'
+        }
+
+        if (this.$route.path === window?.DS_CONFIG?.routers?.designUrl) {
+          prefix = 'design_chart_'
+        }
+
+        if (this.$route.path === window?.DS_CONFIG?.routers?.pageListUrl) {
+          prefix = 'management_chart_'
+        }
       }
 
-      if (this.$route.path === window?.DS_CONFIG?.routers?.designUrl) {
-        prefix = 'design_chart_'
-      }
-
-      if (this.$route.path === window?.DS_CONFIG?.routers?.pageListUrl) {
-        prefix = 'management_chart_'
-      }
       return prefix + this.config.code
     },
     isPreview () {

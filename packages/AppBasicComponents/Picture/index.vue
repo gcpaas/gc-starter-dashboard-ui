@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-design-wrap bs-picture">
+  <div class="db-design-wrap db-picture">
     <div class="content-box">
       <el-image
         :src="config.customize.url || noImageUrl"
@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bs-design-wrap {
+.db-design-wrap {
   width: 100%;
   background-color: rgba(0, 0, 0, 0);
   .content-box {

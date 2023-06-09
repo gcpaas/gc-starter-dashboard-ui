@@ -5,7 +5,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 @import "~element-ui/packages/theme-chalk/src/index";
 // 布局样式
-.bs-container {
+.db-container {
   height: 100% !important;
   width: 100%;
   position: absolute;
@@ -13,7 +13,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
   padding: 16px;
   .inner-container {
     height: 100% !important;
-    background-color: var(--ds-background-2);
+    background-color: var(--db-background-2);
 
     .filter-container {
       padding: 16px 16px 6px;
@@ -38,8 +38,8 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
     }
 
     // page页样式
-    .bs-pagination {
-      padding: 0 0 4px 16px;
+    .db-pagination {
+      // padding: 0 0 4px 16px;
     }
 
     //输入框样式
@@ -84,7 +84,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 }
 //表格样式
 
-.bs-table-box {
+.db-table-box {
   padding: 0 16px;
   // height: calc(100vh - 340px);
   // margin-bottom: 16px;
@@ -141,7 +141,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
     }
 
         // th.is-leaf {
-        //   border-bottom: 2px solid var(--ds-el-color-primary) !important;
+        //   border-bottom: 2px solid var(--db-el-color-primary) !important;
         // }
 
         /* 滚动条样式设置*/
@@ -184,71 +184,71 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
     }
     //分页样式
-    .bs-pagination {
-      .el-pagination.is-background .btn-prev,
-      .el-pagination.is-background .btn-next,
-      .el-pagination.is-background .el-pager li {
-        // color: #bfbfbf;
-        // background-color: var(--ds-el-background-2);
+    // .db-pagination {
+    //   .el-pagination.is-background .btn-prev,
+    //   .el-pagination.is-background .btn-next,
+    //   .el-pagination.is-background .el-pager li {
+    //     // color: #bfbfbf;
+    //     // background-color: var(--db-el-background-2);
 
-        // &:hover {
-        //   color: var(--ds-el-text);
-        //   background-color: var(--ds-el-color-primary);
-        // }
-      }
+    //     // &:hover {
+    //     //   color: var(--db-el-text);
+    //     //   background-color: var(--db-el-color-primary);
+    //     // }
+    //   }
 
-      .el-pagination.is-background .btn-prev:disabled,
-      .el-pagination.is-background .btn-next:disabled {
-        // color: #bfbfbf;
-        // background-color: var(--ds-el-background-2);
-      }
+    //   .el-pagination.is-background .btn-prev:disabled,
+    //   .el-pagination.is-background .btn-next:disabled {
+    //     // color: #bfbfbf;
+    //     // background-color: var(--db-el-background-2);
+    //   }
 
-      .el-pagination__total {
-        color: #bfbfbf;
-      }
+    //   .el-pagination__total {
+    //     color: #bfbfbf;
+    //   }
 
-      .el-pagination .el-select .el-input .el-input__inner {
-        color: #bfbfbf;
+    //   .el-pagination .el-select .el-input .el-input__inner {
+    //     color: #bfbfbf;
 
-        &:hover {
-          color: var(--ds-el-color-primary);
-        }
-      }
+    //     &:hover {
+    //       color: var(--db-el-color-primary);
+    //     }
+    //   }
 
-      .el-pagination {
-        text-align: right !important;
-        font-weight: normal !important;
-      }
+    //   .el-pagination {
+    //     text-align: right !important;
+    //     font-weight: normal !important;
+    //   }
 
-      .el-pager li {
-        padding: 0 !important;
-        min-width: 32px !important;
-        height: 32px !important;
-        line-height: 32px !important;
-        border-radius: 2px !important;
-      }
+    //   .el-pager li {
+    //     padding: 0 !important;
+    //     min-width: 32px !important;
+    //     height: 32px !important;
+    //     line-height: 32px !important;
+    //     border-radius: 2px !important;
+    //   }
 
-      .el-pager li:not(.disabled).active {
-        background-color: var(--ds-el-color-primary) !important;
-      }
+    //   .el-pager li:not(.disabled).active {
+    //     background-color: var(--db-el-color-primary) !important;
+    //   }
 
-      .el-pagination span:not([class*=suffix]), .el-pagination button {
-        font-size: 14px !important;
-        min-width: 0 !important;
-        height: 32px !important;
-        line-height: 32px !important;
-      }
+    //   .el-pagination span:not([class*=suffix]), .el-pagination button {
+    //     font-size: 14px !important;
+    //     min-width: 0 !important;
+    //     height: 32px !important;
+    //     line-height: 32px !important;
+    //   }
 
-      .el-pagination .el-input--mini .el-input__inner {
-        height: 32px !important;
-        line-height: 32px !important;
-      }
+    //   .el-pagination .el-input--mini .el-input__inner {
+    //     height: 32px !important;
+    //     line-height: 32px !important;
+    //   }
 
-      .el-pagination__editor.el-input .el-input__inner {
-        height: 32px !important;
-      }
+    //   .el-pagination__editor.el-input .el-input__inner {
+    //     height: 32px !important;
+    //   }
 
-    }
+    // }
 
     /*解决el-scroll底部出现空白滚动条*/
     .el-scrollbar__wrap {
@@ -258,7 +258,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 
     // dialog设置
-    .bs-dialog-wrap {
+    .db-dialog-wrap {
       .el-dialog__wrapper {
         overflow: hidden !important;
       }
@@ -276,8 +276,8 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
       // dialog头部
       .el-dialog__header {
-        background: var(--ds-el-background-3) !important;
-        background-color: var(--ds-background-2) !important;
+        background: var(--db-el-background-3) !important;
+        background-color: var(--db-background-2) !important;
         padding: 0 !important;
         height: 40px;
         line-height: 40px;
@@ -300,7 +300,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
       .el-dialog__title {
         display: inline-block;
         font-size: 16px;
-        border-left: 4px solid var(--ds-el-color-primary);
+        border-left: 4px solid var(--db-el-color-primary);
         padding-left: 16px;
       }
     }

@@ -32,7 +32,7 @@
             />
             <el-dropdown-menu
               slot="dropdown"
-              class="dropdown-menu-box bs-el-dropdown-menu"
+              class="dropdown-menu-box db-el-dropdown-menu"
             >
               <el-dropdown-item @click.native="catalogEdit(catalog)">
                 编辑
@@ -59,9 +59,9 @@
     <el-dialog
       :title="currentCatalog.code ? '编辑分组':'新建分组'"
       :visible.sync="catalogVisible"
-      custom-class="bs-el-dialog"
+      custom-class="db-el-dialog"
       width="30%"
-      class="bs-dialog-wrap bs-el-dialog"
+      class="db-dialog-wrap db-el-dialog"
       @close="handleClose"
     >
       <el-form
@@ -76,7 +76,7 @@
         >
           <el-input
             v-model="currentCatalog.name"
-            class="bs-el-input"
+            class="db-el-input"
           />
         </el-form-item>
         <el-form-item
@@ -87,7 +87,7 @@
             :min="0"
             :max="30000"
             controls-position="right"
-            class="bs-el-input-number"
+            class="db-el-input-number"
           />
         </el-form-item>
       </el-form>
@@ -96,7 +96,7 @@
         class="dialog-footer"
       >
         <el-button
-          class="bs-el-button-default"
+          class="db-el-button-default"
           @click="catalogVisible = false"
         >
           取消
@@ -220,7 +220,7 @@ export default {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning',
-        customClass: 'bs-el-message-box'
+        customClass: 'db-el-message-box'
       }).then(async () => {
         post(`/dashboard/type/delete/${catalog.id}`).then(() => {
           this.$message({
@@ -257,8 +257,8 @@ export default {
     width: 220px;
     height: 100%;
     box-sizing: border-box;
-    color: var(--ds-el-title);
-    background-color: var(--ds-background-2);
+    color: var(--db-el-title);
+    background-color: var(--db-background-2);
     .side-catalog-box{
       height: calc(100% - 50px);
       overflow-y: auto;
@@ -275,11 +275,11 @@ export default {
         }
         .el-icon-more{
           transform: rotate(90deg);
-          color: var(--ds-el-title);
+          color: var(--db-el-title);
           font-weight: 400;
         }
         .active-icon-more{
-          color:var(--ds-el-text);
+          color:var(--db-el-text);
         }
         .catalog-name{
           overflow:hidden;
@@ -298,9 +298,9 @@ export default {
       .active-catalog{
         background: rgba(0,122,255,.06274509803921569);
         color: #007aff;
-        // background-image: linear-gradient(to right , var(--ds-el-color-primary), var(--ds-background-2));
+        // background-image: linear-gradient(to right , var(--db-el-color-primary), var(--db-background-2));
         // background-repeat: round;
-        // color: var(--ds-el-text);
+        // color: var(--db-el-text);
       }
     }
     .add-catalog-box{
@@ -312,9 +312,9 @@ export default {
       border-radius: 10px;
       margin: 0 8px;
       &:hover{
-        background-color: var(--ds-background-1);
+        background-color: var(--db-background-1);
         cursor: pointer;
-        color: var(--ds-el-text);;
+        color: var(--db-el-text);;
       }
       .el-icon-plus{
         padding: 0 5px;

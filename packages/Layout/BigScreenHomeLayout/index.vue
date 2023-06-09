@@ -125,7 +125,7 @@ export default {
       left: 40px;
       display: flex;
       align-items: center;
-      color: var(--ds-el-color-primary);
+      color: var(--db-el-color-primary);
 
       .logo {
         height: 30px;
@@ -148,7 +148,7 @@ export default {
     overflow: hidden;
     width: 100%;
     height: calc(100vh - 150px);
-    background-color: var(--ds-el-background-2);
+    background-color: var(--db-el-background-2);
     box-sizing: border-box;
   }
 }

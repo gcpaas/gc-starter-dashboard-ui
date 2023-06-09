@@ -22,10 +22,6 @@
           placeholder="请输入标题"
         />
       </el-form-item>
-      <SettingTitle>位置</SettingTitle>
-      <div class="lc-field-body">
-        <PosWhSetting :config="config" />
-      </div>
       <SettingTitle>基础</SettingTitle>
       <div class="lc-field-body">
         <el-form-item
@@ -47,7 +43,7 @@
         >
           <el-input-number
             v-model="config.customize.fontWeight"
-            class="bs-el-input-number"
+            class="db-el-input-number"
             placeholder="请输入时间字体权重"
           />
         </el-form-item>

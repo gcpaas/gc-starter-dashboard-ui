@@ -1,7 +1,7 @@
 <template>
   <div
     style="width: 100%;height: 100%"
-    class="bs-design-wrap "
+    class="db-design-wrap "
   >
     <!-- :border="this.config.customize.border" -->
     <el-table
@@ -255,7 +255,7 @@ export default {
 }
 
 // ::v-deep .el-table th.gutter {
-//   border-bottom: 2px solid var(--ds-el-color-primary) !important;
+//   border-bottom: 2px solid var(--db-el-color-primary) !important;
 // }
 ::v-deep .el-table__body {
   height: 100%;

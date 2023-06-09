@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-design-wrap">
+  <div class="db-design-wrap">
     <div class="basic-component-input">
       <el-input
         :id="`el-input-${config.code}`"
@@ -73,7 +73,7 @@ export default {
 
 <style lang="scss" scoped>
   @import '~packages/assets/style/chartStyle.scss';
-.bs-design-wrap {
+.db-design-wrap {
   width: 100%;
   height: 100%;
   display: flex;

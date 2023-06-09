@@ -1,7 +1,7 @@
 <template>
   <div
     style="width: 100%;height: 100%"
-    class="bs-design-wrap"
+    class="db-design-wrap"
   >
     <dv-scroll-ranking-board
       :key="updateKey"

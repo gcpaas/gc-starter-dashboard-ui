@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-setting-wrap">
+  <div class="db-setting-wrap">
     <el-form
       ref="form"
       :model="config"
@@ -21,10 +21,6 @@
             clearable
           />
         </el-form-item>
-        <SettingTitle>位置</SettingTitle>
-        <div class="lc-field-body">
-          <PosWhSetting :config="config" />
-        </div>
         <SettingTitle>基础</SettingTitle>
         <div class="lc-field-body">
           <el-form-item label="背景色一">
@@ -44,7 +40,7 @@
           <el-form-item label="宽度">
             <el-input-number
               v-model="config.customize.width"
-              class="bs-el-input-number"
+              class="db-el-input-number"
               :min="0"
               :max="30"
               :step="1"
@@ -56,7 +52,7 @@
           >
             <el-slider
               v-model="config.customize.opacity"
-              class="bs-slider bs-el-input-number"
+              class="db-slider db-el-input-number"
               :min="0"
               :max="100"
               show-input

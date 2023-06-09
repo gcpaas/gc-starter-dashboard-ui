@@ -1,7 +1,7 @@
 <template>
   <div
     v-loading="loading"
-    class="bs-remote-wrap"
+    class="db-remote-wrap"
     element-loading-text="远程组件加载中..."
   >
     <component
@@ -174,7 +174,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bs-remote-wrap {
+.db-remote-wrap {
   width: 100%;
 }
 </style>

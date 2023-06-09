@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bs-setting-wrap bs-scrollbar"
+    class="db-setting-wrap db-scrollbar"
     @click.stop
   >
     <el-tabs
@@ -28,7 +28,7 @@
     </el-tabs>
     <el-scrollbar
       v-else
-      class="bs-scrollbar"
+      class="db-scrollbar"
     >
       <component
         :is="resolveComponentType(config.type)"

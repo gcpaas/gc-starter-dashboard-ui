@@ -1,7 +1,7 @@
 <template>
   <div
     style="width: 100%;height: 100%"
-    class="bs-design-wrap"
+    class="db-design-wrap"
   >
     <dv-border-box-2
       :id="'dataV' + code"
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bs-design-wrap {
+.db-design-wrap {
   position: relative;
   width: 100%;
   height: 100%;
@@ -50,7 +50,7 @@ export default {
     font-size: 14px;
     color: #333;
     font-weight: bold;
-    border-left: 3px solid var(--ds-el-color-primary);
+    border-left: 3px solid var(--db-el-color-primary);
     padding-left: 16px;
   }
 

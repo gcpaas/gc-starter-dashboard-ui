@@ -6,7 +6,7 @@
     :before-close="handleClose"
     :append-to-body="true"
     :close-on-click-modal="false"
-    class="bs-dialog-wrap bs-el-dialog"
+    class="db-dialog-wrap db-el-dialog"
   >
     <div class="type-wrap">
       <el-row :gutter="20">
@@ -15,7 +15,7 @@
           :span="spanNum"
         >
           <el-card
-            class="bs-el-card"
+            class="db-el-card"
             shadow="hover"
           >
             <div
@@ -31,7 +31,7 @@
           :span="spanNum"
         >
           <el-card
-            class="bs-el-card"
+            class="db-el-card"
             shadow="hover"
           >
             <div
@@ -47,7 +47,7 @@
           :span="spanNum"
         >
           <el-card
-            class="bs-el-card"
+            class="db-el-card"
             shadow="hover"
           >
             <div
@@ -63,7 +63,7 @@
           :span="spanNum"
         >
           <el-card
-            class="bs-el-card"
+            class="db-el-card"
             shadow="hover"
           >
             <div
@@ -79,7 +79,7 @@
           :span="spanNum"
         >
           <el-card
-            class="bs-el-card"
+            class="db-el-card"
             shadow="hover"
           >
             <div
@@ -137,7 +137,7 @@ export default {
   font-weight: 400;
   cursor: pointer;
   position: relative;
-  color: var(--ds-el-text);
+  color: var(--db-el-text);
   p {
     position: absolute;
     width: 100%;
@@ -147,7 +147,7 @@ export default {
     color: #909399;
   }
   &:hover{
-      color: var(--ds-el-color-primary);
+      color: var(--db-el-color-primary);
     }
 }
 /deep/ .el-dialog__body {

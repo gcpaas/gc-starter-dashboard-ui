@@ -1,5 +1,5 @@
 <template>
-  <div class="bs-template-mag-wrap">
+  <div class="db-template-mag-wrap">
     <SourceMag type="template" />
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bs-template-mag-wrap {
+.db-template-mag-wrap {
   height: 100%;
 }
 </style>

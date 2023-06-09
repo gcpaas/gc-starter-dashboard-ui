@@ -4,8 +4,8 @@
       <el-select
         v-if="catalogInfo !== 'system'"
         v-model="catalogCode"
-        class="bs-el-select"
-        popper-class="bs-el-select"
+        class="db-el-select"
+        popper-class="db-el-select"
         placeholder="请选择分组"
         clearable
         @change="reSearch"
@@ -19,7 +19,7 @@
       </el-select>
       <el-input
         v-model="name"
-        class="bs-el-input"
+        class="db-el-input"
         placeholder="请输入组件名称"
         prefix-icon="el-icon-search"
         clearable
@@ -42,7 +42,7 @@
     </div>
     <div
       v-loading="loading"
-      class="list-wrap bs-scrollbar"
+      class="list-wrap db-scrollbar"
       element-loading-text="加载中"
       :style="{
         display: gridComputed ? 'grid' : 'flex',
@@ -157,10 +157,10 @@
       <!-- <div class="footer-pagination-wrap-text">
         总共 {{ totalCount }} 个项目
       </div> -->
-      <div class="bs-pagination">
+      <div class="db-pagination">
         <el-pagination
-          class="bs-el-pagination"
-          popper-class="bs-el-pagination"
+          class="db-el-pagination"
+          popper-class="db-el-pagination"
           background
           layout="total, prev, pager, next, sizes"
           :page-size="size"
@@ -359,7 +359,7 @@ export default {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning',
-        customClass: 'bs-el-message-box'
+        customClass: 'db-el-message-box'
       })
         .then(async () => {
           const url = this.catalogInfo === 'component' ? `/dashboard/design/delete/${screen.code}` : `/dashboard/bizComponent/delete/${screen.id}`
@@ -386,7 +386,7 @@ export default {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning',
-        customClass: 'bs-el-message-box'
+        customClass: 'db-el-message-box'
       })
         .then(async () => {
           post(url)
@@ -419,7 +419,7 @@ export default {
   height: 100%;
   padding: 16px;
   color: #9ea9b2;
-  background-color: var(--ds-background-leftPanel) !important;
+  background-color: var(--db-background-leftPanel) !important;
 
   .top-search-wrap {
     display: flex;
@@ -502,7 +502,7 @@ export default {
           justify-content: space-evenly;
           width: 100%;
           cursor: pointer;
-          color: var(--ds-el-color-primary);
+          color: var(--db-el-color-primary);
 
           .circle {
             position: relative;
@@ -511,12 +511,12 @@ export default {
             justify-content: center;
             width: 40px;
             height: 40px;
-            border: 1px solid var(--ds-el-color-primary);
+            border: 1px solid var(--db-el-color-primary);
             border-radius: 50%;
 
             &:hover {
               color: #fff;
-              background: var(--ds-el-color-primary);
+              background: var(--db-el-color-primary);
             }
 
             span {
@@ -531,13 +531,13 @@ export default {
         width: 100%;
         height: 100%;
         cursor: pointer;
-        background-color: var(--ds-background-2);
+        background-color: var(--db-background-2);
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-        color: var(--ds-el-title);
-        border: 1px solid var(--ds-background-2);
+        color: var(--db-el-title);
+        border: 1px solid var(--db-background-2);
         &:hover {
-          color: var(--ds-el-text);
-          border: 1px solid var(--ds-el-color-primary);
+          color: var(--db-el-text);
+          border: 1px solid var(--db-el-color-primary);
         }
 
         .add-dashboard-card-text {
@@ -557,7 +557,7 @@ export default {
 
           /deep/.image-slot {
             height: 100%;
-            background-color: var(--ds-background-2);
+            background-color: var(--db-background-2);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -577,8 +577,8 @@ export default {
           /*height: 26px;*/
           padding: 0 10px;
           height: calc(100% - 150px);
-          color: var(--ds-el-title);
-          background-color: var(--ds-background-2);
+          color: var(--db-el-title);
+          background-color: var(--db-background-2);
 
           .left-bigscreen-title {
             font-size: 14px;
@@ -635,11 +635,11 @@ export default {
     padding: 0 20px;
   }
 }
-.bs-pagination {
-  ::v-deep .el-input__inner {
-    width: 110px !important;
-    border: none;
-    background: var(--ds-el-background-2);
-  }
-}
+// .db-pagination {
+//   ::v-deep .el-input__inner {
+//     width: 110px !important;
+//     border: none;
+//     background: var(--db-el-background-2);
+//   }
+// }
 </style>

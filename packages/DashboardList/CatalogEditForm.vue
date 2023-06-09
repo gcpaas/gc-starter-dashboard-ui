@@ -6,7 +6,7 @@
       :visible.sync="formVisible"
       :append-to-body="true"
       destroy-on-close
-      class="bs-dialog-wrap bs-el-dialog catalog-edit-wrap"
+      class="db-dialog-wrap db-el-dialog catalog-edit-wrap"
     >
       <el-form
         v-if="formVisible"
@@ -16,7 +16,7 @@
       >
         <el-input
           v-model="searchKey"
-          class="bs-el-input"
+          class="db-el-input"
           placeholder="'请输入分组名称'"
           prefix-icon="el-icon-search"
           clearable
@@ -36,7 +36,7 @@
           新增
         </el-button>
         <el-table
-          class="bs-el-table"
+          class="db-el-table"
           height="100%"
           :data="tableList"
         >
@@ -80,9 +80,9 @@
     <el-dialog
       :title="currentCatalog.code ? '编辑分组':'新建分组'"
       :visible.sync="catalogVisible"
-      custom-class="bs-el-dialog"
+      custom-class="db-el-dialog"
       width="30%"
-      class="bs-dialog-wrap bs-el-dialog"
+      class="db-dialog-wrap db-el-dialog"
       @close="handleClose"
     >
       <el-form
@@ -97,7 +97,7 @@
         >
           <el-input
             v-model="currentCatalog.name"
-            class="bs-el-input"
+            class="db-el-input"
           />
         </el-form-item>
         <el-form-item
@@ -108,7 +108,7 @@
             :min="0"
             :max="30000"
             controls-position="right"
-            class="bs-el-input-number"
+            class="db-el-input-number"
           />
         </el-form-item>
       </el-form>
@@ -117,7 +117,7 @@
         class="dialog-footer"
       >
         <el-button
-          class="bs-el-button-default"
+          class="db-el-button-default"
           @click="catalogVisible = false"
         >
           取消
@@ -232,7 +232,7 @@ export default {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning',
-        customClass: 'bs-el-message-box'
+        customClass: 'db-el-message-box'
       }).then(async () => {
         post(`/dashboard/type/delete/${catalog.id}`).then(() => {
           this.$message({

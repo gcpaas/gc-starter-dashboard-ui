@@ -11,21 +11,21 @@ import getComponentConfig from 'packages/js/utils/getComponentConfig'
 // 批量引入配置文件
 import { setModules, dataModules } from 'packages/js/utils/configImport'
 const typeList = [
-  'texts',
-  'linkChart',
-  'horizontalLine', // 横线
-  'verticalLine', // 竖线
+  // 'texts',
+  // 'linkChart',
+  // 'horizontalLine', // 横线
+  // 'verticalLine', // 竖线
   'picture',
   'timeCountDown',
   'currentTime',
   'iframeChart',
   'digitalFlop',
   'tables',
-  'screenScrollRanking',
-  'screenScrollBoard',
+  'dashBoardScrollRanking',
+  'dashBoardScrollBoard',
   'video',
-  'input',
-  'button'
+  // 'input',
+  // 'button'
 ]
 let basicConfigList = []
 basicConfigList = typeList.map((type) => {

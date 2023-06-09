@@ -1,7 +1,7 @@
 <template>
   <div
-    class="bs-design-wrap"
-    :class="`bs-text-${customTheme}`"
+    class="db-design-wrap"
+    :class="`db-text-${customTheme}`"
   >
     <div
       class="content-box"

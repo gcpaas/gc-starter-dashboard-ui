@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    class="bs-dialog-wrap bs-page-menu-wrap bs-el-dialog"
+    class="db-dialog-wrap db-page-menu-wrap db-el-dialog"
     title="新建页面"
     :visible.sync="dialogVisible"
     width="800px"
@@ -59,7 +59,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bs-page-menu-wrap{
+.db-page-menu-wrap{
   .page-menu-box{
     width: 100%;
     display: grid;
@@ -81,7 +81,7 @@ export default {
         align-items: center;
         border: 1px solid #e5e5e5;
         &:hover{
-          border: 1px dashed var(--ds-el-color-primary);
+          border: 1px dashed var(--db-el-color-primary);
         }
       }
       img{

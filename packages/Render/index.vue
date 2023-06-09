@@ -1,9 +1,9 @@
 <template>
   <div
     v-if="isInit"
-    ref="bs-render-wrap"
+    ref="db-render-wrap"
     :key="`${pageInfo.pageConfig.w}${pageInfo.pageConfig.h}`"
-    class="bs-render-wrap design-drag-wrap render-theme-wrap"
+    class="db-render-wrap design-drag-wrap render-theme-wrap"
     :style="{
       width: '100%',
       height: '100%',
@@ -360,7 +360,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.bs-render-wrap {
+.db-render-wrap {
   position: relative;
   background-size: cover;
   overflow: auto;
