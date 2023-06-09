@@ -66,7 +66,7 @@ export default function getComponentConfig (type) {
         icon: Icon.getNameList()[1],
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardPictureChart',
-        w: 6,
+        w: 12,
         h: 10,
         x: 0,
         y: 0,
@@ -118,7 +118,7 @@ export default function getComponentConfig (type) {
         icon: Icon.getNameList()[6],
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardCurrentTimeChart',
-        w: 6,
+        w: 12,
         h: 4,
         x: 0,
         y: 0,
@@ -131,7 +131,7 @@ export default function getComponentConfig (type) {
         icon: Icon.getNameList()[7],
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardTimeCountDownChart',
-        w: 6,
+        w: 12,
         h: 4,
         x: 0,
         y: 0,

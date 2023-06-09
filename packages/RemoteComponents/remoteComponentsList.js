@@ -33,7 +33,7 @@ export function getRemoteComponents (comList) {
       img: config.img,
       className:
         'com.gccloud.dashboard.core.module.chart.components.RemoteComponentChart',
-      w: 6,
+      w: 12,
       h: 10,
       x: 0,
       y: 0,
