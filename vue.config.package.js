@@ -54,7 +54,8 @@ module.exports = {
       },
       fallback: {
         path: false,
-        fs: false
+        fs: false,
+        assert: false
       }
     },
     plugins: [

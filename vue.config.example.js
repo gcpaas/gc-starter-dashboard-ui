@@ -74,7 +74,8 @@ module.exports = {
       },
       fallback: {
         path: false,
-        fs: false
+        fs: false,
+        assert: false
       }
     })
     // 如果是开发模式，忽略一些组件打包，采用cdn
