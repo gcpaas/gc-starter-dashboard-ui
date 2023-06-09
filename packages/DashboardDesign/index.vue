@@ -508,7 +508,7 @@ export default {
       height: 8px;
     }
     /deep/::-webkit-scrollbar-thumb {
-      background: #dddddd !important;
+      background: #dddddd;
       border-radius: 10px;
     }
 
