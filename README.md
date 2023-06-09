@@ -87,12 +87,20 @@ window.CONFIG.baseUrl=http://127.0.0.1:8081/bigScreenServer
 
 ```javascript
 // file: main.js
-
 import { registerConfig } from 'gc-starter-dashboard-ui'
 registerConfig({
   httpConfigs: {
     baseURL: `这里是后端服务地址的值，如：window.CONFIG.baseUrl`
   }
+}, router)
+```
+> 注意⚠️，如果同时使用 gc-starter-bigscreen， registerConfig 需要重命名，避免冲突，比如
+
+
+```javascript
+import { registerConfig as registerConfigDashboard } from 'gc-starter-dashboard-ui'
+registerConfig({
+  // ...
 }, router)
 ```
 

@@ -23,6 +23,7 @@
       :use-css-transforms="true"
       :is-draggable="true"
       :margin="[20, 20]"
+      :cols="{ lg: 24, md: 24, sm: 24, xs: 24, xxs: 12 }"
     >
       <grid-item
         v-for="(card) in chartList"
@@ -59,6 +60,7 @@ import { randomString } from '../js/utils'
 import { compile } from 'tiny-sass-compiler/dist/tiny-sass-compiler.esm-browser.prod.js'
 import plotList, { getCustomPlots } from '../G2Plots/plotList'
 import VueGridLayout from 'vue-grid-layout'
+import _ from 'lodash'
 export default {
   name: 'DashboardRender',
   components: {
@@ -87,13 +89,19 @@ export default {
     ...mapState({
       pageConfig: (state) => state.dashboard.pageInfo.pageConfig,
       pageInfo: (state) => state.dashboard.pageInfo,
-      chartList: (state) => state.dashboard.pageInfo.chartList,
+      // chartList: (state) => state.dashboard.pageInfo.chartList,
       activeCode: (state) => state.dashboard.activeCode,
       hoverCode: (state) => state.dashboard.hoverCode,
       themeJson: (state) => state.dashboard.pageInfo.pageConfig.themeJson,
       isInit: (state) => !state.dashboard.pageLoading,
       scale: (state) => state.dashboard.zoom / 100
-    })
+    }),
+    chartList: {
+      get () {
+        return this.pageInfo.chartList
+      },
+      set (val) {}
+    }
   },
   watch: {
     pageConfig: {
@@ -257,8 +265,7 @@ export default {
     },
     // 新增元素
     addChart (chart, position) {
-      const { left, top } = this.$el.getBoundingClientRect()
-      const _chart = !chart.code ? JSON.parse(chart) : chart
+      const _chart = (typeof chart === 'string') ? JSON.parse(chart) : chart
       let option = _chart.option
       if (_chart.type === 'customComponent') {
         option = {
@@ -276,10 +283,10 @@ export default {
         option
       }
       config.key = config.code
-      this.addItem(config)
+      const index = this.chartList.length
+      this.addChatInLayout(config, index, this.chartList)
     },
     addSourceChart (chart, position) {
-      const { left, top } = this.$el.getBoundingClientRect()
       const _chart = JSON.parse(chart)
       let option = _chart.option
       if (_chart.type === 'customComponent') {
@@ -291,8 +298,6 @@ export default {
       const code = !chart.code ? randomString(8) : chart.code
       const config = {
         ..._chart,
-        x: 0,
-        y: 0,
         w: 12,
         h: 10,
         code,
@@ -300,7 +305,8 @@ export default {
         option
       }
       config.key = config.code
-      this.addItem(config)
+      const index = this.chartList.length
+      this.addChatInLayout(config, index, this.chartList)
     },
     /**
      * 拖拽相同组合的组件
@@ -355,6 +361,47 @@ export default {
           })
         })
       }
+    },
+
+    addChatInLayout (item, index, layout) {
+      // 初始化元素
+      const newItem = _.cloneDeep(item)
+      // 确定边界
+      const Ys = []
+      let maxY = 0
+      let edgeX = 0
+      let edgeY = 0
+      // eslint-disable-next-line array-callback-return
+      layout.map(l => {
+        Ys.push(l.y || 0 + l.h || 10)
+      })
+      // eslint-disable-next-line no-mixed-operators
+      maxY = Ys.length && Math.max.apply(null, Ys) || 1
+      edgeX = 24
+      edgeY = maxY
+      // 使用二维数组生成地图
+      const gridMap = []
+
+      for (let x = 0; x < edgeX; x++) {
+        gridMap[x] = []
+        for (let y = 0; y < edgeY; y++) {
+          gridMap[x][y] = 0
+        }
+      }
+      // 标记占位
+      // eslint-disable-next-line array-callback-return
+      layout.map(l => {
+        // 将layout中卡片所占区域标记为1
+        for (let { x } = l; x < (l.x + l.w); x++) {
+          for (let { y } = l; y < (l.y + l.h); y++) {
+            gridMap[x][y] = 1
+          }
+        }
+      })
+      newItem.x = 0
+      newItem.y = edgeY++
+      this.$set(layout, index, newItem)
+      return layout
     }
   }
 }

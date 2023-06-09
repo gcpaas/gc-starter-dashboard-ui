@@ -19,6 +19,7 @@
         :use-css-transforms="true"
         :is-draggable="false"
         :margin="[20, 20]"
+        :cols="{ lg: 24, md: 24, sm: 24, xs: 12, xxs: 12 }"
       >
         <grid-item
           v-for="(card) in chartList"

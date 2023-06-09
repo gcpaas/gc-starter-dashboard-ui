@@ -64,8 +64,8 @@ export function getRemoteComponentConfig (code, name) {
     img: null,
     className:
       'com.gccloud.dashboard.core.module.chart.components.RemoteComponentChart',
-    w: 450,
-    h: 320,
+    w: 12,
+    h: 10,
     x: 0,
     y: 0,
     type: 'remoteComponent',

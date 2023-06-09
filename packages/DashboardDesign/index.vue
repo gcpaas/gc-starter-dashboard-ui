@@ -22,6 +22,7 @@
         @openResource="initDialog"
         @openComponent="openComponent"
         @toggleLeftSidebar="toggleLeftSidebar"
+        @addComponent="addComponent"
       />
       <!-- 中间组件展示面板 -->
       <div
@@ -42,10 +43,19 @@
           @openRightPanel="openRightPanel"
         />
         <!-- 移动端 -->
-        <div class="app-wrap-box" v-else-if="terminal === 'app'" >
-          <div class="app-wrap app-display-wrapper" id="app-dom" >
+        <div
+          v-else-if="terminal === 'app'"
+          class="app-wrap-box"
+        >
+          <div
+            id="app-dom"
+            class="app-wrap app-display-wrapper"
+          >
             <div class="app-container app-design-wrap">
-              <AppDashBoard  ref="Render" @openRightPanel="openRightPanel"></AppDashBoard>
+              <AppDashBoard
+                ref="Render"
+                @openRightPanel="openRightPanel"
+              />
             </div>
           </div>
         </div>
@@ -129,7 +139,7 @@ export default {
   },
   data () {
     return {
-      terminal:'pc',//终端
+      terminal: 'pc', // 终端
       rightVisiable: false,
       pageInfoVisiable: false,
       ruleStartX: 100,
@@ -234,7 +244,7 @@ export default {
       'changeIframeDialog'
     ]),
     // 切换终端
-    chooseTerminal(terminal){
+    chooseTerminal (terminal) {
       this.terminal = terminal
     },
     // 添加资源弹窗初始化
@@ -421,6 +431,9 @@ export default {
     // 页面信息更改
     updatePage () {
       this.$refs.Rules.initZoom()
+    },
+    addComponent (component) {
+      this.$refs.Render.addChart(component, { x: 0, y: 0 })
     }
   }
 }
