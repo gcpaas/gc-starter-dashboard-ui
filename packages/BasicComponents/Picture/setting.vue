@@ -30,7 +30,7 @@
       <SettingTitle>基础</SettingTitle>
       <div class="lc-field-body">
         <el-form-item
-          label="链接"
+          label="URL"
           label-width="100px"
           prop="customize.url"
         >
@@ -84,15 +84,17 @@
           label="不透明度"
           label-width="100px"
         >
-          <el-slider
+         <el-input-number
             v-model="config.customize.opacity"
-            class="db-slider db-el-input-number"
-            :min="0"
-            :max="100"
-            show-input
+            class="db-el-input-number"
+            placeholder="请输入不透明度"
+            :min="0.01"
+            :max="1"
+            :precision="2"
+            :step="0.01"
           />
         </el-form-item>
-        <el-form-item
+        <!-- <el-form-item
           label="圆角"
           label-width="100px"
         >
@@ -102,7 +104,7 @@
             placeholder="请输入圆角大小"
             :min="0"
           />
-        </el-form-item>
+        </el-form-item> -->
       </div>
     </el-form>
   </div>

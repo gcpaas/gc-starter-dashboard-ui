@@ -30,8 +30,8 @@
               :key="settingIndex+1"
             >
               <el-form-item
-                :label="setting.label"
-                label-width="120px"
+                :label="setting.type=== 'padding' ? '' : setting.label"
+                :label-width="setting.type=== 'padding' ? '0px' :'120px'"
               >
                 <el-input
                   v-if="setting.type === 'input'"
@@ -103,7 +103,9 @@
                   v-else-if="setting.type === 'inputNumber'"
                   v-model="setting.value"
                   class="db-el-input-number"
-                  :step="setting.step || 1"
+                  :max="setting.max || 100"
+                  :min="setting.min || 0"
+                  :step="Number(setting.step) || 1"
                 />
                 <el-radio-group
                   v-else-if="setting.type === 'radio'"

@@ -45,7 +45,7 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '数据点形状',
+    label: '折线点样式',
     type: 'select',
     field: 'point_shape',
     optionField: 'point.shape',
@@ -61,7 +61,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '数据点大小',
+    label: '折线点大小',
     type: 'inputNumber',
     field: 'point_size',
     optionField: 'point.size',
@@ -70,7 +70,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '数据点颜色',
+    label: '折线点颜色',
     type: 'colorPicker',
     field: 'point_style_fill',
     optionField: 'point.style.fill',
@@ -99,7 +99,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '线条宽度',
+    label: '折线宽度',
     type: 'inputNumber',
     field: 'lineStyle_lineWidth',
     optionField: 'lineStyle.lineWidth',
@@ -108,7 +108,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '线条颜色',
+    label: '折线颜色',
     type: 'gradual',
     field: 'lineStyle_stroke',
     optionField: 'lineStyle.stroke',
@@ -361,7 +361,7 @@ const setting = [
     type: 'inputNumber',
     field: 'yAxis_line_lineWidth',
     optionField: 'yAxis.line.style.lineWidth',
-    value: 1,
+    value: 0,
     tabName: 'custom',
     groupName: 'yAxis'
   },
@@ -372,7 +372,7 @@ const setting = [
     optionField: 'yAxis.line.style.stroke',
     // 是否多选
     multiple: false,
-    value: 'rgba(255,255,255,0)',
+    value: '#d0d0d0',
     tabName: 'custom',
     groupName: 'yAxis'
   },
@@ -505,11 +505,9 @@ const option = {
     },
     line: {
       style: {
-        stroke: 'rgba(255,255,255,0)',
-        lineWidth: 1
-      },
-      stroke: 'rgba(255,255,255,0)',
-      lineWidth: 1
+        stroke: '#d0d0d0',
+        lineWidth: 0
+      }
     }
   }
 }

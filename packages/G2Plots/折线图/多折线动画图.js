@@ -58,7 +58,7 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '线条宽度',
+    label: '折线宽度',
     type: 'inputNumber',
     field: 'lineStyle_lineWidth',
     optionField: 'lineStyle.lineWidth',
@@ -67,7 +67,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '颜色配置',
+    label: '折线颜色',
     // 设置组件类型
     type: 'colorSelect',
     // 字段
@@ -102,9 +102,9 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '动画执行时间',
+    label: '动画时长(ms)',
     // 设置组件类型
-    type: 'input',
+    type: 'inputNumber',
     // 字段
     field: 'animation_appear_duration',
     // 对应options中的字段
@@ -392,7 +392,7 @@ const setting = [
     type: 'inputNumber',
     field: 'yAxis_line_lineWidth',
     optionField: 'yAxis.line.style.lineWidth',
-    value: 1,
+    value: 0,
     tabName: 'custom',
     groupName: 'yAxis'
   },
@@ -403,7 +403,7 @@ const setting = [
     optionField: 'yAxis.line.style.stroke',
     // 是否多选
     multiple: false,
-    value: 'rgba(255,255,255,0)',
+    value: '#d0d0d0',
     tabName: 'custom',
     groupName: 'yAxis'
   },
@@ -599,11 +599,9 @@ const option = {
     },
     line: {
       style: {
-        stroke: 'rgba(255,255,255,0)',
-        lineWidth: 1
-      },
-      stroke: 'rgba(255,255,255,0)',
-      lineWidth: 1
+        stroke: '#d0d0d0',
+        lineWidth: 0
+      }
     }
   },
   legendEnable: false,

@@ -14,6 +14,7 @@
           'background-color': option.bgColor,
           'font-size': option.fontSize + 'px',
           'min-width': option.width + 'px',
+          'height': option.height + 'px',
           color: option.color,
           'border-radius': option.borderRadius + 'px',
           'font-weight': option.fontWeight,

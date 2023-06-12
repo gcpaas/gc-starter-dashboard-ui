@@ -57,7 +57,7 @@ const setting = [
     field: 'range_color',
     // 对应options中的字段
     optionField: 'range.color',
-    value: 'l(0) 0:#30BF78 1:#ffffff',
+    value: 'l(0) 0:#6B74E3 1:#38BBE5',
     tabName: 'custom',
     groupName: 'graph'
   },
@@ -81,7 +81,7 @@ const setting = [
     field: 'statistic_title_style_fontSize',
     // 对应options中的字段
     optionField: 'statistic.title.style.fontSize',
-    value: 36,
+    value: 20,
     tabName: 'custom',
     groupName: 'graph'
   },
@@ -117,7 +117,7 @@ const setting = [
     field: 'statistic_content_style_fontSize',
     // 对应options中的字段
     optionField: 'statistic.content.style.fontSize',
-    value: 24,
+    value: 20,
     tabName: 'custom',
     groupName: 'graph'
   },
@@ -142,7 +142,7 @@ const option = {
   percent: 0.75,
   appendPadding: [20, 20, 20, 20], // 设置图标的边距
   range: {
-    color: 'l(0) 0:#30BF78 1:#ffffff'
+    color: 'l(0) 0:#6B74E3 1:#38BBE5'
   },
   indicator: {
     pointer: {
@@ -173,7 +173,7 @@ const option = {
     title: {
       offsetY: -36,
       style: {
-        fontSize: 36,
+        fontSize: 20,
         lineHeight: 2,
         color: '#d0d0d0'
       },
@@ -182,7 +182,7 @@ const option = {
     content: {
       content: '占比',
       style: {
-        fontSize: 24,
+        fontSize: 20,
         lineHeight: 2,
         color: '#d0d0d0'
       }

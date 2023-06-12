@@ -22,7 +22,7 @@
       :vertical-compact="true"
       :use-css-transforms="true"
       :is-draggable="true"
-      :margin="[20, 20]"
+      :margin="[16, 16]"
       :cols="{ lg: 24, md: 24, sm: 24, xs: 24, xxs: 12 }"
     >
       <grid-item
@@ -100,6 +100,7 @@ export default {
     }),
     chartList: {
       get () {
+        console.log(this.pageInfo.chartList)
         return this.pageInfo.chartList
       },
       set (val) {}

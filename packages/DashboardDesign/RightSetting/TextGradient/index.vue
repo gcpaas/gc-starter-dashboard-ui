@@ -109,6 +109,7 @@ export default {
   .el-icon-right{
     width: 40px;
     text-align: center;
+    color: #778390;
   }
  }
 </style>

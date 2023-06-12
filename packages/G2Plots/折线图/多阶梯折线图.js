@@ -76,7 +76,7 @@ const setting = [
   },
   // 网格线 grid
   {
-    label: '宽度',
+    label: '梯线宽度',
     type: 'inputNumber',
     field: 'yAxis_grid_line_style_lineWidth',
     optionField: 'yAxis.grid.line.style.lineWidth',
@@ -85,7 +85,7 @@ const setting = [
     groupName: 'grid'
   },
   {
-    label: '颜色',
+    label: '梯线颜色',
     type: 'colorPicker',
     field: 'yAxis_grid_line_style_stroke',
     optionField: 'yAxis.grid.line.style.stroke',
@@ -353,7 +353,7 @@ const setting = [
     type: 'inputNumber',
     field: 'yAxis_line_lineWidth',
     optionField: 'yAxis.line.style.lineWidth',
-    value: 1,
+    value: 0,
     tabName: 'custom',
     groupName: 'yAxis'
   },
@@ -364,7 +364,7 @@ const setting = [
     optionField: 'yAxis.line.style.stroke',
     // 是否多选
     multiple: false,
-    value: 'rgba(255,255,255,0)',
+    value: '#d0d0d0',
     tabName: 'custom',
     groupName: 'yAxis'
   },
@@ -495,11 +495,9 @@ const option = {
     },
     line: {
       style: {
-        stroke: 'rgba(255,255,255,0)',
-        lineWidth: 1
-      },
-      stroke: 'rgba(255,255,255,0)',
-      lineWidth: 1
+        stroke: '#d0d0d0',
+        lineWidth: 0
+      }
     }
   },
   lineStyle: {

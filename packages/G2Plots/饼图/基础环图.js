@@ -81,7 +81,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '标签连线颜色',
+    label: '标签线颜色',
     // 设置组件类型
     type: 'colorPicker',
     // 字段
@@ -93,7 +93,16 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '标签连线透明度',
+    label: '标签线宽度',
+    type: 'inputNumber',
+    field: 'label_labelLine_style_lineWidth',
+    optionField: 'label.labelLine.style.lineWidth',
+    value: 1,
+    tabName: 'custom',
+    groupName: 'graph'
+  },
+  {
+    label: '标签线透明度',
     // 设置组件类型
     type: 'inputNumber',
     // 字段
@@ -106,7 +115,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '颜色配置',
+    label: '环图颜色',
     // 设置组件类型
     type: 'colorSelect',
     // 字段
@@ -118,7 +127,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '统计标题',
+    label: '主标题',
     // 设置组件类型
     type: 'input',
     // 字段
@@ -141,7 +150,7 @@ const setting = [
   //   tabName: 'custom'
   // },
   {
-    label: '统计标题颜色',
+    label: '主标题颜色',
     // 设置组件类型
     type: 'colorPicker',
     // 字段
@@ -153,7 +162,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '统计标题大小',
+    label: '主标题大小',
     // 设置组件类型
     type: 'inputNumber',
     // 字段
@@ -165,7 +174,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '统计正文颜色',
+    label: '副标题颜色',
     // 设置组件类型
     type: 'colorPicker',
     // 字段
@@ -177,7 +186,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '统计正文大小',
+    label: '副标题大小',
     // 设置组件类型
     type: 'inputNumber',
     // 字段
@@ -293,7 +302,8 @@ const option = {
     labelLine: {
       style: {
         stroke: '#5B8FF9',
-        opacity: 0.6
+        opacity: 0.6,
+        lineWidth: 1
       }
     },
     content: '{value}',

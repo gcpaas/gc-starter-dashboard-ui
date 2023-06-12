@@ -18,7 +18,7 @@
         <el-input
           v-model="searchKey"
           class="db-el-input"
-          placeholder="'请输入分组名称'"
+          placeholder="请输入分组名称"
           prefix-icon="el-icon-search"
           clearable
           @clear="reSearch"
@@ -273,13 +273,13 @@ export default {
     justify-content: flex-start;
     margin-bottom: 12px;
 
-    .el-input {
-      width: 200px;
-      margin-right: 20px;
-      /deep/.el-input__inner {
-        background-color: #151A26 !important;
-      }
-    }
+    // .el-input {
+    //   width: 200px;
+    //   margin-right: 20px;
+    //   /deep/.el-input__inner {
+    //     background-color: #151A26 !important;
+    //   }
+    // }
   }
 }
 </style>
