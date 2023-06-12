@@ -314,14 +314,7 @@ export default {
     },
     // 处理保存数据
     handleSaveData () {
-      const pageInfo = _.cloneDeep(this.pageInfo)
       const chartList = _.cloneDeep(this.pageInfo.chartList)
-
-      pageInfo.pageConfig.cacheDataSets =
-        pageInfo.pageConfig.cacheDataSets?.map((cache) => ({
-          name: cache.name,
-          dataSetId: cache.dataSetId
-        })) || []
 
       const newChartList = chartList?.map((chart) => {
         // 如果是自定义组件，需要将option转换为json字符串，因为其中可能有函数

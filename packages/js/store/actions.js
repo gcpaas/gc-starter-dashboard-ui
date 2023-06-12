@@ -14,32 +14,10 @@ export default {
         // 改变页面数据
         commit('changePageInfo', pageInfo)
         commit('changeZIndex', pageInfo.chartList)
-        // 初始化缓存数据集数据
-        // eslint-disable-next-line no-unused-expressions
-        pageInfo.pageConfig.cacheDataSets?.map((cacheDataSet) => {
-          dispatch('getCacheDataSetData', { dataSetId: cacheDataSet.dataSetId })
-          dispatch('getCacheDataFields', { dataSetId: cacheDataSet.dataSetId })
-        })
         // 页面加载成功
         resolve(true)
         commit('saveTimeLine', '初始化')
       })
-    })
-  },
-  // 初始化缓存数据集数据
-  getCacheDataSetData ({ commit, dispatch }, { dataSetId }) {
-    getDataByDataSetId(dataSetId).then(data => {
-      commit('changeCacheDataSetData', { dataSetId, data })
-
-      // 推送数据到各个组件
-      emitDataToChart(dataSetId, data)
-    })
-  },
-  // 初始化缓存数据集字段
-  getCacheDataFields ({ commit, dispatch }, { dataSetId }) {
-    getDataSetDetails(dataSetId).then(data => {
-      commit('changeCacheDataFields', { dataSetId, data })
-      commit('changeCacheDataParams', { dataSetId, data })
     })
   }
 }
@@ -62,8 +40,6 @@ export function handleResData (data) {
       }
     }
   }
-  // 如果pageConfig中的cacheDataSets为null，赋值[]
-  pageInfo.pageConfig.cacheDataSets = pageInfo.pageConfig.cacheDataSets || []
   pageInfo.chartList.forEach((chart) => {
     if (!['customComponent', 'remoteComponent'].includes(chart.type)) {
       chart.option = _.cloneDeep(setModules[chart.type])
@@ -78,17 +54,4 @@ export function handleResData (data) {
     chart.i = chart.code
   })
   return pageInfo
-}
-
-// 推送数据到各个组件
-function emitDataToChart (dataSetId, data) {
-  if (data && data.length) {
-    EventBus.$emit('cacheDataInit',
-      {
-        success: true,
-        data: data
-      },
-      dataSetId
-    )
-  }
 }
