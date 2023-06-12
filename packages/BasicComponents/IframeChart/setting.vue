@@ -27,14 +27,14 @@
       <SettingTitle>基础</SettingTitle>
       <div class="setting-wrap">
         <el-form-item
-          label="链接"
+          label="URL"
           label-width="100px"
         >
           <el-input
             v-model="config.url"
             type="textarea"
             rows="4"
-            placeholder="请输入链接"
+            placeholder="请输入URL"
           />
         </el-form-item>
       </div>
@@ -43,11 +43,9 @@
 </template>
 <script>
 import SettingTitle from 'packages/SettingTitle/index.vue'
-import PosWhSetting from 'packages/DashboardDesign/RightSetting/PosWhSetting.vue'
 export default {
   name: 'IframeChartSetting',
   components: {
-    PosWhSetting,
     SettingTitle
   },
   data () {
