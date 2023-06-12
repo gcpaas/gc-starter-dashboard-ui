@@ -45,13 +45,13 @@ export default function getComponentConfig (type) {
     //     y: 0,
     //     type
     //   }
-    case 'linkChart':
+    case 'iconLink':
       return {
         name: '跳转链接',
         title: '跳转链接',
         icon: Icon.getNameList()[15],
         className:
-          'com.gccloud.dashboard.core.module.chart.components.DashboardLinkChart',
+          'com.gccloud.dashboard.core.module.chart.components.DashboardIconLinkChart',
         w: 12,
         h: 8,
         x: 0,

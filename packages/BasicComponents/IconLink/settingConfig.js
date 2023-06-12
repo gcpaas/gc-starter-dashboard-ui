@@ -15,7 +15,7 @@ export const settingConfig = {
   }
 }
 const customConfig = {
-  type: "linkChart",
+  type: "iconLink",
   root: {
     contribution: false
   },
