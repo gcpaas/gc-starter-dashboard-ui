@@ -47,7 +47,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '显示数据标签',
+    label: '数据标签',
     type: 'switchNumber', // 设置组件类型
     field: 'label_style_opacity', // 字段
     optionField: 'label.style.opacity', // 对应options中的字段
@@ -85,7 +85,7 @@ const setting = [
     type: 'colorPicker', // 设置组件类型
     field: 'label_style_fill', // 字段
     optionField: 'label.style.fill', // 对应options中的字段
-    value: '#ffffff',
+    value: '#778390',
     tabName: 'custom',
     groupName: 'graph'
   },
@@ -98,18 +98,6 @@ const setting = [
     // 对应options中的字段
     optionField: 'label.style.fontSize',
     value: 12,
-    tabName: 'custom',
-    groupName: 'graph'
-  },
-  {
-    label: '颜色配置',
-    // 设置组件类型
-    type: 'colorSelect',
-    // 字段
-    field: 'color',
-    // 对应options中的字段
-    optionField: 'color',
-    value: ['#5B8FF9', '#61DDAA', '#5D7092', '#F6BD16', '#6F5EF9', '#6DC8EC', '#945FB9', '#FF9845', '#1E9493', '#FF99C3'],
     tabName: 'custom',
     groupName: 'graph'
   },
@@ -131,41 +119,6 @@ const setting = [
     value: '#d0d0d0',
     tabName: 'custom',
     groupName: 'grid'
-  },
-  // 图例 legend
-  {
-    label: '显示',
-    type: 'switch', // 设置组件类型
-    field: 'legendEnable', // 字段
-    optionField: 'legendEnable', // 对应options中的字段
-    value: false,
-    tabName: 'custom',
-    groupName: 'legend'
-  },
-  {
-    label: '位置',
-    type: 'select', // 设置组件类型
-    field: 'legendPosition', // 字段
-    optionField: 'legendPosition', // 对应options中的字段
-    // 是否多选
-    multiple: false,
-    value: 'top',
-    tabName: 'custom',
-    options: [
-      { label: '顶部', value: 'top' },
-      { label: '左上角', value: 'top-left' },
-      { label: '右上角', value: 'top-right' },
-      { label: '左侧', value: 'left' },
-      // { label: '左上方', value: 'left-top' },
-      // { label: '左下方', value: 'left-bottom' },
-      { label: '右侧', value: 'right' },
-      // { label: '右上方', value: 'right-top' },
-      // { label: '右下方', value: 'right-bottom' },
-      { label: '底部', value: 'bottom' },
-      { label: '左下角', value: 'bottom-left' },
-      { label: '右下角', value: 'bottom-right' }
-    ],
-    groupName: 'legend'
   },
   // X轴 xAxis
   {

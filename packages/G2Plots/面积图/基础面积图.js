@@ -45,7 +45,7 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '曲线平滑',
+    label: '折线平滑',
     type: 'switch', // 设置组件类型
     field: 'smooth', // 字段
     optionField: 'smooth', // 对应options中的字段
@@ -63,11 +63,20 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '线条颜色',
+    label: '折线颜色',
     type: 'gradual', // 设置组件类型
     field: 'line_color', // 字段
     optionField: 'line.color', // 对应options中的字段
     value: 'l(0) 0:#3e5bdb 1:#3e5bdb',
+    tabName: 'custom',
+    groupName: 'graph'
+  },
+  {
+    label: '折线宽度',
+    type: 'inputNumber', // 设置组件类型
+    field: 'line_size', // 字段
+    optionField: 'line.size', // 对应options中的字段
+    value: 1,
     tabName: 'custom',
     groupName: 'graph'
   },
@@ -81,16 +90,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '线条宽度',
-    type: 'inputNumber', // 设置组件类型
-    field: 'line_size', // 字段
-    optionField: 'line.size', // 对应options中的字段
-    value: 1,
-    tabName: 'custom',
-    groupName: 'graph'
-  },
-  {
-    label: '数据点颜色',
+    label: '折线点颜色',
     type: 'colorPicker', // 设置组件类型
     field: 'point_color', // 字段
     optionField: 'point.color', // 对应options中的字段
@@ -99,11 +99,70 @@ const setting = [
     groupName: 'graph'
   },
   {
+    label: '折线点样式',
+    type: 'select', // 设置组件类型
+    field: 'point_shape', // 字段
+    optionField: 'point.shape', // 对应options中的字段
+    value: 'hollow-circle',
+    tabName: 'custom',
+    options: [
+      {
+        label: '无',
+        value: false
+      },
+      {
+        label: '空心圆',
+        value: 'hollow-circle'
+      },
+      {
+        label: '圆形',
+        value: 'circle'
+      },
+      {
+        label: '正方形',
+        value: 'square'
+      },
+      {
+        label: '菱形',
+        value: 'diamond'
+      },
+      {
+        label: '三角形',
+        value: 'triangle'
+      },
+      {
+        label: '六边形',
+        value: 'hexagon'
+      },
+      {
+        label: '菱形交叉',
+        value: 'bowtie'
+      },
+      {
+        label: '十字形',
+        value: 'cross'
+      },
+      {
+        label: 'I形',
+        value: 'tick'
+      },
+      {
+        label: '加号',
+        value: 'plus'
+      },
+      {
+        label: '连字号',
+        value: 'hyphen'
+      }
+    ],
+    groupName: 'graph'
+  },
+  {
     label: '数据标签字体大小',
     type: 'inputNumber',
     field: 'label_style_fontSize',
     optionField: 'label.style.fontSize',
-    value: 12,
+    value: 0,
     tabName: 'custom',
     groupName: 'graph'
   },
@@ -112,7 +171,7 @@ const setting = [
     type: 'colorPicker',
     field: 'label_style_fill',
     optionField: 'label.style.fill',
-    value: 'rgba(255,255,255,0)',
+    value: 'rgba(255,255,255,1)',
     tabName: 'custom',
     groupName: 'graph'
   },
@@ -402,6 +461,16 @@ const data = [
   { Date: '2010-10', scales: 2140 }
 ]
 
+// 配置处理脚本
+const optionHandler = '  let pointEnable = setting.find(settingItem=>settingItem.field === \'point_shape\').value\n' +
+  '  if (pointEnable === false) {\n' +
+  '    option.point = false\n' +
+  '  } else {\n' +
+  '    option.point = {shape: pointEnable}\n' +
+  '    let pointColor = setting.find(settingItem=>settingItem.field === \'point_color\').value\n' +
+  '    option.point.color = pointColor\n' +
+  '  }'
+
 // 数据处理脚本
 const dataHandler = ''
 
@@ -418,8 +487,8 @@ const option = {
   },
   label: {
     style: {
-      fill: 'rgba(255,255,255,0)',
-      fontSize: 12
+      fill: 'rgba(255,255,255,1)',
+      fontSize: 0
     }
   },
   line: {
@@ -427,8 +496,8 @@ const option = {
     size: 1
   },
   point: {
-    color: ''
-
+    color: '',
+    shape: 'hollow-circle',
   },
   xAxis: {
     title: {
@@ -503,5 +572,6 @@ export default {
   name,
   option,
   setting,
-  dataHandler
+  dataHandler,
+  optionHandler
 }

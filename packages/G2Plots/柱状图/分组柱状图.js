@@ -48,7 +48,7 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '显示数据标签',
+    label: '数据标签',
     type: 'switchNumber', // 设置组件类型
     field: 'label_style_opacity', // 字段
     optionField: 'label.style.opacity', // 对应options中的字段
@@ -103,7 +103,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '颜色配置',
+    label: '柱子颜色',
     // 设置组件类型
     type: 'colorSelect',
     // 字段

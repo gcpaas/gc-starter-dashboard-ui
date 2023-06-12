@@ -59,7 +59,7 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '曲线平滑',
+    label: '折线平滑',
     type: 'switch', // 设置组件类型
     field: 'smooth', // 字段
     optionField: 'smooth', // 对应options中的字段
@@ -68,16 +68,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '从0基准线填充',
-    type: 'switch', // 设置组件类型
-    field: 'startOnZero', // 字段
-    optionField: 'startOnZero', // 对应options中的字段
-    value: true,
-    tabName: 'custom',
-    groupName: 'graph'
-  },
-  {
-    label: '颜色配置',
+    label: '面积颜色',
     // 设置组件类型
     type: 'colorSelect',
     // 字段
@@ -85,7 +76,8 @@ const setting = [
     // 对应options中的字段
     optionField: 'color',
     value: ['#5B8FF9', '#61DDAA', '#5D7092', '#F6BD16', '#6F5EF9', '#6DC8EC', '#945FB9', '#FF9845', '#1E9493', '#FF99C3'],
-    tabName: 'custom'
+    tabName: 'custom',
+    groupName: 'graph'
   },
   // 网格线 grid
   {
