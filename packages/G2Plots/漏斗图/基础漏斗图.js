@@ -96,7 +96,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '标签',
+    label: '标签文本',
     type: 'input', // 设置组件类型
     field: 'conversionTagName', // 字段
     optionField: 'conversionTagName', // 对应options中的字段
@@ -117,19 +117,8 @@ const setting = [
     tabName: 'custom',
     groupName: 'graph'
   },
-  // {
-  //   label: '标签大小',
-  //   // 设置组件类型
-  //   type: 'inputNumber',
-  //   // 字段
-  //   field: 'conversionTag_style_fontSize',
-  //   // 对应options中的字段
-  //   optionField: 'conversionTag.style.fontSize',
-  //   value: 12,
-  //   tabName: 'custom'
-  // },
   {
-    label: '颜色配置',
+    label: '颜色',
     // 设置组件类型
     type: 'colorSelect',
     // 字段

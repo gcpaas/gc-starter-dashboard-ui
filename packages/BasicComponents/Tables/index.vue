@@ -6,6 +6,8 @@
     <!-- :border="this.config.customize.border" -->
     <el-table
       :id="config.code"
+      :key="updateKey"
+      :ref="config.code"
       class="custom-table"
       height="100%"
       :stripe="config.customize.stripe"
@@ -44,12 +46,7 @@ export default {
   },
   data () {
     return {
-      headerCellStyleObj: {
-        backgroundColor: 'transparent'
-      },
-      cellStyleObj: {
-        backgroundColor: 'transparent'
-      }
+      updateKey: 0
     }
   },
   computed: {
@@ -78,29 +75,60 @@ export default {
       return style
     }
   },
-  created () { },
+  created () {
+
+  },
   mounted () {
-    // this.chartInit();
-    if (this.config.customize.evenRowBackgroundColor && !this.config.customize.oddRowBackgroundColor) {
-      this.config.customize.oddRowBackgroundColor = this.config.customize.bodyBackgroundColor
-    } else if (!this.config.customize.evenRowBackgroundColor && this.config.customize.oddRowBackgroundColor) {
-      this.config.customize.evenRowBackgroundColor = this.config.customize.bodyBackgroundColor
-    } else if (!(!this.config.customize.evenRowBackgroundColor && !this.config.customize.oddRowBackgroundColor)) {
-      this.config.customize.bodyBackgroundColor = ''
-    }
-    window.requestAnimationFrame(() => {
-      document.querySelectorAll(`.even-row${this.config.code}`).forEach(node => {
-        node.style.backgroundColor = this.config.customize.evenRowBackgroundColor
-      })
-      document.querySelectorAll(`.odd-row${this.config.code}`).forEach(node => {
-        node.style.backgroundColor = this.config.customize.oddRowBackgroundColor
-      })
-    })
+    this.chartInit()
+    // if (this.config.customize.evenRowBackgroundColor && !this.config.customize.oddRowBackgroundColor) {
+    //   this.config.customize.oddRowBackgroundColor = this.config.customize.bodyBackgroundColor
+    // } else if (!this.config.customize.evenRowBackgroundColor && this.config.customize.oddRowBackgroundColor) {
+    //   this.config.customize.evenRowBackgroundColor = this.config.customize.bodyBackgroundColor
+    // } else if (!(!this.config.customize.evenRowBackgroundColor && !this.config.customize.oddRowBackgroundColor)) {
+    //   this.config.customize.bodyBackgroundColor = ''
+    // }
+    // this.parityRowStyle()
   },
   methods: {
     // 表格行样式
     tableRowClassName ({ row, rowIndex }) {
+      this.parityRowStyle()
       return rowIndex % 2 === 0 ? `even-row${this.config.code}` : `odd-row${this.config.code}`
+    },
+    parityRowStyle () {
+      window.requestAnimationFrame(() => {
+        const evenRowBackgroundColor = this.config.customize.evenRowBackgroundColor
+        const oddRowBackgroundColor = this.config.customize.oddRowBackgroundColor
+        if (evenRowBackgroundColor && oddRowBackgroundColor) {
+          document.querySelectorAll(`.even-row${this.config.code}`).forEach(node => {
+            node.style.backgroundColor = evenRowBackgroundColor
+          })
+          document.querySelectorAll(`.odd-row${this.config.code}`).forEach(node => {
+            node.style.backgroundColor = oddRowBackgroundColor
+          })
+        } else if (evenRowBackgroundColor && !oddRowBackgroundColor) {
+          document.querySelectorAll(`.even-row${this.config.code}`).forEach(node => {
+            node.style.backgroundColor = evenRowBackgroundColor
+          })
+          document.querySelectorAll(`.odd-row${this.config.code}`).forEach(node => {
+            node.style.backgroundColor = this.config.customize.bodyBackgroundColor
+          })
+        } else if (!evenRowBackgroundColor && oddRowBackgroundColor) {
+          document.querySelectorAll(`.even-row${this.config.code}`).forEach(node => {
+            node.style.backgroundColor = this.config.customize.bodyBackgroundColor
+          })
+          document.querySelectorAll(`.odd-row${this.config.code}`).forEach(node => {
+            node.style.backgroundColor = oddRowBackgroundColor
+          })
+        } else {
+          document.querySelectorAll(`.even-row${this.config.code}`).forEach(node => {
+            node.style.backgroundColor = this.config.customize.bodyBackgroundColor
+          })
+          document.querySelectorAll(`.odd-row${this.config.code}`).forEach(node => {
+            node.style.backgroundColor = this.config.customize.bodyBackgroundColor
+          })
+        }
+      })
     },
     buildOption (config, data) {
       config.option.tableData = data?.data
@@ -135,9 +163,6 @@ export default {
   background-color: transparent;
 }
 
-// ::v-deep .el-table th.gutter {
-//   border-bottom: 2px solid var(--db-el-color-primary) !important;
-// }
 ::v-deep .el-table__body {
   height: 100%;
 }

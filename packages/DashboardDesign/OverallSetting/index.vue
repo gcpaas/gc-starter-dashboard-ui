@@ -46,13 +46,6 @@
             :predefine-colors="predefineColors"
           />
         </el-form-item>
-        <el-form-item label="缓存数据集">
-          <data-set-select
-            :ds-value="dsValue"
-            :multiple="true"
-            @getSelectDs="getSelectDs"
-          />
-        </el-form-item>
       </el-form>
     </div>
   </div>
@@ -65,13 +58,11 @@ import { mapState, mapMutations } from 'vuex'
 import { getThemeConfig } from 'packages/js/api/bigScreenApi'
 import _ from 'lodash'
 import { G2 } from '@antv/g2plot'
-import dataSetSelect from 'packages/DataSetSetting/index.vue'
 export default {
   name: 'OverallSetting',
   components: {
     ColorPicker,
-    BgImg,
-    dataSetSelect
+    BgImg
   },
   directives: {
     block: {
@@ -163,7 +154,6 @@ export default {
         opacity: 100,
         customTheme: 'light',
         themeJson: {},
-        cacheDataSets: [],
         fitMode: 'none'
       },
       // 预设主题色
@@ -184,13 +174,7 @@ export default {
     ...mapState({
       pageInfo: state => state.dashboard.pageInfo,
       config: state => state.dashboard.activeItemConfig
-    }),
-    dsValue () {
-      return this.form.cacheDataSets?.map(dSet => ({
-        id: dSet.dataSetId,
-        name: dSet.name
-      })) || []
-    }
+    })
   },
   watch: {
     form: {
@@ -250,12 +234,6 @@ export default {
         this.changePageConfig(this.form)
         this.changeChart(themeName)
       }
-      // 获取缓存数据集数据和配置
-      // eslint-disable-next-line no-unused-expressions
-      this.pageInfo.pageConfig.cacheDataSets?.map((cacheDataSet) => {
-        this.$store.dispatch('dashboard/getCacheDataSetData', { dataSetId: cacheDataSet.dataSetId })
-        this.$store.dispatch('dashboard/getCacheDataFields', { dataSetId: cacheDataSet.dataSetId })
-      })
     },
     // 改变
     changeChart (themeName) {
@@ -273,32 +251,6 @@ export default {
     init () {
       this.form = { ...this.pageInfo.pageConfig }
       this.drawerVisible = true
-    },
-    // 新增数据集
-    addCacheDataSet () {
-      this.form.cacheDataSets.push({
-        // 数据集名称
-        name: '',
-        // 数据集id
-        dataSetId: ''
-      })
-    },
-    // 删除数据集
-    deleteCacheDataSet (index) {
-      this.form.cacheDataSets.splice(index, 1)
-    },
-    // 选择数据集
-    getSelectDs (selectDs) {
-      this.form.cacheDataSets = selectDs?.map(ds => ({
-        name: ds.name,
-        dataSetId: ds.id
-      }))
-      // 获取缓存数据集数据和配置
-      // eslint-disable-next-line no-unused-expressions
-      this.form.cacheDataSets?.map((cacheDataSet) => {
-        this.$store.dispatch('dashboard/getCacheDataSetData', { dataSetId: cacheDataSet.dataSetId })
-        this.$store.dispatch('dashboard/getCacheDataFields', { dataSetId: cacheDataSet.dataSetId })
-      })
     },
     close () {
       this.drawerVisible = false

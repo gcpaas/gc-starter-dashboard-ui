@@ -24,7 +24,9 @@ export default {
     }
   },
   mounted () {
-    this.chartInit()
+    if (!['tables'].includes(this.config.type)) {
+      this.chartInit()
+    }
   },
   methods: {
     ...mapMutations({

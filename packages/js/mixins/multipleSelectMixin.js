@@ -77,7 +77,9 @@ export default {
             // 单个删除
             this.deleteItem(this.activeChart)
           }
-        }).catch(() => {})
+        }).catch(() => {
+          console.info('取消删除')
+        })
       }
     }
   }

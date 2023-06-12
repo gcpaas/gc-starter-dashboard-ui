@@ -45,9 +45,9 @@ export default {
     }),
     chatId () {
       let prefix = 'chart_'
-      if (this.isDialog){
+      if (this.isDialog) {
         prefix = 'isDialog_chart_'
-      }else{
+      } else {
         if (this.$route.path === window?.DS_CONFIG?.routers?.previewUrl) {
           prefix = 'preview_chart_'
         }
@@ -89,10 +89,6 @@ export default {
         this.updateChart()
       } else {
         // 否则说明是更新或者复制
-        // 如果是复制，给默认值
-        if (this.config.isCopy) {
-          this.config.option.data = this.plotList.find(plot => plot.name === this.config.name)?.option?.data
-        }
         this.newChart(this.config.option)
       }
     },
@@ -113,27 +109,20 @@ export default {
      * 更新组件
      */
     updateChart () {
-      // 看是否是缓存数据集，缓存数据集不从list接口获取数据
-      if (this.config.dataSource.dataSetType === '2') {
-        const config = this.buildOption(this.config, { success: false })
-        this.chart.update(config.option)
+      if (this.isPreview) {
+        this.getCurrentOption().then(({ data, config }) => {
+          if (data.success) {
+            // 成功后更新数据
+            config = this.buildOption(config, data)
+            this.changeChartConfig(config)
+            this.chart.update(config.option)
+          } else {
+            config.option.data = this.plotList.find(plot => plot.name === config.name)?.option.data
+            this.chart.update(config.option)
+          }
+        })
       } else {
-        // 非缓存数据集，从list接口初始化的组件
-        if (this.isPreview) {
-          this.getCurrentOption().then(({ data, config }) => {
-            if (data.success) {
-              // 成功后更新数据
-              config = this.buildOption(config, data)
-              this.changeChartConfig(config)
-              this.chart.update(config.option)
-            } else {
-              config.option.data = this.plotList.find(plot => plot.name === config.name)?.option.data
-              this.chart.update(config.option)
-            }
-          })
-        } else {
-          this.updateChartData(this.config)
-        }
+        this.updateChartData(this.config)
       }
     },
     /**

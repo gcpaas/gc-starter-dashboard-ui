@@ -50,12 +50,12 @@ export default {
     // 复制组件
     copyItem (config) {
       const newConfig = _.cloneDeep(config)
-      newConfig.code = randomString(8)
+      const newCode = randomString(8)
+      newConfig.code = newCode
+      newConfig.i = newCode
       newConfig.title = newConfig.title + '_副本'
       // 区分是从左侧添加还是复制的组件
       newConfig.isCopy = true
-      newConfig.x = config.x + 20
-      newConfig.y = config.y + 20
       if (config.group) {
         newConfig.group = 'copy_' + config.group
       }

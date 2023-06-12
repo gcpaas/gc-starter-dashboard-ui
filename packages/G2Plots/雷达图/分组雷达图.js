@@ -62,7 +62,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '颜色配置',
+    label: '颜色',
     // 设置组件类型
     type: 'colorSelect',
     // 字段
