@@ -12,6 +12,7 @@
       :class="{
         'render-item-small': ['currentTime','timeCountDown','input','button'].includes(card.type),
         'render-item-mid': ['picture', 'digitalFlop', 'video'].includes(card.type),
+         'render-item-xmid': ['video'].includes(card.type),
       }"
       class="render-item-box render-item-big"
     >
@@ -170,6 +171,10 @@ export default {
       height: 88px;
     }
     .render-item-mid {
+      position: relative;
+      height: 280px;
+    }
+    .render-item-xmid {
       position: relative;
       height: 144px;
     }

@@ -1,14 +1,14 @@
 <template>
   <div class="db-design-wrap db-picture">
     <div class="content-box">
-      <el-image
+      <van-image
         :src="config.customize.url || noImageUrl"
         fit="fill"
+        :radius="config.customize.radius"
         :style="{
           width: '100%',
           height: '100%',
-          opacity: config.customize.opacity / 100,
-          borderRadius: config.customize.radius + 'px'
+          opacity: config.customize.opacity / 100
         }"
         draggable="false"
       >
@@ -18,24 +18,18 @@
         >
           加载中···
         </div>
-      </el-image>
-      <!-- <img
-        :src="config.customize.url || noImageUrl"
-        :style="{
-          width: '100%',
-          height: '100%',
-          opacity: config.customize.opacity / 100,
-          borderRadius: config.customize.radius + 'px'
-        }"
-        draggable="false"
-      > -->
+      </van-image>
     </div>
   </div>
 </template>
 <script>
+import VanImage from 'vant/lib/image';
+import 'vant/lib/image/style';
+import Vue from 'vue'
+Vue.use(VanImage)
 export default {
   name: 'PictureChart',
-  components: {},
+  components: {VanImage},
   props: {
     config: {
       type: Object,
