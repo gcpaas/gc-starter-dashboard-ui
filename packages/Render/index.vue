@@ -37,6 +37,8 @@
         :w="card.w"
         :h="card.h"
         :i="card.i"
+        @resized="resizestop"
+        @moved="dragstop"
       >
         <Configuration
           v-if="isInit"
@@ -136,6 +138,7 @@ export default {
       'changeLayout',
       'changeActiveCode',
       'changeChartConfig',
+      'changeActiveItemWH',
       'addItem',
       'delItem',
       'resetPresetLine',
@@ -225,24 +228,27 @@ export default {
         ...chart
       })
     },
-    resizestop (left, top, width, height, chart) {
-      this.changeChartConfig({
+    resizestop (i, height, width) {
+      const chart = this.getChart()
+      const newChart = {
         ...chart,
         w: width,
-        h: height,
+        h: height
+      }
+      this.changeChartConfig({ ...newChart })
+      this.changeActiveItemWH({ w: width, h: height })
+      this.saveTimeLine(`改变${chart?.title}大小`)
+    },
+    dragstop (i, left, top) {
+      const chart = this.getChart()
+      const newChart = {
+        ...chart,
         x: left,
         y: top
-      })
-      this.saveTimeLine(`改变${chart?.title}大小`)
-      this.changeGridShow(false)
-    },
-    dragstop (left, top, chart) {
+      }
       if (!this.freeze) {
-        this.changeChartConfig({
-          ...chart,
-          x: left,
-          y: top
-        })
+        this.changeChartConfig({ ...newChart })
+        this.changeActiveItemWH({ x: left, y: top })
       } else {
         const index = this.chartList.findIndex(
           (_chart) => _chart.code === chart.code
