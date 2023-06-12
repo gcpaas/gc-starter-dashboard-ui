@@ -179,18 +179,6 @@ export default {
       }
     },
     /**
-     * 获取当前鼠标悬浮所得的组件
-     * @returns {{}|*} chat | {}
-     */
-    getChart () {
-      const chartList = this.pageInfo.chartList
-      const index = chartList.findIndex((item) => item.code === this.activeCode)
-      if (index > -1) {
-        return chartList[index]
-      }
-      return {}
-    },
-    /**
      * 改变组件大小
      * @param x
      * @param y
@@ -230,18 +218,20 @@ export default {
       })
     },
     resizestop (i, height, width) {
-      const chart = this.getChart()
+      const chart = this.chartList?.find((item) => item.code === i)
       const newChart = {
         ...chart,
         w: width,
         h: height
       }
       this.changeChartConfig({ ...newChart })
-      this.changeActiveItemWH({ w: width, h: height })
+      if (i === this.activeCode) {
+        this.changeActiveItemWH({ code: chart.code, w: width, h: height })
+      }
       this.saveTimeLine(`改变${chart?.title}大小`)
     },
     dragstop (i, left, top) {
-      const chart = this.getChart()
+      const chart = this.chartList?.find((item) => item.code === i)
       const newChart = {
         ...chart,
         x: left,
@@ -249,7 +239,9 @@ export default {
       }
       if (!this.freeze) {
         this.changeChartConfig({ ...newChart })
-        this.changeActiveItemWH({ x: left, y: top })
+        if (i === this.activeCode) {
+          this.changeActiveItemWH({ code: chart.code, x: left, y: top })
+        }
       } else {
         const index = this.chartList.findIndex(
           (_chart) => _chart.code === chart.code
