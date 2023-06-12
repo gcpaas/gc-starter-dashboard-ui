@@ -16,6 +16,15 @@ const name = 'MiNiJiChuZheXianTu'
 // 右侧配置项
 const setting = [
   {
+    label: '平滑',
+    type: 'switch', // 设置组件类型
+    field: 'smooth', // 字段
+    optionField: 'smooth', // 对应options中的字段
+    value: true,
+    tabName: 'custom',
+    groupName: 'graph'
+  },
+  {
     label: '维度',
     // 设置组件类型， select / input / colorPicker
     type: 'select',
@@ -45,7 +54,7 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '线条宽度',
+    label: '折线宽度',
     type: 'inputNumber', // 设置组件类型
     field: 'lineStyle_lineWidth', // 字段
     optionField: 'lineStyle.lineWidth', // 对应options中的字段
@@ -54,20 +63,11 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '线条颜色',
+    label: '折线颜色',
     type: 'gradual', // 设置组件类型
     field: 'lineStyle_stroke', // 字段
     optionField: 'lineStyle.stroke', // 对应options中的字段
     value: 'l(0) 0:#648ff7 1:#62FF00',
-    tabName: 'custom',
-    groupName: 'graph'
-  },
-  {
-    label: '是否平滑',
-    type: 'switch', // 设置组件类型
-    field: 'smooth', // 字段
-    optionField: 'smooth', // 对应options中的字段
-    value: true,
     tabName: 'custom',
     groupName: 'graph'
   }
@@ -79,7 +79,8 @@ const dataHandler = '// 取出所有指标的值 \ndata = data.map(item => item[
 // 图表配置 new Line('domName', option)
 const option = {
   data: [16, 95, 35, 27, 50, 36, 78, 99, 60, 62, 37],
-  height: 60,
+  appendPadding: [20, 20, 20, 20], // 设置图标的边距
+  height: 6,
   autoFit: true,
   smooth: true,
   lineStyle: {

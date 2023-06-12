@@ -1,31 +1,50 @@
 <template>
   <div class="db-padding-setting">
     <div class="padding-box">
-      <el-input
-        v-model.number="paddingValue[0]"
-        class="input-top input-item"
-        size="mini"
-        @change="paddingChange"
-      />
-      <el-input
-        v-model.number="paddingValue[1]"
-        class="input-right input-item"
-        size="mini"
-        @change="paddingChange"
-      />
-      <el-input
-        v-model.number="paddingValue[2]"
-        class="input-bottom input-item"
-        size="mini"
-        @change="paddingChange"
-      />
-      <el-input
-        v-model.number="paddingValue[3]"
-        class="input-left input-item db-el-input"
-        size="mini"
-        @change="paddingChange"
-      />
-      <div class="padding-center" />
+      <el-form-item
+        label="上边距"
+        label-width="120px"
+      >
+        <el-input-number
+          v-model.number="paddingValue[0]"
+          class="input-top input-item"
+          size="mini"
+          @change="paddingChange"
+        />
+      </el-form-item>
+      <el-form-item
+        label="下边距"
+        label-width="120px"
+      >
+        <el-input-number
+          v-model.number="paddingValue[2]"
+          class="input-bottom input-item"
+          size="mini"
+          @change="paddingChange"
+        />
+      </el-form-item>
+      <el-form-item
+        label="左边距"
+        label-width="120px"
+      >
+        <el-input-number
+          v-model.number="paddingValue[3]"
+          class="input-left input-item db-el-input"
+          size="mini"
+          @change="paddingChange"
+        />
+      </el-form-item>
+      <el-form-item
+        label="右边距"
+        label-width="120px"
+      >
+        <el-input-number
+          v-model.number="paddingValue[1]"
+          class="input-right input-item"
+          size="mini"
+          @change="paddingChange"
+        />
+      </el-form-item>
     </div>
   </div>
 </template>
@@ -76,34 +95,6 @@ export default {
     width: 30%;
     height: 30%;
     background-color: var(--db-background-1);
-  }
-  .input-item{
-    width: 50px;
-    position: absolute;
-    text-align: center;
-    /deep/ .el-input__inner{
-      text-align: center;
-    }
-  }
-  .input-top{
-    top: 20px;
-    left:50%;
-    transform: translateX(-50%);
-  }
-  .input-bottom{
-    bottom: 20px;
-    left:50%;
-    transform: translateX(-50%);
-  }
-  .input-left{
-    left: 0px;
-    top:50%;
-    transform: translateY(-50%);
-  }
-  .input-right{
-    right: 0px;
-    top:50%;
-    transform: translateY(-50%);
   }
 }
 </style>
