@@ -58,7 +58,7 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '颜色配置',
+    label: '条形颜色',
     // 设置组件类型
     type: 'colorSelect',
     // 字段
@@ -70,7 +70,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '条形图形状',
+    label: '条形样式',
     type: 'select', // 设置组件类型
     field: 'shape', // 字段
     optionField: 'shape', // 对应options中的字段
@@ -110,7 +110,7 @@ const setting = [
     tabName: 'custom'
   },
   {
-    label: '数据标签显隐',
+    label: '数据标签',
     type: 'switchNumber', // 设置组件类型
     field: 'label_style_opacity', // 字段
     optionField: 'label.style.opacity', // 对应options中的字段
@@ -304,7 +304,7 @@ const setting = [
     tabName: 'custom',
     options: [
       {
-        label: '下',
+        label: '上',
         value: 'start'
       },
       {
@@ -312,7 +312,7 @@ const setting = [
         value: 'center'
       },
       {
-        label: '上',
+        label: '下',
         value: 'end'
       }],
     groupName: 'yAxis'
