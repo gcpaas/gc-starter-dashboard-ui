@@ -27,7 +27,6 @@ export default {
     if (!['tables'].includes(this.config.type)) {
       this.chartInit()
     }
-    this.watchCacheData()
   },
   methods: {
     ...mapMutations({
