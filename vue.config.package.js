@@ -83,6 +83,7 @@ module.exports = {
       .add(resolve('packages/assets/images/dataSourceIcon/svg'))
       .add(resolve('packages/BasicComponents/LinkChart/images/svg'))
       .add(resolve('packages/assets/images/pageIcon/svg'))
+      .add(resolve('packages/assets/images/terminalIcon/svg'))
       .end()
 
     config.module
@@ -93,6 +94,7 @@ module.exports = {
       .add(resolve('packages/assets/images/dataSourceIcon/svg'))
       .add(resolve('packages/BasicComponents/LinkChart/images/svg'))
       .add(resolve('packages/assets/images/pageIcon/svg'))
+      .add(resolve('packages/assets/images/terminalIcon/svg'))
       .end()
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')

@@ -3,32 +3,21 @@
     style="width: 100%;height: 100%"
     class="db-design-wrap "
   >
-    <!-- :border="this.config.customize.border" -->
-    <el-table
-      :id="config.code"
-      class="custom-table"
-      height="100%"
-      :stripe="config.customize.stripe"
-      :data="config.option.tableData"
-      :header-cell-style="headerCellStyle"
-      :cell-style="cellStyle"
-      :row-class-name="tableRowClassName"
-    >
-      <el-table-column
-        v-for="(col, index) in config.option.columnData"
-        :key="index"
-        show-overflow-tooltip
-        :label="col.remark"
-        :prop="col.alias"
-        align="center"
-      />
-    </el-table>
+    <vue-good-table
+      :columns="columnData"
+      :rows="config.option.tableData"
+      max-height="300px"
+      row-style-class="rowStyle"
+      compactMode
+    />
   </div>
 </template>
 <script>
 import commonMixins from 'packages/js/mixins/commonMixins'
 import paramsMixins from 'packages/js/mixins/paramsMixins'
 import linkageMixins from 'packages/js/mixins/linkageMixins'
+import 'vue-good-table/dist/vue-good-table.css'
+import { VueGoodTable } from 'vue-good-table';
 export default {
   name: 'TableChart',
   mixins: [paramsMixins, commonMixins, linkageMixins],
@@ -42,6 +31,7 @@ export default {
       default: () => ({})
     }
   },
+  components:{VueGoodTable},
   data () {
     return {
       headerCellStyleObj: {
@@ -49,10 +39,20 @@ export default {
       },
       cellStyleObj: {
         backgroundColor: 'transparent'
-      }
+      },
     }
   },
   computed: {
+    columnData(){
+      const arr = []
+     for(let item in this.config.option.columnData) {
+       arr.push({
+         field:item,
+         label:this.config.option.columnData[item].remark || item
+       })
+     }
+      return arr
+    },
     headerCellStyle () {
       const headerBackgroundColor = {
         dark: '#141414',
@@ -168,8 +168,21 @@ export default {
         node.style.backgroundColor = this.config.customize.oddRowBackgroundColor
       })
     })
+      // this.init()
   },
   methods: {
+    init(){
+      this.$nextTick(() => {
+        const style = document.createElement('style')
+            const themeStr = 'th.ve-table-header-th{\n' +
+              ' background-color: #20D944!important;\n' +
+              '}'
+            style.type = 'text/css'
+            style.innerText = themeStr
+            document.getElementsByClassName('VeTable')[0].appendChild(style)
+
+      })
+    },
     // 表格行样式
     tableRowClassName ({ row, rowIndex }) {
       // console.log(6)
@@ -250,7 +263,6 @@ export default {
   height: 100%;
   background-color: transparent;
   border-radius: 4px;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
 
@@ -348,5 +360,15 @@ export default {
   &:hover {
     background-color: #90939980;
   }
+}
+.rowStyle{
+  height: 30px!important;
+  color: red;
+}
+/deep/th{
+  border: none!important;
+}
+/deep/td{
+  border: none!important;
 }
 </style>

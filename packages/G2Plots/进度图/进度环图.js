@@ -32,7 +32,7 @@ const setting = [
     field: 'color2',
     // 对应options中的字段
     optionField: 'color2',
-    value: '#d0d0d0',
+    value: 'rgba(238, 238, 238, 1)',
     tabName: 'custom',
     groupName: 'graph'
   },
@@ -44,12 +44,12 @@ const setting = [
     field: 'color1',
     // 对应options中的字段
     optionField: 'color1',
-    value: '#F4664A',
+    value: 'rgba(67, 145, 244, 1)',
     tabName: 'custom',
     groupName: 'graph'
   },
   {
-    label: '标签',
+    label: '标签文本',
     // 设置组件类型
     type: 'input',
     // 字段
@@ -68,7 +68,7 @@ const setting = [
     field: 'statistic_title_style_fill',
     // 对应options中的字段
     optionField: 'statistic.title.style.fill',
-    value: '#fafafa',
+    value: 'rgba(133, 133, 133, 1)',
     tabName: 'custom',
     groupName: 'graph'
   },
@@ -80,12 +80,12 @@ const setting = [
     field: 'statistic_title_style_fontSize',
     // 对应options中的字段
     optionField: 'statistic.title.style.fontSize',
-    value: 28,
+    value: 20,
     tabName: 'custom',
     groupName: 'graph'
   },
   {
-    label: '标签高度',
+    label: '标签位置',
     // 设置组件类型
     type: 'inputNumber',
     // 字段
@@ -104,7 +104,7 @@ const setting = [
     field: 'statistic_content_style_fill',
     // 对应options中的字段
     optionField: 'statistic.content.style.fill',
-    value: '#fafafa',
+    value: 'rgba(133, 133, 133, 1)',
     tabName: 'custom',
     groupName: 'graph'
   },
@@ -116,12 +116,12 @@ const setting = [
     field: 'statistic_content_style_fontSize',
     // 对应options中的字段
     optionField: 'statistic.content.style.fontSize',
-    value: 28,
+    value: 24,
     tabName: 'custom',
     groupName: 'graph'
   },
   {
-    label: '指标高度',
+    label: '指标位置',
     // 设置组件类型
     type: 'inputNumber',
     // 字段

@@ -3,7 +3,7 @@
  * @Date: 2023-03-13 10:04:59
  * @Author: xing.heng
  * @LastEditors: xing.heng
- * @LastEditTime: 2023-05-31 16:27:12
+ * @LastEditTime: 2023-06-12 10:42:56
  */
 
 import Vue from 'vue'
@@ -25,6 +25,9 @@ export default {
   },
   // 改变当前选择组件id
   changeActiveCode (state, code) {
+    if (state.activeCode === code) {
+      return
+    }
     state.activeCode = code
     state.hoverCode = code
 

@@ -20,6 +20,7 @@
       >
         <component
           :is="resolveComponentType(config.type)"
+          :key="config.code"
           ref="customSetting"
           :config="config"
           @closeRightPanel="close"
@@ -32,6 +33,7 @@
     >
       <component
         :is="resolveComponentType(config.type)"
+        :key="config.code"
         ref="customSetting"
         :config="config"
         @closeRightPanel="close"
@@ -80,6 +82,7 @@ export default {
       return this.$route.query.code
     },
     configStyle () {
+      console.log('configStyle', this.config)
       return {
         dataSource: this.config.dataSource,
         showTitle: this.config.showTitle,
@@ -107,6 +110,7 @@ export default {
           } else {
             this.$emit('updateSetting', this.config)
           }
+          console.log('configStyle change', this.config)
           this.saveTimeLine(`更新${val?.title}组件属性`)
         }
       },
