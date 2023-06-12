@@ -8,6 +8,9 @@ export const settingConfig = {
   // 设置面板属性的显隐
   displayOption: {
     ...displayOption,
+    headerField: {
+      enable: true
+    },
     metricField: {
       // 指标
       label: '指标',
@@ -15,7 +18,7 @@ export const settingConfig = {
       multiple: false // 是否多选
     },
     dimensionField: {
-      // 表格列
+      // 维度
       label: '维度', // 维度/查询字段
       enable: true,
       multiple: false // 是否多选
@@ -28,12 +31,14 @@ const customConfig = {
     contribution: false
   },
   customize: {
-    rowNum: 5,
-    waitTime: 2000,
-    carousel: 'single',
-    unit: '',
-    sort: true,
-    valueFormatter: undefined
+    highlightNum: 4, // 高亮显示数量
+    highlightStyle: [
+      // 高亮显示自定义样式
+      { highlightColor: '#314659', mark: 0 },
+      { highlightColor: '#314659', mark: 1 },
+      { highlightColor: '#314659', mark: 2 },
+      { highlightColor: '#314659', mark: 3 }
+    ]
   }
 }
 export const dataConfig = {
