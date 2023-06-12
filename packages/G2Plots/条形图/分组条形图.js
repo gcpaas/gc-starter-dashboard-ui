@@ -371,7 +371,7 @@ const setting = [
     type: 'inputNumber',
     field: 'yAxis_line_lineWidth',
     optionField: 'yAxis.line.style.lineWidth',
-    value: 1,
+    value: 0,
     tabName: 'custom',
     groupName: 'yAxis'
   },
@@ -601,11 +601,9 @@ const option = {
     },
     line: {
       style: {
-        stroke: 'rgba(255,255,255,0)',
-        lineWidth: 1
-      },
-      stroke: 'rgba(255,255,255,0)',
-      lineWidth: 1
+        stroke: '#d0d0d0',
+        lineWidth: 0
+      }
     },
     tickLine: {
       style: {
