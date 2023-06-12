@@ -325,64 +325,9 @@
 
 }
 
-// .db-el-pagination {
-//   border: none !important;
-
-//   li:hover {
-//     color: var(--db-el-text) !important;
-//   }
-
-//   .popper__arrow {
-//     border-bottom-color: var(--db-el-background-1) !important;
-//     border-top-color: var(--db-el-background-1) !important;
-
-//     &:after {
-//       top: 0 !important;
-//       bottom: 0 !important;
-//       border-bottom-color: var(--db-el-background-1) !important;
-//       border-top-color: var(--db-el-background-1) !important;
-//     }
-//   }
-
-//   .el-select-dropdown__list {
-//     padding: 0 0 6px 0;
-//     margin-bottom: 6px !important;
-//   }
-
-//   ::v-deep .el-select-dropdown {
-//     width: 100px;
-//     min-width: 100px;
-//     border-color: var(--db-el-border) !important;
-//   }
-
-//   .el-select-dropdown__wrap {
-//     background-color: var(--db-background-1) !important;
-
-//     .selected {
-//       span {
-//         color: var(--db-el-color-primary) !important;
-//       }
-//     }
-
-//     .el-select-dropdown__item {
-//       color: var(--db-el-text) !important;
-//     }
-//   }
-
-//   .el-select-dropdown__item.hover,
-//   .el-select-dropdown__item:hover {
-//     color: var(--db-el-color-primary) !important;
-//     background: var(--db-el-background-3) !important;
-//   }
-
-//   ::v-deep .el-select-dropdown {
-//     background: var(--db-el-background-1) !important;
-//   }
-
-//   ::v-deep .el-input__inner {
-//     border-color: var(--db-el-border) !important;
-//   }
-// }
+.db-el-pagination {
+  text-align: right;
+}
 
 .db-el-message-box {
   background: var(--db-background-1) !important;
@@ -395,30 +340,6 @@
   p {
     color: var(--db-el-text) !important;
   }
-
-  // .el-button--default {
-  //   color: var(--db-el-text) !important;
-  //   border-color: var(--db-el-border) !important;
-  //   background-color: var(--db-el-background-2) !important;
-
-  //   &:hover {
-  //     color: var(--db-el-color-primary) !important;
-  //     border-color: var(--db-el-color-primary) !important;
-  //     background-color: var(--db-background-2) !important;
-  //   }
-  // }
-
-  // .el-button--primary {
-  //   color: #FFFFFF;
-  //   background-color: var(--db-el-color-primary) !important;
-  //   border-color: var(--db-el-color-primary) !important;
-
-  //   &:hover {
-  //     color: #FFFFFF !important;
-  //     background-color: #66b1ff !important;
-  //     border-color: #66b1ff !important;
-  //   }
-  // }
 }
 
 .db-title-style {

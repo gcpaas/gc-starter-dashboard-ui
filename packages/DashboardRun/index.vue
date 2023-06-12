@@ -78,10 +78,15 @@ export default {
     ...mapState({
       pageInfo: state => state.dashboard.pageInfo,
       pageConfig: state => state.dashboard.pageInfo.pageConfig,
-      chartList: state => state.dashboard.pageInfo.chartList,
       stateFitMode: state => state.dashboard.pageInfo.pageConfig.fitMode,
       isInit: (state) => !state.dashboard.pageLoading
     }),
+    chartList: {
+      get () {
+        return this.pageInfo.chartList
+      },
+      set () {}
+    },
     pageCode () {
       // 内部系统取到外部iframe上src链接的code参数
       const iframeCode = this.getIframeCode()

@@ -7,7 +7,7 @@
   <el-select
     ref="colorSelect"
     v-model="myColor"
-    class="db-el-select select"
+    class="db-el-select select select-box"
     popper-class="db-el-select"
     placeholder=""
     style="width: 100%"
@@ -113,5 +113,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
 </style>

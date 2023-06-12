@@ -84,10 +84,12 @@ export default {
     state.activeItemConfig = _.cloneDeep(config)
   },
   // 改变当前组件的xywh
-  changeActiveItemWH (state, pwh) {
-    state.activeItemConfig = {
-      ...state.activeItemConfig,
-      ...pwh
+  changeActiveItemWH (state, chart) {
+    if (chart.code === state.activeItemConfig.code) {
+      state.activeItemConfig = {
+        ...state.activeItemConfig,
+        ...chart
+      }
     }
   },
   // 新增一个组件
