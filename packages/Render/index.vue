@@ -431,7 +431,7 @@ export default {
 }
 .design-drag-wrap {
   // box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
-  height: calc(100% - 30px) !important;
+  height: 100% !important;
 }
 
 /deep/.vue-grid-placeholder {

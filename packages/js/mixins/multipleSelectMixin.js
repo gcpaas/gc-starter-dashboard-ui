@@ -27,27 +27,6 @@ export default {
       undoTimeLine: 'undoTimeLine'
     }),
     keydown (event) {
-      if (event.keyCode === 37) {
-        // 关闭默认事件
-        event.preventDefault()
-        // 左箭头键被按下
-        this.changeActivePos({ diffX: -1, diffY: 0 })
-      } else if (event.keyCode === 38) {
-        // 关闭默认事件
-        event.preventDefault()
-        // 上箭头键被按下
-        this.changeActivePos({ diffX: 0, diffY: -1 })
-      } else if (event.keyCode === 39) {
-        // 关闭默认事件
-        event.preventDefault()
-        // 右箭头键被按下
-        this.changeActivePos({ diffX: 1, diffY: 0 })
-      } else if (event.keyCode === 40) {
-        // 关闭默认事件
-        event.preventDefault()
-        // 下箭头键被按下
-        this.changeActivePos({ diffX: 0, diffY: 1 })
-      }
       // ctrl/command + s保存
       if ((event.ctrlKey || event.metaKey) && event.keyCode === 83) {
         // 关闭默认事件
