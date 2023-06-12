@@ -3,75 +3,63 @@
     <el-form
       ref="form"
       :model="config"
-      label-width="90px"
-      label-position="left"
       class="setting-body"
+      label-position="left"
+      label-width="90px"
     >
       <el-form
-          :model="config.customize"
-          label-position="left"
-          class="setting-body"
-          label-width="100px"
-        >
+        :model="config.customize"
+        class="setting-body"
+        label-position="left"
+        label-width="90px"
+      >
         <SettingTitle>标题</SettingTitle>
-        <div class="lc-field-body">
-          <el-form-item label="排名轮播表名称">
-            <el-input
-              v-model="config.title"
-              clearable
-            />
-          </el-form-item>
-        </div>
+        <el-form-item
+          label-width="100px"
+          class="lc-field-body"
+          label="排名表名称"
+        >
+          <el-input
+            v-model="config.title"
+            clearable
+          />
+        </el-form-item>
         <SettingTitle>基础</SettingTitle>
         <div class="lc-field-body">
           <el-form-item
-            label="轮播时间间隔"
+            label="高亮显示数量"
             label-width="100px"
           >
-            <el-input
-              v-model="config.customize.waitTime"
-              clearable
-              placeholder="请输入时间间隔"
-            >
-              <template slot="append">
-                ms
-              </template>
-            </el-input>
-          </el-form-item>
-          <el-form-item label="显示行数">
             <el-input-number
-              v-model="config.customize.rowNum"
-              :precision="0"
-              class="db-el-input-number"
-              label="请输入行数"
+              v-model="config.customize.highlightNum"
+              :min="1"
+              @change="highlightNumChange"
             />
           </el-form-item>
-          <el-form-item label="数值单位">
-            <el-input
-              v-model="config.customize.unit"
-              clearable
-            />
-          </el-form-item>
-          <el-form-item label="自动排序">
-            <el-switch
-              v-model="config.customize.sort"
-              :active-value="true"
-              :inactive-value="false"
+          <el-form-item
+            v-for="(highlightItem, index) in config.customize
+              .highlightStyle"
+            :key="index"
+            :label="'排名' + (index + 1) + '高亮样式'"
+            label-width="100px"
+          >
+            <ColorPicker
+              v-model="highlightItem.highlightColor"
+              :predefine="predefineThemeColors"
             />
           </el-form-item>
         </div>
-
-        </el-form>
+      </el-form>
     </el-form>
   </div>
 </template>
 <script>
 import SettingTitle from 'packages/SettingTitle/index.vue'
-import PosWhSetting from 'packages/DashboardDesign/RightSetting/PosWhSetting.vue'
+import ColorPicker from 'packages/ColorPicker/index.vue'
 export default {
   name: 'BarSetting',
   components: {
-    PosWhSetting,
+    ColorPicker,
     SettingTitle
   },
   data () {
@@ -104,6 +92,25 @@ export default {
   mounted () {
   },
   methods: {
+    highlightNumChange (len) {
+      if (len - this.config.customize.highlightStyle.length >= 0) {
+        for (
+          let i = 0;
+          i <= len - this.config.customize.highlightStyle.length;
+          i++
+        ) {
+          this.config.customize.highlightStyle.push({
+            highlightColor: '#314659',
+            mark: this.config.customize.highlightStyle.length
+          })
+        }
+      } else {
+        this.config.customize.highlightStyle = this.config.customize.highlightStyle.splice(
+          0,
+          len
+        )
+      }
+    }
   }
 }
 </script>

@@ -168,6 +168,35 @@ const setting = [
     ],
     groupName: 'legend'
   },
+  {
+    label: '字体大小',
+    type: 'inputNumber',
+    field: 'legendItemName_style_fontSize',
+    optionField: 'legendItemName.style.fontSize',
+    value: 12,
+    tabName: 'custom',
+    groupName: 'legend'
+  },
+  {
+    label: '字体权重',
+    type: 'inputNumber',
+    step: 100,
+    max: 900,
+    field: 'legendItemName_style_fontWeight',
+    optionField: 'legendItemName.style.fontWeight',
+    value: 400,
+    tabName: 'custom',
+    groupName: 'legend'
+  },
+  {
+    label: '字体颜色',
+    type: 'colorPicker',
+    field: 'legendItemName_style_fill',
+    optionField: 'legendItemName.style.fill',
+    value: '#595959',
+    tabName: 'custom',
+    groupName: 'legend'
+  },
   // X轴 xAxis
   {
     label: '标题',
@@ -441,7 +470,11 @@ const data = [
 ]
 
 // 配置处理脚本
-const optionHandler = 'option.legend = option.legendEnable ? {position: setting.find(settingItem=>settingItem.field === \'legendPosition\').value} : false;'
+const optionHandler = '  option.legend = option.legendEnable ? {position: setting.find(settingItem=>settingItem.field === \'legendPosition\').value} : false;\n' +
+  '  if (option.legendEnable) {\n' +
+  '    option.legend.itemName = option.legendItemName\n' +
+  '  }'
+
 
 // 数据处理脚本
 const dataHandler = ''
@@ -453,6 +486,13 @@ const option = {
   legendEnable: false,
   legendLayout: 'vertical',
   legendPosition: 'top',
+  legendItemName: {
+    style: {
+      fill: '#595959',
+      fontSize: 12,
+      fontWeight: 400
+    }
+  },
   legend: false,
   color: ['#5B8FF9', '#61DDAA', '#5D7092', '#F6BD16', '#6F5EF9', '#6DC8EC', '#945FB9', '#FF9845', '#1E9493', '#FF99C3'],
   isGroup: true,
