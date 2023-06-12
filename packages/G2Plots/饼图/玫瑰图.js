@@ -40,7 +40,7 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '颜色配置',
+    label: '玫瑰颜色',
     // 设置组件类型
     type: 'colorSelect',
     // 字段
@@ -52,7 +52,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '半径',
+    label: '玫瑰半径',
     // 设置组件类型
     type: 'slider',
     // 字段

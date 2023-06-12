@@ -22,7 +22,7 @@ const typeList = [
   'digitalFlop',
   'tables',
   'dashBoardScrollRanking',
-  'dashBoardScrollBoard',
+  // 'dashBoardScrollBoard',
   'video',
   // 'input',
   // 'button'

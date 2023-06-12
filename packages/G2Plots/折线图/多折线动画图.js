@@ -58,7 +58,7 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '线条宽度',
+    label: '折线宽度',
     type: 'inputNumber',
     field: 'lineStyle_lineWidth',
     optionField: 'lineStyle.lineWidth',
@@ -67,7 +67,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '颜色配置',
+    label: '折线颜色',
     // 设置组件类型
     type: 'colorSelect',
     // 字段
@@ -102,9 +102,9 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '动画执行时间',
+    label: '动画时长(ms)',
     // 设置组件类型
-    type: 'input',
+    type: 'inputNumber',
     // 字段
     field: 'animation_appear_duration',
     // 对应options中的字段

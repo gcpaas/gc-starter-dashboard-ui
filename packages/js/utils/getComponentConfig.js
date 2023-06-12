@@ -71,19 +71,19 @@ export default function getComponentConfig (type) {
         y: 0,
         type
       }
-    case 'dashBoardScrollBoard':
-      return {
-        name: '轮播表',
-        title: '轮播表',
-        icon: Icon.getNameList()[2],
-        className:
-          'com.gccloud.dashboard.core.module.chart.components.DashboardScrollBoardChart',
-        w: 12,
-        h: 10,
-        x: 0,
-        y: 0,
-        type
-      }
+    // case 'dashBoardScrollBoard':
+    //   return {
+    //     name: '轮播表',
+    //     title: '轮播表',
+    //     icon: Icon.getNameList()[2],
+    //     className:
+    //       'com.gccloud.dashboard.core.module.chart.components.DashboardScrollBoardChart',
+    //     w: 12,
+    //     h: 10,
+    //     x: 0,
+    //     y: 0,
+    //     type
+    //   }
     case 'dashBoardScrollRanking':
       return {
         name: '排名表',

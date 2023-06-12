@@ -25,38 +25,26 @@
           </div>
           <SettingTitle>基础</SettingTitle>
           <div class="lc-field-body">
-            <el-form-item label="字体颜色">
-              <ColorPicker
-                v-model="config.customize.color"
-                :predefine="predefineThemeColors"
-              />
-            </el-form-item>
-            <el-form-item label="卡片背景颜色">
-              <ColorPicker
-                v-model="config.customize.bgColor"
-                :predefine="predefineThemeColors"
-              />
-            </el-form-item>
-            <el-form-item label="卡片边框颜色">
-              <ColorPicker
-                v-model="config.customize.borderColor"
-                :predefine="predefineThemeColors"
-              />
-            </el-form-item>
-            <el-form-item label="卡片边框粗度">
-              <el-input-number
-                v-model="config.customize.borderWidth"
-                class="db-el-input-number"
-                :min="0"
-                :step="1"
-              />
-            </el-form-item>
             <el-form-item label="字体大小">
               <el-input-number
                 v-model="config.customize.fontSize"
                 class="db-el-input-number"
                 :min="12"
                 :step="1"
+              />
+            </el-form-item>
+            <el-form-item label="字体权重">
+              <el-input-number
+                v-model="config.customize.fontWeight"
+                class="db-el-input-number"
+                :min="0"
+                :step="1"
+              />
+            </el-form-item>
+            <el-form-item label="字体颜色">
+              <ColorPicker
+                v-model="config.customize.color"
+                :predefine="predefineThemeColors"
               />
             </el-form-item>
             <el-form-item label="卡片宽度">
@@ -67,6 +55,28 @@
                 :step="1"
               />
             </el-form-item>
+             <el-form-item label="卡片高度">
+              <el-input-number
+                v-model="config.customize.height"
+                class="db-el-input-number"
+                :min="0"
+                :step="1"
+              />
+            </el-form-item>
+            <el-form-item label="卡片间距">
+              <el-input-number
+                v-model="config.customize.marginRight"
+                class="db-el-input-number"
+                :min="0"
+                :step="1"
+              />
+            </el-form-item>
+            <el-form-item label="卡片背景">
+              <ColorPicker
+                v-model="config.customize.bgColor"
+                :predefine="predefineThemeColors"
+              />
+            </el-form-item>
             <el-form-item label="卡片圆角">
               <el-input-number
                 v-model="config.customize.borderRadius"
@@ -75,7 +85,29 @@
                 :step="1"
               />
             </el-form-item>
-            <el-form-item label="逗号分隔位置">
+             <el-form-item label="卡片边框">
+              <el-input-number
+                v-model="config.customize.borderWidth"
+                class="db-el-input-number"
+                :min="0"
+                :step="1"
+              />
+            </el-form-item>
+            <el-form-item label="卡片边框色">
+              <ColorPicker
+                v-model="config.customize.borderColor"
+                :predefine="predefineThemeColors"
+              />
+            </el-form-item>
+            <el-form-item label="数字个数">
+              <el-input-number
+                v-model="config.customize.numberDigits"
+                class="db-el-input-number"
+                :min="0"
+                :step="1"
+              />
+            </el-form-item>
+            <el-form-item label="分隔个数">
               <el-input-number
                 v-model="config.customize.formatter"
                 class="db-el-input-number"
@@ -84,43 +116,19 @@
                 :step="1"
               />
             </el-form-item>
-            <el-form-item label="字体粗细">
-              <el-input-number
-                v-model="config.customize.fontWeight"
-                class="db-el-input-number"
-                :min="0"
-                :step="1"
-              />
-            </el-form-item>
-            <el-form-item label="数字位数">
-              <el-input-number
-                v-model="config.customize.numberDigits"
-                class="db-el-input-number"
-                :min="0"
-                :step="1"
-              />
-            </el-form-item>
-            <el-form-item label="卡片距离">
-              <el-input-number
-                v-model="config.customize.marginRight"
-                class="db-el-input-number"
-                :min="0"
-                :step="1"
-              />
-            </el-form-item>
-            <el-form-item label="补位值">
+            <el-form-item label="占位符">
               <el-input
                 v-model="config.customize.placeHolder"
                 clearable
               />
             </el-form-item>
-            <el-form-item label="头部填充">
+            <el-form-item label="头部单位">
               <el-input
                 v-model="config.customize.slotLeft"
                 clearable
               />
             </el-form-item>
-            <el-form-item label="尾部填充">
+            <el-form-item label="尾部单位">
               <el-input
                 v-model="config.customize.slotRight"
                 clearable
