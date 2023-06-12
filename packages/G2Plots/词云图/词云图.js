@@ -40,7 +40,7 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '颜色配置',
+    label: '字体颜色',
     // 设置组件类型
     type: 'colorSelect',
     // 字段
@@ -52,7 +52,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '遮罩图片url',
+    label: '背景图url',
     // 设置组件类型
     type: 'input',
     // 字段

@@ -40,6 +40,15 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
+    label: '底色',
+    type: 'colorPicker', // 设置组件类型
+    field: 'theme_styleSheet_backgroundColor', // 字段
+    optionField: 'theme.styleSheet.backgroundColor', // 对应options中的字段
+    value: '',
+    tabName: 'custom',
+    groupName: 'graph'
+  },
+  {
     label: '面积填充',
     type: 'switchNumber', // 设置组件类型
     field: 'area', // 字段
@@ -134,6 +143,11 @@ const option = {
   smooth: false,
   color: 'l(90) 0:#648ff7 1:#648ff7',
   appendPadding: [20, 20, 20, 20], // 设置图标的边距
+  theme: {
+    styleSheet: {
+      backgroundColor: ''
+    }
+  },
   meta: {
     star: {
       alias: 'star 数量',

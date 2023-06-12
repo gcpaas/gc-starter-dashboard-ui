@@ -40,7 +40,31 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '颜色配置',
+    label: '字体大小',
+    // 设置组件类型
+    type: 'inputNumber',
+    // 字段
+    field: 'lable_style_fontSize',
+    // 对应options中的字段
+    optionField: 'label.style.fontSize',
+    value: '14',
+    tabName: 'custom',
+    groupName: 'graph'
+  },
+  {
+    label: '字体颜色',
+    // 设置组件类型
+    type: 'colorPicker',
+    // 字段
+    field: 'label_style_color',
+    // 对应options中的字段
+    optionField: 'label.style.fill',
+    value: '#FFFFFF',
+    tabName: 'custom',
+    groupName: 'graph'
+  },
+  {
+    label: '颜色',
     // 设置组件类型
     type: 'colorSelect',
     // 字段
@@ -189,6 +213,11 @@ const option = {
       fontWeight: 400
     }
   },
+  label: {
+    style: {
+      fontSize: '30px'
+    }
+  }
 }
 
 export default {
