@@ -22,6 +22,7 @@
         :cols="{ lg: 24, md: 24, sm: 24, xs: 12, xxs: 12 }"
       >
         <grid-item
+          class="grid-item-box"
           v-for="(card) in chartList"
           :id="`${card.code}`"
           :ref="`layoutItem_${card.code}`"
@@ -338,6 +339,9 @@ export default {
     position: relative;
     background-size: cover;
     overflow: auto
+  }
+  .grid-item-box{
+    border: 1px solid #e8e8e8
   }
 }
 /deep/.vue-grid-placeholder {
