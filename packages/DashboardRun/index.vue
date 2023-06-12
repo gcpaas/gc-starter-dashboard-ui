@@ -11,7 +11,7 @@
       <grid-layout
         ref="gridlayout"
         :layout.sync="chartList"
-        :col-num="12"
+        :col-num="24"
         :row-height="10"
         :responsive="true"
         :is-resizable="false"
@@ -19,7 +19,7 @@
         :use-css-transforms="true"
         :is-draggable="false"
         :margin="[20, 20]"
-        :cols="{ lg: 12, md: 12, sm: 12, xs: 12, xxs: 12 }"
+        :cols="{ lg: 24, md: 24, sm: 24, xs: 12, xxs: 12 }"
       >
         <grid-item
           v-for="(card) in chartList"

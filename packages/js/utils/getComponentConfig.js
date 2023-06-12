@@ -65,7 +65,7 @@ export default function getComponentConfig (type) {
         icon: Icon.getNameList()[1],
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardPictureChart',
-        w: 3,
+        w: 12,
         h: 10,
         x: 0,
         y: 0,
@@ -78,7 +78,7 @@ export default function getComponentConfig (type) {
         icon: Icon.getNameList()[2],
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardScrollBoardChart',
-        w: 6,
+        w: 12,
         h: 10,
         x: 0,
         y: 0,
@@ -91,7 +91,7 @@ export default function getComponentConfig (type) {
         icon: Icon.getNameList()[3],
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardScrollRankingChart',
-        w: 6,
+        w: 12,
         h: 10,
         x: 0,
         y: 0,
@@ -104,7 +104,7 @@ export default function getComponentConfig (type) {
         icon: Icon.getNameList()[4],
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardTablesChart',
-        w: 6,
+        w: 12,
         h: 10,
         x: 0,
         y: 0,
@@ -117,7 +117,7 @@ export default function getComponentConfig (type) {
         icon: Icon.getNameList()[6],
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardCurrentTimeChart',
-        w: 3,
+        w: 12,
         h: 4,
         x: 0,
         y: 0,
@@ -130,7 +130,7 @@ export default function getComponentConfig (type) {
         icon: Icon.getNameList()[7],
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardTimeCountDownChart',
-        w: 3,
+        w: 12,
         h: 4,
         x: 0,
         y: 0,
@@ -143,7 +143,7 @@ export default function getComponentConfig (type) {
         icon: Icon.getNameList()[8],
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardIframeChart',
-        w: 6,
+        w: 12,
         h: 20,
         x: 0,
         y: 0,
@@ -157,7 +157,7 @@ export default function getComponentConfig (type) {
         img: require('packages/BasicComponents/DigitalFlop/images/fanpaiqi.png'),
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardDigitalFlopChart',
-        w: 6,
+        w: 12,
         h: 10,
         x: 0,
         y: 0,
@@ -170,7 +170,7 @@ export default function getComponentConfig (type) {
         icon: Icon.getNameList()[12],
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardVideoChart',
-        w: 6,
+        w: 12,
         h: 10,
         x: 0,
         y: 0,

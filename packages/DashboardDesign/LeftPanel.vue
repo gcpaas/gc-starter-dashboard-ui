@@ -77,13 +77,13 @@
                       draggable="true"
                       :data-type="element.type"
                       :data-name="element.name"
+                      @click.stop="addComponent(element)"
                     >
                       <div class="component-name">
                         {{ element.title || element.name }}
                       </div>
                       <div
                         class="img_dispaly chooseDragNode"
-                        @click.stop="addComponent(element)"
                       >
                         <icon-svg
                           v-if="element.icon"
@@ -117,8 +117,6 @@
 import _ from 'lodash'
 import basicComponents from 'packages/js/config/basicComponentsConfig'
 import g2PlotComponents, { getCustomPlots } from '../G2Plots/plotList'
-import borderComponents from 'packages/js/config/borderComponentsConfig'
-import decorationComponents from 'packages/js/config/decorationComponentsConfig'
 import LayerList from './LayerList/index.vue'
 import { mapMutations } from 'vuex'
 import IconSvg from 'packages/SvgIcon'
@@ -247,7 +245,6 @@ export default {
     onEnd (e) {},
     // 点击左侧组件时触发
     addComponent (element) {
-      this.$store.commit('dashboard/changeActiveItem', element)
       this.$emit('addComponent', element)
     },
     // 初始化

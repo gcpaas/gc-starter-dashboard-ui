@@ -88,7 +88,7 @@ const option = {
   data,
   appendPadding: [0, 0, 0, 0], // 设置图标的边距
   height: 50,
-  width: 400,
+  width: 6,
   autoFit: true,
   percent: 0.8,
   barWidthRatio: 0.3,
