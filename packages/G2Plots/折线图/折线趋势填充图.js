@@ -453,12 +453,12 @@ const setting = [
     groupName: 'yAxis'
   },
   // 边距 padding
-  {
+    {
     label: '图表边距',
     type: 'padding',
     field: 'appendPadding',
     optionField: 'appendPadding',
-    value: [20, 20, 20, 20],
+    value: [16, 16, 16, 16],
     tabName: 'custom',
     groupName: 'padding'
   }
@@ -579,7 +579,7 @@ const option = {
   xField: 'year',
   yField: 'gdp',
   seriesField: 'name',
-  appendPadding: [20, 20, 20, 20], // 设置图标的边距
+  appendPadding: [16, 16, 16, 16], // 设置图标的边距
   xAxis: {
     title: {
       text: '',

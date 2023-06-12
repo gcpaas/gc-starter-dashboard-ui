@@ -70,6 +70,16 @@ const setting = [
     value: 'l(0) 0:#648ff7 1:#62FF00',
     tabName: 'custom',
     groupName: 'graph'
+  },
+  // 边距 padding
+  {
+    label: '图表边距',
+    type: 'padding', // 设置组件类型
+    field: 'appendPadding', // 字段
+    optionField: 'appendPadding', // 对应options中的字段
+    value: [16, 16, 16, 16],
+    tabName: 'custom',
+    groupName: 'padding'
   }
 ]
 
@@ -79,7 +89,7 @@ const dataHandler = '// 取出所有指标的值 \ndata = data.map(item => item[
 // 图表配置 new Line('domName', option)
 const option = {
   data: [16, 95, 35, 27, 50, 36, 78, 99, 60, 62, 37],
-  appendPadding: [20, 20, 20, 20], // 设置图标的边距
+  appendPadding: [16, 16, 16, 16], // 设置图标的边距
   height: 6,
   autoFit: true,
   smooth: true,

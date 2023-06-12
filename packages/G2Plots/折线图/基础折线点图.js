@@ -383,7 +383,7 @@ const setting = [
     type: 'padding',
     field: 'appendPadding',
     optionField: 'appendPadding',
-    value: [20, 20, 20, 20],
+    value: [16, 16, 16, 16],
     tabName: 'custom',
     groupName: 'padding'
   }
@@ -416,7 +416,7 @@ const option = {
       fontSize: 12
     }
   },
-  appendPadding: [20, 20, 20, 20], // 设置图标的边距
+  appendPadding: [16, 16, 16, 16], // 设置图标的边距
   point: {
     size: 5,
     shape: 'circle',

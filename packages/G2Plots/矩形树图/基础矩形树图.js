@@ -121,7 +121,7 @@ const setting = [
     type: 'padding', // 设置组件类型
     field: 'appendPadding', // 字段
     optionField: 'appendPadding', // 对应options中的字段
-    value: [20, 20, 20, 20],
+    value: [16, 16, 16, 16],
     tabName: 'custom',
     groupName: 'padding'
   }
@@ -175,7 +175,7 @@ const dataHandler = '// 转换数据格式\n' +
 const option = {
   data,
   color: ['#5B8FF9', '#61DDAA', '#5D7092', '#F6BD16', '#6F5EF9', '#6DC8EC', '#945FB9', '#FF9845', '#1E9493', '#FF99C3'],
-  appendPadding: [20, 20, 20, 20], // 设置图标的边距
+  appendPadding: [16, 16, 16, 16], // 设置图标的边距
   colorField: 'name',
   valueField: 'value',
   legendEnable: false,

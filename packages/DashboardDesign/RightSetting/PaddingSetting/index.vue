@@ -9,6 +9,8 @@
           v-model.number="paddingValue[0]"
           class="input-top input-item"
           size="mini"
+          :min="0"
+          :step="1"
           @change="paddingChange"
         />
       </el-form-item>
@@ -20,6 +22,8 @@
           v-model.number="paddingValue[2]"
           class="input-bottom input-item"
           size="mini"
+          :min="0"
+          :step="1"
           @change="paddingChange"
         />
       </el-form-item>
@@ -31,6 +35,8 @@
           v-model.number="paddingValue[3]"
           class="input-left input-item db-el-input"
           size="mini"
+          :min="0"
+          :step="1"
           @change="paddingChange"
         />
       </el-form-item>
@@ -42,6 +48,8 @@
           v-model.number="paddingValue[1]"
           class="input-right input-item"
           size="mini"
+          :min="0"
+          :step="1"
           @change="paddingChange"
         />
       </el-form-item>
