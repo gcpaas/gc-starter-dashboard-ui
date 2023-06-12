@@ -162,7 +162,7 @@ export default {
   mounted () {
     // 监听屏幕改变
     this.listenSize()
-    this.initRuleHeight()
+    // this.initRuleHeight()
     this.throttleScroll()
   },
   methods: {
@@ -172,7 +172,7 @@ export default {
     ]),
     listenSize () {
       window.onresize = throttle(() => {
-        this.initRuleHeight()
+        // this.initRuleHeight()
       }, 100)
     },
     initRuleHeight () {
