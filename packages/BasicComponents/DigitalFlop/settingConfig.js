@@ -36,8 +36,8 @@ const customConfig = {
   customize: {
     color: '#fff',
     bgColor: '#007aff',
-    fontSize: 100,
-    width: 100,
+    fontSize: 70,
+    width: 60,
     borderRadius: 10,
     borderColor: '#fff',
     borderWidth: 1,
@@ -48,7 +48,7 @@ const customConfig = {
     marginRight: 20,
     numberDigits: 5,
     placeHolder: '0',
-    height: 170
+    height: 125
   }
 }
 export const dataConfig = {
