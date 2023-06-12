@@ -361,7 +361,9 @@ export default {
           this.resetPresetLine()
           this.saveTimeLine('清空画布')
         })
-        .catch(() => {})
+        .catch(() => {
+          console.info('取消清空画布')
+        })
     },
     // 自定义属性更新
     updateSetting (config) {
