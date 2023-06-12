@@ -9,29 +9,41 @@
       class="setting-body"
     >
       <SettingTitle>基础</SettingTitle>
-      <el-form-item class="lc-field-body" label="名称">
+      <el-form-item
+        class="lc-field-body"
+        label="名称"
+      >
         <el-input
           v-model="config.title"
           clearable
         />
       </el-form-item>
       <SettingTitle>基础</SettingTitle>
-      <div class="lc-field-body">
-        <el-form-item label="头部背景颜色">
+      表头颜色 <div class="lc-field-body">
+        <el-form-item label="表格表头高度">
+          <el-input-number
+            v-model="config.customize.headerHeight"
+            class="db-el-input-number"
+            :min="0"
+            :max="100"
+            :step="1"
+          />
+        </el-form-item>
+        <el-form-item label="表头颜色">
           <ColorPicker
             v-model="config.customize.headerBackgroundColor"
-            placeholder="请选择头部背景颜色"
+            placeholder="请选择表头颜色"
             :predefine-colors="predefineThemeColors"
           />
         </el-form-item>
-        <el-form-item label="头部字体颜色">
+        <el-form-item label="表头字体颜色">
           <ColorPicker
             v-model="config.customize.headerFontColor"
-            placeholder="请选择头部字体颜色"
+            placeholder="请选择表头字体颜色"
             :predefine-colors="predefineThemeColors"
           />
         </el-form-item>
-        <el-form-item label="头部字体大小">
+        <el-form-item label="表头字体大小">
           <el-input-number
             v-model="config.customize.headerFontSize"
             class="db-el-input-number"
@@ -78,7 +90,6 @@
           />
         </el-form-item>
       </div>
-
     </el-form>
   </div>
 </template>
@@ -86,11 +97,9 @@
 import SettingTitle from 'packages/SettingTitle/index.vue'
 import ColorPicker from 'packages/ColorPicker/index.vue'
 import { chartSettingMixins } from 'packages/js/mixins/chartSettingMixins'
-import PosWhSetting from 'packages/DashboardDesign/RightSetting/PosWhSetting.vue'
 export default {
   components: {
     ColorPicker,
-    PosWhSetting,
     SettingTitle
   },
   mixins: [chartSettingMixins],

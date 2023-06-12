@@ -6,16 +6,11 @@ export const settingConfig = {
   isGroup: true,
   data: [],
   color: '',
-  theme: 'dark',
   label: {
     // 可手动配置 label 数据标签位置
     position: 'top', // 'top', 'bottom', 'middle',
     // 配置样式
     content: ''
-    // style: {
-    //   fill: '#CACACA',
-    //   opacity: 0.6
-    // },
   },
   seriesField: '', // 分组
   displayOption: {
@@ -40,17 +35,18 @@ const customConfig = {
     contribution: false
   },
   customize: {
-    theme: 'dark', // 'light'、'dark'
+    // 表格头部高度
+    headerHeight: 38,
     // 表格头部背景颜色
-    headerBackgroundColor: '',
+    headerBackgroundColor: '#fafafa',
     // 表格头部字体颜色
-    headerFontColor: '#ffffff',
+    headerFontColor: '#909399',
     // 表格头部字体大小
     headerFontSize: 14,
     // 表格主体背景颜色
     bodyBackgroundColor: '',
     // 表格主体字体颜色
-    bodyFontColor: '#ffffff',
+    bodyFontColor: '#606266',
     // 表格主体字体大小
     bodyFontSize: 14,
     // 表格是否需要斑马纹
