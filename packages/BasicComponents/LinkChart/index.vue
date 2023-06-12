@@ -1,82 +1,124 @@
+<!--
+ * @description: 跳转
+ * @Date: 2022-09-02 09:32:00
+ * @Author: xingheng
+-->
+
 <template>
-  <div
-    class="db-design-wrap"
-    :class="`db-text-${customTheme}`"
-    @click="linkHandle"
-  >
-    <div
-      class="content-box"
-      :style="{'font-size': config.customize.fontSize +'px','font-weight': +config.customize.fontWeight,'background-image': `-webkit-linear-gradient(${config.customize.color})`}"
-    >
-      {{ config.customize.title }}
+  <div class="design-wrap">
+    <!-- <div class="title">
+      {{ config.title }}
+    </div> -->
+    <div class="icons-box-wrap">
+      <div
+        v-for="(link, index) in config.customize.linkList"
+        :key="index"
+        class="link-chart-item"
+      >
+        <div
+          class="icon-wrap"
+          :style="{ 'background-color': link.iconColor }"
+        >
+          <icon-svg
+            class="img-btn-svg"
+            :style="{
+              fill: (link.iconColor) === '#FFFFFF' ? '#0000000' : '#FFFFFF',
+            }"
+            :name="link.icon"
+          />
+        </div>
+        <div class="link-name">
+          {{ link.name }}
+        </div>
+      </div>
     </div>
-    <iframeDialogPreview
-      v-if="isPreview"
-      ref="iframeDialogPreview"
-      :config="config"
-    />
   </div>
 </template>
+
 <script>
-import commonMixins from 'packages/js/mixins/commonMixins'
-import paramsMixins from 'packages/js/mixins/paramsMixins'
-import { mapMutations } from 'vuex'
-import iframeDialogPreview from './iframeDialogPreview'
+import IconSvg from 'packages/SvgIcon'
 export default {
   name: 'LinkChart',
-  components: { iframeDialogPreview },
-  mixins: [paramsMixins, commonMixins],
+  components: { IconSvg },
   props: {
-    // 卡片的属性
     config: {
       type: Object,
-      default: () => ({})
+      default: () => {
+      }
     }
   },
   data () {
-    return {
-      customClass: {}
+    return {}
+  },
+  computed: {
+    pageInfo () {
+      return this.$store.state.page.pageInfo
     }
   },
-  watch: {
-  },
+  watch: {},
   mounted () {
   },
   methods: {
-    ...mapMutations('dashboard', ['changeIframeDialog']),
-    linkHandle () {
-      if (this.config.customize.url) {
-        if (this.config.customize.openType === 'dialog') {
-          if (this.isPreview) {
-            this.$refs.iframeDialogPreview.dialogVisible = true
-          } else {
-            this.changeIframeDialog(true)
-          }
-        } else {
-          window.open(this.config.customize.url, this.config.customize.openType)
-        }
-      }
-    },
-    buildOption (config, data) {
-      // 文本数据配置原则：选择数据集则以后端返回的数据为主，否则以设置面板中标题设置为准
-      if (config.dataSource.businessKey) {
-        config.customize.title = data && data.data && data.data.length ? data.data[0][config.dataSource.metricField] : '暂无数据'
-      }
-      return config
-    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  @import '~packages/assets/style/chartStyle.scss';
-  .content-box{
-    text-align: center;
-    /* 将背景设为渐变 */
-    /*background-image: -webkit-linear-gradient(left, #6294F7, #C85D14);*/
-    /* 规定背景绘制区域 */
-    -webkit-background-clip: text;
-    /* 将文字隐藏 */
-    -webkit-text-fill-color: transparent;
+.design-wrap {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+
+  .title {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    border-left: 3px solid #007aff;
+    padding-left: 10px;
+    &:hover{
+      cursor: move;
+    }
   }
+  .icons-box-wrap {
+    height: calc(100% - 20px);
+    padding: 16px 16px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    align-items: center;
+    justify-items: center;
+
+    .link-chart-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .icon-wrap {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        cursor: pointer;
+
+        .icon-svg {
+          width: 38px;
+          height: 38px;
+        }
+      }
+
+      .link-name {
+        display: inline-block;
+        padding: 10px 0;
+        font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 120px;
+      }
+    }
+  }
+}
+
 </style>

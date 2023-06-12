@@ -81,7 +81,7 @@
 <script>
 import SourceDialog from './SourceDialog/index.vue'
 import ComponentDialog from './ComponentDialog/index.vue'
-import iframeDialog from 'packages/BasicComponents/LinkChart/iframeDialog'
+import iframeDialog from 'packages/BasicComponents/SuperLinkChart/iframeDialog'
 import {
   dataConfig,
   settingConfig

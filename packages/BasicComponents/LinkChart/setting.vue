@@ -1,145 +1,139 @@
 <!--
- * @description: 标题属性设置面板
- * @Date: 2022-08-17 16:53:28
- * @Author: shiyi
+ * @description: 跳转设置
+ * @Date: 2022-09-02 09:32:00
+ * @Author: xingheng
 -->
+
 <template>
-  <div>
-    <el-form
-      ref="form"
-      label-width="100px"
-      label-position="left"
-      :model="config"
-      :rules="rules"
-    >
-      <SettingTitle>标题</SettingTitle>
-      <div class="db-setting-wrap">
+  <div class="setting-wrap">
+    <div class="setting-inner-wrap">
+      <el-form
+        ref="form"
+        label-width="100px"
+        label-position="left"
+        :model="config"
+        :rules="rules"
+      >
+        <SettingTitle>标题</SettingTitle>
         <el-form-item
-          label="标题"
+          label="跳转名称"
           label-width="100px"
-          prop="title"
         >
           <el-input
-            v-model="config.customize.title"
+            v-model="config.title"
             placeholder="请输入标题"
-            clearable
           />
         </el-form-item>
-      </div>
-      <SettingTitle>基础</SettingTitle>
-      <div class="db-setting-wrap">
-        <el-form-item
-          label="链接地址"
-          label-width="100px"
-          prop="title"
+        <div
+          v-for="(link, index) in config.customize.linkList"
+          :key="index"
+          class="link-set-item"
         >
-          <el-input
-            v-model="config.customize.url"
-            placeholder="请输入链接地址"
-            clearable
-          />
-        </el-form-item>
-        <el-form-item
-          label="打开方式"
-          label-width="100px"
-          prop="title"
-        >
-          <el-select
-            v-model="config.customize.openType"
-            popper-class="db-el-select"
-            class="db-el-select"
+          <el-form-item
+            label="名称"
+            :rules="rules.name"
+            :prop="'linkList.' + index + '.name'"
           >
-            <el-option
-              v-for="type in openTypeList"
-              :key="type.label"
-              :label="type.label"
-              :value="type.value"
+            <el-input
+              v-model="link.name"
+              type="text"
             />
-          </el-select>
-        </el-form-item>
-        <el-form-item
-          v-if="config.customize.openType === 'dialog'"
-          label="弹窗宽度"
-          label-width="100px"
-        >
-          <el-input-number
-            v-model="config.customize.dialogW"
-            class="db-el-input-number"
-            placeholder="请输入弹窗宽度"
-            clearable
-          />
-        </el-form-item>
-        <el-form-item
-          v-if="config.customize.openType === 'dialog'"
-          label="弹窗高度"
-          label-width="100px"
-        >
-          <el-input-number
-            v-model="config.customize.dialogH"
-            class="db-el-input-number"
-            placeholder="请输入弹窗高度"
-            clearable
-          />
-        </el-form-item>
-        <el-form-item
-          label="标题字体大小"
-          label-width="100px"
-        >
-          <el-input
-            v-model="config.customize.fontSize"
-            placeholder="请输入标题字体大小"
-            clearable
+          </el-form-item>
+          <el-form-item
+            label="链接地址"
+            :rules="rules.url"
+            :prop="'linkList.' + index + '.url'"
           >
-            <template slot="append">
-              px
-            </template>
-          </el-input>
-        </el-form-item>
-        <el-form-item
-          label="标题字体权重"
-          label-width="100px"
-        >
-          <el-input-number
-            v-model="config.customize.fontWeight"
-            class="db-el-input-number"
-            placeholder="请输入标题字体权重"
-          />
-        </el-form-item>
-        <TextGradient v-model="config.customize.color" />
-      </div>
-    </el-form>
+            <el-input
+              v-model="link.url"
+              type="text"
+            />
+          </el-form-item>
+          <el-form-item
+            label="打开方式"
+            label-width="100px"
+          >
+            <el-select
+              v-model="link.target"
+              placeholder="请选择打开方式"
+              clearable
+            >
+              <el-option
+                v-for="item in [
+                  { label: '当前窗口', value: '_self' },
+                  { label: '新窗口', value: '_blank' },
+                  { label: '本工程', value: 'push' }
+                ]"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              />
+            </el-select>
+          </el-form-item>
+          <el-form-item
+            label="图标选择"
+            label-width="100px"
+          >
+            <IconSelect
+              ref="IconSelect"
+              :link="{
+                icon: link.icon,
+                iconColor: link.iconColor
+              }"
+              @showChooseIcon="showChooseIcon(...arguments, link, index)"
+              @chooseIcon="chooseIcon"
+            />
+          </el-form-item>
+          <div class="opt-wrap">
+            <el-button
+              type="default"
+              :disabled="config.customize.linkList.length === 1"
+              @click="delLink(index)"
+            >
+              删除
+            </el-button>
+            <el-button
+              type="default"
+              @click="addLinkIcon(index)"
+            >
+              新增
+            </el-button>
+            <el-button
+              type="default"
+              icon="el-icon-bottom"
+              @click="down(index)"
+            />
+            <el-button
+              type="default"
+              icon="el-icon-top"
+              @click="up(index)"
+            />
+          </div>
+        </div>
+      </el-form>
+    </div>
   </div>
 </template>
 <script>
+// import _ from 'lodash'
+// import { changeCurrentOption } from '../../../../../store/page/actions'
 import SettingTitle from 'packages/SettingTitle/index.vue'
-import TextGradient from 'packages/DashboardDesign/RightSetting/TextGradient/index'
-import PosWhSetting from 'packages/DashboardDesign/RightSetting/PosWhSetting.vue'
+import IconSelect from './IconSelect/index'
 export default {
   name: 'LinkChartSetting',
   components: {
-    TextGradient,
-    PosWhSetting,
+    IconSelect,
     SettingTitle
   },
   data () {
     return {
-      openTypeList: [
-        {
-          label: '当前窗口',
-          value: '_self'
-        },
-        {
-          label: '新窗口',
-          value: '_blank'
-        },
-        {
-          label: '弹窗',
-          value: 'dialog'
-        }
-      ],
       rules: {
-        title: [
-          { required: true, message: '请输入标题', trigger: 'blur' }
+        name: [
+          { required: true, message: '请输入名称', trigger: 'blur' }
+        ],
+        url: [
+          { required: true, message: '请输入链接地址', trigger: 'blur' },
+          { type: 'url', message: '请输入正确的链接地址', trigger: 'blur' }
         ]
       }
     }
@@ -154,17 +148,114 @@ export default {
       }
     }
   },
-  watch: {
+  watch: {},
+  mounted () {
   },
-  mounted () {},
   methods: {
+    addLinkIcon (index) {
+      this.config.customize.linkList.splice(index + 1, 0, {
+        name: '',
+        url: '',
+        target: '_blank',
+        icon: '17A发送',
+        iconColor: '#007aff'
+      })
+    },
+    delLink (index) {
+      this.config.customize.linkList.splice(index, 1)
+      this.$forceUpdate()
+    },
+    down (index) {
+      if (index === this.config.customize.linkList.length - 1) {
+        return
+      }
+      let temp = this.config.customize.linkList[index]
+      this.config.customize.linkList[index] = this.config.customize.linkList[index + 1]
+      this.config.customize.linkList[index + 1] = temp
+      this.$forceUpdate()
+    },
+    up (index) {
+      if (index === 0) {
+        return
+      }
+      let temp = this.config.customize.linkList[index]
+      this.config.customize.linkList[index] = this.config.customize.linkList[index - 1]
+      this.config.customize.linkList[index - 1] = temp
+      this.$forceUpdate()
+    },
+    handleClick (val) {
+      this.$set(this, 'activeName', val.name)
+    },
+    // 取消
+    close () {
+      this.$emit('closeRightPanel')
+    },
+    // 更新
+    // update () {
+    //   this.$refs.form.validate((valid) => {
+    //     if (valid) {
+    //       this.$store.commit(
+    //         'page/changeLayoutJson',
+    //         _.cloneDeep(changeCurrentOption(this.config))
+    //       )
+    //     } else {
+    //       return false
+    //     }
+    //   })
+    // },
+    showChooseIcon (link, index) {
+      this.$refs.IconSelect[index].init({
+        ...link,
+        index
+      })
+    },
+    chooseIcon (icon) {
+      this.config.customize.linkList[icon.index].icon = icon.icon
+      this.config.customize.linkList[icon.index].iconColor = icon.iconColor
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  @import "../~packages/assets/style/settingWrap.scss";
-  .db-setting-wrap{
-    padding: 12px 16px;
+@import "../~packages/assets/style/settingWrap.scss";
+.setting-wrap {
+  .setting-inner-wrap {
+    height: calc(100% - 50px);
+    overflow: auto;
+    padding: 16px;
   }
+
+  .link-set-item {
+    position: relative;
+    border: 1px solid #f5f7fa;
+    padding: 30px 16px 10px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+
+    .del-icon {
+      cursor: pointer;
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      font-size: 20px;
+      color: #f00;
+    }
+
+    .opt-wrap {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .add-link-btn {
+    width: 100%;
+  }
+
+  /deep/.el-button--primary  {
+    span {
+      margin: 0 auto;
+    }
+  }
+}
 </style>
