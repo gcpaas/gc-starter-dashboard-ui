@@ -36,7 +36,7 @@
 <script>
 import IconSvg from 'packages/SvgIcon'
 export default {
-  name: 'LinkChart',
+  name: 'Link',
   components: { IconSvg },
   props: {
     config: {

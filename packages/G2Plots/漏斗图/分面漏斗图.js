@@ -173,6 +173,35 @@ const setting = [
     ],
     groupName: 'legend'
   },
+  {
+    label: '字体大小',
+    type: 'inputNumber',
+    field: 'legendItemName_style_fontSize',
+    optionField: 'legendItemName.style.fontSize',
+    value: 12,
+    tabName: 'custom',
+    groupName: 'legend'
+  },
+  {
+    label: '字体权重',
+    type: 'inputNumber',
+    step: 100,
+    max: 900,
+    field: 'legendItemName_style_fontWeight',
+    optionField: 'legendItemName.style.fontWeight',
+    value: 400,
+    tabName: 'custom',
+    groupName: 'legend'
+  },
+  {
+    label: '字体颜色',
+    type: 'colorPicker',
+    field: 'legendItemName_style_fill',
+    optionField: 'legendItemName.style.fill',
+    value: '#595959',
+    tabName: 'custom',
+    groupName: 'legend'
+  },
   // 边距 padding
   {
     label: '图表边距',
@@ -200,14 +229,16 @@ const data = [
 ]
 
 // 配置处理脚本
-const optionHandler = `option.legend = option.legendEnable ? option.legendPosition: false;
+const optionHandler = `option.legend = option.legendEnable ? {position: option.legendPosition}: false;
 window.conversionTagName = option.conversionTagName
 option.conversionTag.formatter = (datum) => {
   return window.conversionTagName + datum.$$percentage$$.toFixed(2) * 100 + '%'
 }
+if (option.legendEnable) {
+   option.legend.itemName = option.legendItemName
+}
 `
 
-// 数据处理脚本
 // 数据处理脚本
 const dataHandler = 'data = data.sort((a, b) => b[option.yField] - a[option.yField])'
 
@@ -224,6 +255,13 @@ const option = {
   legendLayout: 'vertical',
   legendPosition: 'top',
   legend: false,
+  legendItemName: {
+    style: {
+      fill: '#595959',
+      fontSize: 12,
+      fontWeight: 400
+    }
+  },
   conversionTagName: '转化率 ',
   label: { // 图表内的数据标签
     // 配置样式
