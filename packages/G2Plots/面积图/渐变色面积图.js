@@ -45,7 +45,7 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '曲线平滑',
+    label: '折线平滑',
     type: 'switch', // 设置组件类型
     field: 'smooth', // 字段
     optionField: 'smooth', // 对应options中的字段
@@ -63,11 +63,20 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '线条颜色',
+    label: '折线颜色',
     type: 'colorPicker', // 设置组件类型
     field: 'line_color', // 字段
     optionField: 'line.color', // 对应options中的字段
     value: '#1890ff',
+    tabName: 'custom',
+    groupName: 'graph'
+  },
+  {
+    label: '折线宽度',
+    type: 'inputNumber', // 设置组件类型
+    field: 'line_size', // 字段
+    optionField: 'line.size', // 对应options中的字段
+    value: 1,
     tabName: 'custom',
     groupName: 'graph'
   },
@@ -80,15 +89,7 @@ const setting = [
     tabName: 'custom',
     groupName: 'graph'
   },
-  {
-    label: '线条宽度',
-    type: 'inputNumber', // 设置组件类型
-    field: 'line_size', // 字段
-    optionField: 'line.size', // 对应options中的字段
-    value: 1,
-    tabName: 'custom',
-    groupName: 'graph'
-  },
+
   // 网格线 grid
   {
     label: '宽度',
