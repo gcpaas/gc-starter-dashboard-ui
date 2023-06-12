@@ -45,19 +45,19 @@ export default function getComponentConfig (type) {
     //     y: 0,
     //     type
     //   }
-    // case 'linkChart':
-    //   return {
-    //     name: '跳转链接',
-    //     title: '跳转链接',
-    //     icon: Icon.getNameList()[15],
-    //     className:
-    //       'com.gccloud.dashboard.core.module.chart.components.DashboardLinkChart',
-    //     w: 3,
-    //     h: 4,
-    //     x: 0,
-    //     y: 0,
-    //     type
-    //   }
+    case 'linkChart':
+      return {
+        name: '跳转链接',
+        title: '跳转链接',
+        icon: Icon.getNameList()[15],
+        className:
+          'com.gccloud.dashboard.core.module.chart.components.DashboardLinkChart',
+        w: 12,
+        h: 8,
+        x: 0,
+        y: 0,
+        type
+      }
     case 'picture':
       return {
         name: '图片',

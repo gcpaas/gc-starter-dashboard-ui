@@ -1,129 +1,129 @@
-<!--
- * @description: 跳转设置
- * @Date: 2022-09-02 09:32:00
- * @Author: xingheng
--->
-
 <template>
-  <div class="setting-wrap">
-    <div class="setting-inner-wrap">
-      <el-form
-        ref="form"
-        label-width="100px"
-        label-position="left"
-        :model="config"
-        :rules="rules"
-      >
-        <SettingTitle>标题</SettingTitle>
-        <el-form-item
-          label="跳转名称"
-          label-width="100px"
+  <div class="db-setting-wrap">
+    <el-form
+      ref="form"
+      :model="config"
+      label-width="90px"
+      label-position="left"
+      class="setting-body"
+    >
+      <div class="setting-inner-wrap">
+        <el-form
+          :model="config.customize"
+          label-position="left"
+          class="setting-body"
+          label-width="90px"
         >
-          <el-input
-            v-model="config.title"
-            placeholder="请输入标题"
-          />
-        </el-form-item>
-        <div
-          v-for="(link, index) in config.customize.linkList"
-          :key="index"
-          class="link-set-item"
-        >
-          <el-form-item
-            label="名称"
-            :rules="rules.name"
-            :prop="'linkList.' + index + '.name'"
-          >
-            <el-input
-              v-model="link.name"
-              type="text"
-            />
-          </el-form-item>
-          <el-form-item
-            label="链接地址"
-            :rules="rules.url"
-            :prop="'linkList.' + index + '.url'"
-          >
-            <el-input
-              v-model="link.url"
-              type="text"
-            />
-          </el-form-item>
-          <el-form-item
-            label="打开方式"
-            label-width="100px"
-          >
-            <el-select
-              v-model="link.target"
-              placeholder="请选择打开方式"
-              clearable
-            >
-              <el-option
-                v-for="item in [
-                  { label: '当前窗口', value: '_self' },
-                  { label: '新窗口', value: '_blank' },
-                  { label: '本工程', value: 'push' }
-                ]"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value"
+          <SettingTitle>标题</SettingTitle>
+          <div class="lc-field-body">
+            <el-form-item label="链接名称">
+              <el-input
+                v-model="config.title"
+                clearable
               />
-            </el-select>
-          </el-form-item>
-          <el-form-item
-            label="图标选择"
-            label-width="100px"
-          >
-            <IconSelect
-              ref="IconSelect"
-              :link="{
-                icon: link.icon,
-                iconColor: link.iconColor
-              }"
-              @showChooseIcon="showChooseIcon(...arguments, link, index)"
-              @chooseIcon="chooseIcon"
-            />
-          </el-form-item>
-          <div class="opt-wrap">
-            <el-button
-              type="default"
-              :disabled="config.customize.linkList.length === 1"
-              @click="delLink(index)"
-            >
-              删除
-            </el-button>
-            <el-button
-              type="default"
-              @click="addLinkIcon(index)"
-            >
-              新增
-            </el-button>
-            <el-button
-              type="default"
-              icon="el-icon-bottom"
-              @click="down(index)"
-            />
-            <el-button
-              type="default"
-              icon="el-icon-top"
-              @click="up(index)"
-            />
+            </el-form-item>
           </div>
-        </div>
-      </el-form>
-    </div>
+          <SettingTitle>基础</SettingTitle>
+          <div class="lc-field-body">
+            <div
+              v-for="(link, index) in config.customize.linkList"
+              :key="index"
+              class="link-set-item"
+            >
+              <el-form-item
+                label="名称"
+                :rules="rules.name"
+                :prop="'linkList.' + index + '.name'"
+              >
+                <el-input
+                  v-model="link.name"
+                  type="text"
+                />
+              </el-form-item>
+              <el-form-item
+                label="链接地址"
+                :rules="rules.url"
+                :prop="'linkList.' + index + '.url'"
+              >
+                <el-input
+                  v-model="link.url"
+                  type="text"
+                />
+              </el-form-item>
+              <el-form-item
+                label="打开方式"
+              >
+                <el-select
+                  v-model="link.target"
+                  placeholder="请选择打开方式"
+                  clearable
+                >
+                  <el-option
+                    v-for="item in [
+                      { label: '当前窗口', value: '_self' },
+                      { label: '新窗口', value: '_blank' },
+                      { label: '本工程', value: 'push' }
+                    ]"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value"
+                  />
+                </el-select>
+              </el-form-item>
+              <el-form-item
+                label="图标选择"
+                label-width="100px"
+              >
+                <IconSelect
+                  ref="IconSelect"
+                  :link="{
+                    icon: link.icon,
+                    iconColor: link.iconColor
+                  }"
+                  @showChooseIcon="showChooseIcon(...arguments, link, index)"
+                  @chooseIcon="chooseIcon"
+                />
+              </el-form-item>
+              <div class="opt-wrap">
+                <el-button
+                  type="default"
+                  :disabled="config.customize.linkList.length === 1"
+                  @click="delLink(index)"
+                >
+                  删除
+                </el-button>
+                <el-button
+                  type="default"
+                  @click="addLinkIcon(index)"
+                >
+                  新增
+                </el-button>
+                <el-button
+                  type="default"
+                  icon="el-icon-bottom"
+                  @click="down(index)"
+                />
+                <el-button
+                  type="default"
+                  icon="el-icon-top"
+                  @click="up(index)"
+                />
+              </div>
+            </div>
+          </div>
+        </el-form>
+      </div>
+    </el-form>
   </div>
 </template>
 <script>
-// import _ from 'lodash'
-// import { changeCurrentOption } from '../../../../../store/page/actions'
+import IconSelect from './IconSelect/index.vue'
 import SettingTitle from 'packages/SettingTitle/index.vue'
-import IconSelect from './IconSelect/index'
 export default {
-  name: 'LinkChartSetting',
+  name: 'BarSetting',
   components: {
-    IconSelect,
-    SettingTitle
+    SettingTitle,
+    IconSelect
   },
   data () {
     return {
@@ -149,8 +149,7 @@ export default {
     }
   },
   watch: {},
-  mounted () {
-  },
+  mounted () {},
   methods: {
     addLinkIcon (index) {
       this.config.customize.linkList.splice(index + 1, 0, {
@@ -169,7 +168,7 @@ export default {
       if (index === this.config.customize.linkList.length - 1) {
         return
       }
-      let temp = this.config.customize.linkList[index]
+      const temp = this.config.customize.linkList[index]
       this.config.customize.linkList[index] = this.config.customize.linkList[index + 1]
       this.config.customize.linkList[index + 1] = temp
       this.$forceUpdate()
@@ -178,7 +177,7 @@ export default {
       if (index === 0) {
         return
       }
-      let temp = this.config.customize.linkList[index]
+      const temp = this.config.customize.linkList[index]
       this.config.customize.linkList[index] = this.config.customize.linkList[index - 1]
       this.config.customize.linkList[index - 1] = temp
       this.$forceUpdate()
@@ -190,19 +189,6 @@ export default {
     close () {
       this.$emit('closeRightPanel')
     },
-    // 更新
-    // update () {
-    //   this.$refs.form.validate((valid) => {
-    //     if (valid) {
-    //       this.$store.commit(
-    //         'page/changeLayoutJson',
-    //         _.cloneDeep(changeCurrentOption(this.config))
-    //       )
-    //     } else {
-    //       return false
-    //     }
-    //   })
-    // },
     showChooseIcon (link, index) {
       this.$refs.IconSelect[index].init({
         ...link,
@@ -218,16 +204,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../~packages/assets/style/settingWrap.scss";
-.setting-wrap {
-  .setting-inner-wrap {
-    height: calc(100% - 50px);
-    overflow: auto;
-    padding: 16px;
+@import '../~packages/assets/style/settingWrap.scss';
+.db-setting-wrap {
+  /deep/ .el-form-item{
+    margin-bottom: 14px!important
   }
-
+  .setting-inner-wrap {
+    overflow: auto;
+    padding: 0 8px;
+  }
   .link-set-item {
-    position: relative;
+    // position: relative;
     border: 1px solid #f5f7fa;
     padding: 30px 16px 10px;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
@@ -258,4 +245,5 @@ export default {
     }
   }
 }
+
 </style>

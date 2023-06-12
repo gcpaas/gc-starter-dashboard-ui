@@ -6,14 +6,12 @@
 
 <template>
   <div class="design-wrap">
-    <!-- <div class="title">
-      {{ config.title }}
-    </div> -->
     <div class="icons-box-wrap">
       <div
         v-for="(link, index) in config.customize.linkList"
         :key="index"
         class="link-chart-item"
+        @click="goToLink(link)"
       >
         <div
           class="icon-wrap"
@@ -59,6 +57,16 @@ export default {
   mounted () {
   },
   methods: {
+    goToLink (link) {
+      if (link.target !== 'push' || link.url.indexOf('http://') > -1 || link.url.indexOf('https://') > -1) {
+        window.open(link.url, link.target)
+      } else {
+        const { href } = this.$router.resolve({
+          path: '/'
+        })
+        window.open(href + link.url, '_self')
+      }
+    }
   }
 }
 </script>

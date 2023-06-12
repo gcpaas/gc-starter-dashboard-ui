@@ -100,7 +100,6 @@ export default {
     }),
     chartList: {
       get () {
-        console.log(this.pageInfo.chartList)
         return this.pageInfo.chartList
       },
       set (val) {}
