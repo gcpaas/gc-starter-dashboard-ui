@@ -92,8 +92,8 @@ export const mapData = {
   icon: Icon.getNameList()[5],
   className:
     'com.gccloud.dashboard.core.module.chart.components.DashboardMapChart',
-  w: 800,
-  h: 700,
+  w: 24,
+  h: 18,
   x: 0,
   y: 0,
   type: 'map',

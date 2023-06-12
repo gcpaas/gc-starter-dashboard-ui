@@ -46,7 +46,7 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '数据点形状',
+    label: '折线点形状',
     type: 'select',
     field: 'point_shape',
     optionField: 'point.shape',
@@ -62,7 +62,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '数据点大小',
+    label: '折线点大小',
     type: 'inputNumber',
     field: 'point_size',
     optionField: 'point.size',
@@ -71,7 +71,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '数据点颜色',
+    label: '折线点颜色',
     type: 'colorPicker',
     field: 'point_style_fill',
     optionField: 'point.style.fill',
@@ -100,7 +100,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '线条宽度',
+    label: '折线宽度',
     type: 'inputNumber',
     field: 'lineStyle_lineWidth',
     optionField: 'lineStyle.lineWidth',
@@ -109,7 +109,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '线条颜色',
+    label: '折线颜色',
     type: 'gradual',
     field: 'lineStyle_stroke',
     optionField: 'lineStyle.stroke',

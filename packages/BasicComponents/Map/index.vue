@@ -1,10 +1,10 @@
 <template>
   <div
-    style="width: 100%; height: 100%"
+    style="width: 100%;height:500px"
     class="db-design-wrap db-bar"
   >
     <div
-      :id="`chart${config.code}`"
+      :id="ChartId"
       style="width: 100%; height: 100%"
     />
   </div>
@@ -38,6 +38,9 @@ export default {
   computed: {
     Data () {
       return JSON.parse(JSON.stringify(this.config))
+    },
+    ChartId () {
+      return `chartInner${this.id}`
     }
   },
   watch: {
@@ -56,8 +59,16 @@ export default {
     // this.chartInit()
   },
   beforeDestroy () {
-    this.charts?.clear()
+    if (
+      // 判断是否存在echarts实例化对象,如果存在则销毁
+      this.charts != null &&
+      this.charts !== '' &&
+      this.charts !== undefined
+    ) {
+      this.charts?.clear()
+    }
   },
+
   methods: {
     buildOption (config, data) {
       const dataList = []
@@ -72,7 +83,7 @@ export default {
     },
     async newChart (options) {
       this.charts = echarts.init(
-        document.getElementById(`chart${this.config.code}`)
+        document.getElementById(this.ChartId)
       )
       const option = {
         // 背景颜色

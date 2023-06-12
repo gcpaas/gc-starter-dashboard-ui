@@ -45,7 +45,7 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '线条宽度',
+    label: '曲线宽度',
     type: 'inputNumber',
     field: 'lineStyle_lineWidth',
     optionField: 'lineStyle.lineWidth',
@@ -54,7 +54,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '线条颜色',
+    label: '曲线颜色',
     type: 'gradual',
     field: 'lineStyle_stroke',
     optionField: 'lineStyle.stroke',
