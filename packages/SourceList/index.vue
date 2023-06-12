@@ -217,7 +217,6 @@ export default {
   },
   methods: {
     uploadError (err, file, fileList) {
-      console.log(err)
     },
     uploadSuccess (response, file, fileList) {
       if (response.code === 200) {
@@ -234,19 +233,15 @@ export default {
       }
     },
     handleRemove (file, fileList) {
-      console.log(file, fileList)
     },
     handlePreview (file) {
-      console.log(file)
     },
     getOptions () {
       get('/dashboard/file/getAllFileSuffix').then((data) => {
-        console.log(data)
         data.forEach((item) => this.options.push({ label: item, value: item }))
       })
     },
     getDataList () {
-      console.log(this.catalogInfo)
       this.loading = true
       get('/dashboard/file', {
         module: this.catalogInfo.page.id,

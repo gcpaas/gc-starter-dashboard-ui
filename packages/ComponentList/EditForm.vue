@@ -281,7 +281,6 @@ export default {
         const addOrUpdateHandel = !this.dataForm.code
           ? (form) => post('/dashboard/bizComponent/add', form)
           : (form) => post('/dashboard/bizComponent/update', form)
-        console.log(this.dataForm.parentCode)
         const form = {
           className: 'com.gccloud.dashboard.core.module.manage.dto.DashboardPageDTO',
           id: this.dataForm.id,

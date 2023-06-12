@@ -42,8 +42,10 @@ export default {
         if (this.isPreview) {
           this.getCurrentOption().then(({ config, data }) => {
             config = this?.buildOption(config, data)
-            this.changeChartConfig(config)
-            this?.newChart(config.option)
+            if (config) {
+              this.changeChartConfig(config)
+              this?.newChart(config.option)
+            }
           })
         } else {
           this.updateChartData(this.config)
@@ -122,38 +124,24 @@ export default {
         type: config.type,
         filterList
       }
-      // if (config.type === 'remoteComponent') {
-      //   config = this.buildOption(config, { success: false })
-      //   config.key = new Date().getTime()
-      //   this.changeChartConfig(config)
-      //   return
-      // }
       getUpdateChartInfo(params).then((res) => {
         // 获取数据后更新组件配置
         config = this.buildOption(config, res)
-        config.key = new Date().getTime()
-        this.changeChartConfig(config)
+        if (config) {
+          config.key = new Date().getTime()
+          this.changeChartConfig(config)
+        }
         // this.$message.success('更新成功')
       }).catch((err) => {
         console.error(err)
         // this.$message.error('更新失败')
       })
     },
-    // 缓存组件数据监听
-    watchCacheData () {
-      EventBus.$on('cacheDataInit', (data, dataSetId) => {
-        // 如果是缓存数据集
-        // 且当前组件的businessKey和缓存的dataSetId相等时，更新组件
-        if (
-          this.config.dataSource.dataSetType === '2' &&
-          this.config.dataSource.businessKey === dataSetId
-        ) {
-          const config = this.buildOption(this.config, data)
-          config.key = new Date().getTime()
-          this.changeChartConfig(config)
-          this.newChart(config.option)
-        }
-      })
+    buildOption (config, data) {
+      // 覆盖
+    },
+    newChart (option) {
+      // 覆盖
     }
   }
 }
