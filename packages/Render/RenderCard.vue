@@ -26,6 +26,7 @@
     <el-dialog
       :visible.sync="formVisible"
       :append-to-body="true"
+      :title="config.title"
       class="db-dialog-wrap db-el-dialog"
       width="50%"
       >

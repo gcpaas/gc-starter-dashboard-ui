@@ -96,9 +96,10 @@
     margin-top: 5%;
     position: relative;
     // 水平垂直居中
-    width: 366.318px;
-    height: 80%;
+    width: 300px;
+    /*height: 80%;*/
     min-height: 600px;
+    max-height: 630px;
     background: url(packages/DashboardDesign/images/iphone.png) no-repeat center 0;
     background-size: 100% 100%;
 
