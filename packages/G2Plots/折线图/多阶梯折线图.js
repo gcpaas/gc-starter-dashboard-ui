@@ -76,7 +76,7 @@ const setting = [
   },
   // 网格线 grid
   {
-    label: '宽度',
+    label: '梯线宽度',
     type: 'inputNumber',
     field: 'yAxis_grid_line_style_lineWidth',
     optionField: 'yAxis.grid.line.style.lineWidth',
@@ -85,7 +85,7 @@ const setting = [
     groupName: 'grid'
   },
   {
-    label: '颜色',
+    label: '梯线颜色',
     type: 'colorPicker',
     field: 'yAxis_grid_line_style_stroke',
     optionField: 'yAxis.grid.line.style.stroke',

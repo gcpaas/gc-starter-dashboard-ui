@@ -103,7 +103,9 @@
                   v-else-if="setting.type === 'inputNumber'"
                   v-model="setting.value"
                   class="db-el-input-number"
-                  :step="setting.step || 1"
+                  :max="setting.max || 100"
+                  :min="setting.min || 0"
+                  :step="Number(setting.step) || 1"
                 />
                 <el-radio-group
                   v-else-if="setting.type === 'radio'"
