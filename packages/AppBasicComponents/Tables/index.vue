@@ -34,12 +34,6 @@ export default {
   components:{VueGoodTable},
   data () {
     return {
-      headerCellStyleObj: {
-        backgroundColor: 'transparent'
-      },
-      cellStyleObj: {
-        backgroundColor: 'transparent'
-      },
     }
   },
   computed: {
@@ -52,142 +46,12 @@ export default {
        })
      }
       return arr
-    },
-    headerCellStyle () {
-      const headerBackgroundColor = {
-        dark: '#141414',
-        light: '#ffffff',
-        auto: 'transparent'
-      }
-      if (document.getElementById(this.config.code)?.querySelector('tr')) {
-        document
-          .getElementById(this.config.code)
-          .querySelector('tr').style.backgroundColor =
-          this.customTheme !== 'custom'
-            ? this.config.customize.headerBackgroundColor || headerBackgroundColor[this.customTheme]
-            : this.headerCellStyleObj.backgroundColor
-      }
-      const style = {
-        height: '48px',
-        borderBottom: 'solid 2px #007aff',
-        backgroundColor:
-          this.customTheme !== 'custom'
-            ? this.config.customize.headerBackgroundColor || headerBackgroundColor[this.customTheme]
-            : this.headerCellStyleObj.backgroundColor,
-        color:
-          this.customTheme === 'light'
-            ? '#000000'
-            : this.config.customize.headerFontColor || '#ffffff',
-        fontSize: this.config.customize.headerFontSize + 'px' || '14px'
-      }
-      return style
-    },
-    cellStyle () {
-      const bodyBackgroundColor = {
-        dark: '#141414',
-        light: '#ffffff',
-        auto: 'transparent'
-      }
-      const style = {
-        backgroundColor:
-          this.customTheme !== 'custom'
-            ? this.config.customize.bodyBackgroundColor || bodyBackgroundColor[this.customTheme]
-            : this.headerCellStyleObj.backgroundColor,
-        color:
-          this.customTheme === 'light'
-            ? '#000000'
-            : this.config.customize.bodyFontColor || '#ffffff',
-        fontSize: this.config.customize.bodyFontSize + 'px' || '14px',
-        border: `solid 1px ${this.customTheme !== 'custom'
-          ? this.config.customize.bodyBackgroundColor || bodyBackgroundColor[this.customTheme]
-          : this.headerCellStyleObj.backgroundColor}`
-      }
-      return style
     }
   },
   created () { },
   mounted () {
-    if (this.customTheme === 'custom') {
-      this.headerCellStyleToObj()
-      this.cellStyleToObj()
-    }
-    if (this.customTheme === 'custom') {
-      this.headerCellStyleToObj()
-      this.cellStyleToObj()
-    }
-    if (this.config.customize.stripe) {
-      const trs = document
-        .getElementById(this.config.code)
-        ?.querySelectorAll('tr.el-table__row--striped')
-      if (trs) {
-        trs.forEach(tr => {
-          tr.style.opacity = '0.9'
-          // 透明度
-          // const overlay = document.createElement("div");
-          // overlay.classList.add("overlay");
-          // // 将蒙版添加到容器中
-          // tr.appendChild(overlay);
-        })
-      }
-    } else {
-      const trs = document
-        .getElementById(this.config.code)
-        ?.querySelectorAll('tr.el-table__row--striped')
-      if (trs) {
-        trs.forEach(tr => {
-          tr.style.opacity = '1'
-          // 透明度
-          // const overlay = document.createElement("div");
-          // overlay.classList.add("overlay");
-          // // 将蒙版添加到容器中
-          // tr.appendChild(overlay);
-        })
-      }
-      // document.querySelectorAll(".overlay").forEach(overlay => {
-      //   overlay.remove();
-      // });
-    }
-    // this.chartInit();
-    if (this.config.customize.evenRowBackgroundColor && !this.config.customize.oddRowBackgroundColor) {
-      // console.log(1)
-      this.config.customize.oddRowBackgroundColor = this.config.customize.bodyBackgroundColor
-    } else if (!this.config.customize.evenRowBackgroundColor && this.config.customize.oddRowBackgroundColor) {
-      // console.log(2)
-      this.config.customize.evenRowBackgroundColor = this.config.customize.bodyBackgroundColor
-    } else if (!(!this.config.customize.evenRowBackgroundColor && !this.config.customize.oddRowBackgroundColor)) {
-      // console.log(3)
-      this.config.customize.bodyBackgroundColor = ''
-    }
-    window.requestAnimationFrame(() => {
-      // console.log(4, this.config.customize.evenRowBackgroundColor)
-      document.querySelectorAll(`.even-row${this.config.code}`).forEach(node => {
-        node.style.backgroundColor = this.config.customize.evenRowBackgroundColor
-      })
-      // console.log(5, this.config.customize.oddRowBackgroundColor)
-      document.querySelectorAll(`.odd-row${this.config.code}`).forEach(node => {
-        node.style.backgroundColor = this.config.customize.oddRowBackgroundColor
-      })
-    })
-      // this.init()
   },
   methods: {
-    init(){
-      this.$nextTick(() => {
-        const style = document.createElement('style')
-            const themeStr = 'th.ve-table-header-th{\n' +
-              ' background-color: #20D944!important;\n' +
-              '}'
-            style.type = 'text/css'
-            style.innerText = themeStr
-            document.getElementsByClassName('VeTable')[0].appendChild(style)
-
-      })
-    },
-    // 表格行样式
-    tableRowClassName ({ row, rowIndex }) {
-      // console.log(6)
-      return rowIndex % 2 === 0 ? `even-row${this.config.code}` : `odd-row${this.config.code}`
-    },
     buildOption (config, data) {
       config.option.tableData = data?.data
       const filteredData = {}
@@ -206,51 +70,6 @@ export default {
       }
       // this.$set(this.headerCellStyleObj, "backgroundColor", config.customize.headerBackgroundColor)
       return config
-    },
-
-    // 将样式字符串转成对象, 用于自定义主题，表格头部样式
-    headerCellStyleToObj () {
-      const str = this.themeJson.themeCss
-      // 匹配包含header-cell-style的样式字符串
-      // 匹配包含header-cell-style的样式字符串
-      const regex = /\.header-cell-style\{([^{}]+)\}/
-      const match = str.match(regex)
-      if (match) {
-        // 将样式字符串转成对象
-        const styleStr = match[1].trim().replace(/\s*;\s*$/, '') // 去掉末尾的空格和分号
-        // const styleObj = {};
-        styleStr.split(';').forEach(s => {
-          const [key, value] = s.split(':')
-          if (key && value) {
-            // 判断是否为空字符串
-            this.headerCellStyleObj[key.trim()] = value.trim()
-          }
-        })
-      } else {
-        this.headerCellStyleObj = {}
-      }
-    },
-    // 将样式字符串转成对象, 用于自定义主题，表格主体样式
-    cellStyleToObj () {
-      const str = this.themeJson.themeCss
-      // 匹配包含header-cell-style的样式字符串
-      // 匹配包含header-cell-style的样式字符串
-      const regex = /\.cell-style\{([^{}]+)\}/
-      const match = str.match(regex)
-
-      if (match) {
-        // 将样式字符串转成对象
-        const styleStr = match[1].trim().replace(/\s*;\s*$/, '') // 去掉末尾的空格和分号
-        styleStr.split(';').forEach(s => {
-          const [key, value] = s.split(':')
-          if (key && value) {
-            // 判断是否为空字符串
-            this.cellStyleObj[key.trim()] = value.trim()
-          }
-        })
-      } else {
-        this.cellStyleObj = {}
-      }
     }
   }
 }

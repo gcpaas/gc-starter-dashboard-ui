@@ -7,7 +7,7 @@
   >
     <div
       v-for="card in layout"
-      v-if="!['texts','iconLink','horizontalLine','verticalLine'].includes(card.type)"
+      v-if="!['texts','horizontalLine','verticalLine'].includes(card.type)"
       :key="card.code"
       :class="{
         'render-item-small': ['currentTime','timeCountDown','input','button'].includes(card.type),

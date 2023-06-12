@@ -6,7 +6,7 @@ const modules = {}
 // 组件名称替换
 const replaceName = {}
 // 排除的组件
-const excludeCommponents = ['Texts','HorizontalLine','VerticalLine','Button','Input','Picture','Tables','IconLink']
+const excludeCommponents = ['Texts','HorizontalLine','VerticalLine','Button','Input','Picture','Tables',]
 function importComponents (files,excludeCommponents) {
   files.keys().forEach(key => {
     // 正则，取到./和/之间的字符串
