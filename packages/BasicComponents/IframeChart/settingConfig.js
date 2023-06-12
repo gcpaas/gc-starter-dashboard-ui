@@ -7,7 +7,6 @@
 import { commonConfig } from '../../js/config'
 
 export const settingConfig = {
-  theme: 'dark',
   displayOption: {
     dataAllocation: {
       // 是否存在数据配置

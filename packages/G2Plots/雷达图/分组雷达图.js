@@ -53,6 +53,15 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
+    label: '底色',
+    type: 'colorPicker', // 设置组件类型
+    field: 'yAxis_grid_alternateColor', // 字段
+    optionField: 'yAxis.grid.alternateColor', // 对应options中的字段
+    value: 'rgba(0, 0, 0, 0.04)',
+    tabName: 'custom',
+    groupName: 'graph'
+  },
+  {
     label: '是否平滑',
     type: 'switch', // 设置组件类型
     field: 'smooth', // 字段

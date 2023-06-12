@@ -58,22 +58,12 @@ const setting = [
   //   ]
   // },
   {
-    label: '数据体现方式',
-    type: 'select', // 设置组件类型
+    label: '是否映射为动态高度',
+    type: 'switch', // 设置组件类型
     field: 'dynamicHeight', // 字段
     optionField: 'dynamicHeight', // 对应options中的字段
     value: false,
     tabName: 'custom',
-    options: [
-      {
-        label: '通过宽度',
-        value: false
-      },
-      {
-        label: '通过高度',
-        value: true
-      }
-    ],
     groupName: 'graph'
   },
   {
