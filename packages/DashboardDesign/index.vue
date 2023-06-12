@@ -381,9 +381,13 @@ export default {
     },
     // 动态属性更新
     updateDataSetting (config) {
-      this.$refs.Render.$refs['RenderCard' + config.code][0].$refs[
-        config.code
-      ].updateChartData(_.cloneDeep(config))
+      this.$nextTick(()=>{
+        if (this.$refs.Render.$refs['RenderCard' + config.code][0]){
+          this.$refs.Render.$refs['RenderCard' + config.code][0].$refs[
+            config.code
+            ].updateChartData(_.cloneDeep(config))
+        }
+      })
     },
     onSelectArea (area) {
       const { startX, startY, endX, endY } = area
@@ -418,10 +422,10 @@ export default {
     },
     updateRightVisiable (visiable) {
       this.rightVisiable = visiable
-      this.$refs.Rules.initRuleHeight()
+      // this.$refs.Rules.initRuleHeight()
     },
     toggleLeftSidebar () {
-      this.$refs.Rules.initRuleHeight()
+      // this.$refs.Rules.initRuleHeight()
     },
     showPageInfo () {
       this.pageInfoVisiable = true
