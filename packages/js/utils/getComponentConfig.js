@@ -144,7 +144,7 @@ export default function getComponentConfig (type) {
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardIframeChart',
         w: 12,
-        h: 20,
+        h: 10,
         x: 0,
         y: 0,
         type

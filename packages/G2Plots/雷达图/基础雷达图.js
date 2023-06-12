@@ -42,9 +42,9 @@ const setting = [
   {
     label: '底色',
     type: 'colorPicker', // 设置组件类型
-    field: 'theme_styleSheet_backgroundColor', // 字段
-    optionField: 'theme.styleSheet.backgroundColor', // 对应options中的字段
-    value: '',
+    field: 'yAxis_grid_alternateColor', // 字段
+    optionField: 'yAxis.grid.alternateColor', // 对应options中的字段
+    value: 'rgba(0, 0, 0, 0.04)',
     tabName: 'custom',
     groupName: 'graph'
   },
