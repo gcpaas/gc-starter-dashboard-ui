@@ -62,6 +62,33 @@ module.exports = {
     imagesRule.uses.clear()
 
     config.module
+      .rule('svg')
+      .exclude.add(resolve('packages/assets/images/bigScreenIcon/svg'))
+      .add(resolve('packages/Svgs/svg'))
+      .add(resolve('packages/assets/images/dataSourceIcon/svg'))
+      .add(resolve('packages/BasicComponents/LinkChart/images/svg'))
+      .add(resolve('packages/assets/images/pageIcon/svg'))
+      .add(resolve('packages/assets/images/terminalIcon/svg'))
+      .end()
+
+    config.module
+      .rule('icons')
+      .test(/\.svg$/)
+      .include.add(resolve('packages/assets/images/bigScreenIcon/svg'))
+      .add(resolve('packages/Svgs/svg'))
+      .add(resolve('packages/assets/images/dataSourceIcon/svg'))
+      .add(resolve('packages/BasicComponents/LinkChart/images/svg'))
+      .add(resolve('packages/assets/images/pageIcon/svg'))
+      .add(resolve('packages/assets/images/terminalIcon/svg'))
+      .end()
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'icon-[name]'
+      })
+      .end()
+
+    config.module
       .rule('images')
       .set('parser', {
         dataUrlCondition: {
