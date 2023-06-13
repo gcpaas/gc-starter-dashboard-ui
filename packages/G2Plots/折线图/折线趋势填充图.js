@@ -124,7 +124,8 @@ const setting = [
     field: 'animation_appear_duration',
     // 对应options中的字段
     optionField: 'animation.appear.duration',
-    value: '5000',
+    value: 5000,
+    max:10000,
     tabName: 'custom',
     groupName: 'graph',
     step: 1
