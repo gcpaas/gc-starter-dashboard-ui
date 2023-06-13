@@ -20,7 +20,7 @@
       </el-form-item>
       <SettingTitle>基础</SettingTitle>
       表头颜色 <div class="lc-field-body">
-        <el-form-item label="表格表头高度">
+        <el-form-item label="表头高度">
           <el-input-number
             v-model="config.customize.headerHeight"
             class="db-el-input-number"
