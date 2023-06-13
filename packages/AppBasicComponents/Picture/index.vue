@@ -1,3 +1,10 @@
+<!--
+ * @Descripttion:
+ * @Author: liu.shiyi
+ * @Date: 2023-06-08 09:57:56
+ * @LastEditors: liu.shiyi
+ * @LastEditTime: 2023-06-13 17:14:58
+-->
 <template>
   <div class="db-design-wrap db-picture">
     <div class="content-box">
@@ -8,7 +15,7 @@
         :style="{
           width: '100%',
           height: '100%',
-          opacity: config.customize.opacity / 100
+          opacity: config.customize.opacity
         }"
         draggable="false"
       >
@@ -23,13 +30,13 @@
   </div>
 </template>
 <script>
-import VanImage from 'vant/lib/image';
-import 'vant/lib/image/style';
+import VanImage from 'vant/lib/image'
+import 'vant/lib/image/style'
 import Vue from 'vue'
 Vue.use(VanImage)
 export default {
   name: 'PictureChart',
-  components: {VanImage},
+  components: { VanImage },
   props: {
     config: {
       type: Object,

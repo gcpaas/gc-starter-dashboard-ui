@@ -17,6 +17,7 @@
       class="render-item-box render-item-big"
     >
       <Configuration
+        v-if="!isPreview"
         :config="card"
         @openRightPanel="openRightPanel"
       >
@@ -25,6 +26,11 @@
           :config="card"
         />
       </Configuration>
+      <RenderCard
+        v-else
+        :ref="'RenderCard' + card.code"
+        :config="card"
+      />
     </div>
   </div>
 </template>
