@@ -58,14 +58,14 @@ const setting = [
         label: '实心条形',
         value: 'default'
       },
-      {
-        label: '线性',
-        value: 'line'
-      },
       // {
-      //   label: '空心条形',
-      //   value: 'hollow-rect'
+      //   label: '线性',
+      //   value: 'line'
       // },
+      {
+        label: '空心条形',
+        value: 'hollow-rect'
+      },
       {
         label: '钉形',
         value: 'tick'
@@ -82,7 +82,8 @@ const setting = [
     // 对应options中的字段
     optionField: 'radiusNum',
     value: 10,
-    tabName: 'custom'
+    tabName: 'custom',
+    groupName: 'graph'
   },
   {
     label: '数据标签',
@@ -422,15 +423,15 @@ const setting = [
     tabName: 'custom',
     groupName: 'yAxis'
   },
-  {
-    label: '标签过多时旋转',
-    type: 'switch',
-    field: 'yAxis_label_autoRotate',
-    optionField: 'yAxis.label.autoRotate',
-    value: false,
-    tabName: 'custom',
-    groupName: 'yAxis'
-  },
+  // {
+  //   label: '标签过多时旋转',
+  //   type: 'switch',
+  //   field: 'yAxis_label_autoRotate',
+  //   optionField: 'yAxis.label.autoRotate',
+  //   value: false,
+  //   tabName: 'custom',
+  //   groupName: 'yAxis'
+  // },
   {
     label: '标签过多时隐藏',
     type: 'switch',
@@ -489,7 +490,7 @@ const option = {
   data,
   xField: 'value',
   yField: 'year',
-  shape: ' ', // 条形图形状
+  shape: 'default', // 条形图形状
   seriesField: 'year',
   color: ['#5B8FF9', '#61DDAA', '#5D7092', '#F6BD16', '#6F5EF9', '#6DC8EC', '#945FB9', '#FF9845', '#1E9493', '#FF99C3'],
   appendPadding: [16, 16, 16, 16], // 设置图标的边距
