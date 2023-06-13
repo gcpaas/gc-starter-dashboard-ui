@@ -70,6 +70,7 @@ const setting = [
     // 对应options中的字段
     optionField: 'statistic.title.offsetY',
     value: -36,
+    min:-100,
     tabName: 'custom',
     groupName: 'graph'
   },
