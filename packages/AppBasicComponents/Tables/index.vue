@@ -8,7 +8,6 @@
       :rows="config.option.tableData"
       max-height="300px"
       row-style-class="rowStyle"
-      compactMode
     />
   </div>
 </template>
@@ -50,6 +49,7 @@ export default {
   },
   created () { },
   mounted () {
+    this.chartInit()
   },
   methods: {
     buildOption (config, data) {

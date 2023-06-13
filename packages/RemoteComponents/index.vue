@@ -46,6 +46,9 @@ export default {
   created () {
     this.getRemoteComponent()
   },
+  mounted () {
+    this.chartInit()
+  },
   methods: {
     ...mapMutations('dashboard', ['changeChartConfig']),
     // 尝试渲染远程文件或远程字符串
@@ -54,7 +57,14 @@ export default {
       // 1. 如果是组件
       if (this.config.customize.vueSysComponentDirName) {
         const remoteComponentList = [...innerRemoteComponents, ...getRemoteComponents()]
-        const vueFile = remoteComponentList?.find(item => item.customize.vueSysComponentDirName === this.config.customize.vueSysComponentDirName)?.customize?.vueFile
+        // 获得系统组件最新的配置, 同步
+        const config = remoteComponentList?.find(item => item.customize.vueSysComponentDirName === this.config.customize.vueSysComponentDirName)
+        const vueFile = config?.customize?.vueFile
+        const option = config?.option
+        const setting = config?.setting
+        // 同步配置
+        this.synchConfig(option, setting)
+
         this.remoteComponent = vueFile
         this.loading = false
         return
@@ -162,6 +172,12 @@ export default {
         config.option.data = data
       }
       return config
+    },
+
+    // 同步配置
+    synchConfig (option, setting) {
+      // 对比this.config.setting 和 setting，进行合并，数据以this.config.option对象的value为准
+      // TODO
     }
   }
 }

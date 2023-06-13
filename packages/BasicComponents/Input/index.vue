@@ -46,6 +46,7 @@ export default {
   },
   mounted () {
     this.updateComponent()
+     this.chartInit()
   },
   methods: {
     updateComponent () {

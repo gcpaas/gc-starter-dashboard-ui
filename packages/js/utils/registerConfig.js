@@ -95,7 +95,7 @@ function registerRouters (config, router) {
       path: config?.routers?.appPreviewUrl,
       name: 'AppPreview',
       component: () =>
-        require.ensure([], () => require('packages/AppDashboardRun'))
+        require.ensure([], () => require('app/DashboardAppRun'))
     },
     {
       path: config?.routers?.bizComponentDesignUrl,

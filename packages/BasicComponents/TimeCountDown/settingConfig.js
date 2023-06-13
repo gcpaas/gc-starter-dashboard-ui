@@ -17,7 +17,7 @@ const customConfig = {
     endTime: ''
   },
   customize: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 700,
     color: '#36474f'
   }
