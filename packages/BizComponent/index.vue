@@ -345,7 +345,8 @@ export default {
       .db-preview-inner {
         width: 100%;
         height: 100%;
-        background: var(--db-el-background-2)
+        background: var(--db-el-background-2);
+        position: relative;
       }
     }
   }
