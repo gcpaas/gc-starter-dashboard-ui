@@ -20,11 +20,11 @@ export default {
       pageCode: state => state.dashboard.pageInfo.code
     }),
     isPreview () {
-      return (this.$route.path === window?.DS_CONFIG?.routers?.previewUrl) || (this.$route.path === '/dashboard/preview')
+      return (this.$route.path === window?.DS_CONFIG?.routers?.previewUrl) || (this.$route.path === window?.DS_CONFIG?.routers?.appPreviewUrl)|| (this.$route.path === '/dashboard/preview')|| (this.$route.path === '/dashboard/app-preview')
     }
   },
   mounted () {
-    if (!['tables'].includes(this.config.type)) {
+    if (![''].includes(this.config.type)) {
       this.chartInit()
     }
   },

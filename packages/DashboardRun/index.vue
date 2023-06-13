@@ -53,7 +53,7 @@ import { compile } from 'tiny-sass-compiler/dist/tiny-sass-compiler.esm-browser.
 import { G2 } from '@antv/g2plot'
 import VueGridLayout from 'vue-grid-layout'
 export default {
-  name: 'BigScreenRun',
+  name: 'DashboardRun',
   components: {
     RenderCard,
     GridLayout: VueGridLayout.GridLayout,

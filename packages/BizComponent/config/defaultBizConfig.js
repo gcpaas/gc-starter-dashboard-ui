@@ -5,7 +5,6 @@
 
 // vue 组件片段
 export const defaultVueContent = `
-
 <!-- 这是一个代码案例 -->
 <template>
   <div class="div-test-container" @click="testClick">
@@ -64,7 +63,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: #000;
   flex-direction: column;
 
   .item {

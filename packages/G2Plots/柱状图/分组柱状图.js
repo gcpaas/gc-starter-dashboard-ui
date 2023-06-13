@@ -71,12 +71,12 @@ const setting = [
         value: 'top'
       },
       {
-        label: '底部',
-        value: 'bottom'
-      },
-      {
         label: '居中',
         value: 'middle'
+      },
+      {
+        label: '底部',
+        value: 'bottom'
       }
     ],
     groupName: 'graph'
@@ -355,16 +355,16 @@ const setting = [
     tabName: 'custom',
     options: [
       {
-        label: '下',
-        value: 'start'
+        label: '上',
+        value: 'end'
       },
       {
         label: '中',
         value: 'center'
       },
       {
-        label: '上',
-        value: 'end'
+        label: '下',
+        value: 'start'
       }],
     groupName: 'yAxis'
   },

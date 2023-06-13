@@ -104,7 +104,7 @@ import { getBizComponentInfo, updateBizComponent } from 'packages/js/api/bigScre
 import { defaultSettingContent, defaultVueContent } from './config/defaultBizConfig'
 import { codemirror } from 'vue-codemirror'
 import 'codemirror/lib/codemirror.css'
-import 'codemirror/theme/material-darker.css'
+import 'codemirror/theme/eclipse.css'
 
 import 'codemirror/addon/selection/active-line.js'
 import 'codemirror/addon/fold/foldgutter.css' // 代码折叠
@@ -137,7 +137,7 @@ export default {
           'CodeMirror-foldgutter',
           'CodeMirror-lint-markers'
         ],
-        theme: 'material-darker',
+        theme: 'eclipse',
         tabSize: 4,
         lineNumbers: true,
         line: true,
@@ -159,7 +159,7 @@ export default {
           'CodeMirror-foldgutter',
           'CodeMirror-lint-markers'
         ],
-        theme: 'material-darker',
+        theme: 'eclipse',
         tabSize: 4,
         lineNumbers: true,
         line: true,
@@ -237,8 +237,9 @@ export default {
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  color:  #fff;
-  background: #232832;
+  color: var(--db-el-text);
+  background: var(--db-background-1);
+  overflow: hidden;
 
   > * {
     box-sizing: border-box;
@@ -250,12 +251,11 @@ export default {
     justify-content: space-between;
     height: 50px;
     padding: 0 16px;
-    border-bottom: 4px solid#151a26;
-    background: #232832;
+    background: var(--db-background-header);
 
     .left-title {
       font-size: 16px;
-      color:  #fff;
+      color: var(--db-background-1);
 
       .logo-wrap {
         display: flex;
@@ -275,12 +275,16 @@ export default {
       display: flex;
       align-items: center;
       height: 100%;
+
+      /deep/.head-btn {
+        color: var(--db-background-1);
+      }
     }
   }
 
   .db-custom-component-content {
     flex: 1;
-    background: #232832;
+    background: var(--db-background-1);
     display: flex;
     flex-direction: column;
 
@@ -294,13 +298,13 @@ export default {
       .left-vue-code {
         width: 60%;
         height: 100%;
-        /* background:#151a26; */
+        background: var(--db-el-background-1)
       }
 
       .right-setting-code {
         width: calc(40% - 16px);
         height: 100%;
-        /* background:#151a26; */
+        background: var(--db-el-background-1)
       }
 
       .component-code {
@@ -317,14 +321,18 @@ export default {
             justify-content: center;
             width: 120px;
             height: 100%;
-            color:  #fff;
-            background: #151a26;
+            color:  var(--db-el-text);
+            background: var(--db-el-background-2)
+          }
+
+          .upload-btn {
+            background: var(--db-el-background-2);
           }
         }
 
         .code-tab-content {
           height: calc(100% - 40px);
-          background: #151a26;
+          background: var(--db-el-background-2);
         }
       }
     }
@@ -337,23 +345,24 @@ export default {
       .db-preview-inner {
         width: 100%;
         height: 100%;
-        background: #151a26;
+        background: var(--db-el-background-2);
+        position: relative;
       }
     }
   }
 }
 </style>
 <style>
-  .cm-s-material-darker.CodeMirror,
-  .cm-s-material-darker .CodeMirror-gutters
+  .cm-s-material.CodeMirror,
+  .cm-s-material .CodeMirror-gutters
   {
-    background: var(--db-background-1) !important;
+    background: var(--db-el-background-2) !important;
   }
   .CodeMirror-scroll {
-    background-color: var(--db-background-1) !important;
+    background-color: var(--db-el-background-2) !important;
   }
   .CodeMirror-gutters {
-    border-right: 1px solid var(--db-background-1) !important;
-    background-color: var(--db-background-1) !important;
+    border-right: 1px solid var(--db-el-background-2) !important;
+    background-color: var(--db-el-background-2) !important;
   }
 </style>

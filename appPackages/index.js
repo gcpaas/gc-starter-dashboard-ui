@@ -7,7 +7,7 @@ import DashboardAppRun from 'app/DashboardAppRun'
 // 仪表盘 vuex store数据
 import dashboardStore from 'packages/js/store'
 // 注册基础配置
-import registerConfig from 'packages/js/utils/registerConfig'
+import registerConfig from './utils/registerConfig'
 // 更新主题
 import updateTheme from 'packages/js/utils/updateTheme'
 
