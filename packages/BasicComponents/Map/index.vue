@@ -56,7 +56,7 @@ export default {
     }
   },
   mounted () {
-    // this.chartInit()
+    this.chartInit()
   },
   beforeDestroy () {
     if (

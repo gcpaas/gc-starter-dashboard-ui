@@ -8,7 +8,10 @@
   <div class="render-item-wrap">
     <header class="top-title">
       <span>{{ title }}</span>
-      <div class="img-btn-svg" @click="openDialog">
+      <div
+        class="img-btn-svg"
+        @click="openDialog"
+      >
         <icon-svg
           :name="icons[5]"
         />
@@ -29,22 +32,24 @@
       :title="config.title"
       class="db-dialog-wrap db-el-dialog"
       width="50%"
+    >
+      <div
+        class="dialog-box"
+        style="height: 500px"
       >
-      <div class="dialog-box" style="height: 500px">
         <component
           :is="resolveComponentType(config.type)"
           :id="`${config.code}${config.key}`"
           :ref="config.code"
           :key="config.key + 'dialog'"
           :config="config"
-          :isDialog="isDialog"
+          :is-dialog="isDialog"
         />
       </div>
     </el-dialog>
   </div>
 </template>
 <script>
-import commonMixins from 'packages/js/mixins/commonMixins'
 import { mapMutations } from 'vuex'
 import { resolveComponentType } from 'packages/js/utils'
 import pcComponent from 'packages/js/utils/componentImport'
@@ -62,7 +67,6 @@ for (const key in pcComponent) {
 }
 export default {
   name: 'RenderCard',
-  mixins: [commonMixins],
   components: {
     IconSvg,
     ...components,
@@ -83,9 +87,9 @@ export default {
   },
   data () {
     return {
-      isDialog:true,
-      formVisible:false,
-      icons:Icon.getNameList(),
+      isDialog: true,
+      formVisible: false,
+      icons: Icon.getNameList()
     }
   },
   computed: {
@@ -96,12 +100,6 @@ export default {
   mounted () {
     // 调用初始化方法
     dataInit(this)
-    // if (this.config.dataSource.businessKey) {
-    //   setInterval(() => {
-    //     console.log('刷新', this.config.key)
-    //     this.refresh(this.config)
-    //   }, 5000)
-    // }
   },
   beforeDestroy () {
     destroyedEvent()
@@ -110,7 +108,7 @@ export default {
     ...mapMutations('dashboard', [
       'changeChartConfig'
     ]),
-    openDialog(){
+    openDialog () {
       this.formVisible = true
     },
     resolveComponentType,

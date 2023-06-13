@@ -2,7 +2,10 @@
   <div class="render-item-wrap">
     <header class="top-title">
       <span>{{ title }}</span>
-      <div class="img-btn-svg" @click="openDialog">
+      <div
+        class="img-btn-svg"
+        @click="openDialog"
+      >
         <icon-svg
           :name="icons[5]"
         />
@@ -18,46 +21,48 @@
     <van-dialog
       v-model="formVisible"
       width="100%"
-      :closeOnClickOverlay="true"
+      :close-on-click-overlay="true"
       :show-confirm-button="false"
     >
-      <div ref="dialogBox" class="dialog-box" style="width: 100vh;height: 100vh">
+      <div
+        ref="dialogBox"
+        class="dialog-box"
+        style="width: 100vh;height: 100vh"
+      >
         <component
-          style="width: 100%;height: 100%"
           :is="resolveComponentType(config.type)"
           :id="`${config.code}${config.key}`"
           :ref="config.code"
           :key="config.key + 'dialog'"
+          style="width: 100%;height: 100%"
           :config="config"
-          :isDialog="isDialog"
+          :is-dialog="isDialog"
         />
       </div>
     </van-dialog>
   </div>
 </template>
 <script>
-  import { resolveComponentType } from 'packages/js/utils'
-  import pcComponent from 'packages/js/utils/appComponentImport'
-  import { dataInit, destroyedEvent } from 'packages/js/utils/eventBus'
-  import CustomComponent from 'packages/PlotRender/index.vue'
-  import Svgs from 'packages/Svgs/index.vue'
-  import RemoteComponent from 'packages/RemoteComponents/index.vue'
-  import commonMixins from "packages/js/mixins/commonMixins";
-  import IconSvg from 'packages/SvgIcon'
-  import Icon from 'packages/assets/images/pageIcon/export'
-  import VanDialog  from 'vant/lib/dialog';
-  import 'vant/lib/dialog/style';
-  import Vue from 'vue'
-  Vue.use(VanDialog)
-  const components = {}
-  for (const key in pcComponent) {
-    if (Object.hasOwnProperty.call(pcComponent, key)) {
-      components[key] = pcComponent[key]
-    }
+import { resolveComponentType } from 'packages/js/utils'
+import pcComponent from 'packages/js/utils/appComponentImport'
+import { dataInit, destroyedEvent } from 'packages/js/utils/eventBus'
+import CustomComponent from 'packages/PlotRender/index.vue'
+import Svgs from 'packages/Svgs/index.vue'
+import RemoteComponent from 'packages/RemoteComponents/index.vue'
+import IconSvg from 'packages/SvgIcon'
+import Icon from 'packages/assets/images/pageIcon/export'
+import VanDialog from 'vant/lib/dialog'
+import 'vant/lib/dialog/style'
+import Vue from 'vue'
+Vue.use(VanDialog)
+const components = {}
+for (const key in pcComponent) {
+  if (Object.hasOwnProperty.call(pcComponent, key)) {
+    components[key] = pcComponent[key]
   }
+}
 export default {
   name: 'RenderCard',
-  mixins: [commonMixins],
   components: {
     ...components,
     CustomComponent,
@@ -77,42 +82,41 @@ export default {
       return this.config.title
     }
   },
-  data() {
+  data () {
     return {
-      isLandscape:true,
-      isDialog:true,
-      formVisible:false,
-      icons:Icon.getNameList()
+      isLandscape: true,
+      isDialog: true,
+      formVisible: false,
+      icons: Icon.getNameList()
     }
   },
   beforeDestroy () {
     destroyedEvent()
   },
-  mounted() {
+  mounted () {
     // 调用初始化方法
     dataInit(this)
   },
   methods: {
-    fn(){
-      let elem = document.documentElement;
+    fn () {
+      const elem = document.documentElement
       if (elem.requestFullscreen) {
-        elem.requestFullscreen();
+        elem.requestFullscreen()
       } else if (elem.webkitRequestFullscreen) { /* Safari */
-        elem.webkitRequestFullscreen();
+        elem.webkitRequestFullscreen()
       } else if (elem.msRequestFullscreen) { /* IE11 */
-        elem.msRequestFullscreen();
+        elem.msRequestFullscreen()
       }
       // 应用旋转效果
-      this.$nextTick(()=>{
-        this.$refs.dialogBox.style.transform = 'rotate(-90deg)';
+      this.$nextTick(() => {
+        this.$refs.dialogBox.style.transform = 'rotate(-90deg)'
       })
-
     },
     resolveComponentType,
-    openDialog(){
+    openDialog () {
       this.formVisible = true
       this.fn()
-    },
+    }
   }
 }
 </script>

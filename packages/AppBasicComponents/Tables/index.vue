@@ -49,6 +49,7 @@ export default {
   },
   created () { },
   mounted () {
+    this.chartInit()
   },
   methods: {
     buildOption (config, data) {
