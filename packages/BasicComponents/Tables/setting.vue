@@ -8,7 +8,7 @@
       label-position="left"
       class="setting-body"
     >
-      <SettingTitle>基础</SettingTitle>
+      <SettingTitle>标题</SettingTitle>
       <el-form-item
         class="lc-field-body"
         label="名称"
