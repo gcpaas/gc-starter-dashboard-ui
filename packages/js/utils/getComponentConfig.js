@@ -131,7 +131,7 @@ export default function getComponentConfig (type) {
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardTimeCountDownChart',
         w: 12,
-        h: 4,
+        h: 5,
         x: 0,
         y: 0,
         type

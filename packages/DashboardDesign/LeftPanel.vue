@@ -22,6 +22,7 @@
         >
           <el-tab-pane
             name="default"
+            :disabled="activeName === 'source' || activeName === 'component'"
             @click.native="changeActiveCode('')"
           >
             <span
@@ -269,6 +270,7 @@ export default {
       }
     },
     toggleSidebar () {
+      if (this.activeName === 'source' || this.activeName === 'component') return
       this.fold = !this.fold
       this.$emit('toggleLeftSidebar')
       setTimeout(() => {
