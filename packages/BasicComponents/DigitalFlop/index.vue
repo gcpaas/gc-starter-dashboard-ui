@@ -28,7 +28,6 @@
   </div>
 </template>
 <script>
-import '@jiaminghi/data-view/lib/components/digitalFlop/src/main.css'
 import { refreshComponentMixin } from 'packages/js/mixins/refreshComponent'
 import commonMixins from 'packages/js/mixins/commonMixins'
 import paramsMixins from 'packages/js/mixins/paramsMixins'
