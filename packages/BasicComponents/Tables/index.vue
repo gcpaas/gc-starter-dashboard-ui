@@ -28,7 +28,6 @@
   </div>
 </template>
 <script>
-import { cloneDeep } from 'lodash'
 import commonMixins from 'packages/js/mixins/commonMixins'
 import paramsMixins from 'packages/js/mixins/paramsMixins'
 import linkageMixins from 'packages/js/mixins/linkageMixins'
@@ -82,7 +81,7 @@ export default {
   mounted () {
     this.chartInit()
     if (this.config.customize.evenRowBackgroundColor && !this.config.customize.oddRowBackgroundColor) {
-      this.config.customize.oddRowBackgroundColor = cloneDeep(this.config.customize.bodyBackgroundColor)
+      this.config.customize.oddRowBackgroundColor = this.config.customize.bodyBackgroundColor
       this.config.customize.bodyBackgroundColor = ''
     } else if (!this.config.customize.evenRowBackgroundColor && this.config.customize.oddRowBackgroundColor) {
       this.config.customize.evenRowBackgroundColor = this.config.customize.bodyBackgroundColor
@@ -90,15 +89,16 @@ export default {
     } else if (!(!this.config.customize.evenRowBackgroundColor && !this.config.customize.oddRowBackgroundColor)) {
       this.config.customize.bodyBackgroundColor = ''
     }
-    this.parityRowStyle()
+    this.tableRowStyle()
   },
   methods: {
     // 表格行样式
     tableRowClassName ({ row, rowIndex }) {
-      this.parityRowStyle()
+      this.tableRowStyle()
       return rowIndex % 2 === 0 ? `even-row${this.config.code}` : `odd-row${this.config.code}`
     },
-    parityRowStyle () {
+    // 表格行样式
+    tableRowStyle () {
       window.requestAnimationFrame(() => {
         document.querySelectorAll(`.even-row${this.config.code}`).forEach(node => {
           node.style.backgroundColor = this.config.customize.evenRowBackgroundColor
