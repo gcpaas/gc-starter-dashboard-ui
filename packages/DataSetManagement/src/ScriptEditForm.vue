@@ -594,6 +594,7 @@ import { codemirror } from 'vue-codemirror'
 import 'codemirror/mode/groovy/groovy'
 
 import 'codemirror/lib/codemirror.css'
+import 'codemirror/theme/eclipse.css'
 import 'codemirror/theme/nord.css'
 import _ from 'lodash'
 export default {
@@ -658,7 +659,7 @@ export default {
         mode: 'text/x-groovy',
         lineNumbers: true,
         lineWrapping: true,
-        theme: 'nord',
+        theme: 'eclipse',
         extraKey: { Ctrl: 'autocomplete' },
         hintOptions: {
           completeSingle: true

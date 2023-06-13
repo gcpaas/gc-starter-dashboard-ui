@@ -353,16 +353,9 @@ export default {
 }
 </style>
 <style>
-  .cm-s-material.CodeMirror,
-  .cm-s-material .CodeMirror-gutters
+  .cm-s-eclipse.CodeMirror,
+  .cm-s-eclipse .CodeMirror-gutters
   {
     background: var(--db-el-background-2) !important;
-  }
-  .CodeMirror-scroll {
-    background-color: var(--db-el-background-2) !important;
-  }
-  .CodeMirror-gutters {
-    border-right: 1px solid var(--db-el-background-2) !important;
-    background-color: var(--db-el-background-2) !important;
   }
 </style>
