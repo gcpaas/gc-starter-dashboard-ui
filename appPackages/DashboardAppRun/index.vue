@@ -31,9 +31,11 @@
 <script>
 import Configuration from 'packages/Render/Configuration.vue'
 import RenderCard from './RenderCard'
-import { mapMutations, mapState } from 'vuex'
+import {mapActions, mapMutations, mapState} from 'vuex'
 import { randomString } from '../../packages/js/utils'
 import plotList from 'packages/G2Plots/plotList'
+import {getThemeConfig} from "../../packages/js/api/bigScreenApi";
+import {G2} from "@antv/g2plot";
 export default {
   name: 'DashboardAppRun',
   components: {
@@ -58,6 +60,12 @@ export default {
       themeJson: (state) => state.dashboard.pageInfo.pageConfig.themeJson,
       isInit: (state) => !state.dashboard.pageLoading
     }),
+    pageCode() {
+      return this.$route.query.code
+    },
+    isPreview () {
+      return (this.$route.path === window?.DS_CONFIG?.routers?.appPreviewUrl) || (this.$route.path === '/dashboard/app-preview')
+    },
     layout: {
       get () {
         const list = this.chartList
@@ -73,10 +81,19 @@ export default {
       }
     }
   },
+  created() {
+    // 如果是预览态则调初始化方法
+    if (this.isPreview){
+      this.init()
+    }
+  },
   mounted () {
     // this.alertMassage()
   },
   methods: {
+    ...mapActions('dashboard', [
+      'initLayout' // -> this.initLayout()
+    ]),
     ...mapMutations('dashboard', [
       'changeLayout',
       'changeActiveCode',
@@ -86,8 +103,30 @@ export default {
       'resetPresetLine',
       'changeGridShow',
       'setPresetLine',
-      'saveTimeLine'
+      'saveTimeLine',
+      'changePageLoading',
     ]),
+    init () {
+      if (!this.pageCode) { return }
+      this.changePageLoading(true)
+      this.initLayout(this.pageCode).then(() => {
+        const themeName = this.pageConfig.customTheme
+        if (this.pageConfig.customTheme === 'custom') {
+          getThemeConfig().then((res) => {
+            // 初始化时如果就是自定义主题则统一注册
+            const { registerTheme } = G2
+            registerTheme(themeName, { ...res.chart })
+            const pageConfig = this.pageConfig
+            pageConfig.themeJson = res
+            this.changePageConfig(pageConfig)
+            this.styleSet()
+            this.changePageLoading(false)
+          })
+        } else {
+          this.changePageLoading(false)
+        }
+      })
+    },
     drop (e) {
       e.preventDefault()
       // 解决：火狐拖放后，总会默认打开百度搜索，如果是图片，则会打开图片的问题。
