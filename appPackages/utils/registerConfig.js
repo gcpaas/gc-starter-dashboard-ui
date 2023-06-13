@@ -35,7 +35,7 @@ function registerRouters (config, router) {
   }
   const routers = [
     {
-      path: config?.routers?.previewUrl,
+      path: config?.routers?.appPreviewUrl,
       name: 'Preview',
       component: () =>
         require.ensure([], () => require('app/DashboardAppRun'))
@@ -84,7 +84,7 @@ function registerTheme (config) {
 export default function (config, router) {
   // 默认路由
   config.routers = {
-    previewUrl: '/dashboard/preview',
+    appPreviewUrl: '/dashboard/app-preview',
     ...config.routers
   }
   window.DS_CONFIG = {}
