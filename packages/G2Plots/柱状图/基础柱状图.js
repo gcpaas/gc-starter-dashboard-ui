@@ -70,12 +70,12 @@ const setting = [
         value: 'top'
       },
       {
-        label: '底部',
-        value: 'bottom'
-      },
-      {
         label: '居中',
         value: 'middle'
+      },
+      {
+        label: '底部',
+        value: 'bottom'
       }
     ],
     groupName: 'graph'
@@ -85,7 +85,7 @@ const setting = [
     type: 'colorPicker', // 设置组件类型
     field: 'label_style_fill', // 字段
     optionField: 'label.style.fill', // 对应options中的字段
-    value: '#778390',
+    value: '#ffffff',
     tabName: 'custom',
     groupName: 'graph'
   },
@@ -278,16 +278,16 @@ const setting = [
     tabName: 'custom',
     options: [
       {
-        label: '下',
-        value: 'start'
+        label: '上',
+        value: 'end'
       },
       {
         label: '中',
         value: 'center'
       },
       {
-        label: '上',
-        value: 'end'
+        label: '下',
+        value: 'start'
       }],
     groupName: 'yAxis'
   },
@@ -361,12 +361,12 @@ const setting = [
     groupName: 'yAxis'
   },
   // 边距 padding
-  {
+    {
     label: '图表边距',
     type: 'padding',
     field: 'appendPadding',
     optionField: 'appendPadding',
-    value: [20, 20, 20, 20],
+    value: [16, 16, 16, 16],
     tabName: 'custom',
     groupName: 'padding'
   }
@@ -414,7 +414,7 @@ const dataHandler = ''
 // 图表配置 new Line('domName', option)
 const option = {
   data,
-  appendPadding: [20, 20, 20, 20], // 设置图标的边距
+  appendPadding: [16, 16, 16, 16], // 设置图标的边距
   xField: 'type',
   yField: 'sales',
   color: '',

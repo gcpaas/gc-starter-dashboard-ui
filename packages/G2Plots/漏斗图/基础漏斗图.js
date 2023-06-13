@@ -58,22 +58,12 @@ const setting = [
   //   ]
   // },
   {
-    label: '数据体现方式',
-    type: 'select', // 设置组件类型
+    label: '是否映射为动态高度',
+    type: 'switch', // 设置组件类型
     field: 'dynamicHeight', // 字段
     optionField: 'dynamicHeight', // 对应options中的字段
     value: false,
     tabName: 'custom',
-    options: [
-      {
-        label: '通过宽度',
-        value: false
-      },
-      {
-        label: '通过高度',
-        value: true
-      }
-    ],
     groupName: 'graph'
   },
   {
@@ -220,7 +210,7 @@ const setting = [
     type: 'padding', // 设置组件类型
     field: 'appendPadding', // 字段
     optionField: 'appendPadding', // 对应options中的字段
-    value: [20, 20, 20, 20],
+    value: [16, 16, 16, 16],
     tabName: 'custom',
     groupName: 'padding'
   }
@@ -251,7 +241,7 @@ const dataHandler = 'data = data.sort((a, b) => b[option.yField] - a[option.yFie
 const option = {
   data,
   color: ['#5B8FF9', '#61DDAA', '#5D7092', '#F6BD16', '#6F5EF9', '#6DC8EC', '#945FB9', '#FF9845', '#1E9493', '#FF99C3'],
-  appendPadding: [20, 20, 20, 20], // 设置图标的边距
+  appendPadding: [16, 16, 16, 16], // 设置图标的边距
   xField: 'stage',
   yField: 'number',
   dynamicHeight: false,

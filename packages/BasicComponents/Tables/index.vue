@@ -67,7 +67,7 @@ export default {
     },
     cellStyle () {
       const style = {
-        backgroundColor: this.config.customize.bodyBackgroundColor || '',
+        backgroundColor: this.config.customize.bodyBackgroundColor || (this.config.customize.evenRowBackgroundColor || this.config.customize.oddRowBackgroundColor ? 'transparent' : '#fff'),
         color: this.config.customize.bodyFontColor || '#606266',
         fontSize: this.config.customize.bodyFontSize + 'px' || '14px',
         border: `solid 1px ${this.config.customize.bodyBackgroundColor || 'transparent'}`
@@ -80,54 +80,32 @@ export default {
   },
   mounted () {
     this.chartInit()
-    // if (this.config.customize.evenRowBackgroundColor && !this.config.customize.oddRowBackgroundColor) {
-    //   this.config.customize.oddRowBackgroundColor = this.config.customize.bodyBackgroundColor
-    // } else if (!this.config.customize.evenRowBackgroundColor && this.config.customize.oddRowBackgroundColor) {
-    //   this.config.customize.evenRowBackgroundColor = this.config.customize.bodyBackgroundColor
-    // } else if (!(!this.config.customize.evenRowBackgroundColor && !this.config.customize.oddRowBackgroundColor)) {
-    //   this.config.customize.bodyBackgroundColor = ''
-    // }
-    // this.parityRowStyle()
+    if (this.config.customize.evenRowBackgroundColor && !this.config.customize.oddRowBackgroundColor) {
+      this.config.customize.oddRowBackgroundColor = this.config.customize.bodyBackgroundColor
+      this.config.customize.bodyBackgroundColor = ''
+    } else if (!this.config.customize.evenRowBackgroundColor && this.config.customize.oddRowBackgroundColor) {
+      this.config.customize.evenRowBackgroundColor = this.config.customize.bodyBackgroundColor
+      this.config.customize.bodyBackgroundColor = ''
+    } else if (!(!this.config.customize.evenRowBackgroundColor && !this.config.customize.oddRowBackgroundColor)) {
+      this.config.customize.bodyBackgroundColor = ''
+    }
+    this.tableRowStyle()
   },
   methods: {
     // 表格行样式
     tableRowClassName ({ row, rowIndex }) {
-      this.parityRowStyle()
+      this.tableRowStyle()
       return rowIndex % 2 === 0 ? `even-row${this.config.code}` : `odd-row${this.config.code}`
     },
-    parityRowStyle () {
+    // 表格行样式
+    tableRowStyle () {
       window.requestAnimationFrame(() => {
-        const evenRowBackgroundColor = this.config.customize.evenRowBackgroundColor
-        const oddRowBackgroundColor = this.config.customize.oddRowBackgroundColor
-        if (evenRowBackgroundColor && oddRowBackgroundColor) {
-          document.querySelectorAll(`.even-row${this.config.code}`).forEach(node => {
-            node.style.backgroundColor = evenRowBackgroundColor
-          })
-          document.querySelectorAll(`.odd-row${this.config.code}`).forEach(node => {
-            node.style.backgroundColor = oddRowBackgroundColor
-          })
-        } else if (evenRowBackgroundColor && !oddRowBackgroundColor) {
-          document.querySelectorAll(`.even-row${this.config.code}`).forEach(node => {
-            node.style.backgroundColor = evenRowBackgroundColor
-          })
-          document.querySelectorAll(`.odd-row${this.config.code}`).forEach(node => {
-            node.style.backgroundColor = this.config.customize.bodyBackgroundColor
-          })
-        } else if (!evenRowBackgroundColor && oddRowBackgroundColor) {
-          document.querySelectorAll(`.even-row${this.config.code}`).forEach(node => {
-            node.style.backgroundColor = this.config.customize.bodyBackgroundColor
-          })
-          document.querySelectorAll(`.odd-row${this.config.code}`).forEach(node => {
-            node.style.backgroundColor = oddRowBackgroundColor
-          })
-        } else {
-          document.querySelectorAll(`.even-row${this.config.code}`).forEach(node => {
-            node.style.backgroundColor = this.config.customize.bodyBackgroundColor
-          })
-          document.querySelectorAll(`.odd-row${this.config.code}`).forEach(node => {
-            node.style.backgroundColor = this.config.customize.bodyBackgroundColor
-          })
-        }
+        document.querySelectorAll(`.even-row${this.config.code}`).forEach(node => {
+          node.style.backgroundColor = this.config.customize.evenRowBackgroundColor
+        })
+        document.querySelectorAll(`.odd-row${this.config.code}`).forEach(node => {
+          node.style.backgroundColor = this.config.customize.oddRowBackgroundColor
+        })
       })
     },
     buildOption (config, data) {

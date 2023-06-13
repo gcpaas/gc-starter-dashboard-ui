@@ -99,7 +99,7 @@
                 :predefine="predefineThemeColors"
               />
             </el-form-item>
-            <el-form-item label="数字个数">
+            <el-form-item label="最小个数">
               <el-input-number
                 v-model="config.customize.numberDigits"
                 class="db-el-input-number"

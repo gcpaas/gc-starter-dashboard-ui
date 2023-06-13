@@ -42,9 +42,9 @@ const setting = [
   {
     label: '底色',
     type: 'colorPicker', // 设置组件类型
-    field: 'theme_styleSheet_backgroundColor', // 字段
-    optionField: 'theme.styleSheet.backgroundColor', // 对应options中的字段
-    value: '',
+    field: 'yAxis_grid_alternateColor', // 字段
+    optionField: 'yAxis.grid.alternateColor', // 对应options中的字段
+    value: 'rgba(0, 0, 0, 0.04)',
     tabName: 'custom',
     groupName: 'graph'
   },
@@ -115,7 +115,7 @@ const setting = [
     type: 'padding', // 设置组件类型
     field: 'appendPadding', // 字段
     optionField: 'appendPadding', // 对应options中的字段
-    value: [20, 20, 20, 20],
+    value: [16, 16, 16, 16],
     tabName: 'custom',
     groupName: 'padding'
   }
@@ -142,7 +142,7 @@ const option = {
   yField: 'star',
   smooth: false,
   color: 'l(90) 0:#648ff7 1:#648ff7',
-  appendPadding: [20, 20, 20, 20], // 设置图标的边距
+  appendPadding: [16, 16, 16, 16], // 设置图标的边距
   theme: {
     styleSheet: {
       backgroundColor: ''
