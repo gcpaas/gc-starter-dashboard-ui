@@ -9,7 +9,7 @@
         :key="index"
         style="padding: 0;list-style: none;"
       >
-        <li class="chart-right-list" @click="rowClick(item)">
+        <li class="chart-right-list">
           <span
             v-if="index < config.customize.highlightNum"
             class="list-serial-top"
