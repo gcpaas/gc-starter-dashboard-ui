@@ -315,16 +315,16 @@ const setting = [
     tabName: 'custom',
     options: [
       {
-        label: '下',
-        value: 'start'
+        label: '上',
+        value: 'end'
       },
       {
         label: '中',
         value: 'center'
       },
       {
-        label: '上',
-        value: 'end'
+        label: '下',
+        value: 'start'
       }],
     groupName: 'yAxis'
   },
