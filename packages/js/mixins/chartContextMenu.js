@@ -70,7 +70,7 @@ export default {
         customClass: 'db-el-message-box'
       }).then(() => {
         this.delItem(config.code)
-      })
+      }).catch(() => {})
     },
     // 批量删除组合元素
     deleteGroupItem (config) {
