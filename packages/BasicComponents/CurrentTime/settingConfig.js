@@ -18,7 +18,7 @@ const customConfig = {
     dateFormat: 'YYYY-MM-DD HH:mm:ss'
   },
   customize: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 700,
     color: '#36474f'
   }

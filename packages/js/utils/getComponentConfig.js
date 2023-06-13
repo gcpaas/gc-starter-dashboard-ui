@@ -4,47 +4,6 @@ export default function getComponentConfig (type) {
   // const _type = _.upperFirst(type)
   // const className = `com.gccloud.starter.lowcode.page.bigscreen.components.${_type}Chart`
   switch (type) {
-    // case 'texts':
-    //   return {
-    //     name: '文本',
-    //     title: '文本',
-    //     icon: Icon.getNameList()[0],
-    //     className:
-    //       'com.gccloud.dashboard.core.module.chart.components.DashboardTextChart',
-    //     w: 3,
-    //     h: 4,
-    //     x: 0,
-    //     y: 0,
-    //     type
-    //   }
-    // case 'horizontalLine':
-    //   return {
-    //     name: '水平线',
-    //     title: '水平线',
-    //     icon: Icon.getNameList()[10],
-    //     component: null,
-    //     className:
-    //       'com.gccloud.dashboard.core.module.chart.components.DashboardBorderChart',
-    //     w: 3,
-    //     h: 4,
-    //     x: 0,
-    //     y: 0,
-    //     type
-    //   }
-    // case 'verticalLine':
-    //   return {
-    //     name: '垂直线',
-    //     title: '垂直线',
-    //     icon: Icon.getNameList()[11],
-    //     component: null,
-    //     className:
-    //       'com.gccloud.dashboard.core.module.chart.components.DashboardBorderChart',
-    //     w: 3,
-    //     h: 10,
-    //     x: 0,
-    //     y: 0,
-    //     type
-    //   }
     case 'iconLink':
       return {
         name: '跳转链接',
@@ -71,19 +30,6 @@ export default function getComponentConfig (type) {
         y: 0,
         type
       }
-    // case 'dashBoardScrollBoard':
-    //   return {
-    //     name: '轮播表',
-    //     title: '轮播表',
-    //     icon: Icon.getNameList()[2],
-    //     className:
-    //       'com.gccloud.dashboard.core.module.chart.components.DashboardScrollBoardChart',
-    //     w: 12,
-    //     h: 10,
-    //     x: 0,
-    //     y: 0,
-    //     type
-    //   }
     case 'dashBoardScrollRanking':
       return {
         name: '排名表',
@@ -118,7 +64,7 @@ export default function getComponentConfig (type) {
         className:
           'com.gccloud.dashboard.core.module.chart.components.DashboardCurrentTimeChart',
         w: 12,
-        h: 4,
+        h: 5,
         x: 0,
         y: 0,
         type

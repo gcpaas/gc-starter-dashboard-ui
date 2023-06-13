@@ -10,8 +10,8 @@
       v-if="!['texts','horizontalLine','verticalLine'].includes(card.type)"
       :key="card.code"
       :class="{
-        'render-item-small': ['currentTime','timeCountDown','input','button'].includes(card.type),
-        'render-item-mid': ['picture', 'digitalFlop', 'video'].includes(card.type),
+        'render-item-small': ['currentTime','timeCountDown'].includes(card.type),
+        'render-item-mid': ['picture', 'digitalFlop'].includes(card.type),
          'render-item-xmid': ['video'].includes(card.type),
       }"
       class="render-item-box render-item-big"
@@ -207,7 +207,7 @@ export default {
     }
     .render-item-small {
       position: relative;
-      height: 88px;
+      height: 128px;
     }
     .render-item-mid {
       position: relative;
@@ -215,7 +215,7 @@ export default {
     }
     .render-item-xmid {
       position: relative;
-      height: 144px;
+      height: 200px;
     }
     .render-item-box {
       width: calc(100% - 16px);
