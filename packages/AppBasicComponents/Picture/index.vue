@@ -36,7 +36,6 @@ import Vue from 'vue'
 Vue.use(VanImage)
 export default {
   name: 'PictureChart',
-  components: { VanImage },
   props: {
     config: {
       type: Object,
