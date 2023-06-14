@@ -10,6 +10,7 @@ import Vue from 'vue'
 import _ from 'lodash'
 import { defaultData } from './state'
 import moment from 'moment'
+import { EventBus } from 'packages/js/utils/eventBus'
 export default {
   // 改变页面基本信息，后端请求的页面信息存储到此处
   changePageInfo (state, pageInfo) {
@@ -108,6 +109,8 @@ export default {
     }
     // 存储删除后的状态
     saveTimeLineFunc(state, '删除组件')
+    // 删除后。关闭右侧面板
+    EventBus.$emit('closeRightPanel')
   },
   changePageConfig (state, pageConfig) {
     Vue.set(state.pageInfo, 'pageConfig', _.cloneDeep(pageConfig))
