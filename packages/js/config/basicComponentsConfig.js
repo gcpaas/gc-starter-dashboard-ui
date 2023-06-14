@@ -12,6 +12,7 @@ import getComponentConfig from 'packages/js/utils/getComponentConfig'
 import { setModules, dataModules } from 'packages/js/utils/configImport'
 const typeList = [
   // 'texts',
+  'bigNumber',
   'iconLink',
   // 'horizontalLine', // 横线
   // 'verticalLine', // 竖线
