@@ -9,7 +9,7 @@ import * as tokenCacheService from '@/http/cache/tokenCacheService'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
-const whiteList = ['/login', '/dashboard', '/404', '/dashboard/preview']
+const whiteList = ['/login', '/dashboard', '/404', '/dashboard/preview','/dashboard/app-preview']
 
 NProgress.configure({ showSpinner: false })
 

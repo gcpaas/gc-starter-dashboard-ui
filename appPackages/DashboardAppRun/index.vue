@@ -17,7 +17,7 @@
       class="render-item-box render-item-big"
     >
       <Configuration
-        v-if="!isPreview"
+        v-if="isDesign"
         :config="card"
         @openRightPanel="openRightPanel"
       >
@@ -49,7 +49,11 @@ export default {
     RenderCard
   },
   props: {
+    isDesign:{
+      type:Boolean,
+      default:false
 
+    }
   },
   data () {
     return {
@@ -70,9 +74,6 @@ export default {
     pageCode () {
       return this.$route.query.code
     },
-    isPreview () {
-      return true
-    },
     layout: {
       get () {
         const list = this.chartList
@@ -90,7 +91,7 @@ export default {
   },
   created () {
     // 如果是预览态则调初始化方法
-    if (this.isPreview) {
+    if (!this.isDesign) {
       this.init()
     }
   },
