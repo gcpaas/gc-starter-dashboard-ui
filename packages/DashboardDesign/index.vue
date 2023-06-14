@@ -53,6 +53,7 @@
           >
             <div class="app-container app-design-wrap">
               <AppDashBoard
+                :isDesign="true"
                 ref="Render"
                 @openRightPanel="openRightPanel"
               />
