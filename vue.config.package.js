@@ -48,7 +48,7 @@ module.exports = {
     },
     resolve: {
       alias: {
-        '@': resolve('example'),
+        '@': resolve('pcExample'),
         packages: resolve('packages'),
         app: resolve('appPackages')
       },
