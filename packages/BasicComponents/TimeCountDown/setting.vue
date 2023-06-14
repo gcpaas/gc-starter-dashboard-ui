@@ -57,6 +57,8 @@
         >
           <el-date-picker
             v-model="config.endTime"
+            popper-class="dateClass"
+            :append-to-body="true"
             type="datetime"
             placeholder="请选择结束日期"
             :picker-options="pickerOptions"
@@ -130,9 +132,5 @@ export default {
 }
 .lc-field-body {
   padding: 12px 16px;
-}
-
-/deep/.el-time-panel{
-  width: 160px !important;
 }
 </style>

@@ -46,7 +46,7 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '折线点形状',
+    label: '折线点样式',
     type: 'select',
     field: 'point_shape',
     optionField: 'point.shape',
