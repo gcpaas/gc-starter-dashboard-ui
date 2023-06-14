@@ -34,7 +34,7 @@ module.exports = {
   parallel: require('os').cpus().length > 1,
   pages: {
     index: {
-      entry: ['example/main.js'],
+      entry: ['pcExample/main.js'],
       template: 'public/index.html',
       filename: 'index.html',
       chunks: 'all'
@@ -64,7 +64,7 @@ module.exports = {
     }
     Object.assign(config.resolve, {
       alias: {
-        '@': resolve('example'),
+        '@': resolve('pcExample'),
         vue$: 'vue/dist/vue.common',
         // 仪表盘工程路径别名
         packages: resolve('packages'),

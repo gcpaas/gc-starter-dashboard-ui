@@ -110,6 +110,7 @@ import { randomString } from '../js/utils'
 import { isFirefox } from 'packages/js/utils/userAgent'
 import { handleResData } from 'packages/js/store/actions.js'
 import AppDashBoard from '../../appPackages/DashboardAppRun/index.vue'
+import { EventBus } from 'packages/js/utils/eventBus'
 export default {
   name: 'BigScreenDesign',
   components: {
@@ -224,8 +225,12 @@ export default {
       }
     }
   },
+  mounted () {
+    EventBus.$on('closeRightPanel', () => { this.rightVisiable = false })
+  },
   beforeDestroy () {
     this.clearTimeline()
+    EventBus.$off('closeRightPanel')
   },
   methods: {
     ...mapActions('dashboard', ['initLayout']),

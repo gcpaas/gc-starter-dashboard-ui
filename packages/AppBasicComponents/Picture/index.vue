@@ -2,8 +2,8 @@
  * @Descripttion:
  * @Author: liu.shiyi
  * @Date: 2023-06-08 09:57:56
- * @LastEditors: liu.shiyi
- * @LastEditTime: 2023-06-13 17:14:58
+ * @LastEditors: xing.heng
+ * @LastEditTime: 2023-06-14 14:25:36
 -->
 <template>
   <div class="db-design-wrap db-picture">
@@ -36,7 +36,6 @@ import Vue from 'vue'
 Vue.use(VanImage)
 export default {
   name: 'PictureChart',
-  components: { VanImage },
   props: {
     config: {
       type: Object,

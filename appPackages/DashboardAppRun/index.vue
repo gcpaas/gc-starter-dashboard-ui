@@ -12,7 +12,7 @@
       :class="{
         'render-item-small': ['currentTime','timeCountDown'].includes(card.type),
         'render-item-mid': ['picture', 'digitalFlop'].includes(card.type),
-         'render-item-xmid': ['video'].includes(card.type),
+        'render-item-xmid': ['video'].includes(card.type),
       }"
       class="render-item-box render-item-big"
     >
@@ -37,11 +37,11 @@
 <script>
 import Configuration from 'packages/Render/Configuration.vue'
 import RenderCard from './RenderCard'
-import {mapActions, mapMutations, mapState} from 'vuex'
+import { mapActions, mapMutations, mapState } from 'vuex'
 import { randomString } from '../../packages/js/utils'
 import plotList from 'packages/G2Plots/plotList'
-import {getThemeConfig} from "../../packages/js/api/bigScreenApi";
-import {G2} from "@antv/g2plot";
+import { getThemeConfig } from '../../packages/js/api/bigScreenApi'
+import { G2 } from '@antv/g2plot'
 export default {
   name: 'DashboardAppRun',
   components: {
@@ -49,6 +49,7 @@ export default {
     RenderCard
   },
   props: {
+
   },
   data () {
     return {
@@ -66,11 +67,11 @@ export default {
       themeJson: (state) => state.dashboard.pageInfo.pageConfig.themeJson,
       isInit: (state) => !state.dashboard.pageLoading
     }),
-    pageCode() {
+    pageCode () {
       return this.$route.query.code
     },
     isPreview () {
-      return (this.$route.path === window?.DS_CONFIG?.routers?.appPreviewUrl) || (this.$route.path === '/dashboard/app-preview')
+      return true
     },
     layout: {
       get () {
@@ -87,9 +88,9 @@ export default {
       }
     }
   },
-  created() {
+  created () {
     // 如果是预览态则调初始化方法
-    if (this.isPreview){
+    if (this.isPreview) {
       this.init()
     }
   },
@@ -110,7 +111,7 @@ export default {
       'changeGridShow',
       'setPresetLine',
       'saveTimeLine',
-      'changePageLoading',
+      'changePageLoading'
     ]),
     init () {
       if (!this.pageCode) { return }
@@ -246,6 +247,5 @@ export default {
       }
     }
   }
-
 
 </style>
