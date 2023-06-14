@@ -148,6 +148,10 @@ export default store
 
 <a href="http://gcpaas.gccloud.com/dashboard"> http://gcpaas.gccloud.com/dashboard </a>
 
+## 其他
+### 工程依赖关系
+![工程依赖关系](./doc/images/工程关系依赖图.png)
+
 ## 联系我们
 <img alt="Email" src="https://img.shields.io/badge/Email-tech@ustcinfo.com-blue.svg">
 
