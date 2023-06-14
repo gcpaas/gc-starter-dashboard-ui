@@ -59,6 +59,7 @@ export default {
   },
   computed: {
     option () {
+      if (!this.config.option.data) return { ...this.config.customize, data: [] }
       if (
         this.config.option.data.toString().split('').length <
         this.config.customize.numberDigits

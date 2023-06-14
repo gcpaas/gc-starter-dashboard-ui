@@ -224,6 +224,9 @@ export default {
 }
 .db-setting-wrap {
   padding-top: 16px;
+  .el-form-item{
+    margin-bottom: 14px !important;
+  }
 
   /deep/ .hide .el-upload--picture-card {
     display: none;
