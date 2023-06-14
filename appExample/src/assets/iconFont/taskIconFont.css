@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "taskIcon"; /* Project id 3710120 */
+  src: url('//at.alicdn.com/t/c/font_3710120_egyj4yysfcn.woff2?t=1665977178351') format('woff2'),
+  url('//at.alicdn.com/t/c/font_3710120_egyj4yysfcn.woff?t=1665977178351') format('woff'),
+  url('//at.alicdn.com/t/c/font_3710120_egyj4yysfcn.ttf?t=1665977178351') format('truetype');
+}
+
+.iconfont {
+  font-family: "taskIcon" !important;
+  font-size: 22px;
+  font-style: normal;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shouquanweituoshu:before {
+  content: "\e659";
+}
+
+.icon-ERP_daibandangqianzhuangtai:before {
+  content: "\e657";
+}
+
+.icon-faqi:before {
+  content: "\e605";
+}
+
+.icon-wodeyiban:before {
+  content: "\e633";
+}
+
+.icon-iconku-:before {
+  content: "\e612";
+}
+
+.icon-wodechaosong:before {
+  content: "\e6b8";
+}
+
+.icon-entrust:before {
+  content: "\e6b0";
+}
+
+.icon-jiaojie:before {
+  content: "\e683";
+}
