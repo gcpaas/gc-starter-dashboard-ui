@@ -54,7 +54,7 @@ const setting = [
   /** 样式配置 **/
   // 图表 graph
   {
-    label: '线条宽度',
+    label: '梯线宽度',
     type: 'inputNumber',
     field: 'lineStyle_lineWidth',
     optionField: 'lineStyle.lineWidth',
@@ -63,7 +63,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '颜色配置',
+    label: '梯线颜色',
     // 设置组件类型
     type: 'colorSelect',
     // 字段
@@ -76,7 +76,7 @@ const setting = [
   },
   // 网格线 grid
   {
-    label: '梯线宽度',
+    label: '宽度',
     type: 'inputNumber',
     field: 'yAxis_grid_line_style_lineWidth',
     optionField: 'yAxis.grid.line.style.lineWidth',
@@ -85,7 +85,7 @@ const setting = [
     groupName: 'grid'
   },
   {
-    label: '梯线颜色',
+    label: '颜色',
     type: 'colorPicker',
     field: 'yAxis_grid_line_style_stroke',
     optionField: 'yAxis.grid.line.style.stroke',

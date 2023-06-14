@@ -63,7 +63,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '面积颜色',
+    label: '折线颜色',
     type: 'gradual', // 设置组件类型
     field: 'line_color', // 字段
     optionField: 'line.color', // 对应options中的字段
@@ -72,7 +72,7 @@ const setting = [
     groupName: 'graph'
   },
   {
-    label: '折线颜色',
+    label: '面积颜色',
     type: 'gradual', // 设置组件类型
     field: 'areaStyle_fill', // 字段
     optionField: 'areaStyle.fill', // 对应options中的字段
@@ -113,6 +113,8 @@ const dataHandler = '// 取出所有指标的值 \ndata = data.map(item => item[
 // 图表配置 new Line('domName', option)
 const option = {
   data: [16, 95, 35, 27, 50, 36, 78, 99, 60, 62, 37],
+  xField:'',
+  yField:'',
   appendPadding: [16, 16, 16, 16], // 设置图标的边距
   height: 6,
   autoFit: true,
