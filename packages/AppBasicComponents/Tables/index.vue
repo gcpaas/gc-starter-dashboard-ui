@@ -2,6 +2,8 @@
   <div
     style="width: 100%;height: 100%"
     class="db-design-wrap "
+    @touchstart='touchmove'
+    @touchend='touchend'
   >
 <!--    <lyzTable sticky style="width: 100%" :columns="columnData" :list="config.option.tableData">-->
 <!--      <template slot="nodata">暂无数据</template>-->
@@ -9,7 +11,7 @@
     <Table
       :id="config.code"
       :ref="config.code"
-      class="custom-table"
+      :class="{'scrollbar':isScrollbar,'notScrollbar':!isScrollbar}"
       height="100%"
       :stripe="config.customize.stripe"
       :data="config.option.tableData"
@@ -50,6 +52,7 @@ export default {
   components:{Table,TableColumn},
   data () {
     return {
+      isScrollbar:false
     }
   },
   computed: {
@@ -128,6 +131,12 @@ export default {
     this.tableRowStyle()
   },
   methods: {
+    touchmove(){
+      this.isScrollbar = true
+    },
+    touchend(){
+      this.isScrollbar = false
+    },
     // 表格行样式
     tableRowClassName ({ row, rowIndex }) {
       this.tableRowStyle()
@@ -246,19 +255,29 @@ export default {
     display: table-cell !important;
   }
 
-  /deep/ .el-table__body-wrapper::-webkit-scrollbar {
+ .notScrollbar /deep/ .el-table__body-wrapper::-webkit-scrollbar {
+    width: 0; // 横向滚动条
+    height: 0; // 纵向滚动条 必写
+    background-color: transparent;
+  }
+  .scrollbar /deep/ .el-table__body-wrapper::-webkit-scrollbar {
     width: 4px; // 横向滚动条
     height: 4px; // 纵向滚动条 必写
     background-color: transparent;
   }
-
   // 滚动条的滑块
-  /deep/ .el-table__body-wrapper::-webkit-scrollbar-thumb {
+   /deep/ .el-table__body-wrapper::-webkit-scrollbar-thumb {
     background-color: #9093994D;
     border-radius: 5px;
 
     &:hover {
       background-color: #90939980;
     }
+  }
+  .db-design-wrap {
+    overflow-y: auto;
+  }
+  /deep/.el-table__fixed::before{
+    height: 0!important;
   }
 </style>
