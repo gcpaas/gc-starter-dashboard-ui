@@ -62,9 +62,6 @@ export default {
       }
 
       return prefix + this.config.code
-    },
-    isPreview () {
-      return (this.$route.path === window?.DS_CONFIG?.routers?.previewUrl) || (this.$route.path === '/dashboard/preview')
     }
   },
   created () {
@@ -82,7 +79,7 @@ export default {
     ...mapMutations('dashboard', ['changeChartConfig']),
     chartInit () {
       // key和code相等，说明是一进来刷新，调用/chart/data/list
-      if (this.config.code === this.config.key) {
+      if (this.config.code === this.config.key || this.isPreview) {
         // 先给默认数据, 渲染出图表
         const config = _.cloneDeep(this.config)
         // config.option = plotList.find(plot => plot.name === config.name)?.option

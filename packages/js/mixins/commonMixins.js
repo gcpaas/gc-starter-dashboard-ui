@@ -5,7 +5,6 @@
  */
 import _ from 'lodash'
 import { mapMutations, mapState } from 'vuex'
-import { EventBus } from 'packages/js/utils/eventBus'
 import { getChatInfo, getUpdateChartInfo } from '../api/bigScreenApi'
 export default {
   data () {
@@ -20,7 +19,7 @@ export default {
       pageCode: state => state.dashboard.pageInfo.code
     }),
     isPreview () {
-      return (this.$route.path === window?.DS_CONFIG?.routers?.previewUrl) || (this.$route.path === window?.DS_CONFIG?.routers?.appPreviewUrl)|| (this.$route.path === '/dashboard/preview')|| (this.$route.path === '/dashboard/app-preview')
+      return this.$route.path !== window?.DS_CONFIG?.routers?.designUrl
     }
   },
   mounted () {
@@ -35,8 +34,8 @@ export default {
     chartInit () {
       // 初始化组件和数据，若自己的组件的初始化和数据处理不一样，可重写该方法
       // 如果key和code相等，说明是一进来刷新，调用/chart/data/list，否则是更新，调用 chart/data/chart
-      // 或者是组件联动isLink,也需要调用/chart/data/list更新
-      if (this.config.code === this.config.key) {
+      // 或者是组件联动,也需要调用/chart/data/list更新
+      if (this.config.code === this.config.key || this.isPreview) {
         // 根据数据集初始化的组件
         if (this.isPreview) {
           this.getCurrentOption().then(({ config, data }) => {
@@ -127,7 +126,6 @@ export default {
         // 获取数据后更新组件配置
         config = this.buildOption(config, res)
         if (config) {
-          config.key = new Date().getTime()
           this.changeChartConfig(config)
         }
         // this.$message.success('更新成功')
