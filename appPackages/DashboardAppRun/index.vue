@@ -10,7 +10,7 @@
       v-if="!['texts','horizontalLine','verticalLine'].includes(card.type)"
       :key="card.code"
       :class="{
-        'render-item-small': ['currentTime','timeCountDown'].includes(card.type),
+        'render-item-small': ['bigNumber','currentTime','timeCountDown'].includes(card.type),
         'render-item-mid': ['picture', 'digitalFlop'].includes(card.type),
         'render-item-xmid': ['video'].includes(card.type),
       }"
