@@ -224,6 +224,8 @@ const dataHandler = ''
 // 图表配置 new Pie('domName', option)
 const option = {
   appendPadding: [16, 16, 16, 16], // 设置图标的边距
+  // 数据将要放入到哪个字段中
+  dataKey: 'data',
   data,
   legendEnable: false,
   legendLayout: 'vertical',

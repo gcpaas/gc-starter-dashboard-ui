@@ -146,13 +146,16 @@ const setting = [
 
 // 配置处理脚本
 const optionHandler = 'option.color = [option.color1, option.color2]'
-
+const data = []
 // 数据处理脚本
 const dataHandler =
   "option.percent = data[0][setting.filter(settingItem=>settingItem.field === 'percent')[0].value]"
 
 // 图表配置 new Gauge('domName', option)
 const option = {
+  // 数据将要放入到哪个字段中
+  dataKey: 'percent',
+  data,
   appendPadding: [0, 0, 0, 0], // 设置图标的边距
   color1: '#F4664A',
   color2: '#d0d0d0',
