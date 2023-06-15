@@ -24,12 +24,14 @@
         <RenderCard
           :ref="'RenderCard' + card.code"
           :config="card"
+          :is-design="isDesign"
         />
       </Configuration>
       <RenderCard
         v-else
         :ref="'RenderCard' + card.code"
         :config="card"
+        :is-design="isDesign"
       />
     </div>
   </div>
@@ -49,9 +51,9 @@ export default {
     RenderCard
   },
   props: {
-    isDesign:{
-      type:Boolean,
-      default:false
+    isDesign: {
+      type: Boolean,
+      default: false
 
     }
   },

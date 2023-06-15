@@ -73,7 +73,7 @@ export default {
   .nav-span {
     position: relative;
     top: 3px;
-     border-bottom: 1px solid #007aff;
+    border-bottom: 1px solid #007aff;
     background-repeat: repeat-x;
     background-position: 0 34px;
 
@@ -85,7 +85,7 @@ export default {
       color: var(--db-el-text);
       width: auto;
       min-width: 140px;
-      line-height: 40px;
+      line-height: 35px;
       font-size: 14px;
       text-align: left;
       cursor: pointer;
