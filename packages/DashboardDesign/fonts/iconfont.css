@@ -11,7 +11,7 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--db-el-title);
+  color: var(--db-el-text);
 }
 
 

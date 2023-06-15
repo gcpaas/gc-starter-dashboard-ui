@@ -70,20 +70,19 @@ export default {
   margin-top: 109px;
   min-width: 1024px;
   user-select: none;
-
   .nav-span {
     position: relative;
     top: 3px;
-    background-image: url('./images/line.png');
+     border-bottom: 1px solid #007aff;
     background-repeat: repeat-x;
     background-position: 0 34px;
 
     .nav-link {
       display: flex;
       align-items: center;
-      transition: color 0.2s;
+      // transition: color 0.2s;
       text-decoration: none !important;
-      color: var(--db-el-title);
+      color: var(--db-el-text);
       width: auto;
       min-width: 140px;
       line-height: 40px;
@@ -94,7 +93,7 @@ export default {
 
       &.nav-active,
       &:hover {
-        color: var(--db-el-text) !important;
+        // color:var(--db-el-title);
       }
     }
 
@@ -103,12 +102,15 @@ export default {
     }
 
     &.nav-active {
-      background-image: url('./images/tab.png');
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-      background-position: center bottom;
-      /* border-bottom: 1px solid var(--db-background-1); */
-      /* background-color: var(--db-background-1) */
+      border-radius: 10px 10px 0px 0;
+      border: 1px solid #007aff;
+      background-color: #007aff;
+      .nav-link{
+        color: #fff !important;
+      }
+      .iconfont-bigscreen {
+        color: #fff !important;
+      }
     }
 
   }
