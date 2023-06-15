@@ -18,27 +18,30 @@
       :key="config.key"
       :config="config"
     />
-    <el-dialog
-      :visible.sync="designVisible"
-      :append-to-body="true"
-      :title="config.title"
-      class="db-dialog-wrap db-el-dialog"
-      width="50%"
-    >
-      <div
-        class="dialog-box"
-        style="height: 500px"
+    <div v-if="designVisible">
+      <el-dialog
+        :visible.sync="designVisible"
+        :append-to-body="true"
+        :title="config.title"
+        class="db-dialog-wrap db-el-dialog"
+        width="50%"
       >
-        <component
-          :is="resolveComponentType(config.type)"
-          :id="`${config.code}${config.key}`"
-          :ref="config.code"
-          :key="config.key + 'dialog'"
-          :config="config"
-          :is-dialog="isDialog"
-        />
-      </div>
-    </el-dialog>
+        <div
+          class="dialog-box"
+          style="height: 500px"
+        >
+          <component
+            :is="resolveComponentType(config.type)"
+            :id="`${config.code}${config.key}`"
+            :ref="config.code"
+            :key="config.key + 'dialog'"
+            :config="config"
+            :is-dialog="isDialog"
+          />
+        </div>
+      </el-dialog>
+    </div>
+
     <van-popup
       v-model="previewVisible"
       closeable
