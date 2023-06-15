@@ -123,6 +123,12 @@ export default {
       }
     },
     /**
+     * @description: 只更新数据
+     */
+    updateData () {
+      this.updateChart()
+    },
+    /**
      * 更新组件
      */
     updateChart () {
