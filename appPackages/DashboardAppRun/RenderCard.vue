@@ -18,28 +18,54 @@
       :key="config.key"
       :config="config"
     />
-    <van-dialog
-      v-model="formVisible"
-      width="100%"
-      :close-on-click-overlay="true"
-      :show-confirm-button="false"
+    <el-dialog
+      :visible.sync="designVisible"
+      :append-to-body="true"
+      :title="config.title"
+      class="db-dialog-wrap db-el-dialog"
+      width="50%"
     >
       <div
-        ref="dialogBox"
         class="dialog-box"
-        style="width: 100vh;height: 100vh"
+        style="height: 500px"
       >
         <component
           :is="resolveComponentType(config.type)"
           :id="`${config.code}${config.key}`"
           :ref="config.code"
           :key="config.key + 'dialog'"
-          style="width: 100%;height: 100%"
           :config="config"
           :is-dialog="isDialog"
         />
       </div>
-    </van-dialog>
+    </el-dialog>
+    <van-popup
+      v-model="previewVisible"
+      closeable
+      close-icon-position="top-left"
+      position="right"
+      style="width: 100%;height: 100%"
+    >
+      <div
+        id="dialogBox"
+        class="dialog-box"
+      >
+        <div
+          ref="dialogContent"
+          class="dialog-content"
+        >
+          <component
+            :is="resolveComponentType(config.type)"
+            :id="`${config.code}${config.key}${randomKey}`"
+            :ref="config.code"
+            :key="config.key + 'dialog' + randomKey"
+            class="component-box"
+            :config="config"
+            :is-dialog="isDialog"
+          />
+        </div>
+      </div>
+    </van-popup>
   </div>
 </template>
 <script>
@@ -51,8 +77,8 @@ import Svgs from 'packages/Svgs/index.vue'
 import RemoteComponent from 'packages/RemoteComponents/index.vue'
 import IconSvg from 'packages/SvgIcon'
 import Icon from 'packages/assets/images/pageIcon/export'
-import VanDialog from 'vant/lib/dialog'
-import 'vant/lib/dialog/style'
+import VanDialog from 'vant/lib/popup'
+import 'vant/lib/popup/style'
 import Vue from 'vue'
 Vue.use(VanDialog)
 const components = {}
@@ -75,6 +101,11 @@ export default {
     config: {
       type: Object,
       default: () => ({})
+    },
+    isDesign: {
+      type: Boolean,
+      default: false
+
     }
   },
   computed: {
@@ -84,8 +115,12 @@ export default {
   },
   data () {
     return {
-      isLandscape: true,
       isDialog: true,
+      randomKey: '',
+      isMobile: false,
+      isLandscape: true,
+      designVisible: false,
+      previewVisible: false,
       formVisible: false,
       icons: Icon.getNameList()
     }
@@ -94,28 +129,25 @@ export default {
     destroyedEvent()
   },
   mounted () {
+    this.isMobileHandel()
     // 调用初始化方法
     dataInit(this)
   },
   methods: {
-    fn () {
-      const elem = document.documentElement
-      if (elem.requestFullscreen) {
-        elem.requestFullscreen()
-      } else if (elem.webkitRequestFullscreen) { /* Safari */
-        elem.webkitRequestFullscreen()
-      } else if (elem.msRequestFullscreen) { /* IE11 */
-        elem.msRequestFullscreen()
-      }
-      // 应用旋转效果
-      this.$nextTick(() => {
-        this.$refs.dialogBox.style.transform = 'rotate(-90deg)'
-      })
+    // 添加当前设备判断方法
+    isMobileHandel () {
+      const flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Windows Phone)/i)
+      this.isMobile = flag
     },
     resolveComponentType,
     openDialog () {
-      this.formVisible = true
-      this.fn()
+      if (this.isDesign) {
+        this.designVisible = true
+      } else {
+        this.previewVisible = true
+      }
+
+      this.randomKey = new Date().getTime()
     }
   }
 }
@@ -156,20 +188,45 @@ export default {
         cursor: pointer;
       }
     }
-    /*.dialog-box{*/
-    /*  position: fixed;*/
-    /*  top: 0;*/
-    /*  left: 0;*/
-    /*  transform: rotate(90deg);*/
-    /*  width: 100vw;*/
-    /*}*/
-    .landscape{
-      -moz-transform:rotate(-90deg);
-      -webkit-transform:rotate(-90deg);
+    .dialog-box{
+      position: relative!important;
 
+      transform: perspective(400px) !important;
+      -ms-transform: perspective(400px) !important;
+      -moz-transform: perspective(400px) !important;
+      -webkit-transform: perspective(400px) !important;
+      -o-transform: perspective(400px) !important;
+      .dialog-content{
+        position: absolute;
+        width: 100vh;
+        height: 100vw;
+        background-color: #ffffff;
+        transform:translate(-29%,58%) rotate(-90deg) !important;
+        -webkit-transform:translate(-29%,58%) rotate(-90deg) !important;
+        -ms-transform:translate(-29%,58%) rotate(-90deg) !important;
+        -moz-transform:translate(-29%,58%) rotate(-90deg) !important;
+        -o-transform:translate(-29%,58%) rotate(-90deg) !important;
+        .exit-btn{
+          position: absolute;
+          background-color: #ffffff;
+          top: 0;
+          right: 0;
+          z-index: 100;
+          font-size: 14px;
+        }
+        .component-box{
+          width: 80% !important;
+          height: 80% !important;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform:translate(-50%,-45%);
+          transform:translate(-50%,-45%);
+        }
+      }
     }
-    .landscape{
-      /*transform: rotateY(180deg);*/
+    /deep/.el-table__body-wrapper{
+      overflow: auto!important;
     }
   }
 </style>
