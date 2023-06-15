@@ -106,6 +106,30 @@ export default {
       this.registerEvent()
     },
     /**
+     * @description: 只更新数据
+     */
+    updateData () {
+      this.getCurrentOption().then(({ data, config }) => {
+        if (data.success) {
+          // 成功后更新数据
+          config = this.buildOption(config, data)
+          const dataKey = config.option.dataKey
+          // eslint-disable-next-line no-inner-declarations
+          function getValueFromOption (option, dataKey) {
+            try {
+              return eval('option.' + dataKey)
+            } catch (error) {
+              return undefined
+            }
+          }
+          const newData = getValueFromOption(config.option, dataKey)
+          if (this.chart) {
+            this.chart.changeData(newData)
+          }
+        }
+      })
+    },
+    /**
      * 更新组件
      */
     updateChart () {

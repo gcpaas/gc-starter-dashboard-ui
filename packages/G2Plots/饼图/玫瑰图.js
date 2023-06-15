@@ -185,6 +185,8 @@ const dataHandler = ''
 
 // 图表配置 new Pie('domName', option)
 const option = {
+  // 数据将要放入到哪个字段中
+  dataKey: 'data',
   data,
   xField: 'type',
   yField: 'value',
