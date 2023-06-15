@@ -126,6 +126,7 @@ export default {
         // 获取数据后更新组件配置
         config = this.buildOption(config, res)
         if (config) {
+          config.key = new Date().getTime()
           this.changeChartConfig(config)
         }
         // this.$message.success('更新成功')
