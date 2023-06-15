@@ -61,6 +61,20 @@
           </div>
         </div>
         <div
+          v-if="config.type === 'multipleNumberChart'"
+          class="data-setting-data-box"
+        >
+          <div class="lc-field-head">
+            <div class="lc-field-title">
+              数据配置
+            </div>
+          </div>
+          <metricSetting
+            :dataSourceDataList="dataSourceDataList"
+            :config="config"
+          />
+        </div>
+        <div
           v-if="!['tree','multipleNumberChart','carousel'].includes(config.type) && config.option.displayOption.dataSourceType.enable "
           class="data-setting-data-box"
         >
@@ -203,6 +217,7 @@
             </template>
           </template>
         </div>
+
         <div
           v-if="config.option.displayOption.headerField && config.option.displayOption.headerField.enable"
           name="轮播表配置"
@@ -560,6 +575,7 @@
   </div>
 </template>
 <script>
+import metricSetting from 'packages/DashboardDesign/metricSetting/index.vue'
 import ElDragSelect from './ElDragSelect.vue'
 import { isEmpty, cloneDeep } from 'lodash'
 import ComponentRelation from 'packages/DashboardDesign/RightSetting/ComponentRelation/index.vue'
@@ -573,7 +589,8 @@ export default {
     ComponentRelation,
     ComponentBinding,
     dataSetSelect,
-    ElDragSelect
+    ElDragSelect,
+    metricSetting
   },
   data () {
     return {

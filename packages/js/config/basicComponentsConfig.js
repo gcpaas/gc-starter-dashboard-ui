@@ -13,6 +13,7 @@ import { setModules, dataModules } from 'packages/js/utils/configImport'
 const typeList = [
   // 'texts',
   'bigNumber',
+  'multipleNumberChart',
   'iconLink',
   // 'horizontalLine', // 横线
   // 'verticalLine', // 竖线

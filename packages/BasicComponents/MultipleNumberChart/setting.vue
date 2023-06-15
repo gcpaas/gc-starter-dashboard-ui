@@ -16,14 +16,14 @@
         >
           <SettingTitle>标题</SettingTitle>
           <div class="lc-field-body">
-            <el-form-item label="数字图名称">
+            <el-form-item label="数字卡片名称">
               <el-input
                 v-model="config.title"
                 clearable
               />
             </el-form-item>
           </div>
-          <SettingTitle>基础</SettingTitle>
+          <!-- <SettingTitle>基础</SettingTitle>
           <div class="lc-field-body">
             <el-form-item label="指标字体大小" label-width="100px">
               <el-input
@@ -55,7 +55,7 @@
                 />
               </el-select>
             </el-form-item>
-          </div>
+          </div> -->
         </el-form>
       </div>
     </el-form>
