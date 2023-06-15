@@ -4,6 +4,18 @@ export default function getComponentConfig (type) {
   // const _type = _.upperFirst(type)
   // const className = `com.gccloud.starter.lowcode.page.bigscreen.components.${_type}Chart`
   switch (type) {
+    case 'bigNumber':
+      return {
+        name: '数字图',
+        title: '数字',
+        icon: Icon.getNameList()[16],
+        className: 'com.gccloud.dashboard.core.module.chart.components.DashboardBigNumberChart',
+        w: 12,
+        h: 6,
+        x: 0,
+        y: 0,
+        type
+      }
     case 'iconLink':
       return {
         name: '跳转链接',
