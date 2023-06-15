@@ -93,7 +93,7 @@
 <script>
 import draggable from 'vuedraggable'
 import MetricConfig from './MetricConfig'
-// import { EventBus } from '../../eventBus/eventBus'
+import { mapMutations } from 'vuex'
 export default {
   name: 'MetricSetting',
   components: {
@@ -135,9 +135,12 @@ export default {
   },
   mounted() {},
   beforeDestroy() {
-    // EventBus.$emit('changeActiveCode', null);
+    this.changeActiveCode('')
   },
   methods: {
+    ...mapMutations('dashboard', [
+      'changeActiveCode'
+    ]),
     // 拖拽结束
     onEnd() {
       this.config.dataSource.metricFieldList = this.config.customize.customizeList.map(customize => customize.metric)
@@ -147,13 +150,15 @@ export default {
       const i = this.dataSourceDataList.findIndex((item)=> e === item.name)
       this.config.customize.customizeList[index].descriptionField = this.dataSourceDataList[i].comment
       this.config.dataSource.metricFieldList[index]=e
+      this.$store.commit('dashboard/changeActiveItemConfig', this.config)
     },
     // 更新指标配置
     updateCustomizeConfig(customize) {
       const index = this.config.customize.customizeList.findIndex(
         item => item.metric === customize.metric
       );
-      this.config.customize.customizeList[index] = customize;
+      this.config.customize.customizeList[index] = customize
+      this.$store.commit('dashboard/changeActiveItemConfig', this.config)
     },
     /**
      * @description: 添加指标

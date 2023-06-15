@@ -79,7 +79,7 @@ export default {
   },
   methods: {
     buildOption (config, data) {
-      console.log('1111111')
+      console.log(config,data,'buildOption')
       const metricFieldList = config.dataSource.metricFieldList || []
       let multipleDataList = []
       // 当返回的数据状态为成功时
@@ -87,7 +87,6 @@ export default {
         if (data.data && data.data.length) {
           // 返回数据不为空
           metricFieldList.forEach((metric, index) => {
-            console.log(metric,'22222')
             multipleDataList.push({
               ...data.data[0],
               label: config.customize.customizeList[index].descriptionField,
@@ -126,6 +125,7 @@ export default {
         data.value = isNaN(Number(data.value)) ? '--' : data.value
       })
       console.log(multipleDataList,'127')
+      config.option.data = []
       config.option.data = multipleDataList
       return config.option
     }

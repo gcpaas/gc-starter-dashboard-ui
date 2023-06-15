@@ -55,10 +55,11 @@ export default {
     state.pageLoading = booleanValue
   },
   // 改变当前组件配置
-  changeChartConfig (state, itemConfig) {
+  changeChartConfig(state, itemConfig) {
     const index = state.pageInfo.chartList.findIndex(
       item => item.code === itemConfig.code
     )
+    // console.log(itemConfig,state.pageInfo.chartList,itemConfig.code,'5555555555')
     Vue.set(state.pageInfo.chartList, index, {
       ...state.pageInfo.chartList[index],
       ...itemConfig
