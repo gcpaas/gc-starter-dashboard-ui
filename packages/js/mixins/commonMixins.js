@@ -125,7 +125,6 @@ export default {
       getUpdateChartInfo(params).then((res) => {
         // 获取数据后更新组件配置
         config = this.buildOption(config, res)
-        // console.log('444444')
         if (config) {
           config.key = new Date().getTime()
           this.changeChartConfig(config)

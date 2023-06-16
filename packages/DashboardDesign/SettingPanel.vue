@@ -143,6 +143,14 @@ export default {
       },
       deep: true
     }
+    // 'pageInfo.chartList': {
+    //   handler (val) {
+    //     if (Array.isArray(val) && val.length) {
+    //       this.init()
+    //     }
+    //   },
+    //   deep: true
+    // }
   },
   mounted () {
     this.init()
@@ -154,7 +162,6 @@ export default {
       } else {
         this.pageInfo.chartList.forEach(chart => {
           if (chart.dataSource.businessKey) {
-            console.log(chart)
             this.chartOptions.push({
               code: chart.code,
               title: chart.title,

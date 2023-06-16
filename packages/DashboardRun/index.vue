@@ -22,11 +22,11 @@
         :cols="{ lg: 24, md: 24, sm: 24, xs: 12, xxs: 12 }"
       >
         <grid-item
-          class="grid-item-box"
           v-for="(card) in chartList"
           :id="`${card.code}`"
           :ref="`layoutItem_${card.code}`"
           :key="card.code"
+          class="grid-item-box"
           :min-w="1"
           :min-h="2"
           :x="card.x"
@@ -72,7 +72,9 @@ export default {
   data () {
     return {
       innerHeight: window.innerHeight,
-      innerWidth: window.innerWidth
+      innerWidth: window.innerWidth,
+      // 定时器
+      timer: null
     }
   },
   computed: {
@@ -175,6 +177,14 @@ export default {
     this.getParentWH()
     this.windowSize()
   },
+  mounted () {
+    this.$nextTick(() => {
+      this.startTimer()
+    })
+  },
+  beforeDestroy () {
+    this.clearTimer()
+  },
   methods: {
     ...mapActions('dashboard', [
       'initLayout' // -> this.initLayout()
@@ -205,6 +215,34 @@ export default {
         }
         this.getParentWH()
       })
+    },
+    // 设置定时器
+    startTimer () {
+      let time = 1
+      const that = this
+      // 使用setTimeout代替setInterval，并在每次循环结束后重新设置定时器。这样可以避免定时器的堆积和性能问题
+      // 同时，为了方便清除定时器，可以将定时器的引用保存在变量中，以便后续清除
+      this.timer = setTimeout(function refresh () {
+        that.pageInfo.pageConfig.refreshConfig.forEach(item => {
+          if (item.code) {
+            if (time === 1) {
+              item.originTime = item.time
+            }
+            that.chartList.forEach((chart, index) => {
+              if (item.code === chart.code && item.time === time) {
+                item.time = item.time + item.originTime
+                that.$refs['RenderCard' + chart.code][0].$refs[chart.code].updateData()
+              }
+            })
+          }
+        })
+        time += 1
+        that.timer = setTimeout(refresh, 1000)
+      }, 1000)
+    },
+    // 清除定时器
+    clearTimer () {
+      clearTimeout(this.timer)
     },
     getIframeCode () {
       // 获取当前页面的URL
@@ -314,7 +352,6 @@ export default {
         overflowX = 'hidden'
         overflowY = 'hidden'
       }
-
       // 无
       const newPageConfig = {
         ...pageConfig,
@@ -326,7 +363,6 @@ export default {
         overflowX,
         overflowY
       }
-
       return newPageConfig
     }
   }

@@ -11,13 +11,21 @@
     </div>
     <!-- 中间切换按钮 -->
     <div class="terminal-btn">
-      <div class="svg-box" :class="{'active-avg-box':terminal === 'pc'}"  @click="chooseTerminal('pc')">
+      <div
+        class="svg-box"
+        :class="{'active-avg-box':terminal === 'pc'}"
+        @click="chooseTerminal('pc')"
+      >
         <icon-svg
           :name="icons[4]"
           class="img-btn-svg"
         />
       </div>
-      <div class="svg-box"  :class="{'active-avg-box':terminal === 'app'}"   @click="chooseTerminal('app')">
+      <div
+        class="svg-box"
+        :class="{'active-avg-box':terminal === 'app'}"
+        @click="chooseTerminal('app')"
+      >
         <icon-svg
           :name="icons[3]"
           class="img-btn-svg"
@@ -128,11 +136,11 @@ export default {
     terminal: {
       type: String,
       default: ''
-    },
+    }
   },
   data () {
     return {
-      icons:Icon.getNameList(),
+      icons: Icon.getNameList(),
       alignList: [
         {
           label: '左侧对齐',
@@ -207,8 +215,8 @@ export default {
       saveTimeLine: 'dashboard/saveTimeLine'
     }),
     // 切换终端
-    chooseTerminal(terminal){
-      this.$emit('chooseTerminal',terminal)
+    chooseTerminal (terminal) {
+      this.$emit('chooseTerminal', terminal)
     },
     backManagement () {
       this.$router.push({
@@ -232,7 +240,7 @@ export default {
     // 预览
     preview () {
       const { href } = this.$router.resolve({
-        path: this.terminal === 'pc'? (window.DS_CONFIG?.routers?.previewUrl || '/dashboard/preview') :  (window.DS_CONFIG?.routers?.appPreviewUrl || '/dashboard/app-preview'),
+        path: this.terminal === 'pc' ? (window.DS_CONFIG?.routers?.previewUrl || '/dashboard/preview') : (window.DS_CONFIG?.routers?.appPreviewUrl || '/dashboard/app-preview'),
         query: {
           code: this.pageCode
         }

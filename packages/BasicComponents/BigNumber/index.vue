@@ -60,15 +60,19 @@ export default {
     return {}
   },
   computed: {
-    option () {
-      if (!this.config.option.data) return { ...this.config.customize, data: null }
-      const a =
+    option: {
+      get () {
+        if (!this.config.option.data) return { ...this.config.customize, data: null }
+        const a =
         this.config.customize.numberFormat === 'kilobit'
           ? numberToCurrencyNo(this.config.option.data)
           : this.config.option.data
-      return {
-        ...this.config.customize,
-        data: a
+        return {
+          ...this.config.customize,
+          data: a
+        }
+      },
+      set (val) {
       }
     }
   },
@@ -91,6 +95,15 @@ export default {
         data: dataList
       }
       return config
+    },
+    updateData () {
+      this.getCurrentOption().then(({ data, config }) => {
+        if (data.success) {
+          const _config = this.buildOption(config, data)
+          this.config.option.data = _config.option.data
+          this.config.customize.numberFormat = _config.customize.numberFormat
+        }
+      })
     }
   }
 }

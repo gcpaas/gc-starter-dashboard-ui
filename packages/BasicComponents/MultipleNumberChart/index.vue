@@ -61,7 +61,6 @@ export default {
   },
   computed: {
     option () {
-      console.log(this.config)
       // if (!this.config.option.data) return { ...this.config.customize, data: null }
       // const a =
       //   this.config.customize.numberFormat === 'kilobit'
@@ -79,7 +78,6 @@ export default {
   },
   methods: {
     buildOption (config, data) {
-      console.log(config,data,'buildOption')
       const metricFieldList = config.dataSource.metricFieldList || []
       let multipleDataList = []
       // 当返回的数据状态为成功时
@@ -124,7 +122,6 @@ export default {
         // 非数字的情况下用其他符号代替
         data.value = isNaN(Number(data.value)) ? '--' : data.value
       })
-      console.log(multipleDataList,'127')
       config.option.data = []
       config.option.data = multipleDataList
       return config.option

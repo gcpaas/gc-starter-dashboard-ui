@@ -3,7 +3,7 @@
  * @Date: 2023-01-04 14:42:51
  * @Author: xing.heng
  * @LastEditors: wujian
- * @LastEditTime: 2023-06-02 15:35:43
+ * @LastEditTime: 2023-06-16 11:49:07
 -->
 <template>
   <div>
@@ -136,9 +136,7 @@ export default {
       return this.config.linkage.components?.map(item => item.componentKey) || []
     }
   },
-  mounted () {
-    // console.log(this.config)
-  },
+  mounted () { },
   beforeDestroy () {
   },
   methods: {
