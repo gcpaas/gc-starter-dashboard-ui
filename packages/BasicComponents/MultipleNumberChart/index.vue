@@ -1,11 +1,10 @@
 <template>
   <div class="design-wrap">
-    {{option}}
     <div class="card-wrap"  v-if="option.data.length">
-      <!-- <div v-for="(data,index) in option.data" :key="index" class="card-item-wrap" @click="rowClick(data)">
-        <div class="value-box"  :style="'font-size:'+ option.customizeList[index].metricFontSize+'px;font-weight:'+ option.customizeList[index].metricFontWeight+';color:'+option.customizeList[index].metricColor">{{data.value||'--'}}</div>
-        <div class="label-box" :style="'font-size:'+ option.customizeList[index].descriptionFontSize+'px;font-weight:'+ option.customizeList[index].descriptionWeight+';color:'+option.customizeList[index].descriptionColor">{{data.label}}</div>
-      </div> -->
+      <div v-for="(data,index) in option.data" :key="index" class="card-item-wrap">
+        <div v-if="option.customizeList[index]" class="value-box"  :style="'font-size:'+ option.customizeList[index].metricFontSize+'px;font-weight:'+ option.customizeList[index].metricFontWeight+';color:'+option.customizeList[index].metricColor">{{option.customizeList[index].numberFormat=='kilobit'?numberToCurrencyNo(data.value):data.value ||'--'}}</div>
+        <div v-if="option.customizeList[index]" class="label-box" :style="'font-size:'+ option.customizeList[index].descriptionFontSize+'px;font-weight:'+ option.customizeList[index].descriptionWeight+';color:'+option.customizeList[index].descriptionColor">{{data.label}}</div>
+      </div>
     </div>
     <div
       v-else
@@ -21,28 +20,7 @@ import commonMixins from 'packages/js/mixins/commonMixins'
 import paramsMixins from 'packages/js/mixins/paramsMixins'
 import linkageMixins from 'packages/js/mixins/linkageMixins'
 
-function numberToCurrencyNo (value) {
-  if (!value || isNaN(value)) return '--'
-  if (typeof value === 'string' && value.indexOf(',') !== -1) {
-    return value
-  }
-  // 获取整数部分
-  const intPart = Math.trunc(value)
-  // 整数部分处理，增加,
-  const intPartFormat = intPart
-    .toString()
-    .replace(/(\d)(?=(?:\d{3})+$)/g, '$1,')
-  // 预定义小数部分
-  let floatPart = ''
-  // 将数值截取为小数部分和整数部分
-  const valueArray = value.toString().split('.')
-  if (valueArray.length === 2) {
-    // 有小数部分
-    floatPart = valueArray[1].toString()// 取得小数部分
-    return intPartFormat + '.' + floatPart
-  }
-  return intPartFormat + floatPart
-}
+
 
 export default {
   name: 'MultipleNumberChart',
@@ -61,7 +39,6 @@ export default {
   },
   computed: {
     option () {
-      console.log(this.config)
       // if (!this.config.option.data) return { ...this.config.customize, data: null }
       // const a =
       //   this.config.customize.numberFormat === 'kilobit'
@@ -78,8 +55,29 @@ export default {
     this.chartInit()
   },
   methods: {
+    numberToCurrencyNo (value) {
+      if (!value || isNaN(value)) return '--'
+      if (typeof value === 'string' && value.indexOf(',') !== -1) {
+        return value
+      }
+      // 获取整数部分
+      const intPart = Math.trunc(value)
+      // 整数部分处理，增加,
+      const intPartFormat = intPart
+        .toString()
+        .replace(/(\d)(?=(?:\d{3})+$)/g, '$1,')
+      // 预定义小数部分
+      let floatPart = ''
+      // 将数值截取为小数部分和整数部分
+      const valueArray = value.toString().split('.')
+      if (valueArray.length === 2) {
+        // 有小数部分
+        floatPart = valueArray[1].toString()// 取得小数部分
+        return intPartFormat + '.' + floatPart
+      }
+      return intPartFormat + floatPart
+    },
     buildOption (config, data) {
-      console.log(config,data,'buildOption')
       const metricFieldList = config.dataSource.metricFieldList || []
       let multipleDataList = []
       // 当返回的数据状态为成功时
@@ -90,7 +88,7 @@ export default {
             multipleDataList.push({
               ...data.data[0],
               label: config.customize.customizeList[index].descriptionField,
-              value: data.data[0][data.columnData[metric].alias]
+              value: data.data[0][data.columnData[metric]?.alias]
             })
           })
         } else {
@@ -124,10 +122,11 @@ export default {
         // 非数字的情况下用其他符号代替
         data.value = isNaN(Number(data.value)) ? '--' : data.value
       })
-      console.log(multipleDataList,'127')
-      config.option.data = []
-      config.option.data = multipleDataList
-      return config.option
+      config.option = {
+        ...config.option,
+        data: multipleDataList
+      }
+      return config
     }
   }
 }

@@ -117,7 +117,7 @@
         get() {
           return this.customizeConfig || {
             metric:'',//指标
-            descriptionField,//指标名称
+            descriptionField:'',//指标名称
             metricFontSize: 30,//指标字体大小
             metricFontWeight: 700,//指标字体权重
             metricColor:'',//指标字体颜色

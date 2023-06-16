@@ -16,19 +16,19 @@ export default function getComponentConfig (type) {
         y: 0,
         type
       }
-    // case 'multipleNumberChart':
-    //   return {
-    //     name: '数字卡片',
-    //     title: '数字卡片',
-    //     icon: Icon.getNameList()[1],
-    //     className:
-    //       'com.gccloud.dashboard.core.module.chart.components.MultipleNumberChart',
-    //     w: 12,
-    //     h: 6,
-    //     x: 0,
-    //     y: 0,
-    //     type
-    //   }
+    case 'multipleNumberChart':
+      return {
+        name: '数字卡片',
+        title: '数字卡片',
+        icon: Icon.getNameList()[17],
+        className:
+          'com.gccloud.dashboard.core.module.chart.components.MultipleNumberChart',
+        w: 12,
+        h: 8,
+        x: 0,
+        y: 0,
+        type
+      }
     case 'iconLink':
       return {
         name: '跳转链接',

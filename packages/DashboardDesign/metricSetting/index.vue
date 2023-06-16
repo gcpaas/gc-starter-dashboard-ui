@@ -148,7 +148,7 @@ export default {
     // 选择指标时
     chooseMetric(e,index) {
       const i = this.dataSourceDataList.findIndex((item)=> e === item.name)
-      this.config.customize.customizeList[index].descriptionField = this.dataSourceDataList[i].comment
+      this.config.customize.customizeList[index].descriptionField = this.dataSourceDataList[i]?.comment
       this.config.dataSource.metricFieldList[index]=e
       this.$store.commit('dashboard/changeActiveItemConfig', this.config)
     },
