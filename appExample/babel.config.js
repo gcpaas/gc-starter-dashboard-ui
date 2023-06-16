@@ -9,7 +9,6 @@ const plugins = [
   //   }
   // ]
 ]
-// 去除 console.log
 if (IS_PROD) {
   plugins.push('transform-remove-console')
 }

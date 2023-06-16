@@ -2,8 +2,8 @@
  * @description: vuex mutations 事件
  * @Date: 2023-03-13 10:04:59
  * @Author: xing.heng
- * @LastEditors: xing.heng
- * @LastEditTime: 2023-06-12 13:31:19
+ * @LastEditors: wujian
+ * @LastEditTime: 2023-06-16 15:04:33
  */
 
 import Vue from 'vue'
@@ -55,7 +55,7 @@ export default {
     state.pageLoading = booleanValue
   },
   // 改变当前组件配置
-  changeChartConfig(state, itemConfig) {
+  changeChartConfig (state, itemConfig) {
     const index = state.pageInfo.chartList.findIndex(
       item => item.code === itemConfig.code
     )
@@ -104,8 +104,10 @@ export default {
   delItem (state, codes) {
     if (Array.isArray(codes)) {
       state.pageInfo.chartList = state.pageInfo.chartList.filter(chart => !codes.includes(chart.code))
+      state.pageInfo.pageConfig.refreshConfig = state.pageInfo.pageConfig.refreshConfig.filter(timer => !codes.includes(timer.code))
     } else {
       state.pageInfo.chartList = state.pageInfo.chartList.filter(chart => codes !== chart.code)
+      state.pageInfo.pageConfig.refreshConfig = state.pageInfo.pageConfig.refreshConfig.filter(item => item.code !== codes)
     }
     // 存储删除后的状态
     saveTimeLineFunc(state, '删除组件')
@@ -167,6 +169,9 @@ export default {
   },
   changeFitZoom (state, zoom) {
     state.fitZoom = zoom
+  },
+  changeRefreshConfig (state, refreshConfig) {
+    state.pageInfo.pageConfig.refreshConfig = refreshConfig
   },
   changeActivePos (state, { diffX, diffY }) {
     const activeCodes = state.activeCodes

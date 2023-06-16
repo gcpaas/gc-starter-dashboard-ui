@@ -40,6 +40,7 @@ export function handleResData (data) {
       }
     }
   }
+  pageInfo.pageConfig.refreshConfig = _.cloneDeep(pageInfo.pageConfig.refreshConfig) || []
   pageInfo.chartList.forEach((chart) => {
     if (!['customComponent', 'remoteComponent'].includes(chart.type)) {
       chart.option = _.cloneDeep(setModules[chart.type])

@@ -24,12 +24,12 @@
         </li>
       </ul>
     </div>
-    <empty v-if="!config.option.data.length" >暂无数据</empty>
+    <empty v-if="!config.option.data.length">
+      暂无数据
+    </empty>
   </div>
 </template>
 <script>
-// import { dataListMixins } from '../../../../../mixins/dashboardMixins'
-// import { refreshComponentMixin } from 'packages/js/mixins/refreshComponent'
 import _ from 'lodash'
 import commonMixins from 'packages/js/mixins/commonMixins'
 import paramsMixins from 'packages/js/mixins/paramsMixins'
@@ -95,6 +95,14 @@ export default {
       }
 
       return config
+    },
+    updateData () {
+      this.getCurrentOption().then(({ data, config }) => {
+        if (data.success) {
+          const _config = this.buildOption(config, data)
+          this.config.option.data = _config.option.data
+        }
+      })
     }
   }
 }

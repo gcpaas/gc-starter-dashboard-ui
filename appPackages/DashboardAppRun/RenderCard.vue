@@ -7,8 +7,10 @@
         @click="openDialog"
       >
         <icon-svg
+          v-if="isDesign"
           :name="icons[5]"
         />
+        <van-icon v-if="!isDesign" name="enlarge" />
       </div>
     </header>
     <component
@@ -18,27 +20,30 @@
       :key="config.key"
       :config="config"
     />
-    <el-dialog
-      :visible.sync="designVisible"
-      :append-to-body="true"
-      :title="config.title"
-      class="db-dialog-wrap db-el-dialog"
-      width="50%"
-    >
-      <div
-        class="dialog-box"
-        style="height: 500px"
+    <div v-if="designVisible">
+      <el-dialog
+        :visible.sync="designVisible"
+        :append-to-body="true"
+        :title="config.title"
+        class="db-dialog-wrap db-el-dialog"
+        width="50%"
       >
-        <component
-          :is="resolveComponentType(config.type)"
-          :id="`${config.code}${config.key}`"
-          :ref="config.code"
-          :key="config.key + 'dialog'"
-          :config="config"
-          :is-dialog="isDialog"
-        />
-      </div>
-    </el-dialog>
+        <div
+          class="dialog-box"
+          style="height: 500px"
+        >
+          <component
+            :is="resolveComponentType(config.type)"
+            :id="`${config.code}${config.key}`"
+            :ref="config.code"
+            :key="config.key + 'dialog'"
+            :config="config"
+            :is-dialog="isDialog"
+          />
+        </div>
+      </el-dialog>
+    </div>
+
     <van-popup
       v-model="previewVisible"
       closeable
@@ -79,8 +84,11 @@ import IconSvg from 'packages/SvgIcon'
 import Icon from 'packages/assets/images/pageIcon/export'
 import VanDialog from 'vant/lib/popup'
 import 'vant/lib/popup/style'
+import VanIcon from 'vant/lib/icon'
+import 'vant/lib/icon/style'
 import Vue from 'vue'
 Vue.use(VanDialog)
+Vue.use(VanIcon)
 const components = {}
 for (const key in pcComponent) {
   if (Object.hasOwnProperty.call(pcComponent, key)) {

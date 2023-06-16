@@ -125,6 +125,15 @@ export default {
         config.option.columnData = columnData
       }
       return config
+    },
+    updateData () {
+      this.getCurrentOption().then(({ data, config }) => {
+        if (data.success) {
+          this.config.option.tableData = data?.data
+          this.config.option.columnData = data?.columnData || {}
+          this.$refs[config.code].doLayout()
+        }
+      })
     }
   }
 }
