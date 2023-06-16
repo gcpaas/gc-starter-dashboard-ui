@@ -34,7 +34,6 @@
         <div class="title">
           <span>时间（秒）</span>
           <span>图表</span>
-          <span />
         </div>
         <div
           v-for="(timer, index) in pageInfo.pageConfig.refreshConfig"
@@ -142,15 +141,16 @@ export default {
         }
       },
       deep: true
+    },
+    'pageInfo.chartList': {
+      handler (val) {
+        this.chartOptions = []
+        if (Array.isArray(val) && val.length) {
+          this.init()
+        }
+      },
+      deep: true
     }
-    // 'pageInfo.chartList': {
-    //   handler (val) {
-    //     if (Array.isArray(val) && val.length) {
-    //       this.init()
-    //     }
-    //   },
-    //   deep: true
-    // }
   },
   mounted () {
     this.init()
@@ -226,7 +226,8 @@ export default {
       position: relative;
       padding-left: 12px;
       display: inline-block;
-      &:after{
+
+      &:after {
         position: absolute;
         left: 0;
         top: 50%;
@@ -329,21 +330,32 @@ export default {
   transform: translateX(10px);
   opacity: 0;
 }
-/deep/ .el-scrollbar__view{
+
+/deep/ .el-scrollbar__view {
   height: calc(100vh - 80px);
   overflow-x: unset;
 }
 
 .db-overall-setting-wrap {
-    padding: 16px;
-    .title{
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 18px;
-    }
-    .db-timer-item{
-      display: flex;
-      margin-bottom: 18px;
-    }
+  padding: 16px;
+
+  .title {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 18px;
   }
+
+  .db-timer-item {
+    display: flex;
+    margin-bottom: 18px;
+  }
+
+  ::v-deep .el-select {
+    width: 110px;
+  }
+
+  ::v-deep .el-input-number {
+    width: 100px;
+  }
+}
 </style>
